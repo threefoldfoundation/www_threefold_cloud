@@ -1,0 +1,37 @@
+{
+  "name": "my-blog",
+  "private": true,
+  "scripts": {
+    "build": "gridsome build",
+    "develop": "gridsome develop",
+    "explore": "gridsome explore"
+  },
+  "dependencies": {
+    "@gridsome/source-filesystem": "^0.6.2",
+    "@gridsome/source-graphql": "^0.1.0",
+    "@gridsome/transformer-remark": "^0.6.2",
+    "@noxify/gridsome-remark-classes": "^1.0.0",
+    "@noxify/gridsome-remark-table-align": "^1.0.0",
+    "babel-runtime": "^6.26.0",
+    "core-js": "^3.6.5",
+    "gridsome": "^0.7.3",
+    "gridsome-plugin-flexsearch": "^1.0.5",
+    "gridsome-plugin-tailwindcss": "^3.0.1",
+    "gridsome-source-static-meta": "github:noxify/gridsome-source-static-meta#master",
+    "lodash": "^4.17.20",
+    "pluralize": "^8.0.0",
+    "sass-loader": "^10.0.2",
+    "tailwindcss": "^1.8.4",
+    "tailwindcss-gradients": "^3.0.0",
+    "tailwindcss-tables": "^0.4.0",
+    "v-tooltip": "^2.0.3",
+    "vue-markdown": "^2.2.4"
+  },
+  "devDependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.30",
+    "@fortawesome/free-brands-svg-icons": "^5.14.0",
+    "@fortawesome/free-solid-svg-icons": "^5.14.0",
+    "@fortawesome/vue-fontawesome": "^2.0.0",
+    "node-sass": "^5.0.0"
+  }
+}
