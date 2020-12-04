@@ -22,16 +22,13 @@ module.exports = {
           shouldPurgeUnusedKeyframes: true,
       }
   },
-
   {
     use: '@gridsome/source-filesystem',
     options: {
         typeName: 'Card',
         path: './content/page/**/cards/**/*.md',
-       
     }
   },
-
   {
     use: '@gridsome/source-filesystem',
     options: {
@@ -44,7 +41,6 @@ module.exports = {
       }       
     }
   },
-
   ],
   templates: {
     MarkdownPage: [{

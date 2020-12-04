@@ -1,7 +1,7 @@
 <template>
   <Layout :hideHeader="true" :disableScroll="true">
     <div class="container sm:pxi-0 mx-auto overflow-x-hidden text-center py-5">
-    
+      <Header :header=" $page.markdownPage.header" />
     <vue-markdown>
     {{ $page.markdownPage.content }}
     </vue-markdown>
@@ -17,6 +17,12 @@
         path
         content
         title
+        header{
+          title
+          image
+          altImg
+          excerpt
+        }
         cards{
           id
           title
@@ -34,11 +40,13 @@
 <script>
 import VueMarkdown from 'vue-markdown'
 import NewCard from "~/components/marketing/sections/cta-sections/NewCard.vue";
+import Header from "~/components/marketing/sections/cta-sections/Header.vue";
 
 export default {
   components: {
     VueMarkdown,
-    NewCard
+    NewCard,
+    Header
   },
   metaInfo() {
     return {
