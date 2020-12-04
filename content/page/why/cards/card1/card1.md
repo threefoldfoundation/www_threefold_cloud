@@ -1,6 +1,6 @@
 ---
 id: why1
-title: The Environment Demands It.
+title: The Environment Demands It
 image: ./card1.jpeg
 button: Read More on Our Blog
 link: ''
