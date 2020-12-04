@@ -26,18 +26,31 @@ module.exports = {
   {
     use: '@gridsome/source-filesystem',
     options: {
-        typeName: 'MarkdownPage',
-        path: './content/page/**/*.md',
+        typeName: 'Card',
+        path: './content/page/**/cards/**/*.md',
        
     }
   },
 
+  {
+    use: '@gridsome/source-filesystem',
+    options: {
+        typeName: 'MarkdownPage',
+        path: './content/page/*/*.md',
+        refs: {
+          cards: {
+              typeName: 'Card',
+          }
+      }       
+    }
+  },
 
   ],
   templates: {
     MarkdownPage: [{
       path: '/:id',
-      component: '~/templates/MarkdownPage.vue'
+      component: '~/templates/MarkdownPage.vue',
+      
     }],
   }
 }
