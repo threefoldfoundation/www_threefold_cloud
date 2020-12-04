@@ -240,7 +240,7 @@ export default {
       navLinks: [
         {
           name: "Why",
-          link: "/about",
+          link: "/why",
           external: false,
           expandable: false,
         },
@@ -250,9 +250,11 @@ export default {
           external: false,
           expandable: true,
           submenu: [
-            { title: "Product", path: "/product" },
-            { title: "Read More", path: "/blog" },
-            { title: "Knowledge", path: "/community" },
+            { title: "Solution", path: "/solution" },
+            { title: "Participate", path: "/participate" },
+            { title: "Token", path: "/token" },
+            { title: "Future", path: "/future" },
+            { title: "Knowledge", path: "https://wiki.threefold.io/#/what_is_farming" },
           ],
         },
         {

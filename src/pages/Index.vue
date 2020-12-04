@@ -1,5 +1,7 @@
 <template>
   <Layout>
+
+    
     <!-- Learn how to use images here: https://gridsome.org/docs/images -->
     <!-- <g-image alt="Example image" src="~/favicon.png" width="135" />
 
@@ -89,17 +91,16 @@
       ]"
     /> -->
     
-
+    <Header
+        v-for="header in headers"
+        :key="header.title"
+        :header="header"
+      />
 
     <NewCard v-for="card in cards" :key="card.title"
       :card = "card"
     />
 
-    <!-- <Footer
-      desc="Making the world a better place through constructing elegant
-            hierarchies."
-      :footerLinks="footerLinks"
-    /> -->
   </Layout>
 </template>
 
@@ -112,6 +113,7 @@ import NewPeoplePage from "~/components/marketing/sections/cta-sections/new_peop
 // import BlogOverview from "~/components/blog/BlogOverview.vue";
 import Footer from "~/components/marketing/sections/cta-sections/Footer.vue";
 import NewCard from "~/components/marketing/sections/cta-sections/NewCard.vue";
+import Header from "~/components/marketing/sections/cta-sections/Header.vue";
 
 
 export default {
@@ -127,6 +129,7 @@ export default {
     // BlogOverview,
     Footer,
     NewCard,
+    Header,
   },
   data() {
     return {
@@ -138,6 +141,14 @@ export default {
         button :"Start Now",
         link :"#"
         }
+      ],
+      headers: [
+        {
+          title: "THANK YOU THREEFOLD MEMBERS",
+          img: "https://placehold.co/600x300",
+          altImg :"home",
+          content:"Welcome to the growing ecosystem of ThreeFold.",
+        },
       ],
       footerLinks: [
         {

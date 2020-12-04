@@ -22,5 +22,22 @@ module.exports = {
           shouldPurgeUnusedKeyframes: true,
       }
   },
-  ]
+
+  {
+    use: '@gridsome/source-filesystem',
+    options: {
+        typeName: 'MarkdownPage',
+        path: './content/page/**/*.md',
+       
+    }
+  },
+
+
+  ],
+  templates: {
+    MarkdownPage: [{
+      path: '/:id',
+      component: '~/templates/MarkdownPage.vue'
+    }],
+  }
 }
