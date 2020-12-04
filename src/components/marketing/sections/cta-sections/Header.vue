@@ -19,5 +19,12 @@
 <script>
 export default {
   props: ["header"],
+  computed: {
+        img: function(){
+            if(this.card.image.src)
+                return this.card.image.src
+            return this.card.image
+        }
+    },
 };
 </script>

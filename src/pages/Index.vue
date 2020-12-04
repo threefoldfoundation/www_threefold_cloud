@@ -145,9 +145,9 @@ export default {
       headers: [
         {
           title: "THANK YOU THREEFOLD MEMBERS",
-          img: "https://placehold.co/600x300",
+          image: "https://placehold.co/600x300",
           altImg :"home",
-          content:"Welcome to the growing ecosystem of ThreeFold.",
+          excerpt:"Welcome to the growing ecosystem of ThreeFold.",
         },
       ],
       footerLinks: [
