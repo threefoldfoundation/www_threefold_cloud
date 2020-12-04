@@ -21,7 +21,6 @@ export default {
   props: ["header"],
   computed: {
         img: function(){
-          console.log(this.header)
             if(this.header.image.src)
                 return this.header.image.src
             return this.header.image

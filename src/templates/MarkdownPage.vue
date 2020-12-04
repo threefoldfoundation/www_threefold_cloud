@@ -2,7 +2,7 @@
   <Layout :hideHeader="true" :disableScroll="true">
     <div class="container sm:pxi-0 mx-auto overflow-x-hidden text-center py-5">
       <Header :header="$page.markdownPage" />
-    <vue-markdown>
+    <vue-markdown :key="$page.markdownPage.id">
     {{ $page.markdownPage.content }}
     </vue-markdown>
     <NewCard v-for="card in $page.markdownPage.cards" :key="card.id" :card = "card"/>
