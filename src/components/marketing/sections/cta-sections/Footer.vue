@@ -91,7 +91,9 @@
             </a>
           </div>
         </div>
-        <div class="mt-12 grid grid-cols-4 xl:mt-0 xl:col-span-2">
+        <div class="mt-12 grid md:grid-cols-4 sm:grid-cols-2 xl:mt-0 xl:col-span-2">
+        <!-- class="mt-12 grid grid-cols-2 gap-8 xl:mt-0 xl:col-span-2" -->
+
           <div
             v-for="footerLink in footerLinks"
             :key="footerLink.title"
