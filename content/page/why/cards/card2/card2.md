@@ -1,6 +1,6 @@
 ---
 id: why2
-title: The Technology Demands It.
+title: The Technology Demands It
 image: ./card2.jpeg
 button: Read More on Our Blog
 link: ''
