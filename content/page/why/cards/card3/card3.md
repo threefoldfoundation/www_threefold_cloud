@@ -1,6 +1,6 @@
 ---
 id: why3
-title: The People Demand It.
+title: The People Demand It
 image: ./card3.jpeg
 button: CTA
 link: ''
