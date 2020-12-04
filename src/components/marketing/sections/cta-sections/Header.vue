@@ -9,7 +9,7 @@
           <a class="text-indigo-600 hover:underline" href="#">Learn more</a>
       </div> -->
     </div>
-    <div class="lg:w-1/2 px-2"><img :src="header.image.src" :alt="header.altImg"></div>
+    <div class="lg:w-1/2 px-2"><img :src="img" :alt="header.altImg"></div>
   </div>
 </section>
 
@@ -21,9 +21,10 @@ export default {
   props: ["header"],
   computed: {
         img: function(){
-            if(this.card.image.src)
-                return this.card.image.src
-            return this.card.image
+          console.log(this.header)
+            if(this.header.image.src)
+                return this.header.image.src
+            return this.header.image
         }
     },
 };

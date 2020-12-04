@@ -1,7 +1,7 @@
 <template>
   <Layout :hideHeader="true" :disableScroll="true">
     <div class="container sm:pxi-0 mx-auto overflow-x-hidden text-center py-5">
-      <Header :header=" $page.markdownPage.header" />
+      <Header :header="$page.markdownPage" />
     <vue-markdown>
     {{ $page.markdownPage.content }}
     </vue-markdown>
@@ -17,12 +17,8 @@
         path
         content
         title
-        header{
-          title
-          image
-          altImg
-          excerpt
-        }
+        image
+        excerpt
         cards{
           id
           title

@@ -1,11 +1,9 @@
 ---
 id: future
 title: Future
-header:
-    title: ''
-    image: ''
-    altImg: ''
-    excerpt: ''
+image: ./header.png
+altImg: why
+excerpt: Welcome to the growing ecosystem of ThreeFold.
 ---
 
 # Future

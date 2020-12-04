@@ -1,11 +1,9 @@
 ---
 id: token
 title: Token
-header:
-    title: ''
-    image: ''
-    altImg: ''
-    excerpt: ''
+image: ./header.png
+altImg: why
+excerpt: Welcome to the growing ecosystem of ThreeFold.
 ---
 
 # Token
