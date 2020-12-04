@@ -33,7 +33,7 @@
             <div class="flex justify-between items-center">
               <ul class="list-none flex author-list m-0">
                 <li
-                  v-for="author in record.author"
+                  v-for="author in record.authors"
                   :key="author.id"
                   class="author-list-item"
                 >
@@ -90,6 +90,25 @@ export default {
       type: Boolean,
       default: true,
     },
+  },
+  mounted: function () {
+
+    function get_img(img){
+        img.src = "https://data.threefold.io/" + img.src
+        for(var i=0; i < img.srcset.length; i++){
+          img.srcset[i] = "https://data.threefold.io/" + img.srcset[i]
+        }
+      return img
+    }
+    if(this.record.image.src){
+      this.record.image = get_img(this.record.image )
+      if(this.record.authors){
+          for(var i=0; i < this.record.authors.length; i++){
+              this.record.authors[i].image = get_img(this.record.authors[i].image)
+          }
+      }
+      
+    }
   },
   methods: {
     displaytags(){

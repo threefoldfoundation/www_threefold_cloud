@@ -8,7 +8,7 @@
   },
   "dependencies": {
     "@gridsome/source-filesystem": "^0.6.2",
-    "@gridsome/source-graphql": "^0.1.0",
+    "gridsome-source-graphql": "^1.0.2",
     "@gridsome/transformer-remark": "^0.6.2",
     "@noxify/gridsome-remark-classes": "^1.0.0",
     "@noxify/gridsome-remark-table-align": "^1.0.0",

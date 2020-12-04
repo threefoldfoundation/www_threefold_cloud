@@ -41,6 +41,35 @@ module.exports = {
       }       
     }
   },
+
+  // Remote models
+
+  {
+    use: 'gridsome-source-graphql',
+    options: {
+      url: 'https://data.threefold.io/___graphql',
+      fieldName: 'Person',
+      typeName: 'Person',
+    },
+  },
+
+  {
+    use: 'gridsome-source-graphql',
+    options: {
+      url: 'https://data.threefold.io/___graphql',
+      fieldName: 'Project',
+      typeName: 'Project',
+    },
+  },
+
+  {
+    use: 'gridsome-source-graphql',
+    options: {
+      url: 'https://data.threefold.io/___graphql',
+      fieldName: 'Membership',
+      typeName: 'Membership',
+    },
+  },
   ],
   templates: {
     MarkdownPage: [{
