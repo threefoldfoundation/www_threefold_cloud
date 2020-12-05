@@ -6,6 +6,7 @@
           v-for="partner in $page.entries.edges"
           :key="partner.id"
           :record="partner.node"
+          pathPrefix="/partners"
         />
       </div>
     </div>
@@ -18,6 +19,7 @@ query ($private: Int){
     totalCount
     edges {
       node {
+        id
         title
         path
         members {

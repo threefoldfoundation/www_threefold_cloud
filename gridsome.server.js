@@ -5,6 +5,11 @@
 // Changes here require a server restart.
 // To restart press CTRL + C in terminal and run `gridsome develop`
 
+var private = process.env.SHOWPRIVATE
+if (private == "true")
+    private = null
+else if (private == "false")
+    private = 1
 
 module.exports = function(api) {
     api.loadSource(({ addCollection }) => {
@@ -31,7 +36,31 @@ module.exports = function(api) {
             path: `/people/${node.id}`,
             component: './src/templates/Person.vue',
             context: {
-              id: node.id
+              id: node.id,
+              private: private
+            }
+          })
+        })
+      })
+
+      api.createPages(async ({ graphql, createPage }) => {
+        const { data } = await graphql(`{
+          allProject {
+            edges {
+              node {
+                id
+              }
+            }
+          }
+        }`)
+    
+        data.allProject.edges.forEach(({ node }) => {
+          createPage({
+            path: `/partners/${node.id}`,
+            component: './src/templates/Project.vue',
+            context: {
+              id: node.id,
+              private: private
             }
           })
         })

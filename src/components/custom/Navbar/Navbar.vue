@@ -275,7 +275,7 @@ export default {
           submenu: [
             { title: "Newsroom", path: "/news" },
             { title: "Blog", path: "/blog" },
-            { title: "Forum", path: "https://forums.threefold.io/" },
+            { title: "Community", path: "https://forums.threefold.io/" },
             { title: "Contact", path: "/contact" },
           ],
         },

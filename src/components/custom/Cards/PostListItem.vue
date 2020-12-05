@@ -86,12 +86,16 @@ export default {
   props: {
     record: {},
     showtags: false,
+    pathPrefix: "",
     border: {
       type: Boolean,
       default: true,
     },
   },
   mounted: function () {
+    if (this.pathPrefix != ""){
+      this.record.path = this.pathPrefix + "/" + this.record.id
+    }
 
     function get_img(img){
         img.src = "https://data.threefold.io/" + img.src
