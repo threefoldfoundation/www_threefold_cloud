@@ -5,7 +5,7 @@
 // To restart press CTRL + C in terminal and run `gridsome develop`
 
 module.exports = {
-  siteName: 'Threefold Webstack',
+  siteName: 'Threefold Farming',
   plugins: [
 
     // Remote models
@@ -13,7 +13,7 @@ module.exports = {
   {
     use: 'gridsome-source-graphql',
     options: {
-      url: 'http://localhost:8080/___graphql',
+      url: 'https://data.threefold.io/___graphql',
       fieldName: 'Threefold',
       typeName: '',
     },
