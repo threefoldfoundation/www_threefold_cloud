@@ -1,110 +1,75 @@
 <template>
   <Layout>
-    <div class="container sm:pxi-0 mx-auto overflow-x-hidden">
+     <div
+      class="container sm:pxi-0 mx-auto"
+      :style="{ 'min-height': contentHeight + 'px' }"
+    >
       <div class="flex flex-wrap with-large pt-8 pb-8 mx-4 sm:-mx-4">
-        <PostListItem v-for="blog in allBlog" :key="blog.id" :record="blog" />
+        <PostListItem
+          v-for="post in $page.entries.edges"
+          :key="post.node.id"
+          :record="post.node"
+        />
       </div>
+
+       <div class="pagination flex justify-center mb-8">
+      <Pagination
+        baseUrl=""
+        :currentPage="$page.entries.pageInfo.currentPage"
+        :totalPages="$page.entries.pageInfo.totalPages"
+        :maxVisibleButtons="5"
+        v-if="$page.entries.pageInfo.totalPages > 1"
+      />
+    </div>
+
     </div>
   </Layout>
 </template>
+<page-query>
 
+query{
+  entries: allBlog(sortBy: "created", order: DESC) {
+    totalCount
+    pageInfo {
+      totalPages
+      currentPage
+    }
+    edges {
+      node {
+        title
+        excerpt
+        image(width:800)
+        path
+        humanTime : created(format:"DD MMM YYYY")
+        datetime : created
+        authors {
+          id
+          name
+          image(width:64, height:64, fit:inside)
+          path
+        }
+      }
+    }
+  }
+}
+
+</page-query>
 <script>
-import PostListItem from "~/components/customize/Cards/PostListItem.vue";
+import PostListItem from "~/components/custom/Cards/PostListItem.vue";
+import Pagination from "~/components/custom/Pagination.vue";
 
 export default {
   components: {
     PostListItem,
+    Pagination
   },
-  data() {
-    return {
-      allBlog: [
-        {
-          title: "Title Here",
-          author: [
-            {
-              id: "id_name",
-              image: "https://placehold.co/64x64",
-              name: "Blogger name",
-              path: "#",
-            },
-          ],
-          datetime: "2019-12-05T00:00:00.000Z",
-          excerpt:
-            "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Non architecto mollitia saepe ratione eos dolores commodi porro quos assumenda quis, veniam ab omnis distinctio, tempore laudantium, sapiente quidem? Corrupti, obcaecati.",
-          humanTime: "05 Dec 2019",
-          image: "https://placehold.co/800",
-          path: "#",
-        },
-        {
-          title: "Title Here",
-          author: [
-            {
-              id: "id_name",
-              image: "https://placehold.co/64x64",
-              name: "Blogger name",
-              path: "#",
-            },
-          ],
-          datetime: "2019-12-05T00:00:00.000Z",
-          excerpt:
-            "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Non architecto mollitia saepe ratione eos dolores commodi porro quos assumenda quis, veniam ab omnis distinctio, tempore laudantium, sapiente quidem? Corrupti, obcaecati.",
-          humanTime: "05 Dec 2019",
-          image: "https://placehold.co/800",
-          path: "#",
-        },
-        {
-          title: "Title Here",
-          author: [
-            {
-              id: "id_name",
-              image: "https://placehold.co/64x64",
-              name: "Blogger name",
-              path: "#",
-            },
-          ],
-          datetime: "2019-12-05T00:00:00.000Z",
-          excerpt:
-            "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Non architecto mollitia saepe ratione eos dolores commodi porro quos assumenda quis, veniam ab omnis distinctio, tempore laudantium, sapiente quidem? Corrupti, obcaecati.",
-          humanTime: "05 Dec 2019",
-          image: "https://placehold.co/800",
-          path: "#",
-        },
-        {
-          title: "Title Here",
-          author: [
-            {
-              id: "id_name",
-              image: "https://placehold.co/64x64",
-              name: "Blogger name",
-              path: "#",
-            },
-          ],
-          datetime: "2019-12-05T00:00:00.000Z",
-          excerpt:
-            "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Non architecto mollitia saepe ratione eos dolores commodi porro quos assumenda quis, veniam ab omnis distinctio, tempore laudantium, sapiente quidem? Corrupti, obcaecati.",
-          humanTime: "05 Dec 2019",
-          image: "https://placehold.co/800",
-          path: "#",
-        },
-        {
-          title: "Title Here",
-          author: [
-            {
-              id: "id_name",
-              image: "https://placehold.co/64x64",
-              name: "Blogger name",
-              path: "#",
-            },
-          ],
-          datetime: "2019-12-05T00:00:00.000Z",
-          excerpt:
-            "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Non architecto mollitia saepe ratione eos dolores commodi porro quos assumenda quis, veniam ab omnis distinctio, tempore laudantium, sapiente quidem? Corrupti, obcaecati.",
-          humanTime: "05 Dec 2019",
-          image: "https://placehold.co/800",
-          path: "#",
-        },
-      ],
-    };
+  computed: {
+    
+    contentHeight() {
+      if (process.isClient) {
+        return window.innerHeight - 100;
+      }
+    },
   },
 };
 </script>

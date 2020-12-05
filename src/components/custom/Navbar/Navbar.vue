@@ -214,7 +214,7 @@
  * css classes to show the sticky navbar
  */
 
-import ThemeSwitcher from "~/components/customize/ThemeSwitcher.vue";
+import ThemeSwitcher from "~/components/custom/ThemeSwitcher.vue";
 
 export default {
   components: {
@@ -273,7 +273,7 @@ export default {
           external: false,
           expandable: true,
           submenu: [
-            { title: "Newsrroom", path: "/newsroom" },
+            { title: "Newsroom", path: "/news" },
             { title: "Blog", path: "/blog" },
             { title: "Forum", path: "https://forums.threefold.io/" },
             { title: "Contact", path: "/contact" },

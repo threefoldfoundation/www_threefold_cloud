@@ -2,6 +2,7 @@
   <Layout :hideHeader="true" :disableScroll="true">
     <div class="container sm:pxi-0 mx-auto overflow-x-hidden text-center py-5">
       <Header :header="$page.markdownPage" />
+      <VerticalNav :slides="$page.markdownPage.slides" v-if="$page.markdownPage.slides.length > 0" />
     <vue-markdown :key="$page.markdownPage.id">
     {{ $page.markdownPage.content }}
     </vue-markdown>
@@ -18,6 +19,13 @@
         content
         title
         image
+        slides{
+          id
+          title
+          content
+          image
+          order
+        }
         excerpt
         cards{
           id
@@ -28,7 +36,8 @@
           order
           excerpt
         }
-    }  
+       
+    }
   }
 
 </page-query>
@@ -37,12 +46,19 @@
 import VueMarkdown from 'vue-markdown'
 import NewCard from "~/components/marketing/sections/cta-sections/NewCard.vue";
 import Header from "~/components/marketing/sections/cta-sections/Header.vue";
+import VerticalNav from "~/components/custom/Navbar/VerticalNav.vue"
+
 
 export default {
   components: {
     VueMarkdown,
     NewCard,
-    Header
+    Header,
+    VerticalNav
+  },
+  mounted: function(){
+    console.log(this.$page.markdownPage.slides.length)
+    console.log("**")
   },
   metaInfo() {
     return {

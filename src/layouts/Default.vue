@@ -11,7 +11,7 @@
 </template>
 
 <script>
-import NavBar from "~/components/customize/Navbar/Navbar.vue";
+import NavBar from "~/components/custom/Navbar/Navbar.vue";
 import Footer from "~/components/marketing/sections/cta-sections/Footer.vue";
 export default {
   components: {

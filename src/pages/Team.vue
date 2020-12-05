@@ -47,7 +47,7 @@ query ($private: Int){
 </page-query>
 
 <script>
-import PostListItem from "~/components/customize/Cards/PostListItem.vue";
+import PostListItem from "~/components/custom/Cards/PostListItem.vue";
 
 export default {
   components: {

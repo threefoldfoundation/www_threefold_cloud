@@ -29,17 +29,25 @@ module.exports = {
         path: './content/page/**/cards/**/*.md',
     }
   },
+
+  {
+    use: '@gridsome/source-filesystem',
+    options: {
+        typeName: 'Slide',
+        path: './content/page/**/sliders/**/*.md',
+    }
+  },
+
   {
     use: '@gridsome/source-filesystem',
     options: {
         typeName: 'MarkdownPage',
         path: './content/page/*/*.md',
         refs: {
-          cards: {
-              typeName: 'Card',
-          }
+          cards: 'Card',
+          slides:'Slide',
+        }
       }       
-    }
   },
 
   // Remote models
@@ -70,6 +78,25 @@ module.exports = {
       typeName: 'Membership',
     },
   },
+
+  {
+    use: 'gridsome-source-graphql',
+    options: {
+      url: 'https://data.threefold.io/___graphql',
+      fieldName: 'Blog',
+      typeName: 'Blog',
+    },
+  },
+
+  {
+    use: 'gridsome-source-graphql',
+    options: {
+      url: 'https://data.threefold.io/___graphql',
+      fieldName: 'News',
+      typeName: 'News',
+    },
+  },
+
   ],
   templates: {
     MarkdownPage: [{
