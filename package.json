@@ -8,7 +8,6 @@
   },
   "dependencies": {
     "@gridsome/source-filesystem": "^0.6.2",
-    "gridsome-source-graphql": "^1.0.2",
     "@gridsome/transformer-remark": "^0.6.2",
     "@noxify/gridsome-remark-classes": "^1.0.0",
     "@noxify/gridsome-remark-table-align": "^1.0.0",
@@ -17,6 +16,7 @@
     "gridsome": "^0.7.3",
     "gridsome-plugin-flexsearch": "^1.0.5",
     "gridsome-plugin-tailwindcss": "^3.0.1",
+    "gridsome-source-graphql": "^1.0.2",
     "gridsome-source-static-meta": "github:noxify/gridsome-source-static-meta#master",
     "lodash": "^4.17.20",
     "pluralize": "^8.0.0",

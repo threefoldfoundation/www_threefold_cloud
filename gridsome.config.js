@@ -7,21 +7,19 @@
 module.exports = {
   siteName: 'Threefold Webstack',
   plugins: [
-    {
-      use: 'gridsome-plugin-tailwindcss',
-      options: {
-          tailwindConfig: './tailwind.config.js',
-          purgeConfig: {
-              whitelist: ['svg-inline--fa', 'table', 'table-striped', 'table-bordered', 'table-hover', 'table-sm'],
-              whitelistPatterns: [/fa-$/, /blockquote$/, /code$/, /pre$/, /table$/, /table-$/]
-          },
-          presetEnvConfig: {},
-          shouldPurge: false,
-          shouldImport: true,
-          shouldTimeTravel: true,
-          shouldPurgeUnusedKeyframes: true,
-      }
+
+    // Remote models
+
+  {
+    use: 'gridsome-source-graphql',
+    options: {
+      url: 'http://localhost:8080/___graphql',
+      fieldName: 'Threefold',
+      typeName: '',
+    },
   },
+
+  // Local models
   {
     use: '@gridsome/source-filesystem',
     options: {
@@ -50,17 +48,105 @@ module.exports = {
       }       
   },
 
-  // Remote models
-
+  // Tailwind
   {
-    use: 'gridsome-source-graphql',
+    use: 'gridsome-plugin-tailwindcss',
     options: {
-      url: 'https://data.threefold.io/___graphql',
-      fieldName: 'Threefold',
-      typeName: '',
-    },
+        tailwindConfig: './tailwind.config.js',
+        purgeConfig: {
+            whitelist: ['svg-inline--fa', 'table', 'table-striped', 'table-bordered', 'table-hover', 'table-sm'],
+            whitelistPatterns: [/fa-$/, /blockquote$/, /code$/, /pre$/, /table$/, /table-$/]
+        },
+        presetEnvConfig: {},
+        shouldPurge: false,
+        shouldImport: true,
+        shouldTimeTravel: true,
+        shouldPurgeUnusedKeyframes: true,
+    }
   },
- 
+
+  // Full Text search
+  {
+    use: 'gridsome-plugin-flexsearch',
+    options: {
+       
+        searchFields: ['node[title]'],
+        collections: [
+          {
+            query: `
+            {
+              allBlog{edges{
+                  node{
+                    id
+                    path
+                    content
+                    excerpt
+                    title
+                    tags{
+                      title
+                    }
+                  }
+                }
+              }
+            }
+            `,
+            path: 'allBlog.edges',
+            indexName: 'Blog'
+          },
+          // {
+          //   query: `
+          //   {
+          //     allProject{
+          //        edges {
+          //         node {
+          //           title
+          //           content
+          //           status
+          //           path  
+          //           members {
+          //             name
+          //           },
+          //           linkedin
+          //         }
+          //       }
+          //     }
+          //   }
+          //   `,
+          //   path: 'allProject.edges',
+          //   fields : ['path'],
+          //   indexName: 'Project'
+          // },
+          // {
+          //   query: `
+          //   {
+          //     allPerson{
+          //       edges{
+          //         node{
+          //           content
+          //           path
+          //           excerpt
+          //           name
+          //           memberships{
+          //             title
+          //           }
+          //           tags{
+          //             title
+          //           }
+          //           cities
+          //           countries
+          //           websites
+          //         }      
+          //       }
+          //     }
+          //   }
+          //   `,
+          //   path: 'allPerson.edges',
+          //   fields: ['path'],
+          //   indexName: 'Person'
+          // }
+        ]
+      }
+    }
   ],
   templates: {
     MarkdownPage: [{
