@@ -83,11 +83,13 @@
 
 <script>
 function get_img(img){
-        img.src = "https://data.threefold.io/" + img.src
-        for(var i=0; i < img.srcset.length; i++){
-          img.srcset[i] = "https://data.threefold.io/" + img.srcset[i]
-        }
-      return img
+    if(img){
+      img.src = "https://data.threefold.io/" + img.src
+      for(var i=0; i < img.srcset.length; i++){
+        img.srcset[i] = "https://data.threefold.io/" + img.srcset[i]
+      }
+    }
+    return img
 }
 
 export default {
