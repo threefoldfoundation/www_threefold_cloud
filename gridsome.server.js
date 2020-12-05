@@ -130,6 +130,77 @@ module.exports = function(api) {
         });
     })
 
+    api.createPages(async ({ graphql, createPage }) => {
+        const { data } = await graphql(`{
+          allProjectTag {
+            edges {
+              node {
+                id
+                path
+              }
+            }
+          }
+        }`)
+    
+        data.allProjectTag.edges.forEach(({ node }) => {
+          createPage({
+            path: `${node.path}`,
+            component: './src/templates/Tag.vue',
+            context: {
+              id: node.id,
+              private: private
+            }
+          })
+        })
+      })
+
+      api.createPages(async ({ graphql, createPage }) => {
+        const { data } = await graphql(`{
+          allBlogTag {
+            edges {
+              node {
+                id
+                path
+              }
+            }
+          }
+        }`)
+    
+        data.allBlogTag.edges.forEach(({ node }) => {
+          createPage({
+            path: `${node.path}`,
+            component: './src/templates/Tag.vue',
+            context: {
+              id: node.id,
+              private: private
+            }
+          })
+        })
+      })
+
+      api.createPages(async ({ graphql, createPage }) => {
+        const { data } = await graphql(`{
+          allNewsTag {
+            edges {
+              node {
+                id
+                path
+              }
+            }
+          }
+        }`)
+    
+        data.allNewsTag.edges.forEach(({ node }) => {
+          createPage({
+            path: `${node.path}`,
+            component: './src/templates/Tag.vue',
+            context: {
+              id: node.id,
+              private: private
+            }
+          })
+        })
+      })
     
     
 }
