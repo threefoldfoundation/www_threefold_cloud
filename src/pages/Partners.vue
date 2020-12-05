@@ -3,14 +3,39 @@
     <div class="container sm:pxi-0 mx-auto overflow-x-hidden">
       <div class="flex flex-wrap with-large pt-8 pb-8 mx-4 sm:-mx-4">
         <PostListItem
-          v-for="partner in allParteners"
+          v-for="partner in $page.entries.edges"
           :key="partner.id"
-          :record="partner"
+          :record="partner.node"
         />
       </div>
     </div>
   </Layout>
 </template>
+
+<page-query>
+query ($private: Int){
+  entries: allProject (sortBy: "rank", order: DESC, filter: { private: { ne: $private }}){
+    totalCount
+    edges {
+      node {
+        title
+        members {
+          id
+          name
+          image(width:64, height:64, fit:inside)
+          path
+        },
+        rank
+        linkedin
+        excerpt
+        image(width:800)
+        timeToRead
+        logo
+      }
+    }
+  }
+}
+</page-query>
 
 <script>
 import PostListItem from "~/components/customize/Cards/PostListItem.vue";
@@ -18,97 +43,6 @@ import PostListItem from "~/components/customize/Cards/PostListItem.vue";
 export default {
   components: {
     PostListItem,
-  },
-  data() {
-    return {
-      allParteners: [
-        {
-          title: "Title Here",
-          author: [
-            {
-              id: "id_name",
-              image: "https://placehold.co/64x64",
-              name: "Partner name",
-              path: "#",
-            },
-          ],
-          datetime: "2019-12-05T00:00:00.000Z",
-          excerpt:
-            "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Non architecto mollitia saepe ratione eos dolores commodi porro quos assumenda quis, veniam ab omnis distinctio, tempore laudantium, sapiente quidem? Corrupti, obcaecati.",
-          humanTime: "05 Dec 2019",
-          image: "https://placehold.co/800",
-          path: "#",
-        },
-        {
-          title: "Title Here",
-          author: [
-            {
-              id: "id_name",
-              image: "https://placehold.co/64x64",
-              name: "Partner name",
-              path: "#",
-            },
-          ],
-          datetime: "2019-12-05T00:00:00.000Z",
-          excerpt:
-            "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Non architecto mollitia saepe ratione eos dolores commodi porro quos assumenda quis, veniam ab omnis distinctio, tempore laudantium, sapiente quidem? Corrupti, obcaecati.",
-          humanTime: "05 Dec 2019",
-          image: "https://placehold.co/800",
-          path: "#",
-        },
-        {
-          title: "Title Here",
-          author: [
-            {
-              id: "id_name",
-              image: "https://placehold.co/64x64",
-              name: "Partner name",
-              path: "#",
-            },
-          ],
-          datetime: "2019-12-05T00:00:00.000Z",
-          excerpt:
-            "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Non architecto mollitia saepe ratione eos dolores commodi porro quos assumenda quis, veniam ab omnis distinctio, tempore laudantium, sapiente quidem? Corrupti, obcaecati.",
-          humanTime: "05 Dec 2019",
-          image: "https://placehold.co/800",
-          path: "#",
-        },
-        {
-          title: "Title Here",
-          author: [
-            {
-              id: "id_name",
-              image: "https://placehold.co/64x64",
-              name: "Partner name",
-              path: "#",
-            },
-          ],
-          datetime: "2019-12-05T00:00:00.000Z",
-          excerpt:
-            "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Non architecto mollitia saepe ratione eos dolores commodi porro quos assumenda quis, veniam ab omnis distinctio, tempore laudantium, sapiente quidem? Corrupti, obcaecati.",
-          humanTime: "05 Dec 2019",
-          image: "https://placehold.co/800",
-          path: "#",
-        },
-        {
-          title: "Title Here",
-          author: [
-            {
-              id: "id_name",
-              image: "https://placehold.co/64x64",
-              name: "Partner name",
-              path: "#",
-            },
-          ],
-          datetime: "2019-12-05T00:00:00.000Z",
-          excerpt:
-            "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Non architecto mollitia saepe ratione eos dolores commodi porro quos assumenda quis, veniam ab omnis distinctio, tempore laudantium, sapiente quidem? Corrupti, obcaecati.",
-          humanTime: "05 Dec 2019",
-          image: "https://placehold.co/800",
-          path: "#",
-        },
-      ],
-    };
   },
 };
 </script>
