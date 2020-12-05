@@ -4,7 +4,7 @@
       <div class="flex flex-row flex-wrap items-center mx-4 sm:mx-0">
         <div class="w-full md:w-1/6 mx-auto sm:mx-0">
           <g-image
-            :src="$page.person.image"
+            :src="img"
             class="rounded-full bg-gray-200 w-32 h-32 border-4 border-gray-400 mx-auto md:mx-0"
           ></g-image>
         </div>
@@ -33,7 +33,7 @@
             <div class="flex justify-between items-center">
               <ul class="list-none flex author-list m-0 py-2">
                 <li
-                  v-for="project in $page.person.projects"
+                  v-for="project in projects"
                   :key="project.id"
                   class="author-list-item"
                 >
@@ -163,36 +163,21 @@ export default {
     Pagination,
     PostListItem,
   },
-  // fix remote images
-  mounted: function () {
-
-    function get_img(img){
-        img.src = "https://data.threefold.io/" + img.src
-        for(var i=0; i < img.srcset.length; i++){
-          img.srcset[i] = "https://data.threefold.io/" + img.srcset[i]
-        }
-      return img
-    }
-    
-    if(this.$page.person.image.src){
-      this.$page.person.image = get_img(this.$page.person.image )
-      if(this.$page.person.authors){
-          for(var i=0; i < this.$page.person.authors.length; i++){
-              this.$page.person.authors[i].image = get_img(this.$page.person.authors[i].image)
-          }
-      }
-      if(this.$page.person.projects){
-          for(var i=0; i < this.$page.person.projects.length; i++){
-              this.$page.person.projects[i].logo = get_img(this.$page.person.projects[i].logo)
-          }
-      }
-    }
-  },
   computed: {
     postLabel: function () {
       var pluralize = require("pluralize");
       return pluralize("post", this.$page.person.belongsTo.totalCount);
     },
+    projects(){
+      for(var i=0; i < this.$page.person.projects.length; i++){
+              this.$page.person.projects[i].path = "/partners/" +  this.$page.person.projects[i].id
+              this.$page.person.projects[i].logo = get_img(this.$page.person.projects[i].logo)
+      }
+      return this.$page.person.projects
+    },
+    img(){
+      return get_img(this.$page.person.image )
+    }
   },
   metaInfo() {
     return {

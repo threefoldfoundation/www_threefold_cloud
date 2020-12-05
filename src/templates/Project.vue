@@ -153,15 +153,6 @@ function get_img(img){
 export default {
   // fix remote images
   mounted: function () {
-
-    function get_img(img){
-        img.src = "https://data.threefold.io/" + img.src
-        for(var i=0; i < img.srcset.length; i++){
-          img.srcset[i] = "https://data.threefold.io/" + img.srcset[i]
-        }
-      return img
-    }
-    
     if(this.$page.project.image.src){
       this.$page.project.image = get_img(this.$page.project.image )
     }

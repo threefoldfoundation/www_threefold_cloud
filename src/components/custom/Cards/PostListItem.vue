@@ -3,15 +3,15 @@
     class="flex flex-post px-0 sm:px-4 pb-8 mb-8"
     v-bind:class="{ 'no-border': !border }"
   >
-    <g-link :to="record.path" class="post-card-image-link">
+    <g-link :to="path" class="post-card-image-link">
       <g-image
-        :src="record.image"
+        :src="img"
         :alt="record.title"
         class="post-card-image"
       ></g-image>
     </g-link>
     <div>
-      <g-link :to="record.path">
+      <g-link :to="path">
         <h2 class="post-card-title mt-3">{{ record.title || record.name }}</h2>
         <p class="post-card-excerpt">{{ record.excerpt }}</p>
         <section
@@ -33,7 +33,7 @@
             <div class="flex justify-between items-center">
               <ul class="list-none flex author-list m-0">
                 <li
-                  v-for="author in record.authors"
+                  v-for="author in authors"
                   :key="author.id"
                   class="author-list-item"
                 >
@@ -50,14 +50,14 @@
 
             <div class="flex flex-col text-xs leading-none uppercase">
               <p>
-                <g-link :to="record.path">
+                <g-link :to="path">
                   <time :datetime="record.datetime">{{
                     record.humanTime
                   }}</time>
                 </g-link>
               </p>
               <p>
-                <g-link :to="record.path">
+                <g-link :to="path">
                   <time :datetime="record.datetime">{{
                     record.startDate
                   }}</time>
@@ -82,7 +82,16 @@
 </template>
 
 <script>
+function get_img(img){
+        img.src = "https://data.threefold.io/" + img.src
+        for(var i=0; i < img.srcset.length; i++){
+          img.srcset[i] = "https://data.threefold.io/" + img.srcset[i]
+        }
+      return img
+}
+
 export default {
+  
   props: {
     record: {},
     showtags: false,
@@ -92,28 +101,28 @@ export default {
       default: true,
     },
   },
-  mounted: function () {
-    if (this.pathPrefix != ""){
-      this.record.path = this.pathPrefix + "/" + this.record.id
-    }
 
-    function get_img(img){
-        img.src = "https://data.threefold.io/" + img.src
-        for(var i=0; i < img.srcset.length; i++){
-          img.srcset[i] = "https://data.threefold.io/" + img.srcset[i]
-        }
-      return img
-    }
-    if(this.record.image.src){
-      this.record.image = get_img(this.record.image )
+  computed: {
+    img(){
+      return get_img(this.record.image )
+    },
+
+    authors(){
       if(this.record.authors){
-          for(var i=0; i < this.record.authors.length; i++){
+        for(var i=0; i < this.record.authors.length; i++){
               this.record.authors[i].image = get_img(this.record.authors[i].image)
-          }
+        }
+        return this.record.authors
       }
-      
+    },
+
+    path(){
+       if (this.pathPrefix)
+          return this.pathPrefix + "/" + this.record.id
+        return this.record.path
     }
   },
+
   methods: {
     displaytags(){
       return this.showtags

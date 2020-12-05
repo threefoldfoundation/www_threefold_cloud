@@ -43,26 +43,61 @@ module.exports = function(api) {
         })
       })
 
-      api.createPages(async ({ graphql, createPage }) => {
+    api.createPages(async ({ graphql, createPage }) => {
         const { data } = await graphql(`{
-          allProject {
+            allProject {
             edges {
-              node {
+                node {
                 id
-              }
+                }
             }
-          }
+            }
         }`)
-    
+
         data.allProject.edges.forEach(({ node }) => {
-          createPage({
+            createPage({
             path: `/partners/${node.id}`,
             component: './src/templates/Project.vue',
             context: {
-              id: node.id,
-              private: private
+                id: node.id,
+                private: private
             }
-          })
+            })
         })
-      })
+    })
+
+    api.createPages(async ({ graphql, createPage }) => {
+        const { data } = await graphql(`{
+            allBlog {
+                edges {
+                    previous {
+                        id
+                    }
+                    next {
+                        id
+                    }
+                    node {
+                        id
+                        path
+                    }
+                }
+            }
+        }`)
+
+        data.allBlog.edges.forEach(function(element) {
+            createPage({
+                path: element.node.path,
+                component: './src/templates/BlogPost.vue',
+                context: {
+                    previousElement: (element.previous) ? element.previous.id : '##empty##',
+                    nextElement: (element.next) ? element.next.id : '##empty##',
+                    id: element.node.id
+                }
+            });
+
+        });
+    })
+
+    
+    
 }

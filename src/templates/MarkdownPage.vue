@@ -56,10 +56,6 @@ export default {
     Header,
     VerticalNav
   },
-  mounted: function(){
-    console.log(this.$page.markdownPage.slides.length)
-    console.log("**")
-  },
   metaInfo() {
     return {
       title: this.$page.markdownPage.title,
