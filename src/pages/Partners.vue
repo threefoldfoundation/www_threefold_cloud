@@ -19,6 +19,7 @@ query ($private: Int){
     edges {
       node {
         title
+        path
         members {
           id
           name

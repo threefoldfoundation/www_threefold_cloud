@@ -18,7 +18,7 @@ query ($private: Int){
     totalCount
     edges {
       node {
-        
+        path
         content
         excerpt
         name

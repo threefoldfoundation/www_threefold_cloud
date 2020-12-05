@@ -56,47 +56,11 @@ module.exports = {
     use: 'gridsome-source-graphql',
     options: {
       url: 'https://data.threefold.io/___graphql',
-      fieldName: 'Person',
-      typeName: 'Person',
+      fieldName: 'Threefold',
+      typeName: '',
     },
   },
-
-  {
-    use: 'gridsome-source-graphql',
-    options: {
-      url: 'https://data.threefold.io/___graphql',
-      fieldName: 'Project',
-      typeName: 'Project',
-    },
-  },
-
-  {
-    use: 'gridsome-source-graphql',
-    options: {
-      url: 'https://data.threefold.io/___graphql',
-      fieldName: 'Membership',
-      typeName: 'Membership',
-    },
-  },
-
-  {
-    use: 'gridsome-source-graphql',
-    options: {
-      url: 'https://data.threefold.io/___graphql',
-      fieldName: 'Blog',
-      typeName: 'Blog',
-    },
-  },
-
-  {
-    use: 'gridsome-source-graphql',
-    options: {
-      url: 'https://data.threefold.io/___graphql',
-      fieldName: 'News',
-      typeName: 'News',
-    },
-  },
-
+ 
   ],
   templates: {
     MarkdownPage: [{
