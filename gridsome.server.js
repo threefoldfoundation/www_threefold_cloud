@@ -201,6 +201,30 @@ module.exports = function(api) {
           })
         })
       })
+
+      api.createPages(async ({ graphql, createPage }) => {
+        const { data } = await graphql(`{
+          allMembership {
+            edges {
+              node {
+                id
+                path
+              }
+            }
+          }
+        }`)
+    
+        data.allMembership.edges.forEach(({ node }) => {
+          createPage({
+            path: `${node.path}`,
+            component: './src/templates/Membership.vue',
+            context: {
+              id: node.id,
+              private: private
+            }
+          })
+        })
+      })
     
     
 }

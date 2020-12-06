@@ -111,7 +111,7 @@ query ($private: Int){
 </page-query>
 
 <script>
-import SearchListItem from "~/components/custom/SearchListItem.vue";
+import SearchListItem from "~/components/custom/Cards/SearchListItem.vue";
 
 export default {
   metaInfo: {
@@ -126,8 +126,6 @@ export default {
     searchResults() {
       const searchTerm = this.q;
       if (searchTerm.length < 3) return [];
-      console.log(searchTerm)
-      console.log(this.$search.search({ query: searchTerm, limit: 5 }))
       var searchRes = this.$search.search({ query: searchTerm, limit: 5 });
       var result = [];
       for (var i = 0; i < searchRes.length; i++) {

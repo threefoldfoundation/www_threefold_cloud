@@ -69,8 +69,9 @@ module.exports = {
   {
     use: 'gridsome-plugin-flexsearch',
     options: {
-       
-        searchFields: ['node[title]'],
+        chunk: true,
+        compress: true,
+        searchFields: ['title', 'name', 'content', 'tags[title]', 'status', 'members[name]', 'linkedin', 'excerpt', 'cities', 'countries', 'websites', ],
         collections: [
           {
             query: `
@@ -91,59 +92,60 @@ module.exports = {
             }
             `,
             path: 'allBlog.edges',
-            indexName: 'Blog'
+            indexName: 'Blog',
+            fields : ['path'],
           },
-          // {
-          //   query: `
-          //   {
-          //     allProject{
-          //        edges {
-          //         node {
-          //           title
-          //           content
-          //           status
-          //           path  
-          //           members {
-          //             name
-          //           },
-          //           linkedin
-          //         }
-          //       }
-          //     }
-          //   }
-          //   `,
-          //   path: 'allProject.edges',
-          //   fields : ['path'],
-          //   indexName: 'Project'
-          // },
-          // {
-          //   query: `
-          //   {
-          //     allPerson{
-          //       edges{
-          //         node{
-          //           content
-          //           path
-          //           excerpt
-          //           name
-          //           memberships{
-          //             title
-          //           }
-          //           tags{
-          //             title
-          //           }
-          //           cities
-          //           countries
-          //           websites
-          //         }      
-          //       }
-          //     }
-          //   }
-          //   `,
-          //   path: 'allPerson.edges',
-          //   fields: ['path'],
-          //   indexName: 'Person'
-          // }
+          {
+            query: `
+            {
+              allProject{
+                 edges {
+                  node {
+                    title
+                    content
+                    status
+                    path  
+                    members {
+                      name
+                    },
+                    linkedin
+                  }
+                }
+              }
+            }
+            `,
+            path: 'allProject.edges',
+            fields : ['path'],
+            indexName: 'Project'
+          },
+          {
+            query: `
+            {
+              allPerson{
+                edges{
+                  node{
+                    content
+                    path
+                    excerpt
+                    name
+                    memberships{
+                      title
+                    }
+                    tags{
+                      title
+                    }
+                    cities
+                    countries
+                    websites
+                  }      
+                }
+              }
+            }
+            `,
+            path: 'allPerson.edges',
+            fields: ['path'],
+            indexName: 'Person'
+          }
         ]
       }
     }
