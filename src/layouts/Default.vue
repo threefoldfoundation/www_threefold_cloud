@@ -5,10 +5,11 @@
     <Footer
       desc="Making the world a better place through constructing elegant
             hierarchies."
-      :footerLinks="footerLinks"
+      :footerLinks="$static.footer.items"
     />
   </div>
 </template>
+
 
 <script>
 import NavBar from "~/components/custom/Navbar/Navbar.vue";
@@ -21,45 +22,6 @@ export default {
   data() {
     return {
       theme: "light",
-
-      footerLinks: [
-        {
-          title: "solutions",
-          links: [
-            { name: "Marketing", link: "#" },
-            { name: "Marketing2", link: "#" },
-            { name: "Marketing3", link: "#" },
-            { name: "Marketing4", link: "#" },
-          ],
-        },
-        {
-          title: "Support",
-          links: [
-            { name: "Marketing", link: "#" },
-            { name: "Marketing2", link: "#" },
-            { name: "Marketing3", link: "#" },
-            { name: "Marketing4", link: "#" },
-          ],
-        },
-        {
-          title: "Company",
-          links: [
-            { name: "Marketing", link: "#" },
-            { name: "Marketing2", link: "#" },
-            { name: "Marketing3", link: "#" },
-            { name: "Marketing4", link: "#" },
-          ],
-        },
-        {
-          title: "Legal",
-          links: [
-            { name: "Marketing7", link: "#" },
-            { name: "Marketing8", link: "#" },
-            { name: "Marketing9", link: "#" },
-            { name: "Marketing4", link: "#" },
-          ],
-        },
-      ],
     };
   },
   methods: {
@@ -74,6 +36,16 @@ query {
   metadata {
     siteName
   }
+
+  footer(id: "footer"){
+      items{
+        title
+        links{
+          name
+          link
+        }
+      }
+    }
 }
 </static-query>
 

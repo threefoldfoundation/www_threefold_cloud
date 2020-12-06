@@ -48,6 +48,14 @@ module.exports = {
       }       
   },
 
+  {
+    use: '@gridsome/source-filesystem',
+    options: {
+        typeName: 'Footer',
+        path: './content/footer/footer.md',
+    }
+  },
+
   // Tailwind
   {
     use: 'gridsome-plugin-tailwindcss',
