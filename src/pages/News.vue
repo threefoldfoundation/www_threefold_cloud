@@ -1,6 +1,9 @@
 <template>
   <Layout>
     <FilterHeader />
+    <br/><br/><br/>
+    <a v-on:click="toggleListArchive" href="#">Archive</a>
+
     <div class="container sm:pxi-0 mx-auto overflow-hidden">
       <div class="flex flex-wrap with-large pt-12 mt-8 pb-8 mx-4 sm:-mx-4">
         <PostListItem
@@ -49,6 +52,14 @@ query{
       }
     }
   }
+
+  topics:  allNewsTag{
+    edges{
+      node{
+				title        
+      }
+    }
+  }
 }
 
 </page-query>
@@ -59,6 +70,20 @@ import PostListItem from "~/components/custom/Cards/PostListItem.vue";
 import Pagination from "~/components/custom/Pagination.vue";
 
 export default {
+  data(){
+    const allMonths = ['All', 'January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
+    const currYear = new Date().getFullYear()
+    
+    return {
+      selectedTopic: "All",
+      selectedYear: String(new Date().getFullYear()),
+      selectedMonth: "All",
+      months: allMonths,
+      years: ["All", String(currYear), String(currYear - 1)],
+      listArchive: false
+    }
+  },
+
   metaInfo: {
     title: "Home",
   },
@@ -67,7 +92,32 @@ export default {
     Pagination,
     FilterHeader,
   },
+  methods:{
+    setTopic: function(topic){
+      this.selectedTopic = topic
+    },
+    setYear: function(year){
+      this.selectedYear = year
+    },
+
+    setMonth: function(month){
+      this.selectedMonth = month
+    },
+
+    toggleListArchive(){
+      if(this.listArchive)
+        this.listArchive = false
+      else
+        this.listArchive = true
+    }
+  },
   computed: {
+    topics: function(){
+        var res = ['All']
+        this.$page.topics.edges.forEach(edge => res.push(edge.node.title));
+        return res
+    },
+
     baseurl: function () {
       return "";
     },
@@ -81,11 +131,39 @@ export default {
 
       for (var i = 0; i < old.edges.length; i++) {
         var node = old.edges[i].node;
-        const diff = Math.abs(new Date() - new Date(node.datetime));
+        var nodeDate = new Date(node.datetime)
+        const diff = Math.abs(new Date() - nodeDate);
         const diffDays = Math.ceil(diff / (1000 * 60 * 60 * 24));
-        if (diffDays <= 30) {
-          res.edges.push({ node: node, id: node.id });
+        var selected = false
+        
+        if (!this.listArchive && diffDays <= 30) {
+          selected = true
+        }else if(this.listArchive && diffDays > 30){
+          selected = true
         }
+
+        if(!selected)
+          continue
+
+        // Now check topic
+        var topics = ["All"]
+        node.tags.forEach(tag => topics.push(tag.title));
+        
+        if(!topics.includes(this.selectedTopic))
+          continue
+
+        // Check year
+        var years = ["All", String(nodeDate.getFullYear())]
+        if(!years.includes(this.selectedYear))
+          continue
+
+        
+        // Check Month
+        var months = ["All", this.months[nodeDate.getMonth()+1]]
+        
+        if(!months.includes(this.selectedMonth))
+          continue
+        res.edges.push({ node: node, id: node.id });
       }
       return res;
     },
