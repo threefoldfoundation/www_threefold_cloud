@@ -3,9 +3,7 @@
     <div class="container sm:pxi-0 mx-auto overflow-x-hidden py-5">
       <Header :header="$page.markdownPage" />
       <VerticalNav :slides="$page.markdownPage.slides" v-if="$page.markdownPage.slides.length > 0" />
-    <vue-markdown :key="$page.markdownPage.id">
-    {{ $page.markdownPage.content }}
-    </vue-markdown>
+    <div v-html="$page.markdownPage.content"></div>
     <NewCard v-for="card in $page.markdownPage.cards" :key="card.id" :card = "card"/>
     </div>
   </Layout>
@@ -48,7 +46,6 @@ import NewCard from "~/components/marketing/sections/cta-sections/NewCard.vue";
 import Header from "~/components/marketing/sections/cta-sections/Header.vue";
 import VerticalNav from "~/components/custom/Navbar/VerticalNav.vue"
 
-
 export default {
   components: {
     VueMarkdown,
@@ -60,6 +57,20 @@ export default {
     return {
       title: this.$page.markdownPage.title,
     };
+  },
+  methods: {
+    markdown(content){
+      marked.setOptions({
+      highlight: function (code, lang, _callback) {
+        if (hljs.getLanguage(lang)) {
+          return hljs.highlight(lang, code).value
+        } else {
+          return hljs.highlightAuto(code).value
+        }
+      },
+    })
+      return marked(content)
+    }
   },
 };
 </script>

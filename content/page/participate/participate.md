@@ -30,4 +30,13 @@ def ssss(dd):
   x = 3
 ```
 
+Javascript
+```javascript
+for(var i=0; i < this.$page.person.projects.length; i++){
+              this.$page.person.projects[i].path = "/partners/" +  this.$page.person.projects[i].id
+              this.$page.person.projects[i].logo = get_img(this.$page.person.projects[i].logo)
+      }
+      return this.$page.person.projects
+```
+
 xxx
