@@ -16,7 +16,11 @@
             {{ record.description }}
           </p>
           <div class="flex space-x-6">
-            <a v-if="record.facebook != '#'" :href="record.facebook" class="text-gray-400 hover:text-gray-500">
+            <a
+              v-if="record.facebook != '#'"
+              :href="record.facebook"
+              class="text-gray-400 hover:text-gray-500"
+            >
               <span class="sr-only">Facebook</span>
               <svg
                 class="h-6 w-6"
@@ -31,7 +35,11 @@
                 />
               </svg>
             </a>
-            <a v-if="record.instagram != '#'" :href="record.instagram" class="text-gray-400 hover:text-gray-500">
+            <a
+              v-if="record.instagram != '#'"
+              :href="record.instagram"
+              class="text-gray-400 hover:text-gray-500"
+            >
               <span class="sr-only">Instagram</span>
               <svg
                 class="h-6 w-6"
@@ -46,7 +54,11 @@
                 />
               </svg>
             </a>
-            <a v-if="record.twitter != '#'" :href="record.twitter" class="text-gray-400 hover:text-gray-500">
+            <a
+              v-if="record.twitter != '#'"
+              :href="record.twitter"
+              class="text-gray-400 hover:text-gray-500"
+            >
               <span class="sr-only">Twitter</span>
               <svg
                 class="h-6 w-6"
@@ -59,7 +71,11 @@
                 />
               </svg>
             </a>
-            <a v-if="record.github != '#'" :href="record.github" class="text-gray-400 hover:text-gray-500">
+            <a
+              v-if="record.github != '#'"
+              :href="record.github"
+              class="text-gray-400 hover:text-gray-500"
+            >
               <span class="sr-only">GitHub</span>
               <svg
                 class="h-6 w-6"
@@ -74,7 +90,11 @@
                 />
               </svg>
             </a>
-            <a v-if="record.dribbble != '#'" :href="record.dribbble" class="text-gray-400 hover:text-gray-500">
+            <a
+              v-if="record.dribbble != '#'"
+              :href="record.dribbble"
+              class="text-gray-400 hover:text-gray-500"
+            >
               <span class="sr-only">Dribbble</span>
               <svg
                 class="h-6 w-6"
@@ -91,8 +111,10 @@
             </a>
           </div>
         </div>
-        <div class="mt-12 grid md:grid-cols-4 sm:grid-cols-2 xl:mt-0 xl:col-span-2">
-        <!-- class="mt-12 grid grid-cols-2 gap-8 xl:mt-0 xl:col-span-2" -->
+        <div
+          class="mt-12 grid md:grid-cols-4 sm:grid-cols-2 xl:mt-0 xl:col-span-2"
+        >
+          <!-- class="mt-12 grid grid-cols-2 gap-8 xl:mt-0 xl:col-span-2" -->
 
           <div
             v-for="footerLink in record.items"
@@ -228,6 +250,12 @@
 
 <script>
 export default {
-  props: {record: {}}
+  props: { record: {} },
 };
 </script>
+
+<style scoped>
+ul {
+  list-style-type: none;
+}
+</style>
