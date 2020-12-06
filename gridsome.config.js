@@ -78,7 +78,8 @@ module.exports = {
     use: 'gridsome-plugin-flexsearch',
     options: {
         compress: true,
-        searchFields: ['title', 'name', 'content', 'tags[title]', 'status', 'members[name]', 'linkedin', 'excerpt', 'cities', 'countries', 'websites', ],
+        cache: true,
+        searchFields: ['title', 'name', 'content', 'tags[title]', 'status', 'members[name]', 'linkedin', 'excerpt', 'cities', 'countries', 'websites', 'cards[content]', 'cards[title]', 'cards.excerpt', 'slides[content]', 'slides[title]', 'slides[excerpt]'],
         collections: [
           {
             query: `
@@ -152,6 +153,35 @@ module.exports = {
             path: 'allPerson.edges',
             fields: ['path'],
             indexName: 'Person'
+          },
+          {
+            query: `
+            {
+              allMarkdownPage{
+                edges{
+                  node{
+                    cards{
+                      content
+                      excerpt
+                      title
+                    }
+                    slides{
+                      content
+                      excerpt
+                      title
+                    }
+                    excerpt
+                    path
+                    title
+                    content
+                  }      
+                }
+              }
+            }
+            `,
+            path: 'allMarkdownPage.edges',
+            fields: ['path'],
+            indexName: 'MarkdownPage'
           }
         ]
       }

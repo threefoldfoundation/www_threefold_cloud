@@ -106,6 +106,17 @@ query ($private: Int){
     }
   }
 
+  markdowns: allMarkdownPage{
+    edges{
+      node{
+        __typename
+        title
+        path
+        excerpt
+        image
+      }      
+    }
+  }
 }
 
 </page-query>
@@ -157,6 +168,12 @@ export default {
       var item = this.$page.blogs.edges[i];
       this.objects[item.node.path] = item.node;
     }
+
+    for (var i = 0; i < this.$page.markdowns.edges.length; i++) {
+      var item = this.$page.markdowns.edges[i];
+      this.objects[item.node.path] = item.node;
+    }
+
     this.loading = false;
   },
   components: {
