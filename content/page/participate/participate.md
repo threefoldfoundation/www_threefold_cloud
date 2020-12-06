@@ -7,7 +7,7 @@ excerpt:  Welcome to the growing ecosystem of ThreeFold.
 ---
 # Participate
 
-![](img/test22.png)
+![](./img/test22.png)
 
 - this is test
 - this is test
@@ -26,7 +26,8 @@ sdd
 
 ```python
 def ssss(dd):
-
   a = 9
+  x = 3
 ```
 
+xxx
