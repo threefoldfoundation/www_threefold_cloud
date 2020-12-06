@@ -1,3 +1,0 @@
-# Events
-
-News / Blogs
