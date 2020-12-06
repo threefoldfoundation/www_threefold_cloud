@@ -1,6 +1,6 @@
 <template>
   <Layout :hideHeader="true" :disableScroll="true">
-    <div class="container sm:pxi-0 mx-auto overflow-x-hidden text-center py-5">
+    <div class="container sm:pxi-0 mx-auto overflow-x-hidden py-5">
       <Header :header="$page.markdownPage" />
     <vue-markdown>
     {{ $page.markdownPage.content }}
