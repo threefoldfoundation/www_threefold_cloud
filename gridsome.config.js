@@ -86,7 +86,7 @@ module.exports = {
             use: 'gridsome-plugin-flexsearch',
             options: {
                 compress: true,
-                searchFields: ['title', 'name', 'content', 'tags[title]', 'status', 'members[name]', 'linkedin', 'excerpt', 'cities', 'countries', 'websites', ],
+                searchFields: ['title', 'name', 'content', 'tags.title', 'status', 'members.name', 'linkedin', 'excerpt', 'cities', 'countries', 'websites', 'cards.content', 'cards.title', 'cards.excerpt', 'slides.content', 'slides.title', 'slides.excerpt'],
                 collections: [{
                         query: `
             {
@@ -105,12 +105,12 @@ module.exports = {
               }
             }
             `,
-                        path: 'allBlog.edges',
-                        indexName: 'Blog',
-                        fields: ['path'],
-                    },
-                    {
-                        query: `
+            path: 'allBlog.edges',
+            indexName: 'Blog',
+            fields: ['path'],
+          },
+          {
+            query: `
             {
               allProject{
                  edges {
@@ -128,12 +128,12 @@ module.exports = {
               }
             }
             `,
-                        path: 'allProject.edges',
-                        fields: ['path'],
-                        indexName: 'Project'
-                    },
-                    {
-                        query: `
+              path: 'allProject.edges',
+              fields: ['path'],
+              indexName: 'Project'
+          },
+          {
+            query: `
             {
               allPerson{
                 edges{
