@@ -2,11 +2,7 @@
   <div class="container mx-auto">
     <NavBar @setTheme="setTheme" :theme="this.theme" />
     <slot />
-    <Footer
-      desc="Making the world a better place through constructing elegant
-            hierarchies."
-      :footerLinks="$static.footer.items"
-    />
+    <Footer :record="$static.footer"/>
   </div>
 </template>
 
@@ -38,7 +34,14 @@ query {
   }
 
   footer(id: "footer"){
+      facebook
+      github
+      twitter
+      dribbble
+      instagram
+      description
       items{
+        
         title
         links{
           name

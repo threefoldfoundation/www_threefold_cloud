@@ -1,5 +1,11 @@
 ---
 id: footer
+description: Making the world a better place through constructing elegant hierarchies.
+facebook: '#'
+instagram: '#'
+twitter: '#'
+github: '#'
+dribbble: '#'
 items:
  - title: Solutions
    links:
