@@ -1,8 +1,12 @@
 <template>
   <div class="container mx-auto">
-    <NavBar @setTheme="setTheme" :theme="this.theme" />
+    <NavBar
+      :navigation="$static.navigation"
+      @setTheme="setTheme"
+      :theme="this.theme"
+    />
     <slot />
-    <Footer :record="$static.footer"/>
+    <Footer :record="$static.footer" />
   </div>
 </template>
 
@@ -33,6 +37,23 @@ query {
     siteName
   }
 
+  navigation(id: "navigation"){
+    navLinks{
+      name
+      link
+      external
+      expandable
+      submenu {
+        title
+        path
+      }
+    }
+    social{
+      icon
+      link
+    }
+  }
+
   footer(id: "footer"){
       facebook
       github
@@ -41,7 +62,6 @@ query {
       instagram
       description
       items{
-        
         title
         links{
           name
