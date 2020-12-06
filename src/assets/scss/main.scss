@@ -103,8 +103,8 @@ button:focus {
 }
 
 @media (min-width: 768px) {
-    .with-large>.flex-post:nth-child(5n),
-    .with-large>.flex-post:nth-child(5n-1) {
+    .with-large>.flex-post:nth-child(6n),
+    .with-large>.flex-post:nth-child(6n-1) {
         // @apply flex-100;
         flex: 1 1 50%;
         @apply flex-col;
