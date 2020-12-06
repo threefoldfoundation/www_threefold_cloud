@@ -100,15 +100,19 @@ export default {
 
   computed: {
     img(){
+      if(this.record.__typename == "MarkdownPage")
+        return this.record.image
       return get_img(this.record.image )
     },
 
     authors(){
-      if(this.record.authors){
-        for(var i=0; i < this.record.authors.length; i++){
-              this.record.authors[i].image = get_img(this.record.authors[i].image)
-        }
-        return this.record.authors
+      if(this.record.__typename != "MarkdownPage"){
+        if(this.record.authors){
+          for(var i=0; i < this.record.authors.length; i++){
+                this.record.authors[i].image = get_img(this.record.authors[i].image)
+          }
+      }
+      return this.record.authors
       }
     },
 
