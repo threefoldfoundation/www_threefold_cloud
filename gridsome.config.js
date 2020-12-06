@@ -69,7 +69,6 @@ module.exports = {
   {
     use: 'gridsome-plugin-flexsearch',
     options: {
-        chunk: true,
         compress: true,
         searchFields: ['title', 'name', 'content', 'tags[title]', 'status', 'members[name]', 'linkedin', 'excerpt', 'cities', 'countries', 'websites', ],
         collections: [
