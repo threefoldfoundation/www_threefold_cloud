@@ -1,12 +1,22 @@
 <template>
   <Layout :hideHeader="true" :disableScroll="true">
     <div class="container sm:pxi-0 mx-auto overflow-x-hidden py-5">
-      <Header :header="$page.markdownPage" />
-      <VerticalNav :slides="$page.markdownPage.slides" v-if="$page.markdownPage.slides.length > 0" />
-    <vue-markdown :key="$page.markdownPage.id">
-    {{ $page.markdownPage.content }}
-    </vue-markdown>
-    <NewCard v-for="card in $page.markdownPage.cards" :key="card.id" :card = "card"/>
+      <Header
+        v-if="$page.markdownPage.id !== 'contact'"
+        :header="$page.markdownPage"
+      />
+      <VerticalNav
+        :slides="$page.markdownPage.slides"
+        v-if="$page.markdownPage.slides.length > 0"
+      />
+      <vue-markdown :key="$page.markdownPage.id" v-html="$page.markdownPage.content">
+        
+      </vue-markdown>
+      <NewCard
+        v-for="card in $page.markdownPage.cards"
+        :key="card.id"
+        :card="card"
+      />
     </div>
   </Layout>
 </template>
@@ -43,18 +53,17 @@
 </page-query>
 
 <script>
-import VueMarkdown from 'vue-markdown'
+import VueMarkdown from "vue-markdown";
 import NewCard from "~/components/marketing/sections/cta-sections/NewCard.vue";
 import Header from "~/components/marketing/sections/cta-sections/Header.vue";
-import VerticalNav from "~/components/custom/Navbar/VerticalNav.vue"
-
+import VerticalNav from "~/components/custom/Navbar/VerticalNav.vue";
 
 export default {
   components: {
     VueMarkdown,
     NewCard,
     Header,
-    VerticalNav
+    VerticalNav,
   },
   metaInfo() {
     return {
