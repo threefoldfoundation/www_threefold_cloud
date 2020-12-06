@@ -1,10 +1,8 @@
 <template>
   <Layout :hideHeader="true" :disableScroll="true">
-    <div class="container sm:pxi-0 mx-auto overflow-x-hidden text-center py-5">
+    <div class="container sm:pxi-0 mx-auto overflow-x-hidden py-5">
       <Header :header="$page.markdownPage" />
-    <vue-markdown>
-    {{ $page.markdownPage.content }}
-    </vue-markdown>
+      <div v-html="$page.markdownPage.content"></div>
     <NewCard v-for="card in $page.markdownPage.cards" :key="card.id" :card = "card"/>
     </div>
   </Layout>
@@ -34,13 +32,11 @@
 </page-query>
 
 <script>
-import VueMarkdown from 'vue-markdown'
 import NewCard from "~/components/marketing/sections/cta-sections/NewCard.vue";
 import Header from "~/components/marketing/sections/cta-sections/Header.vue";
 
 export default {
   components: {
-    VueMarkdown,
     NewCard,
     Header
   },
