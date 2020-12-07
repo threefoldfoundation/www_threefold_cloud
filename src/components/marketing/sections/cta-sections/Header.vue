@@ -21,7 +21,6 @@ export default {
   props: ["title", "excerpt", "altImg", "image"],
   computed: {
     img: function () {
-      console.log(this.image)
       if (!this.image) return "";
       if (this.image.src) return this.image.src;
       return this.image;

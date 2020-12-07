@@ -12,7 +12,7 @@
     </div>
 
     
-    <Getintouch :contacts ="contacts"/>
+    <Getintouch :contacts="contacts"/>
   </Layout>
 </template>
 
@@ -52,26 +52,25 @@ export default {
     Header,
     Getintouch,
   },
-  data() {
-    return {
-      contacts : [
-        {
-        title :"Collaborate",
-        mail :"support@example.com",
-        number :"+1 (555) 123-4567",
-        },
-        {
-        title :"Collaborate",
-        mail :"support@example.com",
-        number :"+1 (555) 123-4567",
-        },
-        {
-        title :"Collaborate",
-        mail :"support@example.com",
-        number :"+1 (555) 123-4567",
-        },
-      ],
-    };
+  computed : {
+      contacts(){ 
+        return [
+            {
+            title :"Collaborate",
+            mail :"support@example.com",
+            phonenumber : "+1 (555) 123-4567",
+            },
+            {
+            title :"Collaborate",
+            mail : "support@example.com",
+            phonenumber : "+1 (555) 123-4567",
+            },
+            {
+            title : "Collaborate",
+            mail : "support@example.com",
+            phonenumber :"+1 (555) 123-4567",
+            },
+      ]}
   },
   metaInfo() {
     return {

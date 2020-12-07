@@ -2,7 +2,7 @@
   <Layout>
    
 
-    <FilterHeader v-if="listArchive"
+    <NewsFilterHeader v-if="listArchive"
       @selectedTopic="setTopic"
       @selectedYear="setYear"
       @selectedMonth="setMonth"
@@ -83,7 +83,7 @@ query{
 </page-query>
 
 <script>
-import FilterHeader from "~/components/custom/FilterHeader.vue";
+import NewsFilterHeader from "~/components/custom/NewsFilterHeader.vue";
 import PostListItem from "~/components/custom/Cards/PostListItem.vue";
 import Pagination from "~/components/custom/Pagination.vue";
 
@@ -123,7 +123,7 @@ export default {
   components: {
     PostListItem,
     Pagination,
-    FilterHeader,
+    NewsFilterHeader,
   },
   methods: {
     setTopic: function (topic) {
