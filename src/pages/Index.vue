@@ -10,6 +10,9 @@
       <div v-html="$page.markdownPage.content"></div>
     <NewCard v-for="card in $page.markdownPage.cards" :key="card.id" :card = "card"/>
     </div>
+
+    
+    <Getintouch :contacts ="contacts"/>
   </Layout>
 </template>
 
@@ -40,11 +43,35 @@
 <script>
 import NewCard from "~/components/marketing/sections/cta-sections/NewCard.vue";
 import Header from "~/components/marketing/sections/cta-sections/Header.vue";
+import Getintouch from "~/components/marketing/sections/cta-sections/Getintouch.vue";
+
 
 export default {
   components: {
     NewCard,
-    Header
+    Header,
+    Getintouch,
+  },
+  data() {
+    return {
+      contacts : [
+        {
+        title :"Collaborate",
+        mail :"support@example.com",
+        number :"+1 (555) 123-4567",
+        },
+        {
+        title :"Collaborate",
+        mail :"support@example.com",
+        number :"+1 (555) 123-4567",
+        },
+        {
+        title :"Collaborate",
+        mail :"support@example.com",
+        number :"+1 (555) 123-4567",
+        },
+      ],
+    };
   },
   metaInfo() {
     return {
