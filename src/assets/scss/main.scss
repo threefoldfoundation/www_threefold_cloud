@@ -151,6 +151,17 @@ body[data-theme="dark"] {
     .text-gray-700 {
         @apply text-white;
     }
+
+    .lg\:shadow-lg{
+        box-shadow :0 20px 25px -5px rgba(255, 255, 255, 0.1), 0 10px 10px -5px rgba(255, 255, 255, 0.04)
+    }
+    .learn-button{
+        background-color: #c4c4c4;
+        @apply text-gray-900;
+        &:hover {
+            @apply bg-gray-300;
+        }
+    }
     .inset-0,
     input[type="text"] {
         background-color: #191b1f;
