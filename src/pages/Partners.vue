@@ -37,6 +37,17 @@ query ($private: Int){
       }
     }
   }
+  
+  tags: allProjectTag{
+     edges{
+      node{
+        id
+        title
+        path
+      }
+  }
+}
+
 }
 </page-query>
 
