@@ -2,8 +2,11 @@
   <Layout :hideHeader="true" :disableScroll="true">
     <div class="container sm:pxi-0 mx-auto overflow-x-hidden py-5">
       <Header
-        v-if="$page.markdownPage.id !== 'contact'"
-        :header="$page.markdownPage"
+        v-if="$page.markdownPage.id !== 'contact' && $page.markdownPage.header_title && $page.markdownPage.header_title != ''"
+        :title="$page.markdownPage.header_title"
+        :image="$page.markdownPage.header_image"
+        :altImg="$page.markdownPage.header_altImg"
+        :excerpt="$page.markdownPage.header_excerpt"
       />
       <VerticalNav
         :slides="$page.markdownPage.slides"
@@ -25,8 +28,10 @@
         id
         path
         content
-        title
-        image
+        header_excerpt
+        header_altImg
+        header_title
+        header_image
         slides{
           id
           title
@@ -34,7 +39,6 @@
           image
           order
         }
-        excerpt
         cards{
           id
           title
@@ -65,21 +69,7 @@ export default {
     return {
       title: this.$page.markdownPage.title,
     };
-  },
-  methods: {
-    markdown(content){
-      marked.setOptions({
-      highlight: function (code, lang, _callback) {
-        if (hljs.getLanguage(lang)) {
-          return hljs.highlight(lang, code).value
-        } else {
-          return hljs.highlightAuto(code).value
-        }
-      },
-    })
-      return marked(content)
-    }
-  },
+  }
 };
 </script>
 <style scoped>
