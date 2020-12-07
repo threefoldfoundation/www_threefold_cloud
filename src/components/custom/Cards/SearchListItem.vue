@@ -1,5 +1,5 @@
 <template>
-  <div
+  <div v-if="card"
     class="flex search-post px-0 sm:px-4 pb-8 mb-8"
     v-bind:class="{ 'no-border': !border }"
   >
@@ -77,6 +77,19 @@
       </div>
     </div>
   </div>
+
+   <div v-else
+    class="flex search-post px-0 sm:px-4 pb-8 mb-8"
+    v-bind:class="{ 'no-border': !border }"
+  >
+
+  <div class="p-5">
+      <g-link :to="record.path">
+        <h2 class="post-card-title mt-3">{{ record.title}}</h2>
+        <p class="post-card-excerpt" v-if="record.excerpt" >{{ record.excerpt.substring(100) }}</p>
+      </g-link>
+      </div>
+  </div>
 </template>
 
 <script>
@@ -97,8 +110,9 @@ export default {
       default: true,
     },
   },
-
   computed: {
+    card(){return this.record.__typename != "MarkdownPage"},
+
     img(){
       if(this.record.__typename == "MarkdownPage")
         return this.record.image

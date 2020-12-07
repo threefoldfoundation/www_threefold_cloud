@@ -85,81 +85,91 @@ module.exports = {
         {
             use: 'gridsome-plugin-flexsearch',
             options: {
-                compress: true,
-                searchFields: ['title', 'name', 'content', 'tags.title', 'status', 'members.name', 'linkedin', 'excerpt', 'cities', 'countries', 'websites', 'cards.content', 'cards.title', 'cards.excerpt', 'slides.content', 'slides.title', 'slides.excerpt'],
-                collections: [{
-                        query: `
-            {
-              allBlog{edges{
-                  node{
-                    id
-                    path
-                    content
-                    excerpt
-                    title
-                    tags{
-                      title
+                flexsearch: {
+                  cache: true,
+                },
+                compress: true,                
+                searchFields: ['title', 'name', 'content', 'status', 'linkedin', 'excerpt', 'cities', 'countries', 'websites'],
+                collections: [
+                {
+                  query: `{
+                      allBlog{edges{
+                          node{
+                            id
+                            path
+                            content
+                            excerpt
+                            title
+                            tags{
+                              title
+                            }
+                          }
+                        }
+                      }
                     }
-                  }
-                }
-              }
-            }
-            `,
-            path: 'allBlog.edges',
-            indexName: 'Blog',
-            fields: ['path'],
-          },
-          {
-            query: `
-            {
-              allProject{
-                 edges {
-                  node {
-                    title
-                    content
-                    status
-                    path  
-                    members {
-                      name
-                    },
-                    linkedin
-                  }
-                }
-              }
-            }
-            `,
-              path: 'allProject.edges',
-              fields: ['path'],
-              indexName: 'Project'
-          },
-          {
-            query: `
-            {
-              allPerson{
-                edges{
-                  node{
-                    content
-                    path
-                    excerpt
-                    name
-                    memberships{
-                      title
+                    `,
+                    path: 'allBlog.edges',
+                    indexName: 'Blog',
+                    fields: ['path'],
+                  },
+                  {
+                    query: `
+                    {
+                      allProject{
+                        edges {
+                          node {
+                            title
+                            content
+                            status
+                            path  
+                            members {
+                              name
+                            },
+                            linkedin
+                          }
+                        }
+                      }
                     }
-                    tags{
-                      title
+                    `,
+                      path: 'allProject.edges',
+                      fields: ['path'],
+                      indexName: 'Project'
+                  },
+                  {
+                    query: `
+                    {
+                      allPerson{
+                        edges{
+                          node{
+                            content
+                            path
+                            excerpt
+                            name
+                            memberships{
+                              title
+                            }
+                            tags{
+                              title
+                            }
+                            cities
+                            countries
+                            websites
+                          }      
+                        }
+                      }
                     }
-                    cities
-                    countries
-                    websites
-                  }      
-                }
-              }
-            }
-            `,
-                        path: 'allPerson.edges',
-                        fields: ['path'],
-                        indexName: 'Person'
-                    }
+                    `,
+                      path: 'allPerson.edges',
+                      fields: ['path'],
+                      indexName: 'Person'
+                  },
+
+                  {
+                    typeName: 'MarkdownPage',
+                    indexName: 'MarkdownPage',
+                    fields: ['path']
+                  },
+
                 ]
             }
         }
