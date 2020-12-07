@@ -24,7 +24,7 @@
                 @click="setActive(0)"
                 class="flex flex-row items-center w-full md:w-auto md:inline md:mt-0 md:ml-4 animated-link"
               >
-                <span class="capitalize">All Topics</span>
+                <span class="capitalize">{{ topic }}</span>
                 <svg
                   fill="currentColor"
                   viewBox="0 0 20 20"
@@ -78,7 +78,7 @@
                 @click="setActive(1)"
                 class="flex flex-row items-center w-full md:w-auto md:inline md:mt-0 md:ml-4 animated-link"
               >
-                <span class="capitalize">All Years</span>
+                <span class="capitalize">{{ year }}</span>
                 <svg
                   fill="currentColor"
                   viewBox="0 0 20 20"
@@ -132,7 +132,7 @@
                 @click="setActive(2)"
                 class="flex flex-row items-center w-full md:w-auto md:inline md:mt-0 md:ml-4 animated-link"
               >
-                <span class="capitalize">All Months</span>
+                <span class="capitalize">{{ month }}</span>
                 <svg
                   fill="currentColor"
                   viewBox="0 0 20 20"
@@ -170,7 +170,8 @@
                     class="cursor-pointer block px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg dark:bg-transparent dark:hover:bg-gray-600 dark-:focus:bg-gray-600 dark:focus:text-white dark:hover:text-white dark:text-gray-200 md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
                     @click.self="
                       setMonth(month);
-                      open = false;"
+                      open = false;
+                    "
                     >{{ month }}</a
                   >
                 </div>
@@ -179,12 +180,13 @@
           </li>
         </ul>
       </nav>
-      <nav class="ml-auto inline-flex md:order-2 items-end px-2 pt-2 pb-4 sm:flex sm:p-0 bg-transparent">
-        <ul class="list-none sm:flex justify-left capitalize transition-all transition-500">
+      <nav
+        class="ml-auto inline-flex md:order-2 items-end px-2 pt-2 pb-4 sm:flex sm:p-0 bg-transparent"
+      >
+        <ul
+          class="list-none sm:flex justify-left capitalize transition-all transition-500"
+        >
           <li class="py-1 mx-5 cursor-pointer" @click="resetAll()">Reset</li>
-          <li class="py-1 mx-5 cursor-pointer" @click="showArchive()">
-            Archive
-          </li>
         </ul>
       </nav>
     </header>
@@ -233,6 +235,9 @@ export default {
         "November",
         "December",
       ],
+      topic: "All Topics",
+      year: "All Years",
+      month: "All Months",
     };
   },
 
@@ -243,18 +248,26 @@ export default {
     },
     setTopic(event) {
       this.$emit("selectedTopic", event);
+      this.topic = event;
     },
     setYear(event) {
       this.$emit("selectedYear", event);
+      this.year = event;
     },
     setMonth(event) {
       this.$emit("selectedMonth", event);
+      this.month = event;
     },
     resetAll() {
       this.$emit("resetAll", true);
+      this.topic = "All Topics";
+      this.year = "All Year";
+      this.month = "All Months";
     },
-    showArchive() {
-      this.$emit("archive");
+    close(e) {
+      if (!this.$el.contains(e.target)) {
+        this.open = false;
+      }
     },
   },
   computed: {
@@ -267,6 +280,12 @@ export default {
       let currYear = new Date().getFullYear();
       return ["All", String(currYear), String(currYear - 1)];
     },
+  },
+  mounted() {
+    document.addEventListener("click", this.close);
+  },
+  beforeDestroy() {
+    document.removeEventListener("click", this.close);
   },
 };
 </script>

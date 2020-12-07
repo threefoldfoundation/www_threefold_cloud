@@ -1,13 +1,12 @@
 <template>
   <Layout>
-    <div class="flex">
-      <a
-        href="/archive"
-        class="ml-auto bg-gray-900 hover:bg-gray-700 text-gray-100 px-5 py-2 font-semibold rounded"
-      >
-        Archive</a
-      >
-    </div>
+    <FilterHeader
+      @selectedTopic="setTopic"
+      @selectedYear="setYear"
+      @selectedMonth="setMonth"
+      @resetAll="resetAll"
+      @archive="toggleListArchive"
+    />
     <div class="container sm:pxi-0 mx-auto overflow-hidden">
       <div class="flex flex-wrap with-large pt-12 mt-8 pb-8 mx-4 sm:-mx-4">
         <PostListItem
@@ -67,6 +66,7 @@ query{
 </page-query>
 
 <script>
+import FilterHeader from "~/components/custom/FilterHeader.vue";
 import PostListItem from "~/components/custom/Cards/PostListItem.vue";
 import Pagination from "~/components/custom/Pagination.vue";
 
@@ -90,23 +90,54 @@ export default {
     const currYear = new Date().getFullYear();
 
     return {
-      selectedTopic: "All Topics",
+      selectedTopic: "All",
       selectedYear: String(new Date().getFullYear()),
-      selectedMonth: "All Months",
+      selectedMonth: "All",
       months: allMonths,
-      years: ["All Years", String(currYear), String(currYear - 1)],
+      years: ["All", String(currYear), String(currYear - 1)],
       listArchive: false,
     };
   },
 
   metaInfo: {
-    title: "Newsroom",
+    title: "Archive",
   },
   components: {
     PostListItem,
     Pagination,
+    FilterHeader,
+  },
+  methods: {
+    setTopic: function (topic) {
+      this.selectedTopic = topic;
+    },
+    setYear(year) {
+      this.selectedYear = year;
+    },
+    setMonth(month) {
+      this.selectedMonth = month;
+    },
+    resetAll() {
+      this.selectedTopic = "All Topics";
+      this.selectedYear = "All Years";
+      this.selectedMonth = "All Months";
+      this.listArchive = false;
+    },
+    toggleListArchive() {
+      if (this.listArchive) {
+        this.listArchive = false;
+      } else {
+        this.listArchive = true;
+      }
+    },
   },
   computed: {
+    topics: function () {
+      var res = ["All Topics"];
+      this.$page.topics.edges.forEach((edge) => res.push(edge.node.title));
+      return res;
+    },
+
     baseurl: function () {
       return "";
     },
