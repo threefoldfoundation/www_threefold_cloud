@@ -11,47 +11,170 @@ slides:
   ]
 ---
 
+<div class="bg-white">
+  <div class="max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:py-24 lg:px-8">
+    <div class="grid grid-cols-1 gap-16">
+      <div class="lg:grid lg:grid-cols-3 lg:gap-8">
+        <h2 class="text-4xl mb-6 leading-tight font-semibold font-heading">
+          Get in touch
+        </h2>
+        <div class="mt-8 grid grid-cols-1 gap-12 sm:grid-cols-2 sm:gap-x-8 sm:gap-y-12 lg:mt-0 lg:col-span-2">
+          <div>
+            <h4 class="text-lg leading-6 font-medium text-gray-700">
+              Collaborate
+            </h4>
+            <dl class="mt-2 text-base leading-6 text-gray-500">
+              <div>
+                <dt class="sr-only">
+                  Email
+                </dt>
+                <dd>
+                  support@example.com
+                </dd>
+              </div>
+              <div class="mt-1">
+                <dt class="sr-only">
+                  Phone number
+                </dt>
+                <dd>
+                  +1 (555) 123-4567
+                </dd>
+              </div>
+            </dl>
+          </div>
+          <div>
+            <h4 class="text-lg leading-6 font-medium text-gray-700">
+              Press
+            </h4>
+            <dl class="mt-2 text-base leading-6 text-gray-500">
+              <div>
+                <dt class="sr-only">
+                  Email
+                </dt>
+                <dd>
+                  support@example.com
+                </dd>
+              </div>
+              <div class="mt-1">
+                <dt class="sr-only">
+                  Phone number
+                </dt>
+                <dd>
+                  +1 (555) 123-4567
+                </dd>
+              </div>
+            </dl>
+          </div>
+          <div>
+            <h4 class="text-lg leading-6 font-medium text-gray-700">
+              Join our team
+            </h4>
+            <dl class="mt-2 text-base leading-6 text-gray-500">
+              <div>
+                <dt class="sr-only">
+                  Email
+                </dt>
+                <dd>
+                  support@example.com
+                </dd>
+              </div>
+              <div class="mt-1">
+                <dt class="sr-only">
+                  Phone number
+                </dt>
+                <dd>
+                  +1 (555) 123-4567
+                </dd>
+              </div>
+            </dl>
+          </div>
+          <div>
+            <h4 class="text-lg leading-6 font-medium text-gray-700">
+              Say hello
+            </h4>
+            <dl class="mt-2 text-base leading-6 text-gray-500">
+              <div>
+                <dt class="sr-only">
+                  Email
+                </dt>
+                <dd>
+                  support@example.com
+                </dd>
+              </div>
+              <div class="mt-1">
+                <dt class="sr-only">
+                  Phone number
+                </dt>
+                <dd>
+                  +1 (555) 123-4567
+                </dd>
+              </div>
+            </dl>
+          </div>
+        </div>
+      </div>
+      <div class="border-t-2 border-gray-100"></div>
+      <div class="lg:grid lg:grid-cols-3 lg:gap-8">
+        <h2 class="text-4xl mb-6 leading-tight font-semibold font-heading">
+                   
+          Locations
+        </h2>
+        <div class="mt-8 grid grid-cols-1 gap-12 sm:grid-cols-2 sm:gap-x-8 sm:gap-y-12 lg:mt-0 lg:col-span-2">
+          <div>
+            <h4 class="text-lg leading-6 font-medium text-gray-700">
+              Los Angeles
+            </h4>
+            <div class="mt-2 text-base leading-6 text-gray-500">
+              <p>
+                4556 Brendan Ferry
+              </p>
+              <p class="mt-1">
+                Los Angeles, CA 90210
+              </p>
+            </div>
+          </div>
+          <div>
+            <h4 class="text-lg leading-6 font-medium text-gray-700">
+              New York
+            </h4>
+            <div class="mt-2 text-base leading-6 text-gray-500">
+              <p>
+                886 Walter Streets
+              </p>
+              <p class="mt-1">
+                New York, NY 12345
+              </p>
+            </div>
+          </div>
+          <div>
+            <h4 class="text-lg leading-6 font-medium text-gray-700">
+              Toronto
+            </h4>
+            <div class="mt-2 text-base leading-6 text-gray-500">
+              <p>
+                7363 Cynthia Pass
+              </p>
+              <p class="mt-1">
+                Toronto, ON N3Y 4H8
+              </p>
+            </div>
+          </div>
+          <div>
+            <h4 class="text-lg leading-6 font-medium text-gray-700">
+              Chicago
+            </h4>
+            <div class="mt-2 text-base leading-6 text-gray-500">
+              <p>
+                726 Mavis Island
+              </p>
+              <p class="mt-1">
+                Chicago, IL 60601
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
-<form class="my-20 lg:py-12 lg:flex flex flex-col">
-  <div class="flex flex-wrap -mx-3 mb-6">
-    <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
-      <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-first-name">
-        First Name
-      </label>
-      <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-red-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" id="grid-first-name" type="text" placeholder="First Name">
-      <p class="text-red-500 text-xs italic">Please fill out this field.</p>
-    </div>
-    <div class="w-full md:w-1/2 px-3">
-      <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-last-name">
-        Last Name
-      </label>
-      <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-last-name" type="text" placeholder="Last Name">
-    </div>
-  </div>
-  <div class="flex flex-wrap -mx-3 mb-6">
-    <div class="w-full px-3">
-      <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-password">
-        E-mail
-      </label>
-      <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="email" type="email">
-      <p class="text-gray-600 text-xs italic">Some tips - as long as needed</p>
-    </div>
-  </div>
-  <div class="flex flex-wrap -mx-3 mb-6">
-    <div class="w-full px-3">
-      <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-password">
-        Message
-      </label>
-      <textarea class=" no-resize appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 h-48 resize-none" id="message"></textarea>
-      <p class="text-gray-600 text-xs italic">Re-size can be disabled by set by resize-none / resize-y / resize-x / resize</p>
-    </div>
-  </div>
-  <div class="w-full px-3">
-    <div class="">
-      <button class="shadow bg-teal-400 hover:bg-teal-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded" type="button">
-        Send
-      </button>
-    </div>
-    
-  </div>
-</form>

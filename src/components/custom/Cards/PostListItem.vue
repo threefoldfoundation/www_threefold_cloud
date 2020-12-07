@@ -140,9 +140,6 @@ export default {
   line-height: 1.2;
 }
 
-.flex-post {
-    flex: 1 1 260px;
-}
 .post-card-image {
   max-width: 100%;
   height: auto;
