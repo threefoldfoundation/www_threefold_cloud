@@ -192,17 +192,7 @@
     </header>
   </div>
 </template>
-<page-query>
-query{
-  topics: allNewsTag{
-    edges{
-      node{
-				title        
-      }
-    }
-  }
-}
-</page-query>
+
 <script>
 /*
  * I'm a lazy guy, so i used this script
@@ -214,27 +204,13 @@ query{
  */
 
 export default {
+  props: ["topics", "years", "months"],
   data: function () {
     return {
       isOpen: false,
       open: false,
       active: null,
       listArchive: false,
-      months: [
-        "All",
-        "January",
-        "February",
-        "March",
-        "April",
-        "May",
-        "June",
-        "July",
-        "August",
-        "September",
-        "October",
-        "November",
-        "December",
-      ],
       topic: "All Topics",
       year: "All Years",
       month: "All Months",
@@ -270,17 +246,7 @@ export default {
       }
     },
   },
-  computed: {
-    topics() {
-      var res = ["All"];
-      this.$page.topics.edges.forEach((edge) => res.push(edge.node.title));
-      return res;
-    },
-    years() {
-      let currYear = new Date().getFullYear();
-      return ["All", String(currYear), String(currYear - 1)];
-    },
-  },
+  
   mounted() {
     document.addEventListener("click", this.close);
   },
