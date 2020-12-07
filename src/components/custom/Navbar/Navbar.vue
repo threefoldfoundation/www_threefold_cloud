@@ -256,6 +256,11 @@ export default {
       this.active = index;
       this.open = !this.open;
     },
+    close(e) {
+      if (!this.$el.contains(e.target)) {
+        this.open = false;
+      }
+    },
   },
 
   mounted() {
@@ -264,6 +269,10 @@ export default {
       this.setHeaderHeight(height);
       window.addEventListener("scroll", this.updateScroll);
     }
+    document.addEventListener("click", this.close);
+  },
+  beforeDestroy() {
+    document.removeEventListener("click", this.close);
   },
 };
 </script>
