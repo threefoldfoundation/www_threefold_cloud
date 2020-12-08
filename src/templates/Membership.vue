@@ -1,5 +1,12 @@
 <template>
   <Layout :hideHeader="true" :disableScroll="true">
+      <TagFilterHeader
+      :tags="memberships"
+      :selected="$page.membership.title"
+
+    />
+    <br/>
+    <br/>
     <div class="container sm:pxi-0 mx-auto overflow-x-hidden">
       <div class="mx-4 sm:mx-0">
         <h1 class="pb-0 mb-0 text-5xl font-medium capitalize">
@@ -58,15 +65,36 @@
         }
       }
     }  
+
+    allMembership{
+     edges{
+      node{
+        id
+        title
+        path
+      }
+    }
+  }
+
   }
 </page-query>
 
 <script>
 import PostListItem from "~/components/custom/Cards/PostListItem.vue";
+import TagFilterHeader from "~/components/custom/TagFilterHeader.vue";
 
 export default {
   components: {
     PostListItem,
+    TagFilterHeader
+  },
+  
+  computed:{
+    memberships(){
+      var res = [{"title": "All", "path": "/team"}]
+      this.$page.allMembership.edges.forEach((edge) => res.push({"title": edge.node.title, "path": edge.node.path}));
+      return res
+    }
   },
 
   metaInfo() {

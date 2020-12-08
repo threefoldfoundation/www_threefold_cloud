@@ -4,8 +4,6 @@
       :tags="tagTitles"
       :selected="title"
     />
-    <br/>
-    <br/>
     <div class="container sm:pxi-0 mx-auto overflow-x-hidden pt-24">
       <div class="mx-4 sm:mx-0">
         <h1 class="pb-0 mb-0 text-5xl font-medium">{{ tags.title }}</h1>
