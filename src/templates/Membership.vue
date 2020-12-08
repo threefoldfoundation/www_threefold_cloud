@@ -1,19 +1,12 @@
 <template>
   <Layout :hideHeader="true" :disableScroll="true">
-      <TagFilterHeader
-      :tags="memberships"
-      :selected="$page.membership.title"
-
-    />
-    <br/>
-    <br/>
-    <div class="container sm:pxi-0 mx-auto overflow-x-hidden">
+    <TagFilterHeader :tags="memberships" :selected="$page.membership.title" />
+    <div class="container sm:pxi-0 mx-auto mt-8 overflow-x-hidden">
       <div class="mx-4 sm:mx-0">
         <h1 class="pb-0 mb-0 text-5xl font-medium capitalize">
           {{ $page.membership.title }}
         </h1>
         <p class="text-gray-700 text-xl">
-          
           <span class="self-center"
             >{{ $page.membership.belongsTo.totalCount }} People</span
           >
@@ -86,15 +79,17 @@ import TagFilterHeader from "~/components/custom/TagFilterHeader.vue";
 export default {
   components: {
     PostListItem,
-    TagFilterHeader
+    TagFilterHeader,
   },
-  
-  computed:{
-    memberships(){
-      var res = [{"title": "All", "path": "/team"}]
-      this.$page.allMembership.edges.forEach((edge) => res.push({"title": edge.node.title, "path": edge.node.path}));
-      return res
-    }
+
+  computed: {
+    memberships() {
+      var res = [{ title: "All", path: "/team" }];
+      this.$page.allMembership.edges.forEach((edge) =>
+        res.push({ title: edge.node.title, path: edge.node.path })
+      );
+      return res;
+    },
   },
 
   metaInfo() {

@@ -1,16 +1,15 @@
 <template>
   <Layout :hideHeader="true" :disableScroll="true">
-     <TagFilterHeader
-      :tags="tagTitles"
-      :selected="title"
-    />
-    <div class="container sm:pxi-0 mx-auto overflow-x-hidden pt-24">
+    <TagFilterHeader :tags="tagTitles" :selected="title" />
+    <div class="container sm:px-0 mx-auto overflow-x-hidden pt-12">
       <div class="mx-4 sm:mx-0">
-        <h1 class="pb-0 mb-0 text-5xl font-medium">{{ tags.title }}</h1>
+        <h1 class="pb-0 mb-0 text-5xl font-medium capitalize">
+          {{ tags.title }}
+        </h1>
         <p class="text-gray-700 text-xl">
-          <span
-            class="self-center"
-          >{{ tags.belongsTo.totalCount }} {{item}}</span>
+          <span class="self-center"
+            >{{ tags.belongsTo.totalCount }} {{ item }}</span
+          >
         </p>
       </div>
 
@@ -168,73 +167,66 @@ export default {
   components: {
     Pagination,
     PostListItem,
-    TagFilterHeader
+    TagFilterHeader,
   },
 
-  computed:{
-    title(){
-      return this.tags.title
+  computed: {
+    title() {
+      return this.tags.title;
     },
-    tagTitles(){
-      var path = ""
-      var tags = null
-      if (this.$page.projectTag){
-        path = "/partners"
-        tags = this.$page.allProjectTag
+    tagTitles() {
+      var path = "";
+      var tags = null;
+      if (this.$page.projectTag) {
+        path = "/partners";
+        tags = this.$page.allProjectTag;
+      } else if (this.$page.newsTag) {
+        path = "/news";
+        tags = this.$page.allNewsTag;
+      } else if (this.$page.blogTag) {
+        path = "/blog";
+        tags = this.$page.allBlogTag;
       }
-        
-      else if (this.$page.newsTag){
-        path = "/news"
-        tags = this.$page.allNewsTag
 
-      }
-      else if (this.$page.blogTag){
-        path = "/blog"
-        tags = this.$page.allBlogTag
-
-      }
-      
-      var res = [{"title": "All", "path": path}]
-      tags.edges.forEach((edge) => res.push({"title": edge.node.title, "path": edge.node.path}));
-      return res
+      var res = [{ title: "All", path: path }];
+      tags.edges.forEach((edge) =>
+        res.push({ title: edge.node.title, path: edge.node.path })
+      );
+      return res;
     },
 
-    tags(){
-
-      return this.$page.projectTag || this.$page.newsTag || this.$page.blogTag
+    tags() {
+      return this.$page.projectTag || this.$page.newsTag || this.$page.blogTag;
     },
-    item(){
-      var plural = this.tags.belongsTo.totalCount > 0
-      if(this.$page.projectTag){
-        if (plural)
-          return "projects"
-        return "project"
+    item() {
+      var plural = this.tags.belongsTo.totalCount > 0;
+      if (this.$page.projectTag) {
+        if (plural) return "projects";
+        return "project";
       }
 
-      if(this.$page.newsTag){
-        if (plural)
-          return "posts"
-        return "post"
+      if (this.$page.newsTag) {
+        if (plural) return "posts";
+        return "post";
       }
 
-      if(this.$page.blogTag){
-        if (plural)
-          return "posts"
-        return "post"
+      if (this.$page.blogTag) {
+        if (plural) return "posts";
+        return "post";
       }
-    }
+    },
   },
-   mounted() {
+  mounted() {
     document.addEventListener("click", this.close);
   },
   beforeDestroy() {
     document.removeEventListener("click", this.close);
   },
- 
+
   metaInfo() {
     return {
-      title: this.tags.title
+      title: this.tags.title,
     };
-  }
+  },
 };
 </script>
