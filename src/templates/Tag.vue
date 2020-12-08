@@ -173,7 +173,7 @@ export default {
 
   computed:{
     title(){
-      return this.$page.projectTag.title
+      return this.tags.title
     },
     tagTitles(){
       var path = ""
