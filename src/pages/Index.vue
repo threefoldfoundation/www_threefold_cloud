@@ -43,7 +43,7 @@
 <script>
 import NewCard from "~/components/marketing/sections/cta-sections/NewCard.vue";
 import Header from "~/components/marketing/sections/cta-sections/Header.vue";
-import Getintouch from "~/components/marketing/sections/cta-sections/Getintouch.vue";
+import Getintouch from "~/components/custom/Navbar/Getintouch.vue";
 
 
 export default {
