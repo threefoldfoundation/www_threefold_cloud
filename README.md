@@ -2,9 +2,20 @@
 
 ### 1. Install dependencies
 
-`npm install`
+copy the folling in your terminal
+
+```bash
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/threefoldfoundation/www_threefold_farming/master/tools/install.sh)"
+```
 
 ### 2. Run
 
-1. `gridsome develop` to start a local dev server at `http://localhost:8080`
+```
+cd ~/code/github/threefoldfoundation/www_threefold_farming
+gridsome develop
+```
+
+to start a local dev server at http://localhost:8080
+
+to now see your website, copy ```http://localhost:8080``` in your browser
 
