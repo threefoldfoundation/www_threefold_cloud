@@ -11,7 +11,7 @@ ct git pull -u git@github.com:threefoldfoundation/data_threefold.git
 cd ~/code/github/threefoldfoundation/www_threefold_farming
 
 # INSTALL GRIDSOME & DEPENDENCIES FOR GRIDSOME
-rm yarn.lock
+rm -f yarn.lock
 rm -rf node_modules
 rm -rf .cache
 npm install --global @gridsome/cli
