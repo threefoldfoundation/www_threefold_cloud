@@ -10,5 +10,5 @@ slides:
     a_new_internet_for_our_planet,
   ]
 
-contactData: [collaborate, support, test]
+contactData: [collaborate, support, press, join]
 ---
