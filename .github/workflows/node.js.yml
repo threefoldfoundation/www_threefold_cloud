@@ -1,0 +1,86 @@
+# This workflow will do a clean install of node dependencies, build the source code and run tests across different versions of node
+# For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
+
+name: Node.js CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [14.x]
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v1
+      with:
+        node-version: ${{ matrix.node-version }}
+    
+    - run: rm -rf .cache dist
+    - run: npm install -g gridsome
+    - run: npm install
+    - run: gridsome build
+    - run: rm -rf .cache dist
+    - run: git checkout stagin
+    - run: git merge main
+    - run: npm install
+    - run: gridsome build
+    - name: Add & Commit
+      uses: EndBug/add-and-commit@v5.2.0
+      with:
+        # The arguments for the `git add` command (see the paragraph below for more info)
+        # Default: '.'
+        add: 'dist'
+
+        # The name of the user that will be displayed as the author of the commit
+        # Default: author of the commit that triggered the run
+        author_name: Hamdy
+
+        # The email of the user that will be displayed as the author of the commit
+        # Default: author of the commit that triggered the run
+        author_email: hamdy.a.farag@gmail.com
+
+        # Name of the branch to use, if different from the one that triggered the workflow
+        # Default: the branch that triggered the run
+        branch: staging
+
+        # The local path to the directory where your repository is located. You should use actions/checkout first to set it up
+        # Default: '.'
+        cwd: '.'
+
+        # The message for the commit
+        # Default: 'Commit from GitHub Actions (name of the workflow)'
+        message: 'release'
+
+        # The flag used on the pull strategy
+        # Default: '--no-rebase'
+        pull_strategy: '--no-rebase or --no-ff or --rebase'
+
+        # Whether to push the commit and, if any, its tags to the repo (only `true` and `false` are accepted)
+        # Default: true
+        push: true
+
+        # The arguments for the `git rm` command (see the paragraph below for more info)
+        # Default: ''
+        remove: ""
+
+        # Whether to use the --signoff option on `git commit` (only `true` and `false` are accepted)
+        # Default: false
+        signoff: true
+
+        # Arguments for the git tag command (the tag name always needs to be the first word not preceded by an hyphen)
+        # Default: ''
+        tag: ""
+
+      env:
+        # This is necessary in order to push a commit to the repo
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # Leave this line unchanged
