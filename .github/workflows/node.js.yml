@@ -30,7 +30,7 @@ jobs:
     - run: npm install
     - run: gridsome build
     - run: rm -rf .cache dist
-    - run: git checkout stagin
+    - run: git checkout staging
     - run: git merge main
     - run: npm install
     - run: gridsome build
