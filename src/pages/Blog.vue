@@ -13,7 +13,7 @@
       class="container sm:pxi-0 mx-auto mt-8"
       :style="{ 'min-height': contentHeight + 'px' }"
     >
-      <div class="flex flex-wrap with-large pt-8 pb-8 mx-4 sm:-mx-4">
+      <div class="flex flex-wrap news pt-12 mt-8 pb-8 mx-4 sm:-mx-4">
         <PostListItem
           v-for="post in blogs.edges"
           :key="post.node.id"

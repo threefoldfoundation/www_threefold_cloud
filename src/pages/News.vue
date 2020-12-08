@@ -263,7 +263,7 @@ export default {
 <style scoped>
 
 
-.flex-post {
+/* .flex-post {
     flex: 1 1 250px;
-}
+} */
 </style>

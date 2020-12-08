@@ -131,14 +131,14 @@ button:focus {
             @apply text-xl;
         }
     }
-    .news>.flex-post:nth-child(6n),
-    .news>.flex-post:nth-child(6n-1) {
+    .news>.flex-post:nth-child(5n),
+    .news>.flex-post:nth-child(5n-1) {
         // @apply flex-100;
         flex: 1 1 50%;
         @apply flex-col;
         .post-card-image-link {
             @apply relative;
-            min-height: 400px;
+            min-height: 300px;
         }
         .post-card-image {
             @apply absolute;
