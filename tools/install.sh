@@ -15,7 +15,8 @@ rm -f yarn.lock
 rm -rf node_modules
 rm -rf .cache
 npm install --global @gridsome/cli
-yarn install
+#yarn install
+npm install
 
 # RUN THE WEBSITE
 gridsome develop
