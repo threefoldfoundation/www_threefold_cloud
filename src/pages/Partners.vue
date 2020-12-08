@@ -1,5 +1,13 @@
 <template>
   <Layout>
+     <TagFilterHeader
+      :tags="tags"
+      selected="all"
+    />
+    <br/>
+    <br/>
+    <br/>
+
     <div class="container sm:pxi-0 mx-auto overflow-x-hidden">
       <div class="flex flex-wrap with-large pt-8 pb-8 mx-4 sm:-mx-4">
         <PostListItem
@@ -53,10 +61,19 @@ query ($private: Int){
 
 <script>
 import PostListItem from "~/components/custom/Cards/PostListItem.vue";
+import TagFilterHeader from "~/components/custom/TagFilterHeader.vue";
 
 export default {
   components: {
     PostListItem,
+    TagFilterHeader
   },
+  computed: {
+    tags(){
+      var res = [{"title": "All", "path": "/partners"}]
+      this.$page.tags.edges.forEach((edge) => res.push({"title": edge.node.title, "path": edge.node.path}));
+      return res
+    },
+  }
 };
 </script>

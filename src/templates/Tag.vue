@@ -1,5 +1,11 @@
 <template>
   <Layout :hideHeader="true" :disableScroll="true">
+     <TagFilterHeader
+      :tags="tagTitles"
+      :selected="title"
+    />
+    <br/>
+    <br/>
     <div class="container sm:pxi-0 mx-auto overflow-x-hidden pt-24">
       <div class="mx-4 sm:mx-0">
         <h1 class="pb-0 mb-0 text-5xl font-medium">{{ tags.title }}</h1>
@@ -120,7 +126,37 @@
           }
         }
       }
-    }  
+    }
+
+    allProjectTag{
+     edges{
+      node{
+        id
+        title
+        path
+      }
+    }
+    }
+
+    allNewsTag{
+     edges{
+      node{
+        id
+        title
+        path
+      }
+    }
+    }
+
+    allBlogTag{
+     edges{
+      node{
+        id
+        title
+        path
+      }
+    }
+} 
 
   }
 </page-query>
@@ -128,15 +164,45 @@
 <script>
 import PostListItem from "~/components/custom/Cards/PostListItem.vue";
 import Pagination from "~/components/custom/Pagination.vue";
+import TagFilterHeader from "~/components/custom/TagFilterHeader.vue";
 
 export default {
   components: {
     Pagination,
-    PostListItem
+    PostListItem,
+    TagFilterHeader
   },
 
   computed:{
+    title(){
+      return this.$page.projectTag.title
+    },
+    tagTitles(){
+      var path = ""
+      var tags = null
+      if (this.$page.projectTag){
+        path = "/partners"
+        tags = this.$page.allProjectTag
+      }
+        
+      else if (this.$page.newsTag){
+        path = "/news"
+        tags = this.$page.allNewsTag
+
+      }
+      else if (this.$page.blogTag){
+        path = "/blog"
+        tags = this.$page.allBlogTag
+
+      }
+      
+      var res = [{"title": "All", "path": path}]
+      tags.edges.forEach((edge) => res.push({"title": edge.node.title, "path": edge.node.path}));
+      return res
+    },
+
     tags(){
+
       return this.$page.projectTag || this.$page.newsTag || this.$page.blogTag
     },
     item(){
@@ -159,6 +225,12 @@ export default {
         return "post"
       }
     }
+  },
+   mounted() {
+    document.addEventListener("click", this.close);
+  },
+  beforeDestroy() {
+    document.removeEventListener("click", this.close);
   },
  
   metaInfo() {
