@@ -1,7 +1,5 @@
 <template>
   <Layout>
-   
-
     <NewsFilterHeader v-if="listArchive"
       @selectedTopic="setTopic"
       @selectedYear="setYear"
@@ -11,10 +9,7 @@
       :years="years"
       :months="months"
     />
-
-    <br/>
-    <br/>
-     <div class="flex">
+     <div class="flex mt-16">
       <a
         @click="toggleListArchive();toggleArchiveButtonText()"
         href="#"
