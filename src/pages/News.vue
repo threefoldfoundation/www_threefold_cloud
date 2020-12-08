@@ -260,10 +260,4 @@ export default {
   },
 };
 </script>
-<style scoped>
 
-
-/* .flex-post {
-    flex: 1 1 250px;
-} */
-</style>

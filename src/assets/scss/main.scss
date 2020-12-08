@@ -159,6 +159,94 @@ button:focus {
             @apply text-xl;
         }
     }
+
+    // .news>.flex-post:nth-child(9n+1),
+    // .news>.flex-post:nth-child(9n+2) {
+    //     // @apply flex-100;
+    //     flex: 1 1 50%;
+    //     @apply flex-col;
+    //     .post-card-image-link {
+    //         @apply relative;
+    //         min-height: 300px;
+    //     }
+    //     .post-card-image {
+    //         @apply absolute;
+    //         @apply h-full;
+    //         @apply w-full;
+    //         @apply object-cover;
+    //         @apply rounded-lg;
+    //     }
+    //     .post-card-content {
+    //         // @apply flex-post-large-content;
+    //         flex: 0 1 auto;
+    //         @apply self-center;
+    //     }
+    //     .post-card-title {
+    //         @apply text-4xl;
+    //     }
+    //     .post-card-excerpt {
+    //         @apply text-xl;
+    //     }
+    // }
+    // .news>.flex-post:nth-child(9n+3),
+    // .news>.flex-post:nth-child(9n+4),
+    // .news>.flex-post:nth-child(9n+5) {
+    //     // @apply flex-100;
+    //     flex: 1 1 300px;
+    //     @apply flex-col;
+    //     .post-card-image-link {
+    //         @apply relative;
+    //         min-height: 180px;
+    //     }
+    //     .post-card-image {
+    //         @apply absolute;
+    //         @apply h-full;
+    //         @apply w-full;
+    //         @apply object-cover;
+    //         @apply rounded-lg;
+    //     }
+    //     .post-card-content {
+    //         // @apply flex-post-large-content;
+    //         flex: 0 1 auto;
+    //         @apply self-center;
+    //     }
+    //     .post-card-title {
+    //         @apply text-4xl;
+    //     }
+    //     .post-card-excerpt {
+    //         @apply text-xl;
+    //     }
+    // }
+    // .news>.flex-post:nth-child(9n+6),
+    // .news>.flex-post:nth-child(9n+7),
+    // .news>.flex-post:nth-child(9n+8),
+    // .news>.flex-post:nth-child(9n+9) {
+    //     // @apply flex-100;
+    //     flex: 1 1 250px;
+    //     @apply flex-col;
+    //     .post-card-image-link {
+    //         @apply relative;
+    //         min-height: 300px;
+    //     }
+    //     .post-card-image {
+    //         @apply absolute;
+    //         @apply h-full;
+    //         @apply w-full;
+    //         @apply object-cover;
+    //         @apply rounded-lg;
+    //     }
+    //     .post-card-content {
+    //         // @apply flex-post-large-content;
+    //         flex: 0 1 auto;
+    //         @apply self-center;
+    //     }
+    //     .post-card-title {
+    //         @apply text-4xl;
+    //     }
+    //     .post-card-excerpt {
+    //         @apply text-xl;
+    //     }
+    // }
 }
 
 body[data-theme="dark"] {
