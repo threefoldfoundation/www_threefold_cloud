@@ -39,11 +39,20 @@ module.exports = {
         {
             use: '@gridsome/source-filesystem',
             options: {
+                typeName: 'Contact',
+                path: './content/page/**/contactData/**/*.md',
+            }
+        },
+
+        {
+            use: '@gridsome/source-filesystem',
+            options: {
                 typeName: 'MarkdownPage',
                 path: './content/page/*/*.md',
                 refs: {
                     cards: 'Card',
                     slides: 'Slide',
+                    contactData: 'Contact'
                 }
             }
         },
@@ -86,13 +95,12 @@ module.exports = {
             use: 'gridsome-plugin-flexsearch',
             options: {
                 flexsearch: {
-                  cache: true,
+                    cache: true,
                 },
-                compress: true,                
+                compress: true,
                 searchFields: ['title', 'name', 'content', 'status', 'linkedin', 'excerpt', 'cities', 'countries', 'websites'],
-                collections: [
-                {
-                  query: `{
+                collections: [{
+                        query: `{
                       allBlog{edges{
                           node{
                             id
@@ -108,12 +116,12 @@ module.exports = {
                       }
                     }
                     `,
-                    path: 'allBlog.edges',
-                    indexName: 'Blog',
-                    fields: ['path'],
-                  },
-                  {
-                    query: `
+                        path: 'allBlog.edges',
+                        indexName: 'Blog',
+                        fields: ['path'],
+                    },
+                    {
+                        query: `
                     {
                       allProject{
                         edges {
@@ -131,12 +139,12 @@ module.exports = {
                       }
                     }
                     `,
-                      path: 'allProject.edges',
-                      fields: ['path'],
-                      indexName: 'Project'
-                  },
-                  {
-                    query: `
+                        path: 'allProject.edges',
+                        fields: ['path'],
+                        indexName: 'Project'
+                    },
+                    {
+                        query: `
                     {
                       allPerson{
                         edges{
@@ -159,16 +167,16 @@ module.exports = {
                       }
                     }
                     `,
-                      path: 'allPerson.edges',
-                      fields: ['path'],
-                      indexName: 'Person'
-                  },
+                        path: 'allPerson.edges',
+                        fields: ['path'],
+                        indexName: 'Person'
+                    },
 
-                  {
-                    typeName: 'MarkdownPage',
-                    indexName: 'MarkdownPage',
-                    fields: ['path']
-                  },
+                    {
+                        typeName: 'MarkdownPage',
+                        indexName: 'MarkdownPage',
+                        fields: ['path']
+                    },
 
                 ]
             }
@@ -183,27 +191,27 @@ module.exports = {
     },
 
     transformers: {
-      //Add markdown support to all file-system sources
-      remark: {
-        externalLinksTarget: '_blank',
-        externalLinksRel: ['nofollow', 'noopener', 'noreferrer'],
-        anchorClassName: 'icon icon-link',
-        plugins: [
-          ['gridsome-plugin-remark-prismjs-all', {
-              highlightClassName: "gridsome-highlight",
-              codeTitleClassName: "gridsome-code-title",
-              classPrefix: 'language-',
-              aliases: {},
-              noInlineHighlight: false,
-              showLineNumbers: false,     //  `require("prismjs/plugins/line-numbers/prism-line-numbers.css");`
-              languageExtensions: [],
-              prompt: {                   //  `require("prismjs/plugins/command-line/prism-command-line.css");`
-                  user: `root`,
-                  host: `localhost`,
-                  global: false,
-              }
-          }]
-        ]
-      }
+        //Add markdown support to all file-system sources
+        remark: {
+            externalLinksTarget: '_blank',
+            externalLinksRel: ['nofollow', 'noopener', 'noreferrer'],
+            anchorClassName: 'icon icon-link',
+            plugins: [
+                ['gridsome-plugin-remark-prismjs-all', {
+                    highlightClassName: "gridsome-highlight",
+                    codeTitleClassName: "gridsome-code-title",
+                    classPrefix: 'language-',
+                    aliases: {},
+                    noInlineHighlight: false,
+                    showLineNumbers: false, //  `require("prismjs/plugins/line-numbers/prism-line-numbers.css");`
+                    languageExtensions: [],
+                    prompt: { //  `require("prismjs/plugins/command-line/prism-command-line.css");`
+                        user: `root`,
+                        host: `localhost`,
+                        global: false,
+                    }
+                }]
+            ]
+        }
     }
 }

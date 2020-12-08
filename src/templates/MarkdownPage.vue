@@ -2,7 +2,11 @@
   <Layout :hideHeader="true" :disableScroll="true">
     <div class="container sm:pxi-0 mx-auto overflow-x-hidden py-5">
       <Header
-        v-if="$page.markdownPage.id !== 'contact' && $page.markdownPage.header_title && $page.markdownPage.header_title != ''"
+        v-if="
+          $page.markdownPage.id !== 'contact' &&
+          $page.markdownPage.header_title &&
+          $page.markdownPage.header_title != ''
+        "
         :title="$page.markdownPage.header_title"
         :image="$page.markdownPage.header_image"
         :altImg="$page.markdownPage.header_altImg"
@@ -18,6 +22,8 @@
         :key="card.id"
         :card="card"
       />
+
+      <GetInTouch :contacts="$page.markdownPage.contactData" />
     </div>
   </Layout>
 </template>
@@ -48,7 +54,12 @@
           order
           excerpt
         }
-       
+       contactData{
+         id
+         title
+         mail
+         phone
+       }
     }
   }
 
@@ -57,19 +68,21 @@
 <script>
 import NewCard from "~/components/marketing/sections/cta-sections/NewCard.vue";
 import Header from "~/components/marketing/sections/cta-sections/Header.vue";
-import VerticalNav from "~/components/custom/Navbar/VerticalNav.vue"
+import VerticalNav from "~/components/custom/Navbar/VerticalNav.vue";
+import GetInTouch from "~/components/custom/Navbar/Getintouch.vue";
 
 export default {
   components: {
     NewCard,
     Header,
     VerticalNav,
+    GetInTouch,
   },
   metaInfo() {
     return {
       title: this.$page.markdownPage.title,
     };
-  }
+  },
 };
 </script>
 <style scoped>

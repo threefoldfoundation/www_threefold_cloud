@@ -9,7 +9,6 @@ slides:
     digital_sovereignty_for_everyone,
     a_new_internet_for_our_planet,
   ]
+
+contactData: [collaborate, support, test]
 ---
-
-
-
