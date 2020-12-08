@@ -20,7 +20,7 @@
     </div>
 
     <div class="container sm:pxi-0 mx-auto overflow-hidden">
-      <div class="flex flex-wrap with-large pt-12 mt-8 pb-8 mx-4 sm:-mx-4">
+      <div class="flex flex-wrap news pt-12 mt-8 pb-8 mx-4 sm:-mx-4">
         <PostListItem
           :showtags="true"
           v-for="edge in news.edges"
@@ -260,3 +260,10 @@ export default {
   },
 };
 </script>
+<style scoped>
+
+
+.flex-post {
+    flex: 1 1 250px;
+}
+</style>
