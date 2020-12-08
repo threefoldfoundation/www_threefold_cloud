@@ -1,8 +1,8 @@
 ---
 id: home
 cards: [home, home2, home3]
-header_title: THANK YOU THREEFOLD MEMBERS
-header_image: ./header.png
+header_title: BE THE INTERNET
+header_image: ./Farming-header.png
 header_altImg: ''
-header_excerpt: Welcome to the growing ecosystem of ThreeFold.
+header_excerpt:
 ---
