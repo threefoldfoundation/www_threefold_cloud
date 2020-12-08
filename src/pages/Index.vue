@@ -12,7 +12,7 @@
     </div>
 
     
-    <Getintouch :contacts="contacts"/>
+    <!-- <Getintouch :contacts="contacts"/> -->
   </Layout>
 </template>
 
