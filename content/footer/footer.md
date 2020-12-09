@@ -10,7 +10,7 @@ youtube: 'https://www.youtube.com/threefoldfoundation'
 github: 'https://github.com/threefoldfoundation'
 telegram: 'https://t.me/threefoldnews'
 items:
- - title: LEARN & USE
+ - title: LEARN
    links:
     - name: 3Node
       link: '#'
@@ -25,14 +25,6 @@ items:
     - name: Github
       link: '#'
     - name: Community
-      link: '#'
- - title: FOR
-   links:
-    - name: Farming
-      link: '#'
-    - name: Blockchain
-      link: '#'
-    - name: Token Holders
       link: '#'
  - title: ABOUT
    links:
