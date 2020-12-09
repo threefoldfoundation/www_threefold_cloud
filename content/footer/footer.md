@@ -1,50 +1,61 @@
 ---
 id: footer
-description: Making the world a better place through constructing elegant hierarchies.
-facebook: '#'
-instagram: '#'
-twitter: '#'
-github: '#'
-dribbble: '#'
+description: BE THE INTERNET
+linkedin: 'https://www.linkedin.com/company/threefold-foundation/'
+facebook: 'https://www.facebook.com/threefold.io'
+twitter: 'https://twitter.com/threefold_io'
+youtube: 'https://www.youtube.com/threefoldfoundation'
+github: 'https://github.com/threefoldfoundation'
+telegram: 'https://t.me/threefoldnews'
 items:
- - title: Solutions
+ - title: LEARN & USE
    links:
-    - name: Marketing
+    - name: 3Node
       link: '#'
-    - name: Marketing2
+    - name: Tech
       link: '#'
-    - name: Marketing3
+    - name: Token
       link: '#'
-    - name: Marketing4
+    - name: Blog
       link: '#'
- - title: Support
+    - name: Knowledgebase
+      link: '#'
+    - name: Github
+      link: '#'
+    - name: Community
+      link: '#'
+ - title: FOR
    links:
-    - name: Marketing
+    - name: Farming
       link: '#'
-    - name: Marketing2
+    - name: Blockchain
       link: '#'
-    - name: Marketing3
+    - name: Token Holders
       link: '#'
-    - name: Marketing4
-      link: '#'
- - title: Company
+ - title: ABOUT
    links:
-    - name: Marketing
+    - name: Newsroom
       link: '#'
-    - name: Marketing2
+    - name: Team
       link: '#'
-    - name: Marketing3
+    - name: Partners
       link: '#'
-    - name: Marketing4
+    - name: Company
       link: '#'
- - title: Legal
+ - title: SUPPORT
    links:
-    - name: Marketing
+    - name: FAQ
       link: '#'
-    - name: Marketing2
+    - name: Community
       link: '#'
-    - name: Marketing3
+    - name: Contact
       link: '#'
-    - name: Marketing4
+ - title: LEGAL
+   links:
+    - name: Terms & Conditions
+      link: '#'
+    - name: Privacy Policy
+      link: '#'
+    - name: Impressum
       link: '#'
 ---
