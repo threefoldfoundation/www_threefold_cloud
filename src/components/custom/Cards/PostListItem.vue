@@ -18,7 +18,7 @@
           class="flex flex-wrap post-tags container mx-auto relative py-1"
         >
           <g-link
-            v-for="membership in record.memberships"
+            v-for="membership in memberships"
             :key="membership.id"
             :to="membership.path"
             class="text-xs bg-transparent hover:text-blue-700 py-1 px-2 mr-1 border hover:border-blue-500 border-gray-600 text-gray-700 rounded-full mb-2"
@@ -100,7 +100,22 @@ export default {
        if (this.pathPrefix)
           return this.pathPrefix + "/" + this.record.id
         return this.record.path
+    },
+
+    memberships(){
+      var res = []
+      var memberships = this.record.memberships
+      if (!memberships){
+        return []
+      }
+      memberships.forEach(function(membership){
+        if(["foundation", "tech"].includes(membership.title)){
+          res.push(membership)
+        }
+      });
+      return res
     }
+
   },
 
   methods: {
