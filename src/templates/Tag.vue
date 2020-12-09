@@ -49,7 +49,7 @@
         }
         edges {
           node {
-            ... on Threefold_Project {
+            ... on Project {
               title
               excerpt
               image(width:800)
@@ -74,7 +74,7 @@
         }
         edges {
           node {
-            ... on Threefold_News {
+            ... on News {
               title
               excerpt
               image(width:800)
@@ -105,7 +105,7 @@
         }
         edges {
           node {
-            ... on Threefold_Blog {
+            ... on Blog {
               title
               excerpt
               image(width:800)

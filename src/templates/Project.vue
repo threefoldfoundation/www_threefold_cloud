@@ -118,7 +118,7 @@
         }
         edges {
           node {
-            ... on Threefold_Person {
+            ... on Person {
               id
               name
               image(width:64, height:64, fit:inside)
@@ -142,32 +142,8 @@
 import PostListItem from "~/components/custom/Cards/PostListItem.vue";
 import Pagination from "~/components/custom/Pagination.vue";
 
-function get_img(img){
-    img.src = "https://data.threefold.io/" + img.src
-    for(var i=0; i < img.srcset.length; i++){
-      img.srcset[i] = "https://data.threefold.io/" + img.srcset[i]
-    }
-  return img
-}
 
 export default {
-  // fix remote images
-  mounted: function () {
-    if(this.$page.project.image.src){
-      this.$page.project.image = get_img(this.$page.project.image )
-    }
-
-     if(this.$page.project.logo.src){
-      this.$page.project.logo = get_img(this.$page.project.logo )
-    }
-
-    if(this.$page.project.members){
-        for(var i=0; i < this.$page.project.members.length; i++){
-            this.$page.project.members[i].image = get_img(this.$page.project.members[i].image)
-        }
-    }
-      
-  },
   components: {
     Pagination,
     PostListItem,

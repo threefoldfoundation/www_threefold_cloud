@@ -5,7 +5,7 @@
   >
     <g-link :to="record.path" class="post-card-image-link">
       <g-image
-        :src="img"
+        :src="record.image"
         :alt="record.title"
         class="post-card-image"
       ></g-image>
@@ -31,7 +31,7 @@
             <div class="flex justify-between items-center">
               <ul class="list-none flex author-list m-0">
                 <li
-                  v-for="author in authors"
+                  v-for="author in record.authors"
                   :key="author.id"
                   class="author-list-item"
                 >
@@ -93,15 +93,7 @@
 </template>
 
 <script>
-function get_img(img){
-    if(img){
-      img.src = "https://data.threefold.io/" + img.src
-      for(var i=0; i < img.srcset.length; i++){
-        img.srcset[i] = "https://data.threefold.io/" + img.srcset[i]
-      }
-    }
-    return img
-}
+
 export default {
   props: {
     record: {},
@@ -112,23 +104,6 @@ export default {
   },
   computed: {
     card(){return this.record.__typename != "MarkdownPage"},
-
-    img(){
-      if(this.record.__typename == "MarkdownPage")
-        return this.record.image
-      return get_img(this.record.image )
-    },
-
-    authors(){
-      if(this.record.__typename != "MarkdownPage"){
-        if(this.record.authors){
-          for(var i=0; i < this.record.authors.length; i++){
-                this.record.authors[i].image = get_img(this.record.authors[i].image)
-          }
-      }
-      return this.record.authors
-      }
-    },
 
     path(){
        if (this.pathPrefix)

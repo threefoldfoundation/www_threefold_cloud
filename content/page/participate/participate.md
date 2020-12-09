@@ -1,13 +1,17 @@
 ---
 id: participate
+title: participate
+
 # header_title: participate
 # header_image: ./header.png
 # header_altImg: Participate
 # header_excerpt:  Welcome to the growing ecosystem of ThreeFold.
 ---
+
 # Participate
 
-![](./img/test22.png)
+![](./img/test22.png)  
+<br/>
 
 - this is test
 - this is test
