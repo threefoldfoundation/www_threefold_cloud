@@ -8,3 +8,8 @@ dist
 .env.*
 package-lock.json
 yarn.lock
+content/blog
+content/person
+content/project
+content/news
+
