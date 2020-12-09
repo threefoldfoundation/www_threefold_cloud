@@ -10,7 +10,10 @@
       :months="months"
     />
 
-    <div class="container sm:pxi-0 mx-auto overflow-hidden">
+    <div
+      class="container sm:pxi-0 mx-auto overflow-hidden"
+      :style="{ 'min-height': contentHeight + 'px' }"
+    >
       <div class="flex flex-wrap news pt-12 mt-8 pb-8 mx-4 sm:-mx-4">
         <PostListItem
           :showtags="true"
@@ -18,6 +21,9 @@
           :key="edge.node.id"
           :record="edge.node"
         />
+      </div>
+      <div class="text-center" v-if="news.edges.length == 0">
+        <h2 class="inlibe-flex mx-auto text-gray-700 w-3/4">No results</h2>
       </div>
     </div>
     <div class="pagination flex justify-center mb-8">
@@ -240,6 +246,11 @@ export default {
         res.edges.push({ node: node, id: node.id });
       }
       return res;
+    },
+    contentHeight() {
+      if (process.isClient) {
+        return window.innerHeight - 570;
+      }
     },
   },
 };
