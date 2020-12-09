@@ -35,7 +35,7 @@
         totalCount
         edges {
           node {
-            ... on Threefold_Person {
+            ... on Person {
                path
               content
               name

@@ -23,7 +23,7 @@
         :card="card"
       />
 
-      <GetInTouch :contacts="$page.markdownPage.contactData" />
+      <GetInTouch :contacts="$page.markdownPage.contactData" v-if="$page.markdownPage.contactData.length > 0"/>
     </div>
   </Layout>
 </template>
