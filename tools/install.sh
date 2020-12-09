@@ -2,8 +2,14 @@ set -e
 set +x
 
 # INSTALL CRYSTAL TOOLS
-sudo /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/crystaluniverse/crystaltools/master/tools/install.sh)"
-sudo chmod 777 /usr/local/bin/ct
+
+if [[ "OSTYPE" == "linux-gnu"* ]]; then 
+    sudo /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/crystaluniverse/crystaltools/master/tools/install.sh)"
+    sudo chmod 777 /usr/local/bin/ct
+elif [[ "OSTYPE" == "darwin"* ]]; then
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/crystaluniverse/crystaltools/master/tools/install.sh)"
+fi
+
 
 # GET REQUIRED REPOSITORIES
 ct git pull -u git@github.com:threefoldfoundation/www_threefold_farming.git
@@ -22,8 +28,12 @@ cd ~/code/github/threefoldfoundation/www_threefold_farming
 rm -f yarn.lock
 rm -rf node_modules
 rm -rf .cache
-sudo npm install --global @gridsome/cli
 
+if [[ "OSTYPE" == "linux-gnu"* ]]; then
+    sudo npm install --global @gridsome/cli
+ elif [[ "OSTYPE" == "darwin"* ]]; then
+     npm install --global @gridsome/cli
+fi
 set +e
 npm install
 
