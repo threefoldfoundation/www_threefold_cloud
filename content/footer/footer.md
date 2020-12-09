@@ -22,8 +22,6 @@ items:
       link: '#'
     - name: Knowledgebase
       link: '#'
-    - name: Github
-      link: '#'
     - name: Community
       link: '#'
  - title: ABOUT
@@ -46,9 +44,9 @@ items:
       link: '#'
  - title: LEGAL
    links:
-    - name: Terms & Conditions
+    - name: Terms&Conditions
       link: '#'
-    - name: Privacy Policy
+    - name: PrivacyPolicy
       link: '#'
     - name: Impressum
       link: '#'
