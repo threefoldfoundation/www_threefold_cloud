@@ -4,11 +4,11 @@ description: BE THE INTERNET
 linkedin: 'https://www.linkedin.com/company/threefold-foundation/'
 facebook: 'https://www.facebook.com/threefold.io'
 twitter: 'https://twitter.com/threefold_io'
+dribbble: '#'
+instagram: '#'
 youtube: 'https://www.youtube.com/threefoldfoundation'
 github: 'https://github.com/threefoldfoundation'
 telegram: 'https://t.me/threefoldnews'
-dribbble: '#'
-instagram: '#'
 items:
  - title: LEARN & USE
    links:
