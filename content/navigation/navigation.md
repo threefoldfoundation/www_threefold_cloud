@@ -25,6 +25,7 @@ navLinks:
 
       - title: Knowledge
         path: https://wiki.threefold.io/#/what_is_farming
+        external: true
 
   - name: People
     link: /people
@@ -50,6 +51,7 @@ navLinks:
 
       - title: Community
         path: https://forums.threefold.io/
+        external: true
 
       - title: Contact
         path: /contact

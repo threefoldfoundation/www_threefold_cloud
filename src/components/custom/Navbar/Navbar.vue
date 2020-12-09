@@ -135,18 +135,34 @@
                   v-if="open"
                   class="px-2 py-2 bg-white rounded-md shadow dark:bg-gray-700"
                 >
-                  <a
-                    v-for="link in element.submenu"
-                    :key="link.title"
-                    class="block px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg dark:bg-transparent dark:hover:bg-gray-600 dark-:focus:bg-gray-600 dark:focus:text-white dark:hover:text-white dark:text-gray-200 md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
-                    @click="open = false"
-                    :href="link.path"
-                    >{{ link.title }}</a
-                  >
+                  <div v-for="link in element.submenu" :key="link.title">
+                    <a
+                      v-if="link.external"
+                      class="block px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg dark:bg-transparent dark:hover:bg-gray-600 dark-:focus:bg-gray-600 dark:focus:text-white dark:hover:text-white dark:text-gray-200 md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
+                      @click="open = false"
+                      :href="link.path"
+                      target="_blank"
+                      >{{ link.title }}</a
+                    >
+                    <a
+                      v-else
+                      class="block px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg dark:bg-transparent dark:hover:bg-gray-600 dark-:focus:bg-gray-600 dark:focus:text-white dark:hover:text-white dark:text-gray-200 md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
+                      @click="open = false"
+                      :href="link.path"
+                      >{{ link.title }}</a
+                    >
+                  </div>
                 </div>
               </div>
             </div>
 
+            <g-link
+              v-else-if="element.external"
+              :to="element.link"
+              target="_blank"
+              class="animated-link"
+              >{{ element.name }}</g-link
+            >
             <g-link v-else :to="element.link" class="animated-link">{{
               element.name
             }}</g-link>

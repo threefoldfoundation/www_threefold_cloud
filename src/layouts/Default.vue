@@ -46,6 +46,7 @@ query {
       submenu {
         title
         path
+        external
       }
     }
     social{
