@@ -102,7 +102,7 @@ module.exports = function(api) {
 
   api.createPages(async ({ graphql, createPage }) => {
     const { data } = await graphql(`{
-      allProjectTag {
+      allProjectTag(filter: { title: {in: ["farming"]}}) {
         edges {
           node {
             id
@@ -171,5 +171,36 @@ module.exports = function(api) {
       })
     })
   })
+
+  api.createPages(({ createPage }) => {
+    createPage({
+        path: '/partners',
+        component: './src/templates/Partners.vue',
+        context: {
+            private: private
+        }
+    })
+})
+
+api.createPages(({ createPage }) => {
+    createPage({
+        path: '/team',
+        component: './src/templates/Team.vue',
+        context: {
+            private: private
+        }
+    })
+});
+
+api.createPages(({ createPage }) => {
+  createPage({
+      path: '/search',
+      component: './src/templates/Search.vue',
+      context: {
+          private: private
+      }
+  })
+});
+  
     
 }

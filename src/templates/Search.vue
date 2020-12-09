@@ -30,7 +30,7 @@
 <page-query>
 
 query ($private: Int){
-  projects: allProject (filter: { private: { ne: $private }}){   
+  projects: allProject (filter: { private: { ne: $private }, tags: { id: {in: ["farming"]}}}){   
     edges {
         node {
                 id

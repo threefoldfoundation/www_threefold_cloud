@@ -16,7 +16,7 @@
 
 <page-query>
 query ($private: Int){
-  entries: allProject (sortBy: "rank", order: DESC, filter: { private: { ne: $private }}){
+  entries: allProject (sortBy: "rank", order: DESC, filter: { private: { ne: $private }, tags: { id: {in: ["farming"]}}}){
     totalCount
     edges {
       node {
@@ -39,7 +39,7 @@ query ($private: Int){
     }
   }
   
-  tags: allProjectTag{
+  tags: allProjectTag (filter: { title: {in: ["farming"]}}) {
      edges{
       node{
         id
