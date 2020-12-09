@@ -159,7 +159,6 @@ button:focus {
             @apply text-xl;
         }
     }
-
     // .news>.flex-post:nth-child(9n+1),
     // .news>.flex-post:nth-child(9n+2) {
     //     // @apply flex-100;
@@ -272,11 +271,9 @@ body[data-theme="dark"] {
     input[type="text"] {
         background-color: #191b1f;
     }
-    .bg-white {
-        background-color: #191b1f;
-    }
+    .bg-white,
     .bg-gray-100 {
-        @apply bg-gray-600;
+        background-color: #191b1f;
     }
     .post-card-excerpt {
         @apply text-gray-500;
