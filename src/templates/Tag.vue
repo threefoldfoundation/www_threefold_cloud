@@ -1,6 +1,6 @@
 <template>
   <Layout :hideHeader="true" :disableScroll="true">
-    <TagFilterHeader :tags="tagTitles" :selected="title" />
+    <TagFilterHeader :tags="tagTitles" :selected="title" v-if="tagTitles.length > 2"/>
     <div class="container sm:px-0 mx-auto overflow-x-hidden pt-12">
       <div class="mx-4 sm:mx-0">
         <h1 class="pb-0 mb-0 text-5xl font-medium capitalize">
