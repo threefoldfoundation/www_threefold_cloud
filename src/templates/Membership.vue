@@ -59,7 +59,7 @@
       }
     }  
 
-    allMembership(filter: {title: {in: ["grid", "cloud"]}}){
+    allMembership(filter: {title: {in: ["tech"]}}){
      edges{
       node{
         id
