@@ -5,7 +5,7 @@
 copy the folling in your terminal
 
 ```bash
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/threefoldfoundation/www_threefold_farming/master/tools/install.sh)"
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/threefoldfoundation/www_threefold_cloud/master/tools/install.sh)"
 ```
 
 ### 2. Run

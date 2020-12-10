@@ -1,6 +1,6 @@
 <template>
   <Layout>
-    <TagFilterHeader :tags="tags" selected="all" />
+    <TagFilterHeader :tags="tags" selected="all" v-if="$page.tags.edges.length > 1"/>
     <div class="container mt-8 sm:pxi-0 mx-auto overflow-x-hidden">
       <div class="flex flex-wrap with-large pt-8 pb-8 mx-4 sm:-mx-4">
         <PostListItem
@@ -16,7 +16,7 @@
 
 <page-query>
 query ($private: Int){
-  entries: allProject (sortBy: "rank", order: DESC, filter: { private: { ne: $private }, tags: { id: {in: ["farming"]}}}){
+  entries: allProject (sortBy: "rank", order: DESC, filter: { private: { ne: $private }, tags: { id: {in: ["grid", "cloud"]}}}){
     totalCount
     edges {
       node {
@@ -39,7 +39,7 @@ query ($private: Int){
     }
   }
   
-  tags: allProjectTag (filter: { title: {in: ["farming"]}}) {
+  tags: allProjectTag (filter: { title: {in: ["grid", "cloud"]}}) {
      edges{
       node{
         id

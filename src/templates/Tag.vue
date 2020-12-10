@@ -125,7 +125,7 @@
       }
     }
 
-    allProjectTag(filter: { title: {in: ["farming"]}}){
+    allProjectTag(filter: { title: {in: ["grid", "cloud"]}}){
      edges{
       node{
         id
