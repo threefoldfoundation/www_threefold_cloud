@@ -1,12 +1,15 @@
 <template>
   <Layout :hideHeader="true" :disableScroll="true">
-    <div class="container sm:pxi-0 mx-auto overflow-x-hidden pt-24">
+    <TagFilterHeader :tags="tagTitles" :selected="title" />
+    <div class="container sm:px-0 mx-auto overflow-x-hidden pt-12">
       <div class="mx-4 sm:mx-0">
-        <h1 class="pb-0 mb-0 text-5xl font-medium">{{ tags.title }}</h1>
+        <h1 class="pb-0 mb-0 text-5xl font-medium capitalize">
+          {{ tags.title }}
+        </h1>
         <p class="text-gray-700 text-xl">
-          <span
-            class="self-center"
-          >{{ tags.belongsTo.totalCount }} {{item}}</span>
+          <span class="self-center"
+            >{{ tags.belongsTo.totalCount }} {{ item }}</span
+          >
         </p>
       </div>
 
@@ -46,7 +49,7 @@
         }
         edges {
           node {
-            ... on Threefold_Project {
+            ... on Project {
               title
               excerpt
               image(width:800)
@@ -71,7 +74,7 @@
         }
         edges {
           node {
-            ... on Threefold_News {
+            ... on News {
               title
               excerpt
               image(width:800)
@@ -102,7 +105,7 @@
         }
         edges {
           node {
-            ... on Threefold_Blog {
+            ... on Blog {
               title
               excerpt
               image(width:800)
@@ -120,7 +123,37 @@
           }
         }
       }
-    }  
+    }
+
+    allProjectTag(filter: { title: {in: ["farming"]}}){
+     edges{
+      node{
+        id
+        title
+        path
+      }
+    }
+    }
+
+    allNewsTag{
+     edges{
+      node{
+        id
+        title
+        path
+      }
+    }
+    }
+
+    allBlogTag{
+     edges{
+      node{
+        id
+        title
+        path
+      }
+    }
+} 
 
   }
 </page-query>
@@ -128,43 +161,72 @@
 <script>
 import PostListItem from "~/components/custom/Cards/PostListItem.vue";
 import Pagination from "~/components/custom/Pagination.vue";
+import TagFilterHeader from "~/components/custom/TagFilterHeader.vue";
 
 export default {
   components: {
     Pagination,
-    PostListItem
+    PostListItem,
+    TagFilterHeader,
   },
 
-  computed:{
-    tags(){
-      return this.$page.projectTag || this.$page.newsTag || this.$page.blogTag
+  computed: {
+    title() {
+      return this.tags.title;
     },
-    item(){
-      var plural = this.tags.belongsTo.totalCount > 0
-      if(this.$page.projectTag){
-        if (plural)
-          return "projects"
-        return "project"
+    tagTitles() {
+      var path = "";
+      var tags = null;
+      if (this.$page.projectTag) {
+        path = "/partners";
+        tags = this.$page.allProjectTag;
+      } else if (this.$page.newsTag) {
+        path = "/news";
+        tags = this.$page.allNewsTag;
+      } else if (this.$page.blogTag) {
+        path = "/blog";
+        tags = this.$page.allBlogTag;
       }
 
-      if(this.$page.newsTag){
-        if (plural)
-          return "posts"
-        return "post"
+      var res = [{ title: "All", path: path }];
+      tags.edges.forEach((edge) =>
+        res.push({ title: edge.node.title, path: edge.node.path })
+      );
+      return res;
+    },
+
+    tags() {
+      return this.$page.projectTag || this.$page.newsTag || this.$page.blogTag;
+    },
+    item() {
+      var plural = this.tags.belongsTo.totalCount > 0;
+      if (this.$page.projectTag) {
+        if (plural) return "projects";
+        return "project";
       }
 
-      if(this.$page.blogTag){
-        if (plural)
-          return "posts"
-        return "post"
+      if (this.$page.newsTag) {
+        if (plural) return "posts";
+        return "post";
       }
-    }
+
+      if (this.$page.blogTag) {
+        if (plural) return "posts";
+        return "post";
+      }
+    },
   },
- 
+  mounted() {
+    document.addEventListener("click", this.close);
+  },
+  beforeDestroy() {
+    document.removeEventListener("click", this.close);
+  },
+
   metaInfo() {
     return {
-      title: this.tags.title
+      title: this.tags.title,
     };
-  }
+  },
 };
 </script>

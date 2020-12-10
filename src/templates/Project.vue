@@ -50,11 +50,11 @@
             </section>
             <section class="post-tags container mx-auto relative py-5">
               <g-link
-                v-for="tag in $page.project.tags"
-                :key="tag.id"
-                :to="tag.path"
+                v-for="edge in $page.tags.edges"
+                :key="edge.node.id"
+                :to="edge.node.path"
                 class="text-xs bg-transparent hover:text-blue-700 py-2 px-4 mr-2 border hover:border-blue-500 border-gray-600 text-gray-700 rounded-full"
-                >{{ tag.title }}</g-link
+                >{{ edge.node.title }}</g-link
               >
             </section>
           </div>
@@ -118,7 +118,7 @@
         }
         edges {
           node {
-            ... on Threefold_Person {
+            ... on Person {
               id
               name
               image(width:64, height:64, fit:inside)
@@ -135,39 +135,28 @@
         }
       }
     }  
+
+    tags: allProjectTag (filter: { title: {in: ["farming"]}}) {
+     edges{
+      node{
+        id
+        title
+        path
+      }
   }
+  }
+
+  
+}
+
 </page-query>
 
 <script>
 import PostListItem from "~/components/custom/Cards/PostListItem.vue";
 import Pagination from "~/components/custom/Pagination.vue";
 
-function get_img(img){
-    img.src = "https://data.threefold.io/" + img.src
-    for(var i=0; i < img.srcset.length; i++){
-      img.srcset[i] = "https://data.threefold.io/" + img.srcset[i]
-    }
-  return img
-}
 
 export default {
-  // fix remote images
-  mounted: function () {
-    if(this.$page.project.image.src){
-      this.$page.project.image = get_img(this.$page.project.image )
-    }
-
-     if(this.$page.project.logo.src){
-      this.$page.project.logo = get_img(this.$page.project.logo )
-    }
-
-    if(this.$page.project.members){
-        for(var i=0; i < this.$page.project.members.length; i++){
-            this.$page.project.members[i].image = get_img(this.$page.project.members[i].image)
-        }
-    }
-      
-  },
   components: {
     Pagination,
     PostListItem,

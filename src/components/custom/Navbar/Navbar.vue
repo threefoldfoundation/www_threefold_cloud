@@ -59,10 +59,10 @@
             </li>
             <li
               :key="element.name"
-              v-for="(element, index) in social"
+              v-for="(element, index) in navigation.social"
               class="hover:text-white sm:block"
               v-bind:class="{
-                'mr-6': index != Object.keys(social).length - 1,
+                'mr-6': index != Object.keys(navigation.social).length - 1,
               }"
             >
               <span class="text-sm">
@@ -89,9 +89,9 @@
           <li
             class="py-1"
             :key="element.name"
-            v-for="(element, index) in navLinks"
+            v-for="(element, index) in navigation.navLinks"
             :class="{
-              'mr-2': index != Object.keys(navLinks).length - 1,
+              'mr-2': index != Object.keys(navigation.navLinks).length - 1,
             }"
           >
             <div
@@ -135,18 +135,34 @@
                   v-if="open"
                   class="px-2 py-2 bg-white rounded-md shadow dark:bg-gray-700"
                 >
-                  <g-link
-                    v-for="link in element.submenu"
-                    :key="link.title"
-                    class="block px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg dark:bg-transparent dark:hover:bg-gray-600 dark-:focus:bg-gray-600 dark:focus:text-white dark:hover:text-white dark:text-gray-200 md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
-                    @click="open = false"
-                    :to="link.path"
-                    >{{ link.title }}</g-link
-                  >
+                  <div v-for="link in element.submenu" :key="link.title">
+                    <a
+                      v-if="link.external"
+                      class="block px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg dark:bg-transparent dark:hover:bg-gray-600 dark-:focus:bg-gray-600 dark:focus:text-white dark:hover:text-white dark:text-gray-200 md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
+                      @click="open = false"
+                      :href="link.path"
+                      target="_blank"
+                      >{{ link.title }}</a
+                    >
+                    <a
+                      v-else
+                      class="block px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg dark:bg-transparent dark:hover:bg-gray-600 dark-:focus:bg-gray-600 dark:focus:text-white dark:hover:text-white dark:text-gray-200 md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
+                      @click="open = false"
+                      :href="link.path"
+                      >{{ link.title }}</a
+                    >
+                  </div>
                 </div>
               </div>
             </div>
 
+            <g-link
+              v-else-if="element.external"
+              :to="element.link"
+              target="_blank"
+              class="animated-link"
+              >{{ element.name }}</g-link
+            >
             <g-link v-else :to="element.link" class="animated-link">{{
               element.name
             }}</g-link>
@@ -186,10 +202,10 @@
           </li>
           <li
             :key="element.name"
-            v-for="(element, index) in social"
+            v-for="(element, index) in navigation.social"
             class="sm:block"
             v-bind:class="{
-              'mr-6': index != Object.keys(social).length - 1,
+              'mr-6': index != Object.keys(navigation.social).length - 1,
             }"
           >
             <span class="text-sm">
@@ -228,6 +244,9 @@ export default {
     theme: {
       type: String,
     },
+    navigation: {
+      type: Object,
+    },
   },
   data: function () {
     return {
@@ -237,55 +256,6 @@ export default {
       search: "",
       open: false,
       active: null,
-      navLinks: [
-        {
-          name: "Why",
-          link: "/why",
-          external: false,
-          expandable: false,
-        },
-        {
-          name: "Learn",
-          link: "/learn",
-          external: false,
-          expandable: true,
-          submenu: [
-            { title: "Solution", path: "/solution" },
-            { title: "Participate", path: "/participate" },
-            { title: "Token", path: "/token" },
-            { title: "Future", path: "/future" },
-            { title: "Knowledge", path: "https://wiki.threefold.io/#/what_is_farming" },
-          ],
-        },
-        {
-          name: "People",
-          link: "/people",
-          external: false,
-          expandable: true,
-          submenu: [
-            { title: "Team", path: "/team" },
-            { title: "Partners", path: "/partners" },
-          ],
-        },
-        {
-          name: "More",
-          link: "/more",
-          external: false,
-          expandable: true,
-          submenu: [
-            { title: "Newsroom", path: "/news" },
-            { title: "Blog", path: "/blog" },
-            { title: "Community", path: "https://forums.threefold.io/" },
-            { title: "Contact", path: "/contact" },
-          ],
-        },
-      ],
-      social: [
-        {
-          icon: "linkedin",
-          link: "https://www.linkedin.com/company/threefold-foundation/",
-        },
-      ],
     };
   },
   methods: {
@@ -302,6 +272,11 @@ export default {
       this.active = index;
       this.open = !this.open;
     },
+    close(e) {
+      if (!this.$el.contains(e.target)) {
+        this.open = false;
+      }
+    },
   },
 
   mounted() {
@@ -310,6 +285,10 @@ export default {
       this.setHeaderHeight(height);
       window.addEventListener("scroll", this.updateScroll);
     }
+    document.addEventListener("click", this.close);
+  },
+  beforeDestroy() {
+    document.removeEventListener("click", this.close);
   },
 };
 </script>

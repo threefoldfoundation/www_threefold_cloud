@@ -5,7 +5,7 @@
   >
     <g-link :to="path" class="post-card-image-link">
       <g-image
-        :src="img"
+        :src="record.image"
         :alt="record.title"
         class="post-card-image"
       ></g-image>
@@ -18,7 +18,7 @@
           class="flex flex-wrap post-tags container mx-auto relative py-1"
         >
           <g-link
-            v-for="membership in record.memberships"
+            v-for="membership in memberships"
             :key="membership.id"
             :to="membership.path"
             class="text-xs bg-transparent hover:text-blue-700 py-1 px-2 mr-1 border hover:border-blue-500 border-gray-600 text-gray-700 rounded-full mb-2"
@@ -33,7 +33,7 @@
             <div class="flex justify-between items-center">
               <ul class="list-none flex author-list m-0">
                 <li
-                  v-for="author in authors"
+                  v-for="author in record.authors"
                   :key="author.id"
                   class="author-list-item"
                 >
@@ -82,15 +82,6 @@
 </template>
 
 <script>
-function get_img(img){
-    if(img){
-      img.src = "https://data.threefold.io/" + img.src
-      for(var i=0; i < img.srcset.length; i++){
-        img.srcset[i] = "https://data.threefold.io/" + img.srcset[i]
-      }
-    }
-    return img
-}
 
 export default {
   
@@ -105,24 +96,26 @@ export default {
   },
 
   computed: {
-    img(){
-      return get_img(this.record.image )
-    },
-
-    authors(){
-      if(this.record.authors){
-        for(var i=0; i < this.record.authors.length; i++){
-              this.record.authors[i].image = get_img(this.record.authors[i].image)
-        }
-        return this.record.authors
-      }
-    },
-
     path(){
        if (this.pathPrefix)
           return this.pathPrefix + "/" + this.record.id
         return this.record.path
+    },
+
+    memberships(){
+      var res = []
+      var memberships = this.record.memberships
+      if (!memberships){
+        return []
+      }
+      memberships.forEach(function(membership){
+        if(["foundation", "tech"].includes(membership.title)){
+          res.push(membership)
+        }
+      });
+      return res
     }
+
   },
 
   methods: {

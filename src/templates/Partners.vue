@@ -1,6 +1,7 @@
 <template>
   <Layout>
-    <div class="container sm:pxi-0 mx-auto overflow-x-hidden">
+    <TagFilterHeader :tags="tags" selected="all" />
+    <div class="container mt-8 sm:pxi-0 mx-auto overflow-x-hidden">
       <div class="flex flex-wrap with-large pt-8 pb-8 mx-4 sm:-mx-4">
         <PostListItem
           v-for="partner in $page.entries.edges"
@@ -15,7 +16,7 @@
 
 <page-query>
 query ($private: Int){
-  entries: allProject (sortBy: "rank", order: DESC, filter: { private: { ne: $private }}){
+  entries: allProject (sortBy: "rank", order: DESC, filter: { private: { ne: $private }, tags: { id: {in: ["farming"]}}}){
     totalCount
     edges {
       node {
@@ -37,15 +38,37 @@ query ($private: Int){
       }
     }
   }
+  
+  tags: allProjectTag (filter: { title: {in: ["farming"]}}) {
+     edges{
+      node{
+        id
+        title
+        path
+      }
+  }
+}
+
 }
 </page-query>
 
 <script>
 import PostListItem from "~/components/custom/Cards/PostListItem.vue";
+import TagFilterHeader from "~/components/custom/TagFilterHeader.vue";
 
 export default {
   components: {
     PostListItem,
+    TagFilterHeader,
+  },
+  computed: {
+    tags() {
+      var res = [{ title: "All", path: "/partners" }];
+      this.$page.tags.edges.forEach((edge) =>
+        res.push({ title: edge.node.title, path: edge.node.path })
+      );
+      return res;
+    },
   },
 };
 </script>

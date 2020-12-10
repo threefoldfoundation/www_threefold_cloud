@@ -16,7 +16,7 @@
             <div class="flex justify-between items-center">
               <ul class="list-none flex author-list m-0">
                 <li
-                  v-for="author in authors"
+                  v-for="author in $page.news.authors"
                   :key="author.id"
                   class="author-list-item"
                 >
@@ -65,7 +65,7 @@
         </section>
       </div>
       <section class="post-image mx-auto w-full">
-        <g-image :src="news_img"></g-image>
+        <g-image :src="$page.news.image"></g-image>
       </section>
 
       <div class="">
@@ -172,13 +172,6 @@
 <script>
 import PostListItem from "~/components/custom/Cards/PostListItem.vue";
 
-function get_img(img){
-    img.src = "https://data.threefold.io/" + img.src
-    for(var i=0; i < img.srcset.length; i++){
-      img.srcset[i] = "https://data.threefold.io/" + img.srcset[i]
-    }
-  return img
-}
 
 export default {
   components: {
@@ -189,19 +182,6 @@ export default {
       title: this.$page.news.title,
     };
   },
-
-    computed: {
-    news_img(){
-      return get_img(this.$page.news.image )
-    },
-
-    authors(){
-      for(var i=0; i < this.$page.news.authors.length; i++){
-            this.$page.news.authors[i].image = get_img(this.$page.news.authors[i].image)
-      }
-      return this.$page.news.authors
-    },
-  }
 };
 </script>
 

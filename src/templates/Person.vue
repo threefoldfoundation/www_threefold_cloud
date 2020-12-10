@@ -4,7 +4,7 @@
       <div class="flex flex-row flex-wrap items-center mx-4 sm:mx-0">
         <div class="w-full md:w-1/6 mx-auto sm:mx-0">
           <g-image
-            :src="img"
+            :src="$page.person.image"
             class="rounded-full bg-gray-200 w-32 h-32 border-4 border-gray-400 mx-auto md:mx-0"
           ></g-image>
         </div>
@@ -114,7 +114,7 @@
         }
         edges {
           node {
-            ... on Threefold_Blog {
+            ... on Blog {
               id
               title
               excerpt
@@ -130,7 +130,7 @@
                 path
               }
             },
-            ... on Threefold_Project {
+            ... on Project {
               id
               title
               excerpt
@@ -142,21 +142,36 @@
           }
         }
       }
-    }  
+    }
+
+    projects: allProject (sortBy: "rank", order: DESC, filter: {tags: { id: {in: ["farming"]}}}){
+    totalCount
+    edges {
+      node {
+        id
+        title
+        path
+        members {
+          id
+          name
+          image(width:64, height:64, fit:inside)
+          path
+        },
+        rank
+        linkedin
+        excerpt
+        image(width:800)
+        timeToRead
+        logo
+      }
+    }
+  }
   }
 </page-query>
 
 <script>
 import PostListItem from "~/components/custom/Cards/PostListItem.vue";
 import Pagination from "~/components/custom/Pagination.vue";
-
-function get_img(img){
-    img.src = "https://data.threefold.io/" + img.src
-    for(var i=0; i < img.srcset.length; i++){
-      img.srcset[i] = "https://data.threefold.io/" + img.srcset[i]
-    }
-  return img
-}
 
 export default {
   components: {
@@ -168,15 +183,17 @@ export default {
       var pluralize = require("pluralize");
       return pluralize("post", this.$page.person.belongsTo.totalCount);
     },
+
     projects(){
-      for(var i=0; i < this.$page.person.projects.length; i++){
-              this.$page.person.projects[i].path = "/partners/" +  this.$page.person.projects[i].id
-              this.$page.person.projects[i].logo = get_img(this.$page.person.projects[i].logo)
-      }
-      return this.$page.person.projects
-    },
-    img(){
-      return get_img(this.$page.person.image )
+      var all = []
+      this.$page.projects.edges.forEach((edge) => all.push(edge.node.title))
+      var res = []
+      this.$page.person.projects.forEach(function(project){
+        if (all.includes(project.title)){
+          res.push(project)
+        }
+      });
+      return res
     }
   },
   metaInfo() {

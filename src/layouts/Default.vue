@@ -1,14 +1,15 @@
 <template>
   <div class="container mx-auto">
-    <NavBar @setTheme="setTheme" :theme="this.theme" />
-    <slot />
-    <Footer
-      desc="Making the world a better place through constructing elegant
-            hierarchies."
-      :footerLinks="footerLinks"
+    <NavBar
+      :navigation="$static.navigation"
+      @setTheme="setTheme"
+      :theme="this.theme"
     />
+    <slot />
+    <Footer :record="$static.footer" />
   </div>
 </template>
+
 
 <script>
 import NavBar from "~/components/custom/Navbar/Navbar.vue";
@@ -21,45 +22,6 @@ export default {
   data() {
     return {
       theme: "light",
-
-      footerLinks: [
-        {
-          title: "solutions",
-          links: [
-            { name: "Marketing", link: "#" },
-            { name: "Marketing2", link: "#" },
-            { name: "Marketing3", link: "#" },
-            { name: "Marketing4", link: "#" },
-          ],
-        },
-        {
-          title: "Support",
-          links: [
-            { name: "Marketing", link: "#" },
-            { name: "Marketing2", link: "#" },
-            { name: "Marketing3", link: "#" },
-            { name: "Marketing4", link: "#" },
-          ],
-        },
-        {
-          title: "Company",
-          links: [
-            { name: "Marketing", link: "#" },
-            { name: "Marketing2", link: "#" },
-            { name: "Marketing3", link: "#" },
-            { name: "Marketing4", link: "#" },
-          ],
-        },
-        {
-          title: "Legal",
-          links: [
-            { name: "Marketing7", link: "#" },
-            { name: "Marketing8", link: "#" },
-            { name: "Marketing9", link: "#" },
-            { name: "Marketing4", link: "#" },
-          ],
-        },
-      ],
     };
   },
   methods: {
@@ -74,6 +36,40 @@ query {
   metadata {
     siteName
   }
+
+  navigation(id: "navigation"){
+    navLinks{
+      name
+      link
+      external
+      expandable
+      submenu {
+        title
+        path
+        external
+      }
+    }
+    social{
+      icon
+      link
+    }
+  }
+
+  footer(id: "footer"){
+      facebook
+      github
+      twitter
+      dribbble
+      instagram
+      description
+      items{
+        title
+        links{
+          name
+          link
+        }
+      }
+    }
 }
 </static-query>
 

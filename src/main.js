@@ -11,6 +11,8 @@ import { fas } from '@fortawesome/free-solid-svg-icons';
 import { fab } from '@fortawesome/free-brands-svg-icons'
 
 import '@fortawesome/fontawesome-svg-core/styles.css';
+require("gridsome-plugin-remark-prismjs-all/themes/night-owl.css");
+require("prismjs/themes/prism-solarizedlight.css");
 
 config.autoAddCss = false;
 library.add(fas);
@@ -24,7 +26,4 @@ export default function(Vue, { router, head, isClient }) {
         defaultPlacement: 'top-end',
         defaultClass: 'bg-black text-xs px-2 leading-normal py-1 rounded absolute text-gray-400 max-w-xs mb-1'
     })
-
-    var VueMarkdown = require('vue-markdown');
-    Vue.use(VueMarkdown);
 }

@@ -16,7 +16,7 @@
             <div class="flex justify-between items-center">
               <ul class="list-none flex author-list m-0">
                 <li
-                  v-for="author in authors"
+                  v-for="author in $page.blog.authors"
                   :key="author.id"
                   class="author-list-item"
                 >
@@ -34,7 +34,7 @@
             <div class="pl-3 flex flex-col text-xs leading-none uppercase">
               <p>
                 <span
-                  v-for="(author, index) in authors"
+                  v-for="(author, index) in $page.blog.authors"
                   :key="author.id"
                 >
                   <g-link
@@ -43,7 +43,7 @@
                     class="hover:underline"
                     >{{ author.name }}</g-link
                   >
-                  <span v-if="index < authors.length - 1">,</span>
+                  <span v-if="index < $page.blog.authors.length - 1">,</span>
                 </span>
               </p>
               <p class="text-gray-700">
@@ -65,7 +65,7 @@
         </section>
       </div>
       <section class="post-image mx-auto w-full">
-        <g-image :src="blog_img"></g-image>
+        <g-image :src="$page.blog.image"></g-image>
       </section>
 
       <div class="">
@@ -176,13 +176,6 @@
 <script>
 import PostListItem from "~/components/custom/Cards/PostListItem.vue";
 
-function get_img(img){
-    img.src = "https://data.threefold.io/" + img.src
-    for(var i=0; i < img.srcset.length; i++){
-      img.srcset[i] = "https://data.threefold.io/" + img.srcset[i]
-    }
-  return img
-}
 
 export default {
   components: {
@@ -194,18 +187,6 @@ export default {
     };
   },
 
-  computed: {
-    blog_img(){
-      return get_img(this.$page.blog.image )
-    },
-
-    authors(){
-      for(var i=0; i < this.$page.blog.authors.length; i++){
-            this.$page.blog.authors[i].image = get_img(this.$page.blog.authors[i].image)
-      }
-      return this.$page.blog.authors
-    },
-  },
 };
 </script>
 

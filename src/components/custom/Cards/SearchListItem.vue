@@ -1,11 +1,11 @@
 <template>
-  <div
+  <div v-if="card"
     class="flex search-post px-0 sm:px-4 pb-8 mb-8"
     v-bind:class="{ 'no-border': !border }"
   >
     <g-link :to="record.path" class="post-card-image-link">
       <g-image
-        :src="img"
+        :src="record.image"
         :alt="record.title"
         class="post-card-image"
       ></g-image>
@@ -31,7 +31,7 @@
             <div class="flex justify-between items-center">
               <ul class="list-none flex author-list m-0">
                 <li
-                  v-for="author in authors"
+                  v-for="author in record.authors"
                   :key="author.id"
                   class="author-list-item"
                 >
@@ -77,18 +77,23 @@
       </div>
     </div>
   </div>
+
+   <div v-else
+    class="flex search-post px-0 sm:px-4 pb-8 mb-8"
+    v-bind:class="{ 'no-border': !border }"
+  >
+
+  <div class="p-5">
+      <g-link :to="record.path">
+        <h2 class="post-card-title mt-3">{{ record.title}}</h2>
+        <p class="post-card-excerpt" v-if="record.excerpt" >{{ record.excerpt.substring(100) }}</p>
+      </g-link>
+      </div>
+  </div>
 </template>
 
 <script>
-function get_img(img){
-    if(img){
-      img.src = "https://data.threefold.io/" + img.src
-      for(var i=0; i < img.srcset.length; i++){
-        img.srcset[i] = "https://data.threefold.io/" + img.srcset[i]
-      }
-    }
-    return img
-}
+
 export default {
   props: {
     record: {},
@@ -97,20 +102,8 @@ export default {
       default: true,
     },
   },
-
   computed: {
-    img(){
-      return get_img(this.record.image )
-    },
-
-    authors(){
-      if(this.record.authors){
-        for(var i=0; i < this.record.authors.length; i++){
-              this.record.authors[i].image = get_img(this.record.authors[i].image)
-        }
-        return this.record.authors
-      }
-    },
+    card(){return this.record.__typename != "MarkdownPage"},
 
     path(){
        if (this.pathPrefix)

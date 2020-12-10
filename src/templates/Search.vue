@@ -30,7 +30,7 @@
 <page-query>
 
 query ($private: Int){
-  projects: allProject (filter: { private: { ne: $private }}){   
+  projects: allProject (filter: { private: { ne: $private }, tags: { id: {in: ["farming"]}}}){   
     edges {
         node {
                 id
@@ -62,7 +62,7 @@ query ($private: Int){
     }
   }
 
-  people: allPerson(filter: { private: { ne: $private }}) {   
+  people: allPerson(filter: { private: { ne: $private }, memberships: { id: {in: ["foundation", "tech"]}}}) {   
      edges {
       node {
         id
@@ -106,6 +106,18 @@ query ($private: Int){
     }
   }
 
+  markdowns: allMarkdownPage{
+    edges{
+      node{
+        __typename
+        header_title
+        header_excerpt
+        path
+        title
+        excerpt
+      }      
+    }
+  }
 }
 
 </page-query>
@@ -125,8 +137,8 @@ export default {
   computed: {
     searchResults() {
       const searchTerm = this.q;
-      if (searchTerm.length < 3) return [];
-      var searchRes = this.$search.search({ query: searchTerm, limit: 5 });
+      if (!searchTerm || searchTerm.length < 3) return [];
+      var searchRes = this.$search.search({ query: searchTerm, limit: 100 });
       var result = [];
       for (var i = 0; i < searchRes.length; i++) {
         var item = searchRes[i];
@@ -157,6 +169,12 @@ export default {
       var item = this.$page.blogs.edges[i];
       this.objects[item.node.path] = item.node;
     }
+
+    for (var i = 0; i < this.$page.markdowns.edges.length; i++) {
+      var item = this.$page.markdowns.edges[i];
+      this.objects[item.node.path] = item.node;
+    }
+
     this.loading = false;
   },
   components: {
