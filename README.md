@@ -1,4 +1,4 @@
-# Default starter for Threefold Webstack
+# Default starter for Threefold Cloud
 
 ### 1. Install dependencies
 
@@ -11,8 +11,7 @@ copy the folling in your terminal
 ### 2. Run
 
 ```
-cd ~/code/github/threefoldfoundation/www_threefold_farming
-gridsome develop
+./run.sh
 ```
 
 to start a local dev server at http://localhost:8080
