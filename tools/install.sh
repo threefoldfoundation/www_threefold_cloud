@@ -12,13 +12,13 @@ fi
 
 
 # GET REQUIRED REPOSITORIES
-ct git pull -u git@github.com:threefoldfoundation/www_threefold_farming.git
+ct git pull -u git@github.com:threefoldfoundation/www_threefold_cloud.git
 ct git pull -u git@github.com:threefoldfoundation/data_threefold.git
 
-ln -s ~/code/github/threefoldfoundation/data_threefold/content/blog ~/code/github/threefoldfoundation/www_threefold_farming/content/blog
-ln -s ~/code/github/threefoldfoundation/data_threefold/content/person ~/code/github/threefoldfoundation/www_threefold_farming/content/person
-ln -s ~/code/github/threefoldfoundation/data_threefold/content/news ~/code/github/threefoldfoundation/www_threefold_farming/content/news
-ln -s ~/code/github/threefoldfoundation/data_threefold/content/project ~/code/github/threefoldfoundation/www_threefold_farming/content/project
+#ln -s ~/code/github/threefoldfoundation/data_threefold/content/blog ~/code/github/threefoldfoundation/www_threefold_farming/content/blog
+#ln -s ~/code/github/threefoldfoundation/data_threefold/content/person ~/code/github/threefoldfoundation/www_threefold_farming/content/person
+#ln -s ~/code/github/threefoldfoundation/data_threefold/content/news ~/code/github/threefoldfoundation/www_threefold_farming/content/news
+#ln -s ~/code/github/threefoldfoundation/data_threefold/content/project ~/code/github/threefoldfoundation/www_threefold_farming/content/project
 
 # GO INTO CODE DIERCTORY
 set -e
@@ -37,8 +37,8 @@ fi
 set +e
 npm install
 
-# RUN THE WEBSITE
-gridsome develop
+## RUN THE WEBSITE
+#gridsome develop
 
 #to call this
 #/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/threefoldfoundation/www_threefold_farming/master/tools/install.sh)"
