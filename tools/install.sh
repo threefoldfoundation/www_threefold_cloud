@@ -5,7 +5,7 @@ export NAME=threefold_cloud
 
 # INSTALL CRYSTAL TOOLS
 
-if [[ "OSTYPE" == "linux-gnu"* ]]; then 
+if [[ "$OSTYPE" == "linux-gnu"* ]]; then 
     sudo /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/crystaluniverse/crystaltools/master/tools/install.sh)"
     sudo chmod 777 /usr/local/bin/ct
 elif [[ "OSTYPE" == "darwin"* ]]; then
@@ -26,7 +26,7 @@ rm -f yarn.lock
 rm -rf node_modules
 rm -rf .cache
 
-if [[ "OSTYPE" == "linux-gnu"* ]]; then
+if [[ "$OSTYPE" == "linux-gnu"* ]]; then
     sudo npm install --global @gridsome/cli
  elif [[ "OSTYPE" == "darwin"* ]]; then
      npm install --global @gridsome/cli
@@ -36,5 +36,3 @@ npm install
 
 source run.sh
 
-#to call this
-#/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/threefoldfoundation/www_threefold_farming/master/tools/install.sh)"
