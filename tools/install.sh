@@ -26,13 +26,22 @@ rm -f yarn.lock
 rm -rf node_modules
 rm -rf .cache
 
+export NVM_DIR="$HOME/nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+nvm use --lts
+
 if [[ "$OSTYPE" == "linux-gnu"* ]]; then
     sudo npm install --global @gridsome/cli
  elif [[ "OSTYPE" == "darwin"* ]]; then
-     npm install --global @gridsome/cli
+    npm install --global @gridsome/cli
 fi
 set +e
-npm install
+npm install --global
+
+mkdir -p node_modules
 
 source run.sh
+
 
