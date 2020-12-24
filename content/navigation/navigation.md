@@ -57,6 +57,6 @@ navLinks:
         path: /contact
 
 social:
-  - icon: linkedin
-    link: https://www.linkedin.com/company/threefold-foundation/
+  - icon: telegram-plane
+    link: https://t.me/threefoldnews
 ---

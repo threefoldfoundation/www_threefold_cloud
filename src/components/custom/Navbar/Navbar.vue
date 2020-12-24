@@ -65,7 +65,7 @@
                 'mr-6': index != Object.keys(navigation.social).length - 1,
               }"
             >
-              <span class="text-sm">
+              <span class="telegram_icon">
                 <a
                   :href="element.link"
                   target="_blank"
@@ -208,7 +208,7 @@
               'mr-6': index != Object.keys(navigation.social).length - 1,
             }"
           >
-            <span class="text-sm">
+            <span class="telegram_icon">
               <a :href="element.link" target="_blank" rel="noopener noreferrer">
                 <font-awesome :icon="['fab', element.icon]" />
               </a>
