@@ -23,7 +23,15 @@
         :card="card"
       />
 
-      <GetInTouch :contacts="$page.markdownPage.contactData" v-if="$page.markdownPage.contactData.length > 0"/>
+      <GetInTouch
+        :contacts="$page.markdownPage.contactData"
+        v-if="$page.markdownPage.contactData.length > 0"
+      />
+
+      <WithComparisonTable
+        v-if="$page.markdownPage.plans"
+        :plans="$page.markdownPage.plans"
+      />
     </div>
   </Layout>
 </template>
@@ -60,6 +68,16 @@
          mail
          phone
        }
+       plans{
+         id
+         title
+         rows {
+           title
+           firstCol
+           secCol
+           thirdCol
+         }
+      }
     }
   }
 
@@ -70,6 +88,7 @@ import NewCard from "~/components/marketing/sections/cta-sections/NewCard.vue";
 import Header from "~/components/marketing/sections/cta-sections/Header.vue";
 import VerticalNav from "~/components/custom/Navbar/VerticalNav.vue";
 import GetInTouch from "~/components/custom/Navbar/Getintouch.vue";
+import WithComparisonTable from "~/components/marketing/sections/pricing/with_comparison_table.vue";
 
 export default {
   components: {
@@ -77,6 +96,7 @@ export default {
     Header,
     VerticalNav,
     GetInTouch,
+    WithComparisonTable,
   },
   metaInfo() {
     return {
