@@ -130,6 +130,16 @@
               <ul class="mt-4 space-y-4">
                 <li v-for="item in footerLink.links" :key="item.name">
                   <a
+                    v-if="item.link.includes('http')"
+                    target="_blank"
+                    :href="item.link"
+                    class="text-base leading-6 text-gray-500 hover:text-gray-900"
+                  >
+                    {{ item.name }}
+                  </a>
+
+                  <a
+                    v-else
                     :href="item.link"
                     class="text-base leading-6 text-gray-500 hover:text-gray-900"
                   >
