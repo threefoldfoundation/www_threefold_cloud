@@ -37,7 +37,7 @@
 <page-query>
 
 query{
-  entries: allBlog(sortBy: "created", order: DESC, filter: {category: { id: {in: ["farming"]}}}) {
+  entries: allBlog(sortBy: "created", order: DESC, filter: {category: { id: {in: ["cloud"]}}}) {
     totalCount
     pageInfo {
       totalPages

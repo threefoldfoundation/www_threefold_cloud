@@ -40,7 +40,7 @@
 
 <page-query>
 query{
-  entries: allNews(sortBy: "created", order: DESC, filter: {category: { id: {in: ["farming"]}}}) {
+  entries: allNews(sortBy: "created", order: DESC, filter: {category: { id: {in: ["cloud"]}}}) {
     totalCount
     pageInfo {
       totalPages
