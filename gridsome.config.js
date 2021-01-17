@@ -176,6 +176,14 @@ module.exports = {
                 path: './content/page/**/InTheNews/*.md',
             }
         },
+
+        {
+            use: '@gridsome/source-filesystem',
+            options: {
+                typeName: 'Plans',
+                path: './content/page/**/withComparisonTable/**/*.md',
+            }
+        },
         {
             use: '@gridsome/source-filesystem',
             options: {
@@ -209,7 +217,8 @@ module.exports = {
                     headerSolution2: 'SolutionsHeader',
                     headerSolution3: 'SolutionsHeader',
                     headerSolution4: 'SolutionsHeader',
-                    inTheNews: 'InTheNews'
+                    inTheNews: 'InTheNews',
+                    plans: 'Plans'
                 }
             }
         },
