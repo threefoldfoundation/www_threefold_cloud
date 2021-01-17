@@ -6,7 +6,10 @@
       :theme="this.theme"
     />
     <slot />
-    <Footer :record="$static.footer" />
+      <Footer 
+      :record="$static.footer"
+      @setTheme="setTheme"
+      :theme="this.theme" />
   </div>
 </template>
 
