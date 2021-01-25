@@ -15,8 +15,9 @@
       <VerticalNav
         :slides="$page.markdownPage.slides"
         v-if="$page.markdownPage.slides && $page.markdownPage.slides.length > 0"
-      />
+      /> 
       <div v-html="$page.markdownPage.content"></div>
+      
       <NewCard
         v-for="card in $page.markdownPage.cards"
         :key="card.id"

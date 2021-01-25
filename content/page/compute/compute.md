@@ -1,5 +1,5 @@
 ---
-id: why
+id: compute
 cards: [why1, why2, why3]
 header_title: 404 - The Internet is Broken
 header_image: ./header_404.png

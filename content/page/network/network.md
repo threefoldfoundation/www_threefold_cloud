@@ -1,5 +1,5 @@
 ---
-id: participate
+id: network
 title: participate
 ---
 
