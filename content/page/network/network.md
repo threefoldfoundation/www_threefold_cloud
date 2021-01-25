@@ -1,6 +1,9 @@
 ---
 id: network
-title: participate
+header_title: Network
+header_image: ./header.png
+header_altImg: ''
+header_excerpt: ''
 ---
 
 # TITLE

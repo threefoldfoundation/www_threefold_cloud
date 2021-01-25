@@ -12,22 +12,22 @@
         :altImg="$page.markdownPage.header_altImg"
         :excerpt="$page.markdownPage.header_excerpt"
       />
-      <VerticalNav
+      
+    <!--  <VerticalNav
         :slides="$page.markdownPage.slides"
         v-if="$page.markdownPage.slides && $page.markdownPage.slides.length > 0"
-      /> 
-      <div v-html="$page.markdownPage.content"></div>
-      
+      /> -->
+     
       <NewCard
         v-for="card in $page.markdownPage.cards"
         :key="card.id"
         :card="card"
       />
 
-      <GetInTouch
+      <!-- <GetInTouch
         :contacts="$page.markdownPage.contactData"
         v-if="$page.markdownPage.contactData.length > 0"
-      />
+      /> -->
 
       <WithComparisonTable
         v-if="$page.markdownPage.plans.length > 0"
@@ -47,13 +47,6 @@
         header_altImg
         header_title
         header_image
-        slides{
-          id
-          title
-          content
-          image
-          order
-        }
         cards{
           id
           title
@@ -63,12 +56,6 @@
           order
           excerpt
         }
-       contactData{
-         id
-         title
-         mail
-         phone
-       }
        plans{
          id
          title
@@ -150,3 +137,18 @@ export default {
   padding-left: 2.8em;
 }
 </style> >
+
+  <!--    slides{
+          id
+          title
+          content
+          image
+          order
+        }
+
+      contactData{
+         id
+         title
+         mail
+         phone
+       } -->

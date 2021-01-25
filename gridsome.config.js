@@ -32,13 +32,13 @@ module.exports = {
             }
         },
 
-        {
+       {
             use: '@gridsome/source-filesystem',
             options: {
                 typeName: 'Contact',
                 path: './content/page/**/contactData/**/*.md',
             }
-        },
+        }, 
 
         {
             use: '@gridsome/source-filesystem',
