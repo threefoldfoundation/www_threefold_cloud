@@ -109,7 +109,7 @@ export default {
         return [];
       }
       memberships.forEach(function (membership) {
-        if(["foundation", "tech", "cofounders"].includes(membership.title)){
+        if(["tech"].includes(membership.title)){
           res.push(membership);
         }
       });
