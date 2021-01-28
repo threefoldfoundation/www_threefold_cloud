@@ -6,7 +6,7 @@
       :theme="this.theme"
     />
     <slot />
-      <Footer 
+    <Footer 
       :record="$static.footer"
       @setTheme="setTheme"
       :theme="this.theme" />
@@ -81,7 +81,6 @@ body {
   font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto,
     "Helvetica Neue", Arial, sans-serif;
   margin: 0;
-  padding-top: 100px;
   line-height: 1.5;
 }
 

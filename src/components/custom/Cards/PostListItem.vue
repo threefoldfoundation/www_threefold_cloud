@@ -5,7 +5,7 @@
   >
     <g-link :to="path" class="post-card-image-link">
       <g-image
-        :src="record.image"
+        :src="img(record.image)"
         :alt="record.title"
         class="post-card-image"
       ></g-image>
@@ -13,7 +13,7 @@
     <div>
       <g-link :to="path">
         <h2 class="post-card-title mt-3">{{ record.title || record.name }}</h2>
-        <p class="post-card-excerpt">{{ record.excerpt }}</p>
+        <p class="post-card-excerpt text-gray-700">{{ record.excerpt }}</p>
         <section
           class="flex flex-wrap post-tags container mx-auto relative py-1"
         >
@@ -39,7 +39,7 @@
                 >
                   <g-link :to="author.path" v-tooltip="author.name">
                     <g-image
-                      :src="author.image"
+                      :src="img(author.image)"
                       :alt="author.name"
                       class="w-8 h-8 rounded-full bg-gray-200 border-2 border-white"
                     />
@@ -66,8 +66,11 @@
               </p>
             </div>
           </div>
-          <section class="post-tags container mx-auto relative py-3" v-if="displaytags()">
-            <g-link 
+          <section
+            class="post-tags container mx-auto relative py-3"
+            v-if="displaytags()"
+          >
+            <g-link
               v-for="tag in record.tags"
               :key="tag.id"
               :to="tag.path"
@@ -82,9 +85,7 @@
 </template>
 
 <script>
-
 export default {
-  
   props: {
     record: {},
     showtags: false,
@@ -96,34 +97,36 @@ export default {
   },
 
   computed: {
-    path(){
-       if (this.pathPrefix)
-          return this.pathPrefix + "/" + this.record.id
-        return this.record.path
+    path() {
+      if (this.pathPrefix) return this.pathPrefix + "/" + this.record.id;
+      return this.record.path;
     },
 
-    memberships(){
-      var res = []
-      var memberships = this.record.memberships
-      if (!memberships){
-        return []
+    memberships() {
+      var res = [];
+      var memberships = this.record.memberships;
+      if (!memberships) {
+        return [];
       }
-      memberships.forEach(function(membership){
-        if(["tech"].includes(membership.title)){
-          res.push(membership)
+      memberships.forEach(function (membership) {
+        if(["foundation", "tech", "cofounders"].includes(membership.title)){
+          res.push(membership);
         }
       });
-      return res
-    }
-
+      return res;
+    },
   },
-
   methods: {
-    displaytags(){
-      return this.showtags
-    }
-  }
-}
+    displaytags() {
+      return this.showtags;
+    },
+    img(image) {
+      if (!image) return "";
+      if (image.src) return image.src;
+      return image;
+    },
+  },
+};
 </script>
 
 <style scoped>

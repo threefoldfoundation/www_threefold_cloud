@@ -1,10 +1,10 @@
 ---
-id: home1
-title: The Environment Demands It
-image: ./card1.jpeg
-button: Read More on Our Blog
-link: ''
+id: home_card
+title: Introducing the 3Node
+image: ./home_card1.png
+button: Learn More
+link: /3node
 order: 1
-excerpt: Data centers are neither scalable nor efficient and consume up to 10% world’s electricity today. The huge constructions are almost always built to service current users even better, but fail to reach remote areas and emerging markets. The ThreeFold Grid uses up to 10 times less power to run infrastruce. The decentralized nature of the ThreeFold Grid allows for capacity to be put on the grid anywhere where there network infrastructure and stable power supply.
 ---
 
+Data is now considered the most valuable commodity on earth, outshining oil and gold. ThreeFold provides a new paradigm that allows anyone, like you, to participate in the Internet economy.

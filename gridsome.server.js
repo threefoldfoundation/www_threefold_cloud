@@ -102,7 +102,7 @@ module.exports = function(api) {
 
   api.createPages(async ({ graphql, createPage }) => {
     const { data } = await graphql(`{
-      allProjectTag(filter: { title: {in: ["grid", "cloud"]}}) {
+      allProjectTag(filter: { title: {in: ["farming"]}}) {
         edges {
           node {
             id

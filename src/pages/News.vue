@@ -32,15 +32,15 @@
         :currentPage="$page.entries.pageInfo.currentPage"
         :totalPages="$page.entries.pageInfo.totalPages"
         :maxVisibleButtons="5"
-        v-if="$page.entries.pageInfo.totalPages > 1"
+        v-if="$page.entries.pageInfo.totalPages > 1 && news.edges.length > 0"
       />
     </div>
   </Layout>
 </template>
 
 <page-query>
-query{
-  entries: allNews(sortBy: "created", order: DESC, filter: {category: { id: {in: ["cloud"]}}}) {
+query($page: Int){
+  entries: allNews(perPage: 10, page: $page, sortBy: "created", order: DESC, filter: {category: { id: {in: ["cloud"]}}}) @paginate{
     totalCount
     pageInfo {
       totalPages
@@ -208,7 +208,7 @@ export default {
     },
 
     baseurl: function () {
-      return "";
+      return "/news/";
     },
 
     news() {
@@ -225,13 +225,13 @@ export default {
         const diffDays = Math.ceil(diff / (1000 * 60 * 60 * 24));
         var selected = false;
 
-        if (!this.listArchive && diffDays <= 180) {
-          selected = true;
-        } else if (this.listArchive && diffDays > 180) {
-          selected = true;
-        }
+        // if (!this.listArchive && diffDays <= 180) {
+        //   selected = true;
+        // } else if (this.listArchive && diffDays > 180) {
+        //   selected = true;
+        // }
 
-        if (!selected) continue;
+        // if (!selected) continue;
 
         // Now check topic
         var topics = ["All Topics"];

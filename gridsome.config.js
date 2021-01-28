@@ -5,7 +5,7 @@
 // To restart press CTRL + C in terminal and run `gridsome develop`
 
 module.exports = {
-    siteName: 'Threefold Farming',
+    siteName: 'Threefold Cloud',
     plugins: [
 
         // Local models
@@ -32,13 +32,13 @@ module.exports = {
             }
         },
 
-       {
+        {
             use: '@gridsome/source-filesystem',
             options: {
                 typeName: 'Contact',
                 path: './content/page/**/contactData/**/*.md',
             }
-        }, 
+        },
 
         {
             use: '@gridsome/source-filesystem',
@@ -176,14 +176,6 @@ module.exports = {
                 path: './content/page/**/InTheNews/*.md',
             }
         },
-
-        {
-            use: '@gridsome/source-filesystem',
-            options: {
-                typeName: 'Plans',
-                path: './content/page/**/withComparisonTable/**/*.md',
-            }
-        },
         {
             use: '@gridsome/source-filesystem',
             options: {
@@ -217,8 +209,7 @@ module.exports = {
                     headerSolution2: 'SolutionsHeader',
                     headerSolution3: 'SolutionsHeader',
                     headerSolution4: 'SolutionsHeader',
-                    inTheNews: 'InTheNews',
-                    plans: 'Plans'
+                    inTheNews: 'InTheNews'
                 }
             }
         },

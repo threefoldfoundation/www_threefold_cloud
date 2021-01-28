@@ -33,7 +33,7 @@
             <div class="flex justify-between items-center">
               <ul class="list-none flex author-list m-0 py-2">
                 <li
-                  v-for="project in projects"
+                  v-for="project in $page.person.projects"
                   :key="project.id"
                   class="author-list-item"
                 >
@@ -144,25 +144,12 @@
       }
     }
 
-    projects: allProject (sortBy: "rank", order: DESC, filter: {tags: { id: {in: ["grid", "cloud"]}}}){
-    totalCount
-    edges {
-      node {
+     memberships: allMembership(filter: {title: {in: ["foundation", "tech"]}}){
+     edges{
+      node{
         id
         title
         path
-        members {
-          id
-          name
-          image(width:64, height:64, fit:inside)
-          path
-        },
-        rank
-        linkedin
-        excerpt
-        image(width:800)
-        timeToRead
-        logo
       }
     }
   }
@@ -184,13 +171,13 @@ export default {
       return pluralize("post", this.$page.person.belongsTo.totalCount);
     },
 
-    projects(){
+    memberships(){
       var all = []
-      this.$page.projects.edges.forEach((edge) => all.push(edge.node.title))
+      this.$page.memberships.edges.forEach((edgs) => all.push(edge.node.title))
       var res = []
-      this.$page.person.projects.forEach(function(project){
-        if (all.includes(project.title)){
-          res.push(project)
+      this.$page.person.memberships.forEach(function(membership){
+        if (all.includes(membership.title)){
+          res.push(membership)
         }
       });
       return res

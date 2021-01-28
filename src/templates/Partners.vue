@@ -1,6 +1,10 @@
 <template>
   <Layout>
-    <TagFilterHeader :tags="tags" selected="all" v-if="$page.tags.edges.length > 1"/>
+    <TagFilterHeader
+      :tags="tags"
+      selected="all"
+      v-if="$page.tags.edges.length > 1"
+    />
     <div class="container mt-8 sm:pxi-0 mx-auto overflow-x-hidden">
       <div class="flex flex-wrap with-large pt-8 pb-8 mx-4 sm:-mx-4">
         <PostListItem
@@ -16,7 +20,7 @@
 
 <page-query>
 query ($private: Int){
-  entries: allProject (sortBy: "rank", order: DESC, filter: { private: { ne: $private }, tags: { id: {in: ["grid", "cloud"]}}}){
+  entries: allProject (sortBy: "rank", order: DESC, filter: { private: { ne: $private }, tags: { id: {in: ["farming"]}}}){
     totalCount
     edges {
       node {
@@ -39,7 +43,7 @@ query ($private: Int){
     }
   }
   
-  tags: allProjectTag (filter: { title: {in: ["grid", "cloud"]}}) {
+  tags: allProjectTag (filter: { title: {in: ["farming"]}}) {
      edges{
       node{
         id
@@ -61,6 +65,11 @@ export default {
     PostListItem,
     TagFilterHeader,
   },
+  metaInfo() {
+    return {
+      title: this.pageName,
+    };
+  },
   computed: {
     tags() {
       var res = [{ title: "All", path: "/partners" }];
@@ -68,6 +77,11 @@ export default {
         res.push({ title: edge.node.title, path: edge.node.path })
       );
       return res;
+    },
+    pageName() {
+      let path = this.$route.path.substring(1);
+      let name = path[0].toUpperCase() + path.slice(1);
+      return name;
     },
   },
 };
