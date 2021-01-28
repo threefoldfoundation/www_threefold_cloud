@@ -6,29 +6,23 @@ navLinks:
     external: false
     expandable: false
 
-  - name: Learn
-    link: /learn
+  - name: Tech
+    link: /tech
     external: false
-    expandable: true
-    submenu:
-      - title: Solution
-        path: /solution
+    expandable: false
 
-      - title: Participate
-        path: /participate
+  - name: 3Node
+    link: /3node
+    external: false
+    expandable: false
 
-      - title: Token
-        path: /token
+  - name: Token
+    link: /token
+    external: false
+    expandable: false
 
-      - title: Future
-        path: /future
-
-      - title: Knowledge
-        path: https://wiki.threefold.io/#/what_is_farming
-        external: true
-
-  - name: People
-    link: /people
+  - name: More
+    link: /more
     external: false
     expandable: true
     submenu:
@@ -38,12 +32,7 @@ navLinks:
       - title: Partners
         path: /partners
 
-  - name: More
-    link: /more
-    external: false
-    expandable: true
-    submenu:
-      - title: Newsroom
+      - title: NewsRoom
         path: /news
 
       - title: Blog
@@ -53,10 +42,24 @@ navLinks:
         path: https://forums.threefold.io/
         external: true
 
-      - title: Contact
-        path: /contact
-
 social:
-  - icon: linkedin
-    link: https://www.linkedin.com/company/threefold-foundation/
+  - icon: telegram-plane
+    link: https://t.me/threefoldnews
 ---
+
+<!--       - title: Future
+        path: /future -->
+
+<!--             submenu:
+      - title: Solution
+        path: /solution
+
+      - title: Participate
+        path: /participate
+
+      - title: Token
+        path: /token
+
+      - title: Knowledge Base
+        path: https://wiki.threefold.io/#/what_is_farming
+        external: true -->

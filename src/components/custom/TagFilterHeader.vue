@@ -9,6 +9,11 @@
             >filter:</span
           >
         </div>
+        <div class="sm:block md:hidden">
+          <ul class="list-none inline-flex justify-center md:justify-end">
+            <li class="py-1 mx-5 cursor-pointer" @click="resetAll()">Reset</li>
+          </ul>
+        </div>
       </div>
 
       <nav
@@ -18,7 +23,7 @@
           class="list-none sm:flex justify-left capitalize transition-all transition-500"
         >
           <!-- Tags -->
-          <li class="py-1 mx-5">
+          <li class="pt-2 mx-5">
             <div class="relative" x-data="{ open: false }">
               <button
                 @click="setActive(0)"
@@ -54,7 +59,7 @@
               >
                 <div
                   v-if="open"
-                  class="px-2 py-2 bg-white rounded-md shadow dark:bg-gray-700"
+                  class="w-64 max-h-10 px-2 py-2 bg-white rounded-md shadow dark:bg-gray-700"
                 >
                   <a
                     v-for="tag in tags"
@@ -70,6 +75,11 @@
           </li>
         </ul>
       </nav>
+      <div class="hidden md:ml-auto md:inline-block md:order-last">
+        <ul class="list-none inline-flex justify-center md:justify-end">
+          <li class="py-1 mx-5 cursor-pointer" @click="resetAll()">Reset</li>
+        </ul>
+      </div>
     </header>
   </div>
 </template>
@@ -104,6 +114,9 @@ export default {
       if (!this.$el.contains(e.target)) {
         this.open = false;
       }
+    },
+    resetAll() {
+      this.$emit("resetAll", true);
     },
   },
   mounted() {

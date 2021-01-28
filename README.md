@@ -1,21 +1,23 @@
-# Default starter for Threefold Webstack
-
-### 1. Install dependencies
+# ThreeFold Farming Website
+### To Install
 
 copy the folling in your terminal
 
 ```bash
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/threefoldfoundation/www_threefold_cloud/master/tools/install.sh)"
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/threefoldfoundation/www_threefold_farming/master/tools/install.sh)"
 ```
 
-### 2. Run
+> remark: if you want to install all webtools at once go to: https://github.com/threefoldfoundation/websites and follow instructions there
+
+
+### To Run
 
 ```
 cd ~/code/github/threefoldfoundation/www_threefold_farming
-gridsome develop
+sh run.sh
 ```
 
-to start a local dev server at http://localhost:8080
+this will start a local dev server at http://localhost:8080
 
 to now see your website, copy ```http://localhost:8080``` in your browser
 

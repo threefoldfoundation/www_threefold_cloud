@@ -1,18 +1,43 @@
 <template>
   <div class="fixed top-16 left-0 z-50 mb-5 h-16 bg-gray-100 w-full">
     <header
-      class="flex items-center flex-wrap container mx-auto pt-1 pb-0 sm:px-0 transition-all transition-500"
+      class="flex items-center justify-between flex-wrap container mx-auto px-4 py-1 sm:px-0 transition-all transition-500"
     >
-      <div class="flex items-center justify-between px-4 sm:p-0">
-        <div class="inline-flex items-center flex-shrink-0">
-          <span class="flex text-xl p-3 capitalize tracking-tight"
-            >filter:</span
+      <div class="flex items-center justify-between px-4 py-2 sm:p-0">
+        <div class="sm:hidden ml-auto">
+          <button
+            @click="isOpen = !isOpen"
+            type="button"
+            class="block text-gray-500 focus:outline-none"
           >
+            <svg class="h-6 w-6 fill-current" viewBox="0 0 24 24">
+              <path
+                v-if="isOpen"
+                fill-rule="evenodd"
+                d="M18.278 16.864a1 1 0 0 1-1.414 1.414l-4.829-4.828-4.828 4.828a1 1 0 0 1-1.414-1.414l4.828-4.829-4.828-4.828a1 1 0 0 1 1.414-1.414l4.829 4.828 4.828-4.828a1 1 0 1 1 1.414 1.414l-4.828 4.829 4.828 4.828z"
+              />
+              <path
+                v-if="!isOpen"
+                fill-rule="evenodd"
+                d="M4 5h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2z"
+              />
+            </svg>
+          </button>
+        </div>
+        <div class="inline-flex items-center flex-shrink-0">
+          <span class="flex text-xl p-3 capitalize tracking-tight">filter</span>
         </div>
       </div>
 
+      <div class="sm:block md:hidden">
+        <ul class="list-none inline-flex justify-center md:justify-end">
+          <li class="py-1 mx-5 cursor-pointer" @click="resetAll()">Reset</li>
+        </ul>
+      </div>
+
       <nav
-        class="inline-flex md:order-2 px-2 pt-2 pb-4 sm:flex sm:p-0 bg-transparent"
+        :class="isOpen ? 'flex' : 'hidden'"
+        class="inline-flex md:order-2 sm:w-28 px-2 pt-2 pb-4 sm:flex sm:p-0 bg-gray-100"
       >
         <ul
           class="list-none sm:flex justify-left capitalize transition-all transition-500"
@@ -54,7 +79,7 @@
               >
                 <div
                   v-if="open"
-                  class="px-2 py-2 bg-white rounded-md shadow dark:bg-gray-700"
+                  class="w-64 max-h-10 px-2 py-2 bg-white rounded-md shadow dark:bg-gray-700"
                 >
                   <a
                     v-for="topic in topics"
@@ -108,7 +133,7 @@
               >
                 <div
                   v-if="open"
-                  class="px-2 py-2 bg-white rounded-md shadow dark:bg-gray-700"
+                  class="w-64 px-2 py-2 bg-white rounded-md shadow dark:bg-gray-700"
                 >
                   <a
                     v-for="year in years"
@@ -162,7 +187,7 @@
               >
                 <div
                   v-if="open"
-                  class="px-2 py-2 bg-white rounded-md shadow dark:bg-gray-700"
+                  class="w-64 overflow-y-auto h-40 px-2 py-2 bg-white rounded-md shadow dark:bg-gray-700"
                 >
                   <a
                     v-for="month in months"
@@ -180,15 +205,12 @@
           </li>
         </ul>
       </nav>
-      <nav
-        class="ml-auto inline-flex md:order-2 items-end px-2 pt-2 pb-4 sm:flex sm:p-0 bg-transparent"
-      >
-        <ul
-          class="list-none sm:flex justify-left capitalize transition-all transition-500"
-        >
+
+      <div class="hidden md:ml-auto md:inline-block md:order-last">
+        <ul class="list-none inline-flex justify-center md:justify-end">
           <li class="py-1 mx-5 cursor-pointer" @click="resetAll()">Reset</li>
         </ul>
-      </nav>
+      </div>
     </header>
   </div>
 </template>
@@ -237,7 +259,7 @@ export default {
     resetAll() {
       this.$emit("resetAll", true);
       this.topic = "All Topics";
-      this.year = "All Year";
+      this.year = "All Years";
       this.month = "All Months";
     },
     close(e) {
@@ -246,7 +268,7 @@ export default {
       }
     },
   },
-  
+
   mounted() {
     document.addEventListener("click", this.close);
   },

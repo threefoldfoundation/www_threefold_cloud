@@ -1,9 +1,10 @@
 ---
 id: why2
-title: The Technology Demands It
-image: ./card2.jpeg
-button: Read More on Our Blog
-link: ''
+title: An Internet available to everyone
+image: ./why_card2.png
+button: Learn More
+link: /blog/post/more_inclusive_internet/
 order: 1
-excerpt: Modern day technologies like 5G, IOT, AI,... demand more cloud resources near end-users. The central datacenter approach can't keep up with this deman.  The ThreeFold Grid can cater to all the needs these industries as the decentralized nature of the the grid puts the capacity near the end user.
 ---
+
+Only 57% of the world is connected to the internet today, despite internet access being a human right. This is not acceptable, as digital access represents a gateway to information, knowledge, and economic opportunities. We bring a more affordable and accessible internet solution to the world.

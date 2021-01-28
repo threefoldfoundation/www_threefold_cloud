@@ -1,9 +1,10 @@
 ---
 id: home3
-title: The People Demand It
-image: ./card3.jpeg
-button: CTA
-link: ''
+title: The most powerful nodes
+image: ./home_card_3.png
+button: Learn More
+link: /participate
 order: 3
-excerpt: Thanks to the help of multiple documentaries (The Social Dilemma, The Great Hack, etc) it has become apparent to the masses that things need to change if we want to allow the internet to play such a big role in our lives. 
 ---
+
+Get your 3Node now to connect compute and storage capacity on the edge. Our lightwieght & autonomous operating system empowers the builders of the Internet with more freedom, performance & sustainability.

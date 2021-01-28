@@ -1,9 +1,10 @@
 ---
 id: why3
-title: The People Demand It
-image: ./card3.jpeg
-button: CTA
-link: ''
+title: A better solution for our planet
+image: ./why_card3.png
+button: Learn More
+link: /blog/post/for_our_planet/
 order: 3
-excerpt: Thanks to the help of multiple documentaries (The Social Dilemma, The Great Hack, etc) it has become apparent to the masses that things need to change if we want to allow the internet to play such a big role in our lives. 
 ---
+
+The current internet intrastructure consumes about 10% of the world's energy, much of that power being used to cool down servers in large data centers. This is not needed in a decentralized model. Testing has shown ThreeFold achieves between 50% & 99% power savings when running edge workloads.

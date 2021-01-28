@@ -34,7 +34,7 @@
             <div class="pl-3 flex flex-col text-xs leading-none uppercase">
               <p>
                 <span
-                  v-for="(author, index) in $page.news.author"
+                  v-for="(author, index) in $page.news.authors"
                   :key="author.id"
                 >
                   <g-link
@@ -43,7 +43,7 @@
                     class="hover:underline"
                     >{{ author.name }}</g-link
                   >
-                  <span v-if="index < $page.news.author.length - 1">,</span>
+                  <span v-if="index < $page.news.authors.length - 1">,</span>
                 </span>
               </p>
               <p class="text-gray-700">
@@ -68,7 +68,7 @@
         <g-image :src="$page.news.image"></g-image>
       </section>
 
-      <div class="">
+      <div class="py-5">
         <section
           class="post-content container mx-auto relative font-serif text-gray-700"
         >

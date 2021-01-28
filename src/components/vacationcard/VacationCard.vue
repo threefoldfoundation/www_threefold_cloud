@@ -1,6 +1,6 @@
 <template>
   <div>
-    <img class="rounded" :src="img" :alt="imgAlt" />
+    <g-image class="rounded" :src="img" :alt="imgAlt" />
     <div class="mt-2">
       <div>
         <div class="text-xs text-gray-600 uppercase font-bold">

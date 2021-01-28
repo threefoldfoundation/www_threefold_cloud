@@ -1,6 +1,6 @@
 ---
 id: collaborate
-title: collaborate
-mail: support@example.com
-phone: +1 (555) 123-4567
+title: Collaborate
+mail: info@threefold.io
+phone: ""
 ---
