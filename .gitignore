@@ -15,5 +15,5 @@ node_modules
 yarn.lock
 dist
 .installed
-#install.sh
-#run.sh
+install.sh
+run.sh
