@@ -17,4 +17,5 @@ dist
 .installed
 install.sh
 run.sh
+build.sh
 package-lock.json
