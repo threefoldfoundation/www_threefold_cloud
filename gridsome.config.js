@@ -6,6 +6,7 @@
 
 module.exports = {
     siteName: 'Threefold Cloud',
+    pathPrefix: '/cloud',
     plugins: [
 
         // Local models
