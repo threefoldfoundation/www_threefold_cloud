@@ -13,7 +13,6 @@ node_modules
 .env
 .env.*
 yarn.lock
-dist
 .installed
 install.sh
 run.sh
