@@ -2,7 +2,7 @@
   <div>
     <div
       class="bannerFondo bg-green-800 bg-left-top bg-auto bg-repeat-x"
-      style="background-image: url(./img/continuartl_4.png)"
+      style="background-image: url(require(`!!assets-loader!@images/continuartl_4.png`))"
     ></div>
 
     <div class="-mt-64">
