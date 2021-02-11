@@ -27,16 +27,16 @@ navLinks:
     expandable: true
     submenu:
       - title: Team
-        path: /team
+        path: /cloud/team
 
       - title: Partners
-        path: /partners
+        path: /cloud/partners
 
       - title: NewsRoom
-        path: /news
+        path: /cloud/news
 
       - title: Blog
-        path: /blog
+        path: /cloud/blog
 
       - title: Community
         path: https://forums.threefold.io/
