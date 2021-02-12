@@ -52,7 +52,7 @@
             </svg>
           </button>
         </div>
-        <!-- <div class="text-gray-400 sm:block md:hidden">
+        <div class="text-gray-400 sm:block md:hidden">
           <ul class="list-none flex justify-center md:justify-end">
             <li class="mr-0 sm:mr-6">
               <theme-switcher v-on="$listeners" :theme="theme" />
@@ -77,7 +77,7 @@
             </li>
           </ul> 
         </div>
-      </div> -->
+      </div>
 
       <!-- <nav
         :class="isOpen ? 'block' : 'hidden'"
