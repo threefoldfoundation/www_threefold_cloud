@@ -83,11 +83,11 @@
         :class="isOpen ? 'block' : 'hidden'"
         class="navbar md:order-2 px-2 pt-2 pb-4 sm:flex sm:p-0 sm:w-100 bg-white"
       > -->
-        <div
+        <!-- <div
           :key="index"
           v-for="(element, index) in navigation.navLinks"
           class="w-auto"
-        >
+        > 
           <div
             v-if="element.expandable"
             class="relative mt-2"
@@ -148,7 +148,7 @@
                 </div>
               </div>
             </div>
-          </div>
+          </div> -->
 
           <g-link
             v-else-if="element.external"
