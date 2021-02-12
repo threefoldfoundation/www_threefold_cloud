@@ -1,10 +1,10 @@
 ---
 id: card1
-title: TITLE
+title: Virtual Data Center
 image: ./card1.png
-button: Button
+button: ''
 link: '' #link for button
 order: 1
 ---
 
-Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+Deploy cloud instances with dedicated CPU, SSD drives, and RAM just for your web applicatoin or development environment.

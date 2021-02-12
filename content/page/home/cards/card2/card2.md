@@ -1,10 +1,10 @@
 ---
 id: card2
-title: TITLE
+title: Planetary File System
 image: ./card2.png
-button: Button
+button: ''
 link: '' #link for button
 order: 2
 ---
 
-Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+Introducing an ultra safe storage system that gives you the flexibility to add scalable storage on demand and manage it through S3 API.
