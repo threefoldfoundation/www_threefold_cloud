@@ -53,7 +53,7 @@
           </button>
         </div>
         <div class="text-gray-400 sm:block md:hidden">
-          <ul class="list-none flex justify-center md:justify-end">
+          <!-- <ul class="list-none flex justify-center md:justify-end">
             <li class="mr-0 sm:mr-6">
               <theme-switcher v-on="$listeners" :theme="theme" />
             </li>
@@ -75,14 +75,14 @@
                 </a>
               </span>
             </li>
-          </ul>
+          </ul> -->
         </div>
       </div>
 
-      <nav
+      <!-- <nav
         :class="isOpen ? 'block' : 'hidden'"
         class="navbar md:order-2 px-2 pt-2 pb-4 sm:flex sm:p-0 sm:w-100 bg-white"
-      >
+      > -->
         <div
           :key="index"
           v-for="(element, index) in navigation.navLinks"
