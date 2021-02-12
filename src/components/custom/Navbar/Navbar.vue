@@ -11,7 +11,7 @@
         <div class="inline-flex items-center flex-shrink-0">
           <a href="/" class="flex">
             <img
-              src="/img/cloud_logo.png"
+              src="/img/cloud_logo.svg"
               class="mr-3 fill-current"
               width="180"
               v-if="theme == 'light'"
@@ -19,7 +19,7 @@
             />
 
             <img
-              src="/img/cloud_logo.png"
+              src="/img/cloud_logo.svg"
               class="mr-3 fill-current"
               width="180"
               v-else
