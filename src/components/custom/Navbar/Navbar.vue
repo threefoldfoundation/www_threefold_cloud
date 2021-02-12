@@ -82,12 +82,12 @@
       <!-- <nav
         :class="isOpen ? 'block' : 'hidden'"
         class="navbar md:order-2 px-2 pt-2 pb-4 sm:flex sm:p-0 sm:w-100 bg-white"
-      > -->
+       > 
         <!-- <div
           :key="index"
           v-for="(element, index) in navigation.navLinks"
           class="w-auto"
-        > 
+         > 
           <!-- <div
             v-if="element.expandable"
             class="relative mt-2"
@@ -180,7 +180,7 @@
             @keyup.enter="result"
           />
         </div> -->
-      </nav>
+      </nav> -->
       <div class="hidden md:ml-auto md:inline-block md:order-last">
         <!-- <div class="inline-flex rounded-full border-2 border-gray-200 w-1/2">
           <span class="w-auto flex justify-end items-center p-2">
