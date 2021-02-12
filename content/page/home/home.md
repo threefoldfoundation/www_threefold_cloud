@@ -1,32 +1,15 @@
 ---
 id: home
-header_title: Be the Internet
-header_image: ./farming_header.png
-header_excerpt: This is the era of decentralization. Plug in a server (3Node) from your home or office and start generating passive revenue by selling decentralized storage and compute capacity.
-button:
-link:
+header_title: BIG TITLE
+header_image: ./home_image.png
+header_altImg: BIG TITLE
+header_excerpt: Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+button: Button
+link: '' #link for button
 header: home_header
-headerSolution: headerHome
-solution_image_2: ./Data_Graph.png
-featuresMain: Feature_home
-features: [not_decentralized, not_scalable, not_secure, not_sustainable]
-cards: [home_card]
-featuresMain2: Features_home_2
-features2:
-  [
-    decentralize_the_internet,
-    connect_the_world,
-    make_data_safe,
-    earn_passive_income,
-  ]
-logos: [logo1, logo2, logo3, logo4, logo5, logo6]
-inTheNews: in_the_news
+cards: [card1, card2, card3] #you can continue adding cards as needed
 cta: home_cta
-solution_image: ./home_image.png
+logos: [logo1, logo2, logo3, logo4, logo5, logo6] #you can continue adding logos as needed
+inTheNews: in_the_news
+signup: home_signup
 ---
-
-<!-- header: home_header -->
-<!-- logos: [logo1, logo2, logo3, logo4, logo5, logo6] -->
-<!-- signup: home_signup -->
-
-<!-- Join the movement by connecting the 3Node to the most advanced peer-to-peer grid on the planet. -->

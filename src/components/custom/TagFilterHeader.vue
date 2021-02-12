@@ -9,11 +9,11 @@
             >filter:</span
           >
         </div>
-        <div class="sm:block md:hidden">
+        <!-- <div class="sm:block md:hidden">
           <ul class="list-none inline-flex justify-center md:justify-end">
             <li class="py-1 mx-5 cursor-pointer" @click="resetAll()">Reset</li>
           </ul>
-        </div>
+        </div> -->
       </div>
 
       <nav
@@ -75,11 +75,11 @@
           </li>
         </ul>
       </nav>
-      <div class="hidden md:ml-auto md:inline-block md:order-last">
+      <!-- <div class="hidden md:ml-auto md:inline-block md:order-last">
         <ul class="list-none inline-flex justify-center md:justify-end">
           <li class="py-1 mx-5 cursor-pointer" @click="resetAll()">Reset</li>
         </ul>
-      </div>
+      </div> -->
     </header>
   </div>
 </template>

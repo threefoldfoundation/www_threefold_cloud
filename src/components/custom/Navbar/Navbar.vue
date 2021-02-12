@@ -2,7 +2,7 @@
   <div class="fixed inset-0 h-16 bg-white">
     <header
       class="flex items-center justify-between flex-wrap container mx-auto px-4 sm:px-0 py-4 transition-all transition-500"
-      v-bind:class="{
+      :class="{
         'opacity-100': !disableScroll && scrollPosition > headerHeight,
         'opacity-0': !disableScroll && scrollPosition < headerHeight,
       }"
@@ -10,8 +10,21 @@
       <div class="flex items-center justify-between px-4 py-3 sm:p-0">
         <div class="inline-flex items-center flex-shrink-0">
           <a href="/" class="flex">
-            <g-image v-if="theme == 'light'" width="180" class="mr-3 fill-current" :src="require(`!!assets-loader!@images/TFN_black.svg`)"  alt="" />
-           <g-image v-else width="180" class="mr-3 fill-current" :src="require(`!!assets-loader!@images/TFN_white.svg`)"  alt="" />
+            <img
+              src="/img/TFN_black.svg"
+              class="mr-3 fill-current"
+              width="180"
+              v-if="theme == 'light'"
+              alt=""
+            />
+
+            <img
+              src="/img/TFN_white.svg"
+              class="mr-3 fill-current"
+              width="180"
+              v-else
+              alt=""
+            />
             <!-- <span
               class="hidden md:block font-semibold text-xl tracking-tight"
               >{{ $static.metadata.siteName }}</span
@@ -68,7 +81,7 @@
 
       <nav
         :class="isOpen ? 'block' : 'hidden'"
-        class="md:order-2 px-2 pt-2 pb-4 md:w-auto sm:flex sm:p-0 sm:w-100 bg-white"
+        class="navbar md:order-2 px-2 pt-2 pb-4 sm:flex sm:p-0 sm:w-100 bg-white"
       >
         <div
           :key="index"
@@ -140,6 +153,7 @@
           <g-link
             v-else-if="element.external"
             :to="element.link"
+            @click.native="clicked"
             target="_blank"
             class="inline-flex sm:flex uppercase p-2 mr-4 animated-link"
             >{{ element.name }}</g-link
@@ -147,6 +161,7 @@
           <g-link
             v-else
             :to="element.link"
+            @click.native="clicked"
             class="inline-flex sm:flex uppercase p-2 mr-4 animated-link"
             >{{ element.name }}</g-link
           >
@@ -258,7 +273,11 @@ export default {
       if (!this.$el.contains(e.target)) {
         this.open = false;
         this.active = !this.active;
+        this.isOpen = !this.isOpen;
       }
+    },
+    clicked() {
+      this.isOpen = false;
     },
   },
   mounted() {
@@ -288,5 +307,14 @@ nav li a {
 a.active--exact.active {
   background-color: rgba(237, 242, 247, 1);
   border-radius: 0.5rem;
+}
+
+.navbar {
+  width: auto;
+}
+@media (max-width: 768px) {
+  .navbar {
+    width: 100%;
+  }
 }
 </style>

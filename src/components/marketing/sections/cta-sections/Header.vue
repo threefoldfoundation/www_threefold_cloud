@@ -41,10 +41,3 @@ export default {
   },
 };
 </script>
-
-<style scoped>
-.text-8xl {
-  font-size: 6rem;
-  line-height: 1;
-}
-</style>

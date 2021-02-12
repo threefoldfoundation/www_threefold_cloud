@@ -9,14 +9,14 @@
         <div class="space-y-8 xl:col-span-1">
           <g-image
             class="h-10"
-            :src="require(`!!assets-loader!@images/tf_icon_black.svg`)"
+            src="/img/tf_icon_black.svg"
             alt="Company name"
             v-if="theme == 'light'"
           />
 
           <g-image
             class="h-10"
-            :src="require(`!!assets-loader!@images/tf_icon_white.svg`)"
+            src="/img/tf_icon_white.svg"
             alt="Company name"
             v-else
           />

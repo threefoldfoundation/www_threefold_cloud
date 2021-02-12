@@ -16,10 +16,9 @@
                 brand.subtitle
               }}</span>
             </h2>
-            <div
-              class="mt-4 text-lg leading-6 text-white"
-              v-html="brand.content"
-            ></div>
+            <p class="mt-4 text-lg leading-6 text-white">
+              {{ brand.excerpt }}
+            </p>
             <g-link
               :to="brand.sourceUrl"
               class="mt-8 bg-white border border-transparent rounded-md shadow px-6 py-3 inline-flex items-center text-base leading-6 font-medium text-gray-900 hover:text-indigo-500 hover:bg-gray-50 transition duration-150 ease-in-out"

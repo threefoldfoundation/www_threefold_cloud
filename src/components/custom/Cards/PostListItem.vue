@@ -109,7 +109,7 @@ export default {
         return [];
       }
       memberships.forEach(function (membership) {
-        if(["tech"].includes(membership.title)){
+        if (["foundation", "tech", "cofounders"].includes(membership.title)) {
           res.push(membership);
         }
       });
@@ -138,6 +138,6 @@ export default {
 
 .post-card-image {
   max-width: 100%;
-  height: auto;
+  /* height: auto; */
 }
 </style>
