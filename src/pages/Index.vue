@@ -9,33 +9,38 @@
       :link="$page.markdownPage.link"
     />
 
-    <SolutionsHeader
+    <!-- <SolutionsHeader
       v-if="$page.markdownPage.header"
       :header="$page.markdownPage.header"
-    />
+    /> -->
 
     <NewCard
       v-for="card in $page.markdownPage.cards"
       :key="card.id"
       :card="card"
     />
+    
+    <g-image 
+        v-if="$page.markdownPage.solution_image"
+        :src="$page.markdownPage.solution_image.src"
+    />
 
     <CallToAction v-if="$page.markdownPage.cta" :cta="$page.markdownPage.cta" />
 
-    <logoShowcase
+    <!-- <logoShowcase
       v-if="$page.markdownPage.logos.length > 0"
       :logos="$page.markdownPage.logos"
-    />
+    /> -->
 
-    <InTheNews
+    <!-- <InTheNews
       v-if="$page.markdownPage.inTheNews"
       :news="$page.markdownPage.inTheNews"
-    />
+    /> -->
 
-    <SignUp
+    <!-- <SignUp
       v-if="$page.markdownPage.signup"
       :signup="$page.markdownPage.signup"
-    />
+    /> -->
   </Layout>
 </template>
 
@@ -50,6 +55,7 @@
         header_altImg
         button
         link
+        solution_image
         header{
          title
          subtitle
