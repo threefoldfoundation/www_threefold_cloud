@@ -87,8 +87,8 @@
           :key="index"
           v-for="(element, index) in navigation.navLinks"
           class="w-auto"
-        > -->
-          <div
+        > 
+          <!-- <div
             v-if="element.expandable"
             class="relative mt-2"
             x-data="{ open: false }"
@@ -114,7 +114,7 @@
                 ></path>
               </svg>
             </button>
-            <div
+            <!-- <div
               v-if="active == index"
               x-show="open"
               x-transition:enter="transition ease-out duration-100"
@@ -125,11 +125,11 @@
               x-transition:leave-end="transform opacity-0 scale-95"
               class="absolute w-auto mt-2 origin-top-right rounded-md shadow-lg md:w-48 z-30"
             >
-              <div
+              <!-- <div
                 v-if="open"
                 class="px-2 py-2 bg-white rounded-md shadow dark:bg-gray-700"
               >
-                <div v-for="(link, i) in element.submenu" :key="i">
+                <!-- <div v-for="(link, i) in element.submenu" :key="i">
                   <a
                     v-if="link.external"
                     class="block px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg dark:bg-transparent dark:hover:bg-gray-600 dark-:focus:bg-gray-600 dark:focus:text-white dark:hover:text-white dark:text-gray-200 md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
@@ -145,10 +145,10 @@
                     :href="link.path"
                     >{{ link.title }}</a
                   >
-                </div>
-              </div>
-            </div>
-          </div>
+                </div> -->
+              </div> -->
+            </div> -->
+          </div> -->
 
           <g-link
             v-else-if="element.external"
@@ -165,7 +165,7 @@
             class="inline-flex sm:flex uppercase p-2 mr-4 animated-link"
             >{{ element.name }}</g-link
           >
-        </div>
+        </div> -->
         <!-- <div
           class="md:hidden inline-flex rounded-full border-2 border-gray-200 w-1/2"
         >
