@@ -1,7 +1,5 @@
 
-# ThreeFold Website www_examplesite 
-
-## Examplesite is there to be replicated (copied) - !!! DO NOT EDIT EXAMPLESITE !!!
+# ThreeFold Cloud website 
 
 ### how to get started
 
