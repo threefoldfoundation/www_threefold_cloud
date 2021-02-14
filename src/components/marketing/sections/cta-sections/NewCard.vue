@@ -2,7 +2,7 @@
   <div>
     <div class="lg:py-12 lg:flex lg:justify-center flex flex-col">
       <div
-        class="bg-white lg:mx-8 lg:flex lg:max-w-5xl lg:shadow-lg lg:rounded-lg"
+        class="bg-white lg:mx-8 lg:flex lg:max-w-5xl lg:rounded-lg"
       >
         <div class="lg:w-1/2">
           <div class="h-64 bg-cover lg:rounded-lg lg:h-full" :style="img"></div>
