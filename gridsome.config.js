@@ -16,6 +16,13 @@ module.exports = {
                 path: './content/page/**/cards/**/*.md',
             }
         },
+        {
+            use: '@gridsome/source-filesystem',
+            options: {
+                typeName: 'CardLeft',
+                path: './content/page/**/cardLefts/**/*.md',
+            }
+        },
 
         {
             use: '@gridsome/source-filesystem',
@@ -164,6 +171,7 @@ module.exports = {
                 path: './content/page/*/*.md',
                 refs: {
                     cards: 'Card',
+                    cardLefts: 'CardLeft',
                     slides: 'Slide',
                     contactData: 'Contact',
                     header: 'Header',

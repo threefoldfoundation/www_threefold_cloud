@@ -19,6 +19,12 @@
       :key="card.id"
       :card="card"
     />
+
+    <NewCardLeft
+      v-for="cardLeft in $page.markdownPage.cardLefts"
+      :key="cardLeft.id"
+      :cardLeft="cardLeft"
+    />
     
     <g-image 
         v-if="$page.markdownPage.solution_image"
@@ -74,6 +80,15 @@
           order
           content
         }
+        cardLefts{
+          id
+          title
+          image
+          button
+          link
+          order
+          content
+        }
         cta{
           id
           title
@@ -111,6 +126,7 @@
 import Header from "~/components/marketing/sections/cta-sections/Header.vue";
 import SolutionsHeader from "~/components/custom/sections/header/HeaderSection.vue";
 import NewCard from "~/components/marketing/sections/cta-sections/NewCard.vue";
+import NewCardLeft from "~/components/marketing/sections/cta-sections/NewCardLeft.vue";
 import CallToAction from "~/components/custom/sections/CallToAction.vue";
 import logoShowcase from "~/components/marketing/sections/cta-sections/logoShowcase.vue";
 import InTheNews from "~/components/marketing/sections/logo-clouds/off_white_grid.vue";
@@ -121,6 +137,7 @@ export default {
     Header,
     SolutionsHeader,
     NewCard,
+    NewCardLeft,
     CallToAction,
     logoShowcase,
     InTheNews,
