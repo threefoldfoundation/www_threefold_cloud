@@ -1,0 +1,65 @@
+<!--
+  Tailwind UI components require Tailwind CSS v1.8 and the @tailwindcss/ui plugin.
+  Read the documentation to get started: https://tailwindui.com/documentation
+--><html>
+<head /><body>
+<fieldset>
+  <legend class="sr-only">
+    Privacy setting
+  </legend>
+
+  <div class="bg-white rounded-md -space-y-px">
+    <!-- On: "bg-indigo-50 border-indigo-200 z-10", Off: "border-gray-200" -->
+    <div class="relative border rounded-tl-md rounded-tr-md p-4 flex">
+      <div class="flex items-center h-5">
+        <input id="settings-option-0" name="privacy_setting" type="radio" class="form-radio h-4 w-4 text-indigo-600 transition duration-150 ease-in-out cursor-pointer" checked />
+      </div>
+      <label for="settings-option-0" class="ml-3 flex flex-col cursor-pointer">
+        <!-- On: "text-indigo-900", Off: "text-gray-900" -->
+        <span class="block text-sm leading-5 font-medium">
+          Public access
+        </span>
+        <!-- On: "text-indigo-700", Off: "text-gray-500" -->
+        <span class="block text-sm leading-5">
+          This project would be available to anyone who has the link
+        </span>
+      </label>
+    </div>
+
+    <!-- On: "bg-indigo-50 border-indigo-200 z-10", Off: "border-gray-200" -->
+    <div class="relative border border-gray-200 p-4 flex">
+      <div class="flex items-center h-5">
+        <input id="settings-option-1" name="privacy_setting" type="radio" class="form-radio h-4 w-4 text-indigo-600 transition duration-150 ease-in-out cursor-pointer" />
+      </div>
+      <label for="settings-option-1" class="ml-3 flex flex-col cursor-pointer">
+        <!-- On: "text-indigo-900", Off: "text-gray-900" -->
+        <span class="block text-sm leading-5 font-medium">
+          Private to Project Members
+        </span>
+        <!-- On: "text-indigo-700", Off: "text-gray-500" -->
+        <span class="block text-sm leading-5">
+          Only members of this project would be able to access
+        </span>
+      </label>
+    </div>
+
+    <!-- On: "bg-indigo-50 border-indigo-200 z-10", Off: "border-gray-200" -->
+    <div class="relative border border-gray-200 rounded-bl-md rounded-br-md p-4 flex">
+      <div class="flex items-center h-5">
+        <input id="settings-option-2" name="privacy_setting" type="radio" class="form-radio h-4 w-4 text-indigo-600 transition duration-150 ease-in-out cursor-pointer" />
+      </div>
+      <label for="settings-option-2" class="ml-3 flex flex-col cursor-pointer">
+        <!-- On: "text-indigo-900", Off: "text-gray-900" -->
+        <span class="block text-sm leading-5 font-medium">
+          Private to you
+        </span>
+        <!-- On: "text-indigo-700", Off: "text-gray-500" -->
+        <span class="block text-sm leading-5">
+          You are the only one able to access this project
+        </span>
+      </label>
+    </div>
+  </div>
+</fieldset>
+</body>
+</html>

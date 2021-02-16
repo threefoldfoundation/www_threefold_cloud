@@ -2,7 +2,7 @@
   <div class="fixed inset-0 h-16 bg-white">
     <header
       class="flex items-center justify-between flex-wrap container mx-auto px-4 sm:px-0 py-4 transition-all transition-500"
-      v-bind:class="{
+      :class="{
         'opacity-100': !disableScroll && scrollPosition > headerHeight,
         'opacity-0': !disableScroll && scrollPosition < headerHeight,
       }"
@@ -10,21 +10,21 @@
       <div class="flex items-center justify-between px-4 py-3 sm:p-0">
         <div class="inline-flex items-center flex-shrink-0">
           <a href="/" class="flex">
-            <img
-              src="/img/TFN_black.svg"
-              class="mr-3 fill-current"
-              width="180"
+
+          <g-image
+              :src="require(`!!assets-loader!@images/cloud_logo.svg`)"
+              class="mr-3 fill-current logo"
               v-if="theme == 'light'"
               alt=""
             />
 
-            <img
-              src="/img/TFN_white.svg"
-              class="mr-3 fill-current"
-              width="180"
+            <g-image
+              :src="require(`!!assets-loader!@images/cloud_logo.svg`)"
+              class="mr-3 fill-current logo"
               v-else
               alt=""
             />
+
             <!-- <span
               class="hidden md:block font-semibold text-xl tracking-tight"
               >{{ $static.metadata.siteName }}</span
@@ -52,11 +52,11 @@
             </svg>
           </button>
         </div>
-        <div class="text-gray-400 sm:block md:hidden">
+        <!-- <div class="text-gray-400 sm:block md:hidden">
           <ul class="list-none flex justify-center md:justify-end">
-            <li class="mr-0 sm:mr-6">
+             <li class="mr-0 sm:mr-6">
               <theme-switcher v-on="$listeners" :theme="theme" />
-            </li>
+            </li> 
             <li
               :key="element.name"
               v-for="(element, index) in navigation.social"
@@ -75,19 +75,19 @@
                 </a>
               </span>
             </li>
-          </ul>
-        </div>
+          </ul> 
+        </div> -->
       </div>
 
-      <nav
+      <!-- <nav
         :class="isOpen ? 'block' : 'hidden'"
-        class="md:order-2 px-2 pt-2 pb-4 md:w-auto sm:flex sm:p-0 sm:w-100 bg-white"
-      >
+        class="navbar md:order-2 px-2 pt-2 pb-4 sm:flex sm:p-0 sm:w-100 bg-white"
+       > 
         <div
           :key="index"
           v-for="(element, index) in navigation.navLinks"
           class="w-auto"
-        >
+         > 
           <div
             v-if="element.expandable"
             class="relative mt-2"
@@ -145,14 +145,15 @@
                     :href="link.path"
                     >{{ link.title }}</a
                   >
-                </div>
-              </div>
-            </div>
+                </div> 
+              </div> 
+            </div> 
           </div>
 
           <g-link
             v-else-if="element.external"
             :to="element.link"
+            @click.native="clicked"
             target="_blank"
             class="inline-flex sm:flex uppercase p-2 mr-4 animated-link"
             >{{ element.name }}</g-link
@@ -160,11 +161,12 @@
           <g-link
             v-else
             :to="element.link"
+            @click.native="clicked"
             class="inline-flex sm:flex uppercase p-2 mr-4 animated-link"
             >{{ element.name }}</g-link
           >
-        </div>
-        <!-- <div
+        </div> 
+        <div
           class="md:hidden inline-flex rounded-full border-2 border-gray-200 w-1/2"
         >
           <span class="w-auto flex justify-end items-center p-2">
@@ -177,8 +179,8 @@
             v-model="search"
             @keyup.enter="result"
           />
-        </div> -->
-      </nav>
+        </div> 
+      </nav> -->
       <div class="hidden md:ml-auto md:inline-block md:order-last">
         <!-- <div class="inline-flex rounded-full border-2 border-gray-200 w-1/2">
           <span class="w-auto flex justify-end items-center p-2">
@@ -192,7 +194,7 @@
             @keyup.enter="result"
           />
         </div> -->
-        <ul class="list-none inline-flex justify-center md:justify-end">
+        <!-- <ul class="list-none inline-flex justify-center md:justify-end">
           <li class="mr-0 sm:mr-6">
             <ThemeSwitcher v-on="$listeners" :theme="theme" />
           </li>
@@ -210,7 +212,7 @@
               </a>
             </span>
           </li>
-        </ul>
+        </ul> -->
       </div>
     </header>
   </div>
@@ -271,7 +273,11 @@ export default {
       if (!this.$el.contains(e.target)) {
         this.open = false;
         this.active = !this.active;
+        this.isOpen = !this.isOpen;
       }
+    },
+    clicked() {
+      this.isOpen = false;
     },
   },
   mounted() {
@@ -301,5 +307,16 @@ nav li a {
 a.active--exact.active {
   background-color: rgba(237, 242, 247, 1);
   border-radius: 0.5rem;
+}
+.logo {
+  max-width: 200px;
+}
+.navbar {
+  width: auto;
+}
+@media (max-width: 768px) {
+  .navbar {
+    width: 100%;
+  }
 }
 </style>

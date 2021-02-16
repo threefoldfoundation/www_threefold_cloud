@@ -1,0 +1,43 @@
+<!--
+  Tailwind UI components require Tailwind CSS v1.8 and the @tailwindcss/ui plugin.
+  Read the documentation to get started: https://tailwindui.com/documentation
+--><html>
+<head /><body>
+<div>
+  <div>
+    <fieldset>
+      <legend class="block text-sm font-medium leading-5 text-gray-700">Card Details</legend>
+      <div class="mt-1 bg-white rounded-md shadow-sm">
+        <div>
+          <input aria-label="Card number" class="form-input relative block w-full rounded-none rounded-t-md bg-transparent focus:z-10 transition ease-in-out duration-150 sm:text-sm sm:leading-5" placeholder="Card number" />
+        </div>
+        <div class="-mt-px flex">
+          <div class="w-1/2 flex-1 min-w-0">
+            <input aria-label="Card expiration date" class="form-input relative block w-full rounded-none rounded-bl-md bg-transparent focus:z-10 transition ease-in-out duration-150 sm:text-sm sm:leading-5" placeholder="MM / YY" />
+          </div>
+          <div class="-ml-px flex-1 min-w-0">
+            <input aria-label="Card CVC" class="form-input relative block w-full rounded-none rounded-br-md bg-transparent focus:z-10 transition ease-in-out duration-150 sm:text-sm sm:leading-5" placeholder="CVC" />
+          </div>
+        </div>
+      </div>
+    </fieldset>
+  </div>
+  <div class="mt-6 bg-white">
+    <fieldset>
+      <legend class="block text-sm font-medium leading-5 text-gray-700">Billing address</legend>
+      <div class="mt-1 rounded-md shadow-sm">
+        <div>
+          <select aria-label="Country" class="form-select relative block w-full rounded-none rounded-t-md bg-transparent focus:z-10 transition ease-in-out duration-150 sm:text-sm sm:leading-5">
+            <option>USA</option>
+            <option>Canada</option>
+          </select>
+        </div>
+        <div class="-mt-px">
+          <input aria-label="Postal code" class="form-input relative block w-full rounded-none rounded-b-md bg-transparent focus:z-10 transition ease-in-out duration-150 sm:text-sm sm:leading-5" placeholder="Postal code" />
+        </div>
+      </div>
+    </fieldset>
+  </div>
+</div>
+</body>
+</html>

@@ -130,14 +130,14 @@
       }
     }
 
-    allProjectTag(filter: { title: {in: ["grid", "cloud"]}}){
-     edges{
-      node{
-        id
-        title
-        path
+    allProjectTag(filter: { title: {in: ["farming", "cloud", "grid", "digitaltwin"]}}){
+      edges{
+        node{
+          id
+          title
+          path
+        }
       }
-    }
     }
 
     allNewsTag{
@@ -229,6 +229,7 @@ export default {
   },
   mounted() {
     document.addEventListener("click", this.close);
+    console.log(this.$page.projectTag);
   },
   beforeDestroy() {
     document.removeEventListener("click", this.close);

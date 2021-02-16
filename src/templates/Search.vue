@@ -4,7 +4,12 @@
       class="container sm:pxi-0 mx-auto"
       :style="{ 'min-height': contentHeight + 'px' }"
     >
-      <g-image v-if="loading" class="m-auto" src="/img/loader.gif" alt="" />
+      <img
+        v-if="loading"
+        class="m-auto"
+        :src="require(`!!assets-loader!@images/loader.gif`)"
+        alt=""
+      />
       <div
         v-if="searchResults.length > 0"
         class="flex flex-wrap with-large pt-8 pb-8 mx-4 sm:-mx-4"
@@ -25,7 +30,7 @@
 <page-query>
 
 query ($private: Int){
-  projects: allProject (filter: { private: { ne: $private }, tags: { id: {in: ["grid", "cloud"]}}}){   
+  projects: allProject (filter: { private: { ne: $private }, tags: { id: {in: ["farming"]}}}){   
     edges {
         node {
                 id
@@ -57,7 +62,7 @@ query ($private: Int){
     }
   }
 
-  people: allPerson(filter: { private: { ne: $private }, memberships: { id: {in: ["tech"]}}}) { 
+  people: allPerson(filter: { private: { ne: $private }, memberships: { id: {in: ["foundation", "tech"]}}}) {   
      edges {
       node {
         id
@@ -108,7 +113,7 @@ query ($private: Int){
         header_title
         header_excerpt
         path
-        title
+      #  title
         excerpt
       }      
     }

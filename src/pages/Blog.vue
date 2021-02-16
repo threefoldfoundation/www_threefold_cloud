@@ -23,11 +23,11 @@
 
       <div class="pagination flex justify-center mb-8">
         <Pagination
-          baseUrl=""
+          :baseUrl="baseurl"
           :currentPage="blogs.pageInfo.currentPage"
           :totalPages="blogs.pageInfo.totalPages"
           :maxVisibleButtons="5"
-          v-if="blogs.pageInfo.totalPages > 1"
+          v-if="blogs.pageInfo.totalPages > 1 && blogs.edges.length > 0"
         />
       </div>
     </div>
@@ -35,8 +35,8 @@
 </template>
 <page-query>
 
-query{
-  entries: allBlog(sortBy: "created", order: DESC, filter: {category: { id: {in: ["cloud"]}}}) {
+query($page: Int){
+  entries: allBlog(perPage: 10, page: $page, sortBy: "created", order: DESC, filter: {category: { id: {in: ["farming"]}}}) @paginate{
     totalCount
     pageInfo {
       totalPages
@@ -225,6 +225,9 @@ export default {
         res.edges.push({ node: node, id: node.id });
       }
       return res;
+    },
+    baseurl() {
+      return "/blog/";
     },
   },
 };

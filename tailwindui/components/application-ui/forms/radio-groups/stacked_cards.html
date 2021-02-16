@@ -1,0 +1,117 @@
+<!--
+  Tailwind UI components require Tailwind CSS v1.8 and the @tailwindcss/ui plugin.
+  Read the documentation to get started: https://tailwindui.com/documentation
+--><html>
+<head /><body>
+<fieldset>
+  <legend id="radiogroup-label" class="sr-only">
+    Server size
+  </legend>
+  <ul class="space-y-6" role="radiogroup" aria-labelledby="radiogroup-label">
+    <li id="radiogroup-option-0" tabindex="0" role="radio" aria-checked="true" class="group relative rounded-lg shadow-sm cursor-pointer focus:outline-none focus:shadow-outline-blue">
+      <div class="rounded-lg border border-gray-300 bg-white px-6 py-4 hover:border-gray-400 group-focus:border-blue-300 sm:flex sm:justify-between sm:space-x-4">
+        <div class="flex items-center space-x-0">
+          <div class="flex-shrink-0 flex items-center hidden">
+            <span aria-hidden="" class="form-radio text-indigo-600 group-focus:bg-red-500"></span>
+          </div>
+          <div class="text-sm leading-5">
+            <p class="block font-medium text-gray-900">
+              Hobby
+            </p>
+            <div class="text-gray-500">
+              <span class="block sm:inline">8GB / 4 CPUs</span>
+              <span class="hidden sm:inline sm:mx-1">&#xB7;</span>
+              <span class="block sm:inline">160 GB SSD disk</span>
+            </div>
+          </div>
+        </div>
+        <div class="mt-2 flex text-sm leading-5 space-x-1 sm:mt-0 sm:block sm:space-x-0 sm:text-right">
+          <div class="font-medium text-gray-900">$40</div>
+          <div class="text-gray-500">/mo</div>
+        </div>
+      </div>
+      <!-- On: "border-indigo-500", Off: "border-transparent" -->
+      <div class="border-indigo-500 absolute inset-0 rounded-lg border-2 pointer-events-none"></div>
+    </li>
+
+    <li id="radiogroup-option-1" tabindex="-1" role="radio" aria-checked="false" class="group relative rounded-lg shadow-sm cursor-pointer focus:outline-none focus:shadow-outline-blue">
+      <div class="rounded-lg border border-gray-300 bg-white px-6 py-4 hover:border-gray-400 group-focus:border-blue-300 sm:flex sm:justify-between sm:space-x-4">
+        <div class="flex items-center space-x-0">
+          <div class="flex-shrink-0 flex items-center hidden">
+            <span aria-hidden="" class="form-radio text-indigo-600 group-focus:bg-red-500"></span>
+          </div>
+          <div class="text-sm leading-5">
+            <p class="block font-medium text-gray-900">
+              Startup
+            </p>
+            <div class="text-gray-500">
+              <span class="block sm:inline">12GB / 6 CPUs</span>
+              <span class="hidden sm:inline sm:mx-1">&#xB7;</span>
+              <span class="block sm:inline">256 GB SSD disk</span>
+            </div>
+          </div>
+        </div>
+        <div class="mt-2 flex text-sm leading-5 space-x-1 sm:mt-0 sm:block sm:space-x-0 sm:text-right">
+          <div class="font-medium text-gray-900">$80</div>
+          <div class="text-gray-500">/mo</div>
+        </div>
+      </div>
+      <!-- On: "border-indigo-500", Off: "border-transparent" -->
+      <div class="border-transparent absolute inset-0 rounded-lg border-2 pointer-events-none"></div>
+    </li>
+
+    <li id="radiogroup-option-2" tabindex="-1" role="radio" aria-checked="false" class="group relative rounded-lg shadow-sm cursor-pointer focus:outline-none focus:shadow-outline-blue">
+      <div class="rounded-lg border border-gray-300 bg-white px-6 py-4 hover:border-gray-400 group-focus:border-blue-300 sm:flex sm:justify-between sm:space-x-4">
+        <div class="flex items-center space-x-0">
+          <div class="flex-shrink-0 flex items-center hidden">
+            <span aria-hidden="" class="form-radio text-indigo-600 group-focus:bg-red-500"></span>
+          </div>
+          <div class="text-sm leading-5">
+            <p class="block font-medium text-gray-900">
+              Business
+            </p>
+            <div class="text-gray-500">
+              <span class="block sm:inline">16GB / 8 CPUs</span>
+              <span class="hidden sm:inline sm:mx-1">&#xB7;</span>
+              <span class="block sm:inline">512 GB SSD disk</span>
+            </div>
+          </div>
+        </div>
+        <div class="mt-2 flex text-sm leading-5 space-x-1 sm:mt-0 sm:block sm:space-x-0 sm:text-right">
+          <div class="font-medium text-gray-900">$160</div>
+          <div class="text-gray-500">/mo</div>
+        </div>
+      </div>
+      <!-- On: "border-indigo-500", Off: "border-transparent" -->
+      <div class="border-transparent absolute inset-0 rounded-lg border-2 pointer-events-none"></div>
+    </li>
+
+    <li id="radiogroup-option-3" tabindex="-1" role="radio" aria-checked="false" class="group relative rounded-lg shadow-sm cursor-pointer focus:outline-none focus:shadow-outline-blue">
+      <div class="rounded-lg border border-gray-300 bg-white px-6 py-4 hover:border-gray-400 group-focus:border-blue-300 sm:flex sm:justify-between sm:space-x-4">
+        <div class="flex items-center space-x-0">
+          <div class="flex-shrink-0 flex items-center hidden">
+            <span aria-hidden="" class="form-radio text-indigo-600 group-focus:bg-red-500"></span>
+          </div>
+          <div class="text-sm leading-5">
+            <p class="block font-medium text-gray-900">
+              Enterprise
+            </p>
+            <div class="text-gray-500">
+              <span class="block sm:inline">32GB / 12 CPUs</span>
+              <span class="hidden sm:inline sm:mx-1">&#xB7;</span>
+              <span class="block sm:inline">1024 GB SSD disk</span>
+            </div>
+          </div>
+        </div>
+        <div class="mt-2 flex text-sm leading-5 space-x-1 sm:mt-0 sm:block sm:space-x-0 sm:text-right">
+          <div class="font-medium text-gray-900">$240</div>
+          <div class="text-gray-500">/mo</div>
+        </div>
+      </div>
+      <!-- On: "border-indigo-500", Off: "border-transparent" -->
+      <div class="border-transparent absolute inset-0 rounded-lg border-2 pointer-events-none"></div>
+    </li>
+  </ul>
+</fieldset>
+</body>
+</html>

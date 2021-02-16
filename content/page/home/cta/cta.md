@@ -1,6 +1,8 @@
 ---
 id: home_cta
-title: How much capacity will you provide?
-button: Get your 3Node
-link: /3node 
+title: Planetary Network
+button: Learn More
+link: '' #Add button link here
 ---
+
+A game changing infrastructure that enables you to define your redundancy and automate your deployments from a few clicks.

@@ -10,14 +10,14 @@
           <a
             v-if="link.includes('http')"
             target="_blank"
-            class="inline-block py-4 px-8 mr-6 leading-none text-white bg-gray-900 hover:bg-gray-700 font-semibold rounded shadow"
+            class="inline-block uppercase bg-blue-900 text-lg learn-button hover:bg-blue-800 text-gray-100 px-8 py-2 mr-5 my-2 rounded shadow rounded-full"
             :href="link"
             >{{ button }}</a
           >
 
           <a
             v-else
-            class="inline-block py-4 px-8 mr-6 leading-none text-white bg-gray-900 hover:bg-gray-700 font-semibold rounded shadow"
+            class="inline-block uppercase bg-blue-900 text-lg learn-button hover:bg-blue-800 text-gray-100 px-8 py-2 mr-5 my-2 rounded shadow rounded-full"
             :href="link"
             >{{ button }}</a
           >
@@ -41,10 +41,3 @@ export default {
   },
 };
 </script>
-
-<style scoped>
-.text-8xl {
-  font-size: 6rem;
-  line-height: 1;
-}
-</style>

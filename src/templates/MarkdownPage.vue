@@ -1,27 +1,6 @@
 <template>
   <Layout :hideHeader="true" :disableScroll="true">
     <div class="container sm:pxi-0 mx-auto overflow-x-hidden py-5">
-      
-      <SolutionsHeader
-        v-if="$page.markdownPage.header"
-        :header="$page.markdownPage.header"
-      />
-
-      <g-image
-        v-if="$page.markdownPage.solution_image2"
-        :src="$page.markdownPage.solution_image2.src"
-      />
-
-      <SolutionsHeader
-        v-if="$page.markdownPage.headerSolution4"
-        :header="$page.markdownPage.headerSolution4"
-      />
-
-      <g-image
-        v-if="$page.markdownPage.solution_image3"
-        :src="$page.markdownPage.solution_image3.src"
-      />
-
       <Header
         v-if="
           $page.markdownPage.id !== 'contact' &&
@@ -32,77 +11,40 @@
         :image="$page.markdownPage.header_image"
         :altImg="$page.markdownPage.header_altImg"
         :excerpt="$page.markdownPage.header_excerpt"
-        :button="$page.markdownPage.button"
-        :link="$page.markdownPage.link"
       />
-
-      <Features
-        v-if="$page.markdownPage.features3.length > 0"
-        :main="$page.markdownPage.featuresMain3"
-        :features="$page.markdownPage.features3"
-      />
-
-      <HowItWorks
-        v-if="$page.markdownPage.howItWorks.length > 0"
-        :HIWData="$page.markdownPage.howItWorks"
-        :main="$page.markdownPage.howItWorksMain"
-      />
-
-      <SolutionsHeader
-        v-if="$page.markdownPage.headerSolution"
-        :header="$page.markdownPage.headerSolution"
-      />
-
-      <GetInTouch
-        :contacts="$page.markdownPage.contactData"
-        v-if="$page.markdownPage.contactData.length > 0"
-      />
-
-      <ShowcaseProducts
-        :products="$page.markdownPage.productData"
-        v-if="
-          $page.markdownPage.productData &&
-          $page.markdownPage.productData.length > 0
-        "
-      />
-
-      <g-image
-        v-if="$page.markdownPage.solution_image"
-        :src="$page.markdownPage.solution_image.src"
-      />
-
-      <SolutionsHeader
-        v-if="$page.markdownPage.headerSolution2"
-        :header="$page.markdownPage.headerSolution2"
-      />
-
-      <Features
-        v-if="$page.markdownPage.features.length > 0"
-        :main="$page.markdownPage.featuresMain"
-        :features="$page.markdownPage.features"
-      />
-
-      <!-- <HowItWorks
-        v-if="$page.markdownPage.howItWorks.length > 0"
-        :HIWData="$page.markdownPage.howItWorks"
-        :main="$page.markdownPage.howItWorksMain"
-      /> -->
 
       <VerticalNav
         :slides="$page.markdownPage.slides"
-        v-if="$page.markdownPage.slide && $page.markdownPage.slides.length > 0"
+        v-if="$page.markdownPage.slides && $page.markdownPage.slides && $page.markdownPage.slides && $page.markdownPage.slides.length > 0"
       />
 
-      <div v-html="$page.markdownPage.content"></div>
+      <SolutionsHeader
+        v-if="$page.markdownPage.header"
+        :header="$page.markdownPage.header"
+      />
+      
+      <g-image 
+        v-if="$page.markdownPage.solution_image"
+        :src="$page.markdownPage.solution_image.src"
+      />
+      
+
       <NewCard
         v-for="card in $page.markdownPage.cards"
         :key="card.id"
         :card="card"
       />
 
-      <SolutionsHeader
-        v-if="$page.markdownPage.headerSolution3"
-        :header="$page.markdownPage.headerSolution3"
+      <HowItWorks
+        v-if="$page.markdownPage.howItWorks && $page.markdownPage.howItWorks.length > 0"
+        :HIWData="$page.markdownPage.howItWorks"
+        :main="$page.markdownPage.howItWorksMain"
+      />
+
+      <Features
+        v-if="$page.markdownPage.features && $page.markdownPage.features.length > 0"
+        :main="$page.markdownPage.featuresMain"
+        :features="$page.markdownPage.features"
       />
 
       <Comparison
@@ -114,36 +56,34 @@
         :sections="$page.markdownPage.comparisonSecs"
       />
 
-      <Features
-        v-if="$page.markdownPage.features2.length > 0"
-        :main="$page.markdownPage.featuresMain2"
-        :features="$page.markdownPage.features2"
+      <ShowcaseProducts
+        :main="$page.markdownPage.productsMain"
+        :products="$page.markdownPage.productData"
+        v-if="
+          $page.markdownPage.productData &&
+          $page.markdownPage.productData.length > 0
+        "
       />
 
-      <!-- <logoShowcase
-        v-if="$page.markdownPage.logos"
+      <Roadmap
+        v-if="$page.markdownPage.roadmap && $page.markdownPage.roadmap.length > 0"
+        :roadmap="$page.markdownPage.roadmap"
+      />
+
+      <FourTiersWithToggle
+        v-if="$page.markdownPage.pricingPlans && $page.markdownPage.pricingPlans.length > 0"
+        :main="$page.markdownPage.pricing_plansMain"
+        :pricingPlans="$page.markdownPage.pricingPlans"
+      />
+
+      <WithComparisonTable
+        v-if="$page.markdownPage.plans && $page.markdownPage.plans.length > 0"
+        :plans="$page.markdownPage.plans"
+      />
+
+      <logoShowcase
+        v-if="$page.markdownPage.logos && $page.markdownPage.logos.length > 0"
         :logos="$page.markdownPage.logos"
-      /> -->
-
-      <NewCard
-        v-for="card in $page.markdownPage.cards2"
-        :key="card.id"
-        :card="card"
-      />
-
-      <CallToAction
-        v-if="$page.markdownPage.cta"
-        :cta="$page.markdownPage.cta"
-      />
-
-      <g-image
-        v-if="$page.markdownPage.solution_image4"
-        :src="$page.markdownPage.solution_image4.src"
-      />
-
-      <SignUp
-        v-if="$page.markdownPage.signup"
-        :signup="$page.markdownPage.signup"
       />
 
       <BrandPanel
@@ -151,10 +91,20 @@
         v-if="$page.markdownPage.brandPanel"
       />
 
-      <!-- <SplitWithImage
-      :split="$page.markdownPage.splitWithImage"
-        v-if="$page.markdownPage.splitWithImage"
-      /> -->
+      <CallToAction
+        v-if="$page.markdownPage.cta"
+        :cta="$page.markdownPage.cta"
+      />
+
+      <SignUp
+        v-if="$page.markdownPage.signup"
+        :signup="$page.markdownPage.signup"
+      />
+
+      <GetInTouch
+        :contacts="$page.markdownPage.contactData"
+        v-if="$page.markdownPage.contactData && $page.markdownPage.contactData.length > 0"
+      />
     </div>
   </Layout>
 </template>
@@ -164,48 +114,19 @@
     markdownPage(id: $id) {
         id
         path
-        content
+        excerpt
         header_excerpt
         header_altImg
         header_title
         header_image
-        button
-        link
         solution_image
-        solution_image2
-        solution_image3
-        solution_image4
         slides{
           id
           title
-          content
+          excerpt
           image
           order
         }
-        cards{
-          id
-          title
-          image
-          button
-          link
-          order
-          content
-        }
-        cards2{
-          id
-          title
-          image
-          button
-          link
-          order
-          content
-        }
-       contactData{
-         id
-         title
-         mail
-         phone
-       }
        header{
          title
          subtitle
@@ -215,58 +136,36 @@
          btn2
          link2
        }
-       headerSolution{
-         subtitle
-         content
-       }
-        headerSolution2{
-        subtitle
-        content
-       }
-        headerSolution3{
-         subtitle
-         content
-         btn1
-         link1
-       }
-        headerSolution4{
-        subtitle
-        content
-        btn1
-        link1
-       }
+        cards{
+          id
+          title
+          image
+          button
+          link
+          order
+          content
+        }
        howItWorks{
          id
          title
          content
-       }
-       brandPanel{
-         id
-         title
-         subtitle
-         content
-         sourceUrl
-         btnTxt
-         image
-       }
-       splitWithImage{
-         id
-         subtitle
-         title
-         content
-         sourceUrl
-         btnTxt
-         image
        }
        howItWorksMain{
          id
          title
          image
        }
+       productsMain{
+          id
+          title
+          subtitle
+      #    image
+        }
        productData{
-        id
+         id
          title
-        content
+         content
+         image
        }
         featuresMain{
           id
@@ -275,41 +174,61 @@
           link
           content
         }
-        featuresMain2{
-          id
-          title
-          btn 
-          link
-          content
-        }
-        featuresMain3{
-          id
-          title
-          btn 
-          link
-          content
-        }
-        logos{
-          id
-          image
-        }
         features{
           id
           title 
           svg
           content
         }
-        features2{
+        comparisonMain{
           id
-          title 
+          title
+          description
+          button
+          link
+        }
+        comparisonSecs{
+          id
           svg
+          title
           content
         }
-        features3{
+        roadmap{
           id
-          title 
-          svg
-          content
+          title
+          excerpt
+        }
+        pricing_plansMain{
+          id
+          title
+          button1
+          button2
+          excerpt
+        }
+        pricingPlans{
+          id
+          title
+          excerpt
+          price
+          duration
+          button
+          link
+          includeTitle
+          options
+        }
+        plans{
+          id
+          title
+          rows {
+            title
+            firstCol
+            secCol
+            thirdCol
+          }
+        }
+        logos{
+          id
+          image
         }
         cta{
           id
@@ -326,19 +245,21 @@
           button2
           link2
         }
-        comparisonMain{
-          id
-          title
-          description
-          button
-          link
-        }
-        comparisonSecs{
-          id
-          svg
-          title
-          content
-        }
+        brandPanel{
+         id
+         title
+         subtitle
+         excerpt(length: 2000)
+         sourceUrl
+         btnTxt
+         image
+       }
+        contactData{
+         id
+         title
+         mail
+         phone
+       }
     }
   }
 
@@ -357,8 +278,10 @@ import logoShowcase from "~/components/marketing/sections/cta-sections/logoShowc
 import CallToAction from "~/components/custom/sections/CallToAction.vue";
 import SignUp from "~/components/custom/sections/SignUp.vue";
 import Comparison from "~/components/custom/sections/Comparison.vue";
+import Roadmap from "~/components/custom/sections/Roadmap.vue";
+import FourTiersWithToggle from "~/components/marketing/sections/pricing/four_tiers_with_toggle.vue";
+import WithComparisonTable from "~/components/marketing/sections/pricing/with_comparison_table.vue";
 import BrandPanel from "~/components/marketing/sections/cta-sections/BrandPanel.vue";
-import SplitWithImage from "~/components/marketing/sections/cta-sections/SplitWithImage.vue";
 
 export default {
   components: {
@@ -374,20 +297,19 @@ export default {
     CallToAction,
     SignUp,
     Comparison,
+    Roadmap,
+    FourTiersWithToggle,
+    WithComparisonTable,
     BrandPanel,
-    SplitWithImage,
   },
+
   metaInfo() {
     return {
-      title: this.pageName,
+      title: this.$page.markdownPage.title,
     };
   },
-  computed: {
-    pageName() {
-      let path = this.$route.path.substring(1);
-      let name = path[0].toUpperCase() + path.slice(1);
-      return name;
-    },
+  mounted() {
+    console.log(this.$page.markdownPage);
   },
 };
 </script>

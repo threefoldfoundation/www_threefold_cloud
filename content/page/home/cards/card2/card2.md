@@ -1,10 +1,10 @@
 ---
-id: home2
-title: A model in which anyone can partake
-image: ./home_card_2.png
-button: Learn More
-link: /solution
+id: card2
+title: Planetary File System
+image: ./card2.png
+button: ''
+link: '' #link for button
 order: 2
 ---
 
-Enabling a simple way for anyone to partake in the Internet economy. All you need to get started is a node, plug it into an electricity outlet, and to connect it to your network coverage.
+Introducing an ultra safe storage system that gives you the flexibility to add scalable storage on demand and manage it through S3 API.

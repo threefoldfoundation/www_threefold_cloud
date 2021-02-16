@@ -53,7 +53,7 @@
                   }}</time>
                 </g-link>
                 <!-- &nbsp;&middot;&nbsp; {{ $page.blog.timeToRead }} min read -->
-                &nbsp;&middot;&nbsp;
+                <!-- &nbsp;&middot;&nbsp; -->
                 <g-link :to="$page.blog.path">
                   <time :datetime="$page.blog.datetime">{{
                     $page.blog.startDate
@@ -68,7 +68,7 @@
         <g-image :src="$page.blog.image"></g-image>
       </section>
 
-      <div class="">
+      <div class="py-12">
         <section
           class="post-content container mx-auto relative font-serif text-gray-700"
         >

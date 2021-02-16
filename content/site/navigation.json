@@ -1,0 +1,42 @@
+{
+  "headerNavigation": [
+    {
+      "name": "About",
+      "link": "/about",
+      "external": false,
+      "expandable": false
+    },
+    {
+      "name": "Projects",
+      "link": "/projects",
+      "external": false,
+      "expandable": true
+    },
+    {
+      "name": "People",
+      "link": "/people",
+      "external": false,
+      "expandable": true
+    },
+    {
+      "name": "Blog",
+      "link": "/blog",
+      "external": false,
+      "expandable": false
+    },
+    {
+      "name": "NewsRoom",
+      "link": "/news",
+      "external": false,
+      "expandable": false
+    }
+  ],
+  "footerNavigation": [
+    {
+      "name": "",
+      "link": "",
+      "external": false,
+      "expandable": false
+    }
+  ]
+}

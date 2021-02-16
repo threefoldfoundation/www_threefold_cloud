@@ -5,13 +5,13 @@
         v-for="(slide, index) in slides"
         :key="index"
         :href="`#${index}`"
-        class="mt-1 capitalize group flex items-center px-3 py-2 text-sm leading-5 font-medium hover:text-gray-900 hover:bg-gray-400 focus:outline-none transition border-blue-500 hover:bg-gray-100 transition ease-in-out duration-150"
+        class="mt-1 capitalize group flex items-center px-3 py-2 text-sm leading-5 font-medium hover:text-gray-900 focus:outline-none border-blue-500 hover:bg-gray-100 transition ease-in-out duration-150"
         :class="{
           'border-r-3 border-blue-500 hover:bg-gray-100': activeIndex === index,
         }"
         @click="setActive(index)"
       >
-        <span class="truncate"> {{ slide.title }} </span>
+        <span> {{ slide.title }} </span>
       </a>
     </nav>
 
@@ -21,12 +21,10 @@
       <div :id="slides[activeIndex]" class="hidden" style="display: block">
         <g-image
           v-if="slides[activeIndex].image"
-          :src="
-            require(`!!assets-loader!@images/sliders/${slides[activeIndex].image}`)
-          "
+          :src="slides[activeIndex].image"
           :alt="slides[activeIndex].title"
         />
-        <div v-html="slides[activeIndex].content"></div>
+        <p>{{ slides[activeIndex].excerpt }}</p>
       </div>
     </div>
   </div>

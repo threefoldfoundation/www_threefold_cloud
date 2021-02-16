@@ -1,14 +1,11 @@
 ---
 id: home_header
-title: ""
-subtitle: Decentralization is taking over
-btn1: ""
-link1: ""
-btn2: ""
-link2: ""
+title: title
+subtitle: SUBTITLE
+btn1: Button
+link1: '' #link for button
+btn2: Button
+link2: '' #link for button
 ---
 
-Emerging technologies demand edge solutions to scale.
-
-<br />
-ThreeFold created secure and scaleable technology at the edge that allows anyone to connect capacity, anywhere.
+Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.

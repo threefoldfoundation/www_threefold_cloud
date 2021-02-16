@@ -1,69 +1,52 @@
 <template>
   <Layout :hideHeader="true" :disableScroll="true">
-    <div class="container sm:pxi-0 mx-auto overflow-x-hidden py-5">
-      <Header
-        :title="$page.markdownPage.header_title"
-        :image="$page.markdownPage.header_image"
-        :excerpt="$page.markdownPage.header_excerpt"
-        :button="$page.markdownPage.button"
-        :link="$page.markdownPage.link"
-      />
-
-      <SolutionsHeader
-        v-if="$page.markdownPage.header"
-        :header="$page.markdownPage.header"
-      />
-
-      <SolutionsHeader
-        v-if="$page.markdownPage.headerSolution"
-        :header="$page.markdownPage.headerSolution"
-      />
-
-      <g-image
-        v-if="$page.markdownPage.solution_image_2"
-        :src="$page.markdownPage.solution_image_2.src"
-      />
-
-      <Features
-        :main="$page.markdownPage.featuresMain"
-        :features="$page.markdownPage.features"
-      />
-
-      <NewCard
-        v-for="card in $page.markdownPage.cards"
-        :key="card.id"
-        :card="card"
-      />
-    </div>
-
-    <Features
-      :main="$page.markdownPage.featuresMain2"
-      :features="$page.markdownPage.features2"
+    <Header
+      :title="$page.markdownPage.header_title"
+      :image="$page.markdownPage.header_image"
+      :altImg="$page.markdownPage.header_altImg"
+      :excerpt="$page.markdownPage.header_excerpt"
+      :button="$page.markdownPage.button"
+      :link="$page.markdownPage.link"
     />
 
-    <logoShowcase
-      v-if="$page.markdownPage.logos.length > 0"
-      :logos="$page.markdownPage.logos"
+    <!-- <SolutionsHeader
+      v-if="$page.markdownPage.header"
+      :header="$page.markdownPage.header"
+    /> -->
+
+    <NewCard
+      v-for="card in $page.markdownPage.cards"
+      :key="card.id"
+      :card="card"
     />
 
-    <InTheNews
-      v-if="$page.markdownPage.inTheNews"
-      :news="$page.markdownPage.inTheNews"
+    <NewCardLeft
+      v-for="cardLeft in $page.markdownPage.cardLefts"
+      :key="cardLeft.id"
+      :cardLeft="cardLeft"
     />
-
-    <SignUp
-      :signup="$page.markdownPage.signup"
-      v-if="$page.markdownPage.signup"
+    
+    <g-image 
+        v-if="$page.markdownPage.solution_image"
+        :src="$page.markdownPage.solution_image.src"
     />
 
     <CallToAction v-if="$page.markdownPage.cta" :cta="$page.markdownPage.cta" />
 
-    <g-image
-      v-if="$page.markdownPage.solution_image"
-      :src="$page.markdownPage.solution_image.src"
-    />
+    <!-- <logoShowcase
+      v-if="$page.markdownPage.logos.length > 0"
+      :logos="$page.markdownPage.logos"
+    /> -->
 
-    <!-- <Getintouch :contacts="contacts"/> -->
+    <!-- <InTheNews
+      v-if="$page.markdownPage.inTheNews"
+      :news="$page.markdownPage.inTheNews"
+    /> -->
+
+    <!-- <SignUp
+      v-if="$page.markdownPage.signup"
+      :signup="$page.markdownPage.signup"
+    /> -->
   </Layout>
 </template>
 
@@ -72,14 +55,22 @@
     markdownPage(id: "home") {
         id
         path
-        content
         header_title
         header_image
         header_excerpt
+        header_altImg
         button
         link
         solution_image
-        solution_image_2
+        header{
+         title
+         subtitle
+         content
+         btn1
+         link1
+         btn2
+         link2
+        }
         cards{
           id
           title
@@ -89,49 +80,34 @@
           order
           content
         }
-        header{
-         title
-         subtitle
-         content
-         btn1
-         link1
-         btn2
-         link2
-       }
-        headerSolution{
-         subtitle
-         content
-       }
-       featuresMain{
+        cardLefts{
           id
-          title 
-          btn 
+          title
+          image
+          button
           link
+          order
           content
         }
-        featuresMain2{
+        cta{
           id
-          title 
-          btn 
-          link
+          title
           content
+          button
+          link
         }
         logos{
           id
           image
           url
         }
-        features{
+        inTheNews {
           id
-          title 
-          svg
-          content
-        }
-        features2{
-          id
-          title 
-          svg
-          content
+          excerpt
+          partners {
+            path
+            logo
+          }
         }
         signup{
           id
@@ -141,48 +117,31 @@
           button2
           link2
         }
-        cta{
-          id
-          title
-          content
-          button
-          link
-        }
-        inTheNews {
-          id
-          content
-          partners {
-            path
-            logo
-          }
-        }
     }  
   }
 
 </page-query>
 
 <script>
-import SolutionsHeader from "~/components/custom/sections/header/HeaderSection.vue";
 import Header from "~/components/marketing/sections/cta-sections/Header.vue";
-import Features from "~/components/custom/sections/Features.vue";
+import SolutionsHeader from "~/components/custom/sections/header/HeaderSection.vue";
 import NewCard from "~/components/marketing/sections/cta-sections/NewCard.vue";
-import Getintouch from "~/components/custom/Navbar/Getintouch.vue";
-import logoShowcase from "~/components/marketing/sections/cta-sections/logoShowcase.vue";
-import SignUp from "~/components/custom/sections/SignUp.vue";
+import NewCardLeft from "~/components/marketing/sections/cta-sections/NewCardLeft.vue";
 import CallToAction from "~/components/custom/sections/CallToAction.vue";
+import logoShowcase from "~/components/marketing/sections/cta-sections/logoShowcase.vue";
 import InTheNews from "~/components/marketing/sections/logo-clouds/off_white_grid.vue";
+import SignUp from "~/components/custom/sections/SignUp.vue";
 
 export default {
   components: {
-    SolutionsHeader,
     Header,
-    Features,
+    SolutionsHeader,
     NewCard,
-    Getintouch,
-    logoShowcase,
-    SignUp,
+    NewCardLeft,
     CallToAction,
+    logoShowcase,
     InTheNews,
+    SignUp,
   },
   metaInfo() {
     return {
@@ -191,8 +150,3 @@ export default {
   },
 };
 </script>
-<style scoped>
-/* h2 {
-  padding-bottom: 8rem;
-} */
-</style> >
