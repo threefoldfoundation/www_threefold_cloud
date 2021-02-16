@@ -15,7 +15,7 @@
 
       <VerticalNav
         :slides="$page.markdownPage.slides"
-        v-if="$page.markdownPage.slides && $page.markdownPage.slides.length > 0"
+        v-if="$page.markdownPage.slides && $page.markdownPage.slides && $page.markdownPage.slides && $page.markdownPage.slides.length > 0"
       />
 
       <SolutionsHeader
@@ -36,13 +36,13 @@
       />
 
       <HowItWorks
-        v-if="$page.markdownPage.howItWorks.length > 0"
+        v-if="$page.markdownPage.howItWorks && $page.markdownPage.howItWorks.length > 0"
         :HIWData="$page.markdownPage.howItWorks"
         :main="$page.markdownPage.howItWorksMain"
       />
 
       <Features
-        v-if="$page.markdownPage.features.length > 0"
+        v-if="$page.markdownPage.features && $page.markdownPage.features.length > 0"
         :main="$page.markdownPage.featuresMain"
         :features="$page.markdownPage.features"
       />
@@ -66,23 +66,23 @@
       />
 
       <Roadmap
-        v-if="$page.markdownPage.roadmap.length > 0"
+        v-if="$page.markdownPage.roadmap && $page.markdownPage.roadmap.length > 0"
         :roadmap="$page.markdownPage.roadmap"
       />
 
       <FourTiersWithToggle
-        v-if="$page.markdownPage.pricingPlans.length > 0"
+        v-if="$page.markdownPage.pricingPlans && $page.markdownPage.pricingPlans.length > 0"
         :main="$page.markdownPage.pricing_plansMain"
         :pricingPlans="$page.markdownPage.pricingPlans"
       />
 
       <WithComparisonTable
-        v-if="$page.markdownPage.plans.length > 0"
+        v-if="$page.markdownPage.plans && $page.markdownPage.plans.length > 0"
         :plans="$page.markdownPage.plans"
       />
 
       <logoShowcase
-        v-if="$page.markdownPage.logos.length > 0"
+        v-if="$page.markdownPage.logos && $page.markdownPage.logos.length > 0"
         :logos="$page.markdownPage.logos"
       />
 
@@ -103,7 +103,7 @@
 
       <GetInTouch
         :contacts="$page.markdownPage.contactData"
-        v-if="$page.markdownPage.contactData.length > 0"
+        v-if="$page.markdownPage.contactData && $page.markdownPage.contactData.length > 0"
       />
     </div>
   </Layout>
