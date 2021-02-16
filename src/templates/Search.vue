@@ -7,7 +7,7 @@
       <img
         v-if="loading"
         class="m-auto"
-        src="/img/loader.gif"
+        :src="require(`!!assets-loader!@images/loader.gif`)"
         alt=""
       />
       <div

@@ -10,21 +10,21 @@
       <div class="flex items-center justify-between px-4 py-3 sm:p-0">
         <div class="inline-flex items-center flex-shrink-0">
           <a href="/" class="flex">
-            <img
-              src="/img/cloud_logo.svg"
-              class="mr-3 fill-current"
-              width="180"
+
+          <g-image
+              :src="require(`!!assets-loader!@images/cloud_logo.svg`)"
+              class="mr-3 fill-current logo"
               v-if="theme == 'light'"
               alt=""
             />
 
-            <img
-              src="/img/cloud_logo.svg"
-              class="mr-3 fill-current"
-              width="180"
+            <g-image
+              :src="require(`!!assets-loader!@images/cloud_logo.svg`)"
+              class="mr-3 fill-current logo"
               v-else
               alt=""
             />
+
             <!-- <span
               class="hidden md:block font-semibold text-xl tracking-tight"
               >{{ $static.metadata.siteName }}</span
@@ -308,7 +308,9 @@ a.active--exact.active {
   background-color: rgba(237, 242, 247, 1);
   border-radius: 0.5rem;
 }
-
+.logo {
+  max-width: 200px;
+}
 .navbar {
   width: auto;
 }
