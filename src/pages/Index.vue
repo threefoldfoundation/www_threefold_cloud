@@ -1,10 +1,5 @@
 <template>
   <Layout :hideHeader="true" :disableScroll="true">
-    <SignUp
-      v-if="$page.markdownPage.signup"
-      :signup="$page.markdownPage.signup"
-    />
-    
     <Header
       :title="$page.markdownPage.header_title"
       :image="$page.markdownPage.header_image"
@@ -18,6 +13,11 @@
       v-if="$page.markdownPage.header"
       :header="$page.markdownPage.header"
     /> -->
+
+    <SignUp
+      v-if="$page.markdownPage.signup"
+      :signup="$page.markdownPage.signup"
+    />
 
     <NewCard
       v-for="card in $page.markdownPage.cards"
