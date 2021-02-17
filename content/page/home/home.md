@@ -1,5 +1,6 @@
 ---
 id: home
+signup: home_signup
 header_title: TF cloud.
 header_image: ./home_header.png
 header_altImg: tfcloud

@@ -1,5 +1,10 @@
 <template>
   <Layout :hideHeader="true" :disableScroll="true">
+    <SignUp
+      v-if="$page.markdownPage.signup"
+      :signup="$page.markdownPage.signup"
+    />
+    
     <Header
       :title="$page.markdownPage.header_title"
       :image="$page.markdownPage.header_image"
@@ -41,11 +46,6 @@
     <!-- <InTheNews
       v-if="$page.markdownPage.inTheNews"
       :news="$page.markdownPage.inTheNews"
-    /> -->
-
-    <!-- <SignUp
-      v-if="$page.markdownPage.signup"
-      :signup="$page.markdownPage.signup"
     /> -->
   </Layout>
 </template>
