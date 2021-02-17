@@ -7,4 +7,4 @@ link: '' #link for button
 order: 1
 ---
 
-Deploy cloud instances with dedicated CPU, SSD drives, and RAM just for your web applicatoin or development environment.
+Deploy your own cloud instance with dedicated CPU, SSD drives, and RAM – just for your web application or development environment. On the edge, out of the control of centralized parties – the next generation of the Data Center industry.
