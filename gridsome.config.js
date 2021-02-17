@@ -5,7 +5,7 @@
 // To restart press CTRL + C in terminal and run `gridsome develop`
 
 module.exports = {
-    siteName: 'Threefold Webstack',
+    siteName: 'ThreeFold Cloud',
     plugins: [
 
         // Local models
