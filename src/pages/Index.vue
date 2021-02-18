@@ -14,6 +14,11 @@
       :header="$page.markdownPage.header"
     /> -->
 
+    <SignUp
+      v-if="$page.markdownPage.signup"
+      :signup="$page.markdownPage.signup"
+    />
+
     <NewCard
       v-for="card in $page.markdownPage.cards"
       :key="card.id"
@@ -32,6 +37,18 @@
     />
 
     <CallToAction v-if="$page.markdownPage.cta" :cta="$page.markdownPage.cta" />
+    
+    <NewCard
+      v-for="card in $page.markdownPage.cards2"
+      :key="card.id"
+      :card="card"
+    />
+    
+    <NewCardLeft
+      v-for="cardLeft in $page.markdownPage.cardLefts2"
+      :key="cardLeft.id"
+      :cardLeft="cardLeft"
+    />
 
     <!-- <logoShowcase
       v-if="$page.markdownPage.logos.length > 0"
@@ -41,11 +58,6 @@
     <!-- <InTheNews
       v-if="$page.markdownPage.inTheNews"
       :news="$page.markdownPage.inTheNews"
-    /> -->
-
-    <!-- <SignUp
-      v-if="$page.markdownPage.signup"
-      :signup="$page.markdownPage.signup"
     /> -->
   </Layout>
 </template>
@@ -80,7 +92,25 @@
           order
           content
         }
+        cards2{
+          id
+          title
+          image
+          button
+          link
+          order
+          content
+        }
         cardLefts{
+          id
+          title
+          image
+          button
+          link
+          order
+          content
+        }
+        cardLefts2{
           id
           title
           image

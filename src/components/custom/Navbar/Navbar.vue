@@ -31,7 +31,7 @@
             > -->
           </a>
         </div>
-
+<!-- 
         <div class="sm:hidden ml-auto">
           <button
             @click="isOpen = !isOpen"
@@ -51,7 +51,7 @@
               />
             </svg>
           </button>
-        </div>
+        </div> -->
         <!-- <div class="text-gray-400 sm:block md:hidden">
           <ul class="list-none flex justify-center md:justify-end">
              <li class="mr-0 sm:mr-6">
@@ -309,7 +309,7 @@ a.active--exact.active {
   border-radius: 0.5rem;
 }
 .logo {
-  max-width: 200px;
+  max-width: 170px;
 }
 .navbar {
   width: auto;
@@ -320,3 +320,4 @@ a.active--exact.active {
   }
 }
 </style>
+

@@ -1,8 +1,8 @@
 ---
 id: home_signup
-title: Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-button1: Button
-link1: '' #Add button1 link here
-button2: Button
+title: We are currently in BETA version and invite you to join our testing community!
+button1: Join Now
+link1: 'https://t.me/joinchat/BwOvOxxgK59GmRoZ2_sM0w' #Add button1 link here
+button2: ''
 link2: '' #Add button1 link here
 ---

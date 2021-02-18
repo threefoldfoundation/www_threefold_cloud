@@ -1,10 +1,10 @@
 ---
 id: cardLeft1
-title: Planetary File System
+title: Planetary Secure Filesystem (PSFS)
 image: ./card2.png
 button: ''
 link: '' #link for button
 order: 1
 ---
 
-Introducing an ultra safe storage system that gives you the flexibility to add scalable storage on demand and manage it through S3 API.
+An "unlimited-scale" filesystem that allows anyone to run their storage apps (using existing interfaces & standards) everywhere in the world and securely connect and use the quantum safe storage system as a backend.
