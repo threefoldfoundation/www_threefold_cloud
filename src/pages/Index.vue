@@ -37,7 +37,12 @@
     />
 
     <CallToAction v-if="$page.markdownPage.cta" :cta="$page.markdownPage.cta" />
-
+    
+    <NewCard
+      v-for="card in $page.markdownPage.cards2"
+      :key="card.id"
+      :card="card"
+    />
     <!-- <logoShowcase
       v-if="$page.markdownPage.logos.length > 0"
       :logos="$page.markdownPage.logos"
@@ -72,6 +77,15 @@
          link2
         }
         cards{
+          id
+          title
+          image
+          button
+          link
+          order
+          content
+        }
+        cards2{
           id
           title
           image
