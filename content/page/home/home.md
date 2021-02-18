@@ -12,4 +12,5 @@ cardLefts: [cardLeft1] #you can continue adding cards as needed
 solution_image: ./home_cta.png
 cta: home_cta
 cards2: [marketplace]
+cardLefts2: [iac]
 ---

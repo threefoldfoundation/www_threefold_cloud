@@ -30,7 +30,13 @@ module.exports = {
                 path: './content/page/**/cardLefts/**/*.md',
             }
         },
-
+        {
+            use: '@gridsome/source-filesystem',
+            options: {
+                typeName: 'CardLeft2',
+                path: './content/page/**/cardLefts2/**/*.md',
+            }
+        },
         {
             use: '@gridsome/source-filesystem',
             options: {
@@ -180,6 +186,7 @@ module.exports = {
                     cards: 'Card',
                     cards2: 'Card2',
                     cardLefts: 'CardLeft',
+                    cardLefts2: 'CardLeft2',
                     slides: 'Slide',
                     contactData: 'Contact',
                     header: 'Header',

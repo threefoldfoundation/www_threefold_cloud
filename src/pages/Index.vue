@@ -43,6 +43,13 @@
       :key="card.id"
       :card="card"
     />
+    
+    <NewCardLeft
+      v-for="cardLeft in $page.markdownPage.cardLefts2"
+      :key="cardLeft.id"
+      :cardLeft="cardLeft"
+    />
+
     <!-- <logoShowcase
       v-if="$page.markdownPage.logos.length > 0"
       :logos="$page.markdownPage.logos"
@@ -95,6 +102,15 @@
           content
         }
         cardLefts{
+          id
+          title
+          image
+          button
+          link
+          order
+          content
+        }
+        cardLefts2{
           id
           title
           image
