@@ -271,72 +271,72 @@ button:focus {
   // }
 }
 
-body[data-theme="dark"] {
-  background-color: #191b1f;
-  @apply text-gray-300;
-  .post-content-text {
-    @apply text-gray-300;
-  }
-  .brandpanel {
-    background-color: #1072ba !important;
-}
-  .text-gray-700,
-  .text-gray-900 {
-    @apply text-white;
-  }
-  .lg\:shadow-lg {
-    box-shadow: 0 20px 25px -5px rgba(255, 255, 255, 0.1),
-      0 10px 10px -5px rgba(255, 255, 255, 0.04);
-  }
-  .learn-button {
-    background-color: #c4c4c4;
-    @apply text-gray-900;
-    &:hover {
-      @apply bg-gray-300;
-    }
-  }
-  .text-indigo-600 {
-    @apply text-white;
-  }
-  .inset-0,
-  input[type="text"] {
-    background-color: #191b1f;
-  }
-  .bg-white,
+// body[data-theme="dark"] {
+//   background-color: #191b1f;
+//   @apply text-gray-300;
+//   .post-content-text {
+//     @apply text-gray-300;
+//   }
+//   .brandpanel {
+//     background-color: #1072ba !important;
+// }
+//   .text-gray-700,
+//   .text-gray-900 {
+//     @apply text-white;
+//   }
+//   .lg\:shadow-lg {
+//     box-shadow: 0 20px 25px -5px rgba(255, 255, 255, 0.1),
+//       0 10px 10px -5px rgba(255, 255, 255, 0.04);
+//   }
+//   .learn-button {
+//     background-color: #c4c4c4;
+//     @apply text-gray-900;
+//     &:hover {
+//       @apply bg-gray-300;
+//     }
+//   }
+//   .text-indigo-600 {
+//     @apply text-white;
+//   }
+//   .inset-0,
+//   input[type="text"] {
+//     background-color: #191b1f;
+//   }
+//   .bg-white,
    
-  .bg-gray-100,
-  .bg-gray-200 {
-    background-color: #191b1f;
-  }
-  .post-card-excerpt {
-    @apply text-gray-500;
-  }
-  .pagination li {
-    @apply bg-gray-700;
-    @apply text-gray-200;
-    @apply border-gray-600;
-    &:hover {
-      @apply bg-gray-600;
-      @apply text-gray-900;
-    }
-  }
-  .pagination li.border-l-black {
-    @apply border-l-gray-300;
-  }
-  pre {
-    @apply text-gray-500;
-  }
-  .flex-post {
-    @apply border-b-gray-800;
-  }
-  .author-list-item img {
-    border-color: #191b1f;
-  }
-  .author-social {
-    a {
-      &:hover {
-        @apply text-white;
-      }
-    }
-  }
-}
+//   .bg-gray-100,
+//   .bg-gray-200 {
+//     background-color: #191b1f;
+//   }
+//   .post-card-excerpt {
+//     @apply text-gray-500;
+//   }
+//   .pagination li {
+//     @apply bg-gray-700;
+//     @apply text-gray-200;
+//     @apply border-gray-600;
+//     &:hover {
+//       @apply bg-gray-600;
+//       @apply text-gray-900;
+//     }
+//   }
+//   .pagination li.border-l-black {
+//     @apply border-l-gray-300;
+//   }
+//   pre {
+//     @apply text-gray-500;
+//   }
+//   .flex-post {
+//     @apply border-b-gray-800;
+//   }
+//   .author-list-item img {
+//     border-color: #191b1f;
+//   }
+//   .author-social {
+//     a {
+//       &:hover {
+//         @apply text-white;
+//       }
+//     }
+//   }
+// }
