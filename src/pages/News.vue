@@ -40,7 +40,7 @@
 
 <page-query>
 query($page: Int){
-  entries: allNews(perPage: 10, page: $page, sortBy: "created", order: DESC, filter: {category: { id: {in: ["farming"]}}}) @paginate{
+  entries: allNews(perPage: 10, page: $page, sortBy: "created", order: DESC, filter: {category: { id: {in: ["cloud"]}}}) @paginate{
     totalCount
     pageInfo {
       totalPages

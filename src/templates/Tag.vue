@@ -130,7 +130,7 @@
       }
     }
 
-    allProjectTag(filter: { title: {in: ["farming", "cloud", "grid", "digitaltwin"]}}){
+    allProjectTag(filter: { title: {in: ["cloud"]}}){
       edges{
         node{
           id
