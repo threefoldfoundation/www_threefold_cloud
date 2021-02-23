@@ -59,7 +59,6 @@
               excerpt
               image(width:800)
               path
-              humanTime : startdate(format:"DD MMM YYYY")
               datetime : created
               
             }

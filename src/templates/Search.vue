@@ -44,10 +44,8 @@ query ($private: Int){
       }
         rank
         linkedin
-        startDate : startdate(format:"MM YYYY")
         humanTime : created(format:"DD MMMM YYYY")
         datetime : created(format:"ddd MMM DD YYYY hh:mm:ss zZ")
-        status
         excerpt
         image(width:800)
         path
