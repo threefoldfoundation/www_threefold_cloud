@@ -303,10 +303,17 @@ export default {
     BrandPanel,
   },
 
-  metaInfo() {
+    metaInfo() {
     return {
-      title: this.$page.markdownPage.title,
+      title: this.pageName,
     };
+  },
+  computed: {
+    pageName() {
+      let path = this.$route.path.substring(1);
+      let name = path[0].toUpperCase() + path.slice(1);
+      return name;
+    },
   },
   mounted() {
     console.log(this.$page.markdownPage);

@@ -59,7 +59,6 @@
               excerpt
               image(width:800)
               path
-              humanTime : startdate(format:"DD MMM YYYY")
               datetime : created
               
             }
@@ -130,7 +129,7 @@
       }
     }
 
-    allProjectTag(filter: { title: {in: ["farming", "cloud", "grid", "digitaltwin"]}}){
+    allProjectTag(filter: { title: {in: ["cloud"]}}){
       edges{
         node{
           id

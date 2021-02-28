@@ -30,7 +30,7 @@
 <page-query>
 
 query ($private: Int){
-  projects: allProject (filter: { private: { ne: $private }, tags: { id: {in: ["farming"]}}}){   
+  projects: allProject (filter: { private: { ne: $private }, tags: { id: {in: ["cloud"]}}}){   
     edges {
         node {
                 id
@@ -44,10 +44,8 @@ query ($private: Int){
       }
         rank
         linkedin
-        startDate : startdate(format:"MM YYYY")
         humanTime : created(format:"DD MMMM YYYY")
         datetime : created(format:"ddd MMM DD YYYY hh:mm:ss zZ")
-        status
         excerpt
         image(width:800)
         path
