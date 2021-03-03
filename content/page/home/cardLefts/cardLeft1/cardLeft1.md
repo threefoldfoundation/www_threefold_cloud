@@ -1,10 +1,10 @@
 ---
 id: cardLeft1
-title: Planetary Secure Filesystem (PSFS)
+title: Quantum Safe Filesystem (QSFS)
 image: ./card2.png
 button: ''
 link: '' #link for button
 order: 1
 ---
 
-An "unlimited-scale" filesystem that allows anyone to run their storage apps (using existing interfaces & standards) everywhere in the world and securely connect and use the quantum safe storage system as a backend.
+Store petabytes of data at an incredible price and with great reliability. Compatible with IPFS and Hypercore / Hyperdrive for peer-to-peer use-cases. Any storage platform can be put on top. This is the most reliable and globally-scalable filesystem ever invented.

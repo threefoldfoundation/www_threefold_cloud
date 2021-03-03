@@ -1,7 +1,7 @@
 ---
 id: home_cta
 title: Planetary Secure Network (PSN)
-button: Learn More
+button: '' #Learn More
 link: '' #Add button link here
 ---
 
