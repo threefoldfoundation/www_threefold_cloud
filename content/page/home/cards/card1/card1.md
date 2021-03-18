@@ -1,6 +1,6 @@
 ---
 id: card1
-title: Edge Data Center (eVDC)
+title: Edge Virtual Data Center (eVDC)
 image: ./card1.png
 button: ''
 link: '' #link for button
