@@ -1,9 +1,9 @@
 ---
 id: home
-header_title: TF cloud.
+header_title: ThreeFold P2P Cloud
 header_image: ./home_header.png
 header_altImg: tfcloud
-header_excerpt: Scale your workloads limitlessly in a secure end-to-end environment.
+header_excerpt: Scale your workloads limitlessly in a secure end-to-end environment. The world's first carbon neutral peer-to-peer cloud.
 button: '' #Learn More
 link: '' #link for button
 signup: home_signup

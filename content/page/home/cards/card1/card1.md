@@ -1,6 +1,6 @@
 ---
 id: card1
-title: Planetary Data Center (PDC)
+title: Edge Data Center (eVDC)
 image: ./card1.png
 button: ''
 link: '' #link for button
