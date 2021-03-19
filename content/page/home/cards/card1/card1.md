@@ -2,8 +2,8 @@
 id: card1
 title: Edge Virtual Data Center (eVDC)
 image: ./card1.png
-button: ''
-link: '' #link for button
+button: Learn More
+link: 'https://new.threefold.io/info/cloud#/cloud__evdc_getting_started'
 order: 1
 ---
 
