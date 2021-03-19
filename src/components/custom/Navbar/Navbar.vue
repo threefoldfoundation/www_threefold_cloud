@@ -31,7 +31,7 @@
             > -->
           </a>
         </div>
-<!-- 
+
         <div class="sm:hidden ml-auto">
           <button
             @click="isOpen = !isOpen"
@@ -51,8 +51,8 @@
               />
             </svg>
           </button>
-        </div> -->
-        <!-- <div class="text-gray-400 sm:block md:hidden">
+        </div>
+        <div class="text-gray-400 sm:block md:hidden">
           <ul class="list-none flex justify-center md:justify-end">
              <li class="mr-0 sm:mr-6">
               <theme-switcher v-on="$listeners" :theme="theme" />
@@ -76,10 +76,10 @@
               </span>
             </li>
           </ul> 
-        </div> -->
+        </div>
       </div>
 
-      <!-- <nav
+      <nav
         :class="isOpen ? 'block' : 'hidden'"
         class="navbar md:order-2 px-2 pt-2 pb-4 sm:flex sm:p-0 sm:w-100 bg-white"
        > 
@@ -180,7 +180,7 @@
             @keyup.enter="result"
           />
         </div> 
-      </nav> -->
+      </nav>
       <div class="hidden md:ml-auto md:inline-block md:order-last">
         <!-- <div class="inline-flex rounded-full border-2 border-gray-200 w-1/2">
           <span class="w-auto flex justify-end items-center p-2">
