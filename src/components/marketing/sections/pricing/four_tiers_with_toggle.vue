@@ -36,7 +36,7 @@
           class="border border-gray-200 rounded-lg shadow-sm divide-y divide-gray-200"
         >
           <div class="p-6">
-            <h2 class="text-lg leading-6 font-medium text-gray-900">
+            <h2 class="text-lg leading-6 font-bold text-gray-700">
               {{ plan.title }}
             </h2>
             <p class="mt-4 text-sm leading-5 text-gray-500">
