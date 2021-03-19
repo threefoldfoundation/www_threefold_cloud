@@ -7,7 +7,7 @@ header_excerpt: Scale your workloads limitlessly in a secure end-to-end environm
 button: '' #Learn More
 link: '' #link for button
 signup: home_signup
-cards: [card1] 
+cards: [card1]
 pricing_plansMain: pricing
 pricingPlans: [plan1, plan2, plan3, plan4]
 cardLefts: [cardLeft1]

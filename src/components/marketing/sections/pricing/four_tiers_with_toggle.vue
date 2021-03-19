@@ -3,11 +3,11 @@
     <div class="max-w-screen-xl mx-auto py-24 px-4 sm:px-6 lg:px-8">
       <div class="sm:flex sm:flex-col sm:align-center">
         <h1
-          class="text-5xl leading-none font-extrabold text-gray-900 sm:text-center"
+          class="text-5xl leading-none font-bold text-gray-700 sm:text-center"
         >
           {{ main.title }}
         </h1>
-        <p class="mt-5 text-xl leading-7 text-gray-500 sm:text-center">
+        <p class="mt-5 text-m leading-7 text-gray-700 sm:text-center">
           {{ main.excerpt }}
         </p>
         <!-- <div
@@ -36,14 +36,14 @@
           class="border border-gray-200 rounded-lg shadow-sm divide-y divide-gray-200"
         >
           <div class="p-6">
-            <h2 class="text-lg leading-6 font-bold text-gray-700">
+            <h2 class="text-lg leading-6 font-bold text-gray-600">
               {{ plan.title }}
             </h2>
             <p class="mt-4 text-sm leading-5 text-gray-500">
               {{ plan.excerpt }}
             </p>
             <p class="mt-8">
-              <span class="text-4xl leading-10 font-extrabold text-gray-900">{{
+              <span class="text-4xl leading-10 font-extrabold text-gray-700">{{
                 plan.price
               }}</span>
               <span class="text-base leading-6 font-medium text-gray-500"
@@ -60,7 +60,7 @@
           </div>
           <div class="pt-6 pb-8 px-6">
             <h3
-              class="text-xs leading-4 font-medium text-gray-900 tracking-wide uppercase"
+              class="text-xs leading-4 font-medium text-gray-700 tracking-wide uppercase"
             >
               {{ plan.includeTitle }}
             </h3>
@@ -72,7 +72,7 @@
               >
                 <!-- Heroicon name: check -->
                 <svg
-                  class="flex-shrink-0 h-5 w-5 text-green-500"
+                  class="flex-shrink-0 h-5 w-5 text-green-600"
                   aria-hidden="true"
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 20 20"
@@ -84,7 +84,7 @@
                     clip-rule="evenodd"
                   />
                 </svg>
-                <span class="text-sm leading-5 text-gray-500">{{
+                <span class="text-sm leading-5 text-gray-600">{{
                   option
                 }}</span>
               </li>

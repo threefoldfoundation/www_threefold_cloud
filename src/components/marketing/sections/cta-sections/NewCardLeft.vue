@@ -6,20 +6,20 @@
           <div class="h-64 bg-cover lg:rounded-lg lg:h-full" :style="img"></div>
         </div>
         <div class="lg:w-1/2 py-12 px-6 max-w-xl lg:max-w-5xl ">
-          <h2 class="text-3xl text-gray-700 font-bold">{{ cardLeft.title }}</h2>
+          <h2 class="text-5xl text-gray-700 font-bold">{{ cardLeft.title }}</h2>
           <div class="mt-4 text-gray-700" v-html="cardLeft.content"></div>
           <div class="mt-8" v-if="cardLeft.button">
             <a
               v-if="cardLeft.link.includes('http')"
               target="_blank"
               :href="cardLeft.link"
-              class="bg-gray-900 learn-button hover:bg-gray-700 text-gray-100 px-5 py-3 font-semibold rounded"
+              class="inline-block uppercase bg-blue-900 text-lg learn-button hover:bg-blue-800 text-gray-100 px-8 py-2 mr-5 my-2 rounded shadow rounded-full"
               >{{ cardLeft.button }}</a
             >
             <a
               v-else
               :href="cardLeft.link"
-              class="bg-gray-900 learn-button hover:bg-gray-700 text-gray-100 px-5 py-3 font-semibold rounded"
+              class="inline-block uppercase bg-blue-900 text-lg learn-button hover:bg-blue-800 text-gray-100 px-8 py-2 mr-5 my-2 rounded shadow rounded-full"
               >{{ cardLeft.button }}</a
             >
           </div>
