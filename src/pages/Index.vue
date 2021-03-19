@@ -24,12 +24,6 @@
       :key="card.id"
       :card="card"
     />
-    
-      <FourTiersWithToggle
-        v-if="$page.markdownPage.pricingPlans.length > 0"
-        :main="$page.markdownPage.pricing_plansMain"
-        :pricingPlans="$page.markdownPage.pricingPlans"
-      />
 
     <NewCardLeft
       v-for="cardLeft in $page.markdownPage.cardLefts"
@@ -55,6 +49,12 @@
       :key="cardLeft.id"
       :cardLeft="cardLeft"
     />
+
+      <FourTiersWithToggle
+        v-if="$page.markdownPage.pricingPlans.length > 0"
+        :main="$page.markdownPage.pricing_plansMain"
+        :pricingPlans="$page.markdownPage.pricingPlans"
+      />
 
     <!-- <logoShowcase
       v-if="$page.markdownPage.logos.length > 0"

@@ -1,6 +1,6 @@
 <template>
   <section class="py-8 px-4">
-    <div class="flex flex-wrap items-center -mx-4">
+    <div class="flex flex-wrap items-center -mx-4 bg-teal-200 rounded shadow">
       <div class="w-full lg:w-4/6 px-4 mb-8 lg:mb-0 text-center lg:text-left">
         <h2 class="text-xl text-gray-700 font-semibold font-heading">
           {{ signup.title }}

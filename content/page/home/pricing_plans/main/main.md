@@ -1,6 +1,6 @@
 ---
 id: pricing
-title: eVDC Pricing
+title: Mainnet Pricing
 button1: ''
 button2: ''
 ---
