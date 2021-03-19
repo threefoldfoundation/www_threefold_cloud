@@ -10,7 +10,7 @@
         <p class="mt-5 text-xl leading-7 text-gray-500 sm:text-center">
           {{ main.excerpt }}
         </p>
-        <div
+        <!-- <div
           class="relative self-center mt-6 bg-gray-100 rounded-lg p-0.5 flex sm:mt-8"
         >
           <button
@@ -25,7 +25,7 @@
           >
             {{ main.button2 }}
           </button>
-        </div>
+        </div> -->
       </div>
       <div
         class="mt-12 space-y-4 sm:mt-16 sm:space-y-0 sm:grid sm:grid-cols-2 sm:gap-6 lg:max-w-4xl lg:mx-auto xl:max-w-none xl:mx-0 xl:grid-cols-4"
@@ -53,8 +53,8 @@
             <g-link
               type="button"
               :to="plan.link"
-              class="mt-8 w-full text-center bg-gray-800 border border-gray-800 rounded-md py-2 text-sm leading-5 font-semibold text-white hover:bg-gray-700 focus:outline-none focus:shadow-outline-gray transition duration-150 ease-in-out"
-            >
+              class="inline-block bg-blue-900 learn-button hover:bg-blue-800 text-gray-100 px-6 py-1 mr-5 my-4 rounded shadow rounded-full"
+            > 
               {{ plan.button }}
             </g-link>
           </div>

@@ -7,8 +7,10 @@ header_excerpt: Scale your workloads limitlessly in a secure end-to-end environm
 button: '' #Learn More
 link: '' #link for button
 signup: home_signup
-cards: [card1] #you can continue adding cards as needed
-cardLefts: [cardLeft1] #you can continue adding cards as needed
+cards: [card1] 
+pricing_plansMain: pricing
+pricingPlans: [plan1, plan2, plan3, plan4]
+cardLefts: [cardLeft1]
 solution_image: ./home_cta.png
 cta: home_cta
 cards2: [marketplace]

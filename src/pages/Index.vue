@@ -24,6 +24,12 @@
       :key="card.id"
       :card="card"
     />
+    
+      <FourTiersWithToggle
+        v-if="$page.markdownPage.pricingPlans.length > 0"
+        :main="$page.markdownPage.pricing_plansMain"
+        :pricingPlans="$page.markdownPage.pricingPlans"
+      />
 
     <NewCardLeft
       v-for="cardLeft in $page.markdownPage.cardLefts"
@@ -119,6 +125,24 @@
           order
           content
         }
+        pricing_plansMain{
+          id
+          title
+          button1
+          button2
+          excerpt
+        }
+        pricingPlans{
+          id
+          title
+          excerpt
+          price
+          duration
+          button
+          link
+          includeTitle
+          options
+        }
         cta{
           id
           title
@@ -158,6 +182,7 @@ import SolutionsHeader from "~/components/custom/sections/header/HeaderSection.v
 import NewCard from "~/components/marketing/sections/cta-sections/NewCard.vue";
 import NewCardLeft from "~/components/marketing/sections/cta-sections/NewCardLeft.vue";
 import CallToAction from "~/components/custom/sections/CallToAction.vue";
+import FourTiersWithToggle from "~/components/marketing/sections/pricing/four_tiers_with_toggle.vue";
 import logoShowcase from "~/components/marketing/sections/cta-sections/logoShowcase.vue";
 import InTheNews from "~/components/marketing/sections/logo-clouds/off_white_grid.vue";
 import SignUp from "~/components/custom/sections/SignUp.vue";
@@ -170,6 +195,7 @@ export default {
     NewCardLeft,
     CallToAction,
     logoShowcase,
+    FourTiersWithToggle,
     InTheNews,
     SignUp,
   },
