@@ -51,3 +51,8 @@ items:
     - name: ''
       link: '#' #add as many links as you like
 ---
+
+[Terms & Conditions](https://new.threefold.io/info/legal#/legal__terms_conditions_websites) | [Privacy Policy](https://new.threefold.io/info/legal#/legal__privacypolicy) | [Impressum]()
+
+<br/>
+&#xA9; 2021 ThreeFold P2P Cloud, All rights reserved.
