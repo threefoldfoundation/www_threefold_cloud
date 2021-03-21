@@ -1,6 +1,6 @@
 ---
 id: home_cta
-title: Planetary Secure Network (PSN)
+title: Planetary Network
 button: 'Learn More'
 link: 'https://new.threefold.io/info/threefold#/threefold__hercules_network'
 ---
