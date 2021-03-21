@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-white">
+  <div id="pricing" class="bg-white">
     <div class="max-w-screen-xl mx-auto py-24 px-4 sm:px-6 lg:px-8">
       <div class="sm:flex sm:flex-col sm:align-center">
         <h1

@@ -19,7 +19,7 @@
       :signup="$page.markdownPage.signup"
     />
 
-    <NewCard
+    <NewCardNewCard2button
       v-for="card in $page.markdownPage.cards"
       :key="card.id"
       :card="card"
@@ -95,6 +95,8 @@
           image
           button
           link
+          button2
+          link2
           order
           content
         }
@@ -180,6 +182,7 @@
 import Header from "~/components/marketing/sections/cta-sections/Header.vue";
 import SolutionsHeader from "~/components/custom/sections/header/HeaderSection.vue";
 import NewCard from "~/components/marketing/sections/cta-sections/NewCard.vue";
+import NewCardNewCard2button from "~/components/marketing/sections/cta-sections/NewCard2button.vue";
 import NewCardLeft from "~/components/marketing/sections/cta-sections/NewCardLeft.vue";
 import CallToAction from "~/components/custom/sections/CallToAction.vue";
 import FourTiersWithToggle from "~/components/marketing/sections/pricing/four_tiers_with_toggle.vue";
@@ -192,6 +195,7 @@ export default {
     Header,
     SolutionsHeader,
     NewCard,
+    NewCardNewCard2button,
     NewCardLeft,
     CallToAction,
     logoShowcase,

@@ -122,7 +122,7 @@ button:focus {
 }
 
 .text-8xl {
-  font-size: 5rem;
+  font-size: 4.5rem;
   line-height: 1;
 }
 @media (min-width: 768px) {
@@ -180,6 +180,9 @@ button:focus {
     }
     .post-card-excerpt {
       @apply text-xl;
+    }
+    .h-64 {
+      height: 20rem !important;
     }
   }
   // .news>.flex-post:nth-child(9n+1),
@@ -269,6 +272,15 @@ button:focus {
   //         @apply text-xl;
   //     }
   // }
+}
+
+@media (max-width: 768px) {
+  .text-8xl {
+      font-size: 4rem !important;
+  }
+  .h-64 {
+      height: 20rem !important;
+    }
 }
 
 // body[data-theme="dark"] {
