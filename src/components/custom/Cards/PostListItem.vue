@@ -14,7 +14,7 @@
       <g-link :to="path">
         <h2 class="post-card-title mt-3">{{ record.title || record.name }}</h2>
         <p class="post-card-excerpt text-gray-700">{{ record.excerpt }}</p>
-        <section
+        <!-- <section
           class="flex flex-wrap post-tags container mx-auto relative py-1"
         >
           <g-link
@@ -24,7 +24,7 @@
             class="text-xs bg-transparent hover:text-blue-700 py-1 px-2 mr-1 border hover:border-blue-500 border-gray-600 text-gray-700 rounded-full mb-2"
             >{{ membership.title }}</g-link
           >
-        </section>
+        </section> -->
       </g-link>
 
       <div class="w-full post-card-meta pt-2">
@@ -66,7 +66,7 @@
               </p>
             </div>
           </div>
-          <section
+          <!-- <section
             class="post-tags container mx-auto relative py-3"
             v-if="displaytags()"
           >
@@ -77,7 +77,7 @@
               class="text-xs bg-transparent hover:text-blue-700 py-2 px-4 mr-2 border hover:border-blue-500 border-gray-600 text-gray-700 rounded-full"
               >{{ tag.title }}</g-link
             >
-          </section>
+          </section> -->
         </div>
       </div>
     </div>
