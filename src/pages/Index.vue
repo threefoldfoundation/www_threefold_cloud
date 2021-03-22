@@ -6,7 +6,7 @@
       :altImg="$page.markdownPage.header_altImg"
       :excerpt="$page.markdownPage.header_excerpt"
       :button="$page.markdownPage.button"
-      :link="$page.markdownPage.link"
+      :link="$url($page.markdownPage.link)"
     />
 
     <!-- <SolutionsHeader
