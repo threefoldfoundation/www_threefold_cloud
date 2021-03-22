@@ -37,7 +37,7 @@
 
       <nav
         :class="isOpen ? 'flex' : 'hidden'"
-        class="inline-flex md:order-2 sm:w-28 px-2 pt-2 pb-4 sm:flex sm:p-0 bg-gray-100"
+        class="inline-flex md:order-2 sm:w-28 px-2 pt-2 pb-4 sm:flex sm:p-0"
       >
         <ul
           class="list-none sm:flex justify-left capitalize transition-all transition-500"
