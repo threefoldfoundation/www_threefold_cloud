@@ -1,13 +1,13 @@
 ---
 id: navigation
 navLinks:
-  - name: 'Learn'
-    link: 'https://new.threefold.io/info/cloud#/'
+  - name: Learn
+    link: /info/cloud
     external: true
     expandable: false
 
-  - name: 'Build'
-    link: 'https://vdc.testnet.grid.tf/vdc/#/'
+  - name: Build
+    link: https://vdc.testnet.grid.tf/vdc/#/
     external: true
     expandable: false
     submenu:
@@ -16,8 +16,8 @@ navLinks:
       - title: ''
         path: ''
 
-  - name: 'Forum'
-    link: 'https://forum.threefold.io/'
+  - name: Forum
+    link: https://forum.threefold.io/
     external: true
     expandable: false
     submenu:
@@ -25,19 +25,19 @@ navLinks:
         path: ''
         external: false
 
-  - name: 'More'
+  - name: More
     link: ''
     external: false
     expandable: true
     submenu:
-      - title: 'Team'
-        path: '/team'
-      - title: 'Partners'
-        path: '/partners'
-      - title: 'NewsRoom'
-        path: '/news'
-      - title: 'Blog'
-        path: '/blog'
+      - title: Team
+        path: /team
+      - title: Partners
+        path: /partners
+      - title: NewsRoom
+        path: /news
+      - title: Blog
+        path: /blog
 
 social:
   - icon: ''
