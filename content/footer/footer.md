@@ -13,7 +13,7 @@ items:
  - title: LEARN
    links:
     - name: About ThreeFold
-      link: https://new.threefold.io/
+      link: /
     - name: Knowledge Base
       link: /info/threefold
     - name: ThreeFold Marketplace
