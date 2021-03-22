@@ -13,18 +13,18 @@ items:
  - title: LEARN
    links:
     - name: About ThreeFold
-      link: /https://new.threefold.io/
+      link: https://new.threefold.io/
     - name: Knowledge Base
-      link: /info/threefold
+      link: https://new.threefold.io/info/threefold
     - name: ThreeFold Marketplace
-      link: /marketplace
+      link: https://new.threefold.io/marketplace
     - name: ThreeFold Token
-      link: /farming/token
+      link: https://new.threefold.io/farming/token
 
  - title: PARTICIPATE
    links:
     - name: Get Started
-      link: https://new.threefold.io/info/cloud#/cloud__evdc_getting_started​​​​​​​​​​​​​​​​​​​​​
+      link: https://new.threefold.io/info/cloud#/cloud__evdc_getting_started
     - name: Pricing
       link: https://new.threefold.io/info/cloud#/cloud__evdc_pricing
     - name: How to Get TFT
