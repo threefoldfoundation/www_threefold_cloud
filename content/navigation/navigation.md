@@ -5,21 +5,6 @@ navLinks:
     link: /info/cloud
     external: true
     expandable: false
-
-  - name: Build
-    link: https://vdc.testnet.grid.tf/vdc/#/
-    external: true
-    expandable: false
-    submenu:
-      - title: ''
-        path: ''
-      - title: ''
-        path: ''
-
-  - name: Forum
-    link: https://forum.threefold.io/
-    external: true
-    expandable: false
     submenu:
       - title: ''
         path: ''
