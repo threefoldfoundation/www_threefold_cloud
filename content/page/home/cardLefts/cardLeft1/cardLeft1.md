@@ -2,8 +2,8 @@
 id: cardLeft1
 title: Quantum Safe Filesystem (QSFS)
 image: ./card2.png
-button: 'Learn More'
-link: 'https://new.threefold.io/info/cloud#/cloud__threefold_filesystem'
+button: Learn More
+link: /info/cloud#/cloud__threefold_filesystem
 order: 1
 ---
 
