@@ -1,7 +1,7 @@
 ---
 id: plan4
 title: DIAMOND
-price: '€200'
+price: '$200'
 duration: 'mo'
 button: Enter eVDC
 link: https://vdc.testnet.grid.tf/vdc

@@ -1,7 +1,7 @@
 ---
 id: plan2
 title: GOLD
-price: '€30'
+price: '$30'
 duration: 'mo'
 button: Enter eVDC
 link: https://vdc.testnet.grid.tf/vdc

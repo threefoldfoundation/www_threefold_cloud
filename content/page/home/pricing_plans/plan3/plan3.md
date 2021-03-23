@@ -1,7 +1,7 @@
 ---
 id: plan3
 title: PLATINUM
-price: '€80'
+price: '$80'
 duration: 'mo'
 button: Enter eVDC
 link: https://vdc.testnet.grid.tf/vdc
