@@ -7,5 +7,5 @@ button: Enter eVDC
 link: https://vdc.testnet.grid.tf/vdc
 includeTitle: What's included?
 options:
-  [A small Kubernetes Controller and 2 worker nodes, 8 GB memory, 10TB ZDB Storage, A Network Gateway]
+  [A Kubernetes Controller and 2 Worker Nodes, 8 GB Memory, 10TB Storage, A Network Gateway]
 ---
