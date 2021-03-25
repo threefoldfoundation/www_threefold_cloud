@@ -30,31 +30,31 @@
       :key="cardLeft.id"
       :cardLeft="cardLeft"
     />
-    
-    <g-image 
-        v-if="$page.markdownPage.solution_image"
-        :src="$page.markdownPage.solution_image.src"
+
+    <g-image
+      v-if="$page.markdownPage.solution_image"
+      :src="$page.markdownPage.solution_image.src"
     />
 
     <CallToAction v-if="$page.markdownPage.cta" :cta="$page.markdownPage.cta" />
-    
+
     <NewCard
       v-for="card in $page.markdownPage.cards2"
       :key="card.id"
       :card="card"
     />
-    
+
     <NewCardLeft
       v-for="cardLeft in $page.markdownPage.cardLefts2"
       :key="cardLeft.id"
       :cardLeft="cardLeft"
     />
 
-      <FourTiersWithToggle
-        v-if="$page.markdownPage.pricingPlans.length > 0"
-        :main="$page.markdownPage.pricing_plansMain"
-        :pricingPlans="$page.markdownPage.pricingPlans"
-      />
+    <FourTiersWithToggle
+      v-if="$page.markdownPage.pricingPlans.length > 0"
+      :main="$page.markdownPage.pricing_plansMain"
+      :pricingPlans="$page.markdownPage.pricingPlans"
+    />
 
     <!-- <logoShowcase
       v-if="$page.markdownPage.logos.length > 0"
@@ -205,8 +205,14 @@ export default {
   },
   metaInfo: {
     title: "",
-    titleTemplate: "ThreeFold Cloud",
- 
+    titleTemplate: "ThreeFold P2P Cloud | Scale Freely",
+    meta: [
+      {
+        name: "description",
+        content:
+          "Scale your workloads limitlessly in a secure end-to-end environment. The world's first carbon neutral peer-to-peer cloud.",
+      },
+    ],
   },
 };
 </script>
