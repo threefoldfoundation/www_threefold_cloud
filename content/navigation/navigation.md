@@ -25,9 +25,6 @@ navLinks:
         path: /blog
 
 social:
-  - icon: ''
-    link: '' #telegaram link
-
-  - icon: ''
-    link: '' #linkedin link
+  - icon: telegram-plane
+    link: https://t.me/threefoldnews
 ---
