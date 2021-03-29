@@ -15,13 +15,13 @@
               v-if="card.link.includes('http')"
               target="_blank"
               :href="card.link"
-              class="inline-block uppercase bg-blue-900 text-md learn-button hover:bg-blue-800 text-gray-100 px-8 py-2 mr-5 my-2 rounded shadow rounded-full"
+              class="inline-block bg-blue-900 text-md learn-button hover:bg-blue-800 text-gray-100 px-8 py-2 mr-5 my-2 rounded shadow rounded-full"
               >{{ card.button }}</a 
             >
             <a
               v-else
               :href="card.link"
-              class="inline-block uppercase bg-blue-900 text-md learn-button hover:bg-blue-800 text-gray-100 px-8 py-2 mr-5 my-2 rounded shadow rounded-full"
+              class="inline-block bg-blue-900 text-md learn-button hover:bg-blue-800 text-gray-100 px-8 py-2 mr-5 my-2 rounded shadow rounded-full"
               >{{ card.button }}</a
             >
           </div>

@@ -9,7 +9,7 @@
                 <h2 class="text-3xl text-gray-700 font-bold">{{ card.title }}</h2>
                 <p class="mt-4 text-gray-700">{{ card.content }}</p>
                 <div class="mt-8">
-                    <a  :href="card.link" class="inline-block uppercase bg-blue-900 text-lg learn-button hover:bg-blue-800 text-gray-100 px-8 py-2 mr-5 my-2 rounded shadow rounded-full">{{ card.button }}</a>
+                    <a  :href="card.link" class="inline-block bg-blue-900 text-lg learn-button hover:bg-blue-800 text-gray-100 px-8 py-2 mr-5 my-2 rounded shadow rounded-full">{{ card.button }}</a>
                 </div>
             </div>
         </div>

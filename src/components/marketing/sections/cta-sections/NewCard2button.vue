@@ -15,26 +15,26 @@
               v-if="card.link.includes('http')"
               target="_blank"
               :href="card.link"
-              class="inline-block uppercase bg-blue-900 text-lg learn-button hover:bg-blue-800 text-gray-100 px-8 py-2 mr-5 my-2 rounded shadow rounded-full"
+              class="inline-block bg-blue-900 text-lg learn-button hover:bg-blue-800 text-gray-100 px-8 py-2 mr-5 my-2 rounded shadow rounded-full"
               >{{ card.button }}</a 
             >
             <a
               v-else
               :href="card.link"
-              class="inline-block uppercase bg-blue-900 text-lg learn-button hover:bg-blue-800 text-gray-100 px-8 py-2 mr-5 my-2 rounded shadow rounded-full"
+              class="inline-block bg-blue-900 text-lg learn-button hover:bg-blue-800 text-gray-100 px-8 py-2 mr-5 my-2 rounded shadow rounded-full"
               >{{ card.button }}</a
             >
             <a
               v-if="card.link2.includes('http')"
               target="_blank"
               :href="card.link2"
-              class="inline-block uppercase bg-teal-200 text-lg learn-button hover:bg-teal-300 text-gray-700 px-8 py-2 mr-5 my-2 rounded shadow rounded-full"
+              class="inline-block bg-teal-200 text-lg learn-button hover:bg-teal-300 text-gray-700 px-8 py-2 mr-5 my-2 rounded shadow rounded-full"
               >{{ card.button2 }}</a 
             >
             <a
               v-else
               :href="card.link2"
-              class="inline-block uppercase bg-teal-200 text-lg learn-button hover:bg-teal-300 text-gray-700 px-8 py-2 mr-5 my-2 rounded shadow rounded-full"
+              class="inline-block bg-teal-200 text-lg learn-button hover:bg-teal-300 text-gray-700 px-8 py-2 mr-5 my-2 rounded shadow rounded-full"
               >{{ card.button2 }}</a
             >
           </div>
