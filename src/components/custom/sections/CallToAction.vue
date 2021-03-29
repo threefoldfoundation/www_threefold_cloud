@@ -8,11 +8,11 @@
         v-html="cta.content"
         class="mt-6 mb-8 text-gray-700 leading-relaxed"
       ></div>
-      <g-link
+      <a
         v-if="cta.button"
         class="inline-block bg-blue-900 text-lg learn-button hover:bg-blue-800 text-gray-100 px-8 py-2 mr-5 my-2 rounded shadow rounded-full"
-        :to="cta.link"
-        >{{ cta.button }}</g-link
+        :href="cta.link"
+        >{{ cta.button }}</a
       >
     </div>
   </section>

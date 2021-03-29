@@ -172,21 +172,22 @@
             </div>
           </div>
 
-          <g-link
+          <a
             v-else-if="element.external"
-            :to="element.link"
+            :href="element.link"
             @click.native="clicked"
             target="_blank"
             class="inline-flex sm:flex uppercase p-2 mr-4 animated-link"
-            >{{ element.name }}</g-link
+            >{{ element.name }}</a
           >
-          <g-link
+          <a
             v-else
             :to="element.link"
             @click.native="clicked"
             class="inline-flex sm:flex uppercase p-2 mr-4 animated-link"
-            >{{ element.name }}</g-link
+            >{{ element.name }}</a
           >
+          
         </div>
         <!-- <div
           class="md:hidden inline-flex rounded-full border-2 border-gray-200 w-1/2"
