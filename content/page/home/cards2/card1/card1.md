@@ -3,7 +3,7 @@ id: marketplace
 title: The ThreeFold Marketplace
 image: ./marketplace.png
 button: Discover the Marketplace
-link: /marketplace 
+link: https://new.threefold.io/marketplace 
 order: 1
 ---
 

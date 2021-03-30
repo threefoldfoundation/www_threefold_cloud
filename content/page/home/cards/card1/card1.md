@@ -3,7 +3,7 @@ id: card1
 title: Edge Virtual Data Center (eVDC)
 image: ./card1.png
 button: Learn More
-link: /info/cloud#/cloud__evdc
+link: https://new.threefold.io/info/cloud#/cloud__evdc
 button2: Pricing
 link2: '#pricing'
 order: 1

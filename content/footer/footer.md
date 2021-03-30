@@ -15,22 +15,22 @@ items:
     - name: About ThreeFold
       link: /
     - name: Knowledge Base
-      link: /info/threefold
+      link: https://new.threefold.io/info/cloud#/
     - name: ThreeFold Marketplace
-      link: /marketplace
+      link: https://new.threefold.io/marketplace
     - name: ThreeFold Token
-      link: /farming/token
+      link: https://new.threefold.io/farming/token
 
  - title: PARTICIPATE
    links:
     - name: Get Started
-      link: /info/cloud#/cloud__evdc_getting_started
+      link: https://new.threefold.io/info/cloud#/cloud__evdc_getting_started
     - name: Pricing
-      link: /info/cloud#/cloud__evdc_pricing
+      link: https://new.threefold.io/info/cloud#/cloud__evdc_pricing
     - name: How to Get TFT
-      link: /info/threefold#/threefold__how_to_buy_and_sell
+      link: https://new.threefold.io/info/threefold#/threefold__how_to_buy_and_sell
     - name: Store TFT
-      link: /info/threefold#/threefold__storing_tft
+      link: https://new.threefold.io/info/threefold#/threefold__storing_tft
 
  - title: COMMUNITY
    links:
