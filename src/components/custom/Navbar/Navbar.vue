@@ -112,7 +112,7 @@
         >
           <div
             v-if="element.expandable"
-            class="relative mt-2"
+            class="relative mt-2 mr-4"
             x-data="{ open: false }"
           >
             <button
