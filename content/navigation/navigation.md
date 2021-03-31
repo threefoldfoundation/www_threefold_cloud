@@ -23,6 +23,11 @@ navLinks:
         path: /news
       - title: Blog
         path: /blog
+      
+  - name : TF Home
+    link: /
+    external: true
+    expandable: false   
 
 social:
   - icon: telegram-plane
