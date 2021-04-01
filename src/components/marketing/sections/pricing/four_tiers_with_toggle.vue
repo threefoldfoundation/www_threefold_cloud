@@ -35,7 +35,7 @@
           :key="index"
           class="border border-gray-200 rounded-lg shadow-sm divide-y divide-gray-200"
         >
-          <div class="p-6">
+          <div class="p-2 text-center">
             <h2 class="text-lg leading-6 font-bold text-gray-600">
               {{ plan.title }}
             </h2>
@@ -53,18 +53,18 @@
             <g-link
               type="button"
               :to="plan.link"
-              class="inline-block bg-blue-900 learn-button hover:bg-blue-800 text-gray-100 px-6 py-1 mr-5 my-4 rounded shadow rounded-full"
+              class="inline-block bg-blue-900 learn-button hover:bg-blue-800 text-gray-100 px-6 py-1 my-4 rounded shadow rounded-full"
             > 
               {{ plan.button }}
             </g-link>
           </div>
-          <div class="pt-6 pb-8 px-6">
+          <div class="pt-6 pb-8 px-2 text-center ">
             <h3
               class="text-xs leading-4 font-medium text-gray-700 tracking-wide uppercase"
             >
               {{ plan.includeTitle }}
             </h3>
-            <ul class="mt-6 space-y-4">
+            <ul class="mt-6 mx-2 space-y-4">
               <li
                 class="flex space-x-3"
                 v-for="option in plan.options"
