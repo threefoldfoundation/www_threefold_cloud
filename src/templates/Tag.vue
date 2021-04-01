@@ -129,7 +129,7 @@
       }
     }
 
-    allProjectTag(filter: { title: {in: ["cloud"]}}){
+    allProjectTag(filter: { title: {in: ["blockchain", "experience", "technology", "farming", "community", "infrastructure", "impact"]}}){
       edges{
         node{
           id
@@ -149,7 +149,7 @@
     }
     }
 
-    allBlogTag{
+    allBlogTag(filter: { title: {in: ["blockchain", "experience", "technology", "farming", "community", "infrastructure", "impact"]}}){
      edges{
       node{
         id

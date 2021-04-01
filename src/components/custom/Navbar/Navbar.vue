@@ -31,7 +31,6 @@
           </a>
         </div>
 
-
         <div class="sm:hidden ml-auto">
           <button
             @click="isOpen = !isOpen"
@@ -175,7 +174,7 @@
           <a
             v-else-if="element.external"
             :href="element.link"
-            @click.native="clicked"
+            @click="clicked"
             target="_blank"
             class="inline-flex sm:flex uppercase p-2 mr-4 animated-link"
             >{{ element.name }}</a
@@ -183,11 +182,10 @@
           <a
             v-else
             :to="element.link"
-            @click.native="clicked"
+            @click="clicked"
             class="inline-flex sm:flex uppercase p-2 mr-4 animated-link"
             >{{ element.name }}</a
           >
-          
         </div>
         <!-- <div
           class="md:hidden inline-flex rounded-full border-2 border-gray-200 w-1/2"

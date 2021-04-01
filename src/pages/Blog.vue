@@ -36,7 +36,7 @@
 <page-query>
 
 query($page: Int){
-  entries: allBlog(perPage: 10, page: $page, sortBy: "created", order: DESC, filter: {category: { id: {in: ["cloud"]}}}) @paginate{
+  entries: allBlog(perPage: 10, page: $page, sortBy: "created", order: DESC, filter: {category: { id: {in: ["blockchain", "experience", "technology", "farming", "community", "infrastructure", "impact"]}}}) @paginate{
     totalCount
     pageInfo {
       totalPages
@@ -69,7 +69,7 @@ query($page: Int){
     }
   }
 
-   topics:  allBlogTag{
+   topics:  allBlogTag(filter: { title: {in: ["blockchain", "experience", "technology", "farming", "community", "infrastructure", "impact"]}}) {
     edges{
       node{
 				title        

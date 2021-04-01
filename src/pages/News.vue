@@ -40,7 +40,7 @@
 
 <page-query>
 query($page: Int){
-  entries: allNews(perPage: 10, page: $page, sortBy: "created", order: DESC, filter: {category: { id: {in: ["cloud"]}}}) @paginate{
+  entries: allNews(perPage: 10, page: $page, sortBy: "created", order: DESC, filter: {category: { id: {in: ["blockchain", "experience", "technology", "farming", "community", "infrastructure", "impact"]}}}) @paginate{
     totalCount
     pageInfo {
       totalPages
@@ -67,7 +67,7 @@ query($page: Int){
     }
   }
 
-  topics:  allNewsTag{
+  topics:  allNewsTag(filter: { title: {in: ["blockchain", "experience", "technology", "farming", "community", "infrastructure", "impact"]}}) {
     edges{
       node{
 				title        
