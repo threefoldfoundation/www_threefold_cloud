@@ -142,7 +142,7 @@
           </div>
         </div>
         <div
-          class="mt-12 grid md:grid-cols-3 sm:grid-cols-2 xl:mt-0 xl:col-span-2"
+          class="mt-12 grid md:grid-cols-4 sm:grid-cols-2 xl:mt-0 xl:col-span-3"
         >
           <div
             v-for="footerLink in record.items"
