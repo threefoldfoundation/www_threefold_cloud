@@ -51,25 +51,6 @@ navLinks:
       - title: Buy TFT
         path: https://www.threefold.io/info/threefold#/threefold__how_to_buy_and_sell
         external: true
-
-  - name: ABOUT US
-    links: ''
-    external: false
-    expandable: true
-    submenu:
-      - title: Blog
-        path: /blog
-      - title: NewsRoom
-        path: /news
-      - title: Forum
-        path: https://forum.threefold.io
-        external: true
-      - title: Team
-        path: /team
-      - title: Partners
-        path: /partners
-      - title: Contact Us
-        path: 'mailto:info@threefold.io'
  
   - name: UNIVERSE
     links: ''
@@ -95,6 +76,25 @@ navLinks:
         - title: ThreeFold Tech
           path: https://threefold.tech/
           external: true
+          
+  - name: ABOUT US
+    links: ''
+    external: false
+    expandable: true
+    submenu:
+      - title: Blog
+        path: /blog
+      - title: NewsRoom
+        path: /news
+      - title: Forum
+        path: https://forum.threefold.io
+        external: true
+      - title: Team
+        path: /team
+      - title: Partners
+        path: /partners
+      - title: Contact Us
+        path: 'mailto:info@threefold.io'
 
 social:
   - icon: telegram-plane
