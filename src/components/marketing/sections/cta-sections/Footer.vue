@@ -5,7 +5,7 @@
 <template>
   <footer class="bg-white">
     <div class="max-w-screen-xl mx-auto py-12 px-4 sm:px-6 lg:py-16 lg:px-8">
-      <div class="xl:grid xl:grid-cols-3 xl:gap-8">
+      <div class="xl:grid xl:grid-cols-4 xl:gap-4">
         <div class="space-y-8 xl:col-span-1">
           <g-image
             class="h-10"
@@ -21,7 +21,7 @@
             v-else
           />
 
-          <p class="text-gray-500 text-base leading-6">
+          <p class="text-gray-500 font-bold text-base leading-6">
             {{ record.description }}
           </p>
           <div class="flex space-x-6">
@@ -118,6 +118,7 @@
                 />
               </svg>
             </a>
+
             <a
               class="text-gray-400 hover:text-gray-500"
               href="javascript:;"
@@ -144,6 +145,8 @@
         <div
           class="mt-12 grid md:grid-cols-4 sm:grid-cols-2 xl:mt-0 xl:col-span-3"
         >
+          <!-- class="mt-12 grid grid-cols-2 gap-8 xl:mt-0 xl:col-span-2" -->
+
           <div
             v-for="footerLink in record.items"
             :key="footerLink.title"
@@ -151,7 +154,7 @@
           >
             <div>
               <h4
-                class="text-sm leading-5 font-semibold text-gray-400 tracking-wider uppercase"
+                class="text-sm leading-5 font-semibold text-gray-600 tracking-wider uppercase"
               >
                 {{ footerLink.title }}
               </h4>
@@ -161,14 +164,14 @@
                     v-if="item.link.includes('http')"
                     :href="item.link"
                     target="_blank"
-                    class="text-base leading-6 text-gray-500 hover:text-gray-900"
+                    class="text-base leading-5 text-gray-500 hover:text-gray-900"
                   >
                     {{ item.name }}
                   </a>
                   <a
                     v-else
                     :href="item.link"
-                    class="text-base leading-6 text-gray-500 hover:text-gray-900"
+                    class="text-base leading-5 text-gray-500 hover:text-gray-900"
                   >
                     {{ item.name }}
                   </a>
