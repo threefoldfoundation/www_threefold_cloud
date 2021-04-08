@@ -50,8 +50,6 @@ items:
       link: /token
     - name: ThreeFold Grid
       link: /farming
-    - name: ThreeFold Cloud
-      link: /cloud
     - name: ThreeFold Marketplace
       link: /marketplace
     - name: Digital Twin

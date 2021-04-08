@@ -64,8 +64,6 @@ navLinks:
           path: /token
         - title: ThreeFold Grid
           path: /farming
-        - title: P2P Cloud
-          path: /cloud
         - title: P2P Marketplace
           path: /marketplace
         - title: Digital Twin
