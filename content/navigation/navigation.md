@@ -62,15 +62,19 @@ navLinks:
           external: true
         - title: ThreeFold Token
           path: /token
+          external: true
         - title: ThreeFold Grid
           path: /farming
+          external: true
         - title: P2P Marketplace
           path: /marketplace
+          external: true
         - title: Digital Twin
           path: https://mydigitaltwin.io/
           external: true
         - title: Conscious Internet
           path: /aci
+          external: true
         - title: ThreeFold Tech
           path: https://threefold.tech/
           external: true
