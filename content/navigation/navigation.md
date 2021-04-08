@@ -56,7 +56,7 @@ navLinks:
     links: ''
     external: false
     expandable: true
-    submenu: htt
+    submenu:
         - title: ThreeFold
           path: https://threefold.io
           external: true
