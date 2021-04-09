@@ -1,6 +1,33 @@
 ---
 id: navigation
 navLinks:
+  - name: UNIVERSE
+    links: ''
+    external: false
+    expandable: true
+    submenu:
+        - title: ThreeFold
+          path: https://threefold.io
+          external: true
+        - title: ThreeFold Token
+          path: https://threefold.io/token
+          external: true
+        - title: ThreeFold Grid
+          path: https://threefold.io/farming
+          external: true
+        - title: P2P Marketplace
+          path: https://threefold.io/marketplace
+          external: true
+        - title: Digital Twin
+          path: https://mydigitaltwin.io/
+          external: true
+        - title: Conscious Internet
+          path: https://threefold.io/aci
+          external: true
+        - title: ThreeFold Tech
+          path: https://threefold.tech/
+          external: true
+
   - name: PARTICIPATE
     link: ''
     external: false
@@ -51,33 +78,6 @@ navLinks:
       - title: Buy TFT
         path: https://www.threefold.io/info/threefold#/threefold__how_to_buy_and_sell
         external: true
- 
-  - name: UNIVERSE
-    links: ''
-    external: false
-    expandable: true
-    submenu:
-        - title: ThreeFold
-          path: https://threefold.io
-          external: true
-        - title: ThreeFold Token
-          path: https://threefold.io/token
-          external: true
-        - title: ThreeFold Grid
-          path: https://threefold.io/farming
-          external: true
-        - title: P2P Marketplace
-          path: https://threefold.io/marketplace
-          external: true
-        - title: Digital Twin
-          path: https://mydigitaltwin.io/
-          external: true
-        - title: Conscious Internet
-          path: https://threefold.io/aci
-          external: true
-        - title: ThreeFold Tech
-          path: https://threefold.tech/
-          external: true
           
   - name: ABOUT US
     links: ''
