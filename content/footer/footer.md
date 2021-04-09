@@ -10,6 +10,23 @@ youtube: 'https://www.youtube.com/threefoldfoundation'
 github: 'https://github.com/threefoldfoundation'
 telegram: 'https://t.me/threefoldnews'
 items:
+  - title: UNIVERSE
+    links:
+    - name: ThreeFold
+      link: https://threefold.io
+    - name: ThreeFold Token
+      link: /token
+    - name: ThreeFold Grid
+      link: /farming
+    - name: ThreeFold Marketplace
+      link: /marketplace
+    - name: Digital Twin
+      link: https://mydigitaltwin.io/
+    - name: Conscious Internet
+      link: /aci
+    - name: ThreeFold Tech
+      link: https://threefold.tech/
+      
   - title: PARTICIPATE
     links:
     - name: Deploy Private Cloud
@@ -41,23 +58,6 @@ items:
       link: https://threefold.io/token
     - name: Buy TFT
       link: https://www.threefold.io/info/threefold#/threefold__how_to_buy_and_sell
-
-  - title: UNIVERSE
-    links:
-    - name: ThreeFold
-      link: https://threefold.io
-    - name: ThreeFold Token
-      link: /token
-    - name: ThreeFold Grid
-      link: /farming
-    - name: ThreeFold Marketplace
-      link: /marketplace
-    - name: Digital Twin
-      link: https://mydigitaltwin.io/
-    - name: Conscious Internet
-      link: /aci
-    - name: ThreeFold Tech
-      link: https://threefold.tech/
 
   - title: ABOUT US
     links:
