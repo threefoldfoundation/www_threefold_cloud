@@ -9,12 +9,10 @@
     <div class="container sm:px-0 mx-auto overflow-x-hidden pt-12">
       <div class="mx-4 sm:mx-0">
         <h1 class="pb-0 mb-0 text-5xl font-medium capitalize">
-          {{ tags.title }}
+          {{ tags.title.replace("_", " ") }}
         </h1>
         <p class="text-gray-700 text-xl">
-          <span class="self-center"
-            >{{ tags.belongsTo.totalCount }} {{ item }}</span
-          >
+          <span class="self-center">{{ items.length }} {{ item }}</span>
         </p>
       </div>
 
@@ -22,9 +20,10 @@
 
       <div class="flex flex-wrap pt-8 pb-8 mx-4 sm:-mx-4">
         <PostListItem
-          v-for="edge in tags.belongsTo.edges"
-          :key="edge.node.id"
-          :record="edge.node"
+          :showtags="true"
+          v-for="item in items"
+          :key="item.id"
+          :record="item"
         />
       </div>
 
@@ -60,7 +59,6 @@
               image(width:800)
               path
               datetime : created
-              
             }
           }
         }
@@ -219,6 +217,17 @@ export default {
         return "post";
       }
     },
+    items() {
+      let cloudItems = [];
+      this.tags.belongsTo.edges.map((edge) => {
+        if (Array.isArray(edge.node.category)) {
+          if (edge.node.category.includes("cloud")) cloudItems.push(edge.node);
+        } else {
+          cloudItems.push(edge.node);
+        }
+      });
+      return cloudItems;
+    },
   },
 
   methods: {
@@ -228,7 +237,6 @@ export default {
   },
   mounted() {
     document.addEventListener("click", this.close);
-    console.log(this.$page.projectTag);
   },
   beforeDestroy() {
     document.removeEventListener("click", this.close);

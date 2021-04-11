@@ -16,7 +16,6 @@
     >
       <div class="flex flex-wrap news pt-12 mt-8 pb-8 mx-4 sm:-mx-4">
         <PostListItem
-          :showtags="true"
           v-for="edge in news.edges"
           :key="edge.node.id"
           :record="edge.node"
@@ -40,7 +39,7 @@
 
 <page-query>
 query($page: Int){
-  entries: allNews(perPage: 10, page: $page, sortBy: "created", order: DESC, filter: {category: { id: {in: ["blockchain", "experience", "technology", "farming", "community", "infrastructure", "impact"]}}}) @paginate{
+  entries: allNews(perPage: 10, page: $page, sortBy: "created", order: DESC, filter: {category: { contains: ["cloud"]}}) @paginate{
     totalCount
     pageInfo {
       totalPages
@@ -67,7 +66,7 @@ query($page: Int){
     }
   }
 
-  topics:  allNewsTag(filter: { title: {in: ["blockchain", "experience", "technology", "farming", "community", "infrastructure", "impact"]}}) {
+  topics:  allNewsTag {
     edges{
       node{
 				title        
