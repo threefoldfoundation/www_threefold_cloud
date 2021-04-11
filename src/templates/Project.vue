@@ -1,6 +1,6 @@
 <template>
   <Layout :hideHeader="true" :disableScroll="true">
-    <div class="container sm:pxi-0 mx-auto overflow-x-hidden pt-24">
+    <div class="container sm:pxi-0 px-2 mx-auto overflow-x-hidden pt-24">
       <div class="flex flex-row flex-wrap items-center mx-4 sm:mx-0">
         <div class="w-full md:w-1/6 mx-auto sm:mx-0">
           <g-image
