@@ -83,7 +83,7 @@ export default {
 
   computed: {
     memberships() {
-      var res = [{ title: "All", path: "/team" }];
+      var res = [{ title: "All", path: "/people" }];
       this.$page.allMembership.edges.forEach((edge) =>
         res.push({ title: edge.node.title, path: edge.node.path })
       );

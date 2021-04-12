@@ -50,11 +50,11 @@
               </div>
             </div>
             <g-link
-              v-for="edge in $page.memberships.edges"
-              :key="edge.node.id"
-              :to="edge.node.path"
+              v-for="membership in $page.person.memberships"
+              :key="membership.id"
+              :to="membership.path"
               class="text-xs bg-transparent hover:text-blue-700 py-2 px-4 mr-2 border hover:border-blue-500 border-gray-600 text-gray-700 rounded-full"
-              >{{ edge.node.title }}</g-link
+              >{{ membership.title }}</g-link
             >
           </section>
         </div>
@@ -148,7 +148,7 @@
       }
     }
 
-     memberships: allMembership(filter: {title: {in: ["foundation", "tech", "farmers", "ambassadors"]}}){
+     memberships: allMembership{
      edges{
       node{
         id
