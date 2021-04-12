@@ -56,7 +56,7 @@
                   class="rounded-full bg-gray-200 w-8 h-8 border-2 border-gray-400 mx-auto md:mx-0"
                 ></g-image>
                 </li> -->
-                <li>
+                <li v-if="$page.project.websites">
                   <a
                     :href="$page.project.websites"
                     target="_blank"
@@ -66,7 +66,7 @@
                     <font-awesome :icon="['fas', 'globe']" />
                   </a>
                 </li>
-                <li>
+                <li v-if="$page.project.linkedin">
                   <a
                     :href="$page.project.linkedin"
                     target="_blank"
