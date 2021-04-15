@@ -34,5 +34,7 @@
     "v-tooltip": "^2.0.3",
     "vue-markdown": "^2.2.4"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "@tailwindcss/aspect-ratio": "^0.2.0"
+  }
 }
