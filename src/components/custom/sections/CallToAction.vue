@@ -2,7 +2,7 @@
   <section class="py-12 px-4 text-center">
     <div class="w-full max-w-2xl mx-auto">
       <h2 class="text-5xl text-gray-700 leading-tight font-semibold font-heading">
-        {{ cta.title }}
+        {{ cta.title }} 
       </h2>
       <div
         v-html="cta.content"

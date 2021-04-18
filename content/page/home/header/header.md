@@ -1,11 +1,14 @@
 ---
-id: home_header
-title: title
-subtitle: SUBTITLE
-btn1: Button
-link1: '' #link for button
-btn2: Button
-link2: '' #link for button
+id: carbon_neutral
+title: ''
+subtitle: Truly Better for Our Planet
+btn1: ''
+link1: '' 
+btn2: ''
+link2: '' 
 ---
 
-Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+ThreeFold’s peer-to-peer nature brings considerable energy efficiencies as compared to current solutions. 
+<br/>
+<br/>
+The remaining carbon footprint of the grid will be converted into carbon credits and invested in planet positive projects to enable the world’s first carbon neutral grid.

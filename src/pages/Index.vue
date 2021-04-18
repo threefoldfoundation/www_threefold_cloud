@@ -9,14 +9,20 @@
       :link="$url($page.markdownPage.link)"
     />
 
-    <!-- <SolutionsHeader
-      v-if="$page.markdownPage.header"
-      :header="$page.markdownPage.header"
-    /> -->
-
     <SignUp
       v-if="$page.markdownPage.signup"
       :signup="$page.markdownPage.signup"
+    />
+
+    <g-image
+      class="m-auto w-2/4 lg:mt-20"
+      v-if="$page.markdownPage.solution_image2"
+      :src="$page.markdownPage.solution_image2.src"
+    />
+
+    <SolutionsHeader
+      v-if="$page.markdownPage.header"
+      :header="$page.markdownPage.header"
     />
 
     <NewCardNewCard2button
@@ -80,6 +86,7 @@
         button
         link
         solution_image
+        solution_image2
         header{
          title
          subtitle

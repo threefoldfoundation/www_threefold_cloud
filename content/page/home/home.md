@@ -7,6 +7,8 @@ header_excerpt: Scale your workloads limitlessly in a secure end-to-end environm
 button: '' #Learn More
 link: '' #link for button
 signup: home_signup
+solution_image2: ./carbon_neutral.png
+header: carbon_neutral
 cards: [card1]
 cardLefts: [cardLeft1]
 solution_image: ./home_cta.png

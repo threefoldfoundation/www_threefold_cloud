@@ -2,7 +2,7 @@
   <section class="py-12 px-4 text-center">
     <div class="w-full max-w-2xl mx-auto">
       <span class="text-sm font-semibold">{{ header.title }}</span>
-      <h2 class="text-4xl mt-2 mb-6 leading-tight font-heading">
+      <h2 class="text-5xl text-gray-700 leading-tight font-semibold font-heading">
         {{ header.subtitle }}
       </h2>
       <div
@@ -11,12 +11,12 @@
       ></div>
       <div>
         <g-link
-          class="bg-gray-900 learn-button hover:bg-gray-700 text-gray-100 px-5 py-3 mr-3 font-semibold rounded shadow"
+          class="inline-block bg-blue-900 text-lg learn-button hover:bg-blue-800 text-gray-100 px-8 py-2 mr-5 my-2 rounded shadow rounded-full"
           v-if="header.btn1"
           :to="header.link1"
           >{{ header.btn1 }}</g-link
         ><g-link
-          class="text-gray-900 bg-transparent hover:underline"
+          class="inline-block bg-blue-900 text-lg learn-button hover:bg-blue-800 text-gray-100 px-8 py-2 mr-5 my-2 rounded shadow rounded-full"
           v-if="header.btn2"
           :to="header.link2"
           >{{ header.btn2 }}</g-link
