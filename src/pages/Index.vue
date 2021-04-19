@@ -79,6 +79,9 @@
     markdownPage(id: "home") {
         id
         path
+        metaTitle
+        metaDesc
+        metaImg
         header_title
         header_image
         header_excerpt
@@ -210,16 +213,63 @@ export default {
     InTheNews,
     SignUp,
   },
-  metaInfo: {
-    title: "",
-    titleTemplate: "ThreeFold P2P Cloud | Scale Freely",
-    meta: [
-      {
-        name: "description",
-        content:
-          "Scale your workloads limitlessly in a secure end-to-end environment. The world's first carbon neutral peer-to-peer cloud.",
-      },
-    ],
+ computed: {
+    getImg() {
+      let image = "";
+      if (process.isClient) {
+        image = `${window.location.origin}${this.img}`;
+      }
+      return image;
+    },
+    img() {
+      if (!this.$page.markdownPage.metaImg) return "";
+      if (this.$page.markdownPage.metaImg.src)
+        return this.$page.markdownPage.metaImg.src;
+      return this.$page.markdownPage.metaImg;
+    },
+  },
+  metaInfo() {
+    return {
+      title: "",
+      titleTemplate: this.$page.markdownPage.metaTitle,
+      meta: [
+        {
+          key: "description",
+          name: "description",
+          content: this.$page.markdownPage.metaDesc,
+        },
+        {
+          key: "og:title",
+          property: "og:title",
+          content: this.$page.markdownPage.metaTitle,
+        },
+        {
+          key: "og:description",
+          property: "og:description",
+          content: this.$page.markdownPage.metaDesc,
+        },
+        {
+          key: "og:image",
+          property: "og:image",
+          content: this.getImg,
+        },
+        {
+          key: "twitter:description",
+          name: "twitter:description",
+          content: this.$page.markdownPage.metaDesc,
+        },
+        {
+          key: "twitter:image",
+          property: "twitter:image",
+          content: this.getImg,
+        },
+        {
+          key: "twitter:title",
+          property: "twitter:title",
+          content: this.$page.markdownPage.metaTitle,
+        },
+      ],
+    };
   },
 };
 </script>

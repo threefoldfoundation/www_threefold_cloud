@@ -70,6 +70,11 @@ query($page: Int){
     }
   }
   
+      markdownPage(id: "home") {
+        id
+        metaImg
+  }
+  
   tags: allProjectTag (filter: { title: {in: ["blockchain", "experience", "technology", "farming", "community", "infrastructure", "impact"]}}) {
      edges{
       node{
@@ -115,6 +120,65 @@ export default {
     baseurl() {
       return "/partners/";
     },
+    getImg() {
+      let image = "";
+      if (process.isClient) {
+        image = `${window.location.origin}${this.img}`;
+      }
+      return image;
+    },
+    img() {
+      if (!this.$page.markdownPage.metaImg) return "";
+      if (this.$page.markdownPage.metaImg.src)
+        return this.$page.markdownPage.metaImg.src;
+      return this.$page.markdownPage.metaImg;
+    },
+  },
+  metaInfo() {
+    return {
+      title: "",
+      titleTemplate: "ThreeFold P2P Cloud | Partners",
+      meta: [
+        {
+          key: "description",
+          name: "description",
+          content:
+            "Meet the incredible organizations that make up the ThreeFold P2P Cloud ecosystem.",
+        },
+        {
+          key: "og:title",
+          property: "og:title",
+          content: "ThreeFold P2P Cloud | Partners",
+        },
+        {
+          key: "og:description",
+          property: "og:description",
+          content:
+            "Meet the incredible organizations that make up the ThreeFold P2P Cloud ecosystem.",
+        },
+        {
+          key: "og:image",
+          property: "og:image",
+          content: this.getImg,
+        },
+        {
+          key: "twitter:description",
+          name: "twitter:description",
+          content:
+            "Meet the incredible organizations that make up the ThreeFold P2P Cloud ecosystem.",
+        },
+        {
+          key: "twitter:image",
+          property: "twitter:image",
+          content: this.getImg,
+        },
+        {
+          key: "twitter:title",
+          property: "twitter:title",
+          content: "ThreeFold P2P Cloud | Partners",
+        },
+      ],
+    };
   },
 };
 </script>
