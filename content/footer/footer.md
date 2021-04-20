@@ -29,33 +29,31 @@ items:
       
   - title: PARTICIPATE
     links:
-    - name: Deploy Private Cloud
+    - name: Deploy P2P Cloud
       link: https://threefold.io/info/cloud#/cloud__readme
-    - name: Deploy Applications
+    - name: Deploy P2P Apps
       link: https://threefold.io/marketplace
-    - name: SDK
-      link: https://sdk.threefold.io/
-    - name: Get TFT
+    - name: Buy TFT
       link: https://www.threefold.io/token
     - name: Be The Internet
       link: https://threefold.io/farming
+    - name: SDK
+      link: https://sdk.threefold.io/
     - name: Join Testing Community
       link: https://t.me/joinchat/BwOvOxxgK59GmRoZ2_sM0w    
 
   - title: LEARN
     links:
-    - name: ThreeFold P2P Cloud
+    - name: Get Started
       link: https://threefold.io/info/cloud#/cloud__readme
     - name: Live Capacity
       link: https://explorer.threefold.io/
     - name: P2P Cloud Benefits
       link: https://threefold.io/info/cloud#/cloud__usp
-    - name: Get Started
-      link: https://threefold.io/info/cloud#/cloud__evdc_getting_started
-    - name: ThreeFold Grid
-      link: https://threefold.io/farming/tech
     - name: What is TFT?
       link: https://threefold.io/token
+    - name: ThreeFold Grid
+      link: https://threefold.io/farming/tech
     - name: Buy TFT
       link: https://www.threefold.io/info/threefold#/threefold__how_to_buy_and_sell
 

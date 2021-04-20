@@ -28,25 +28,30 @@ navLinks:
           path: https://threefold.tech/
           external: true
 
+  - name: WHY
+    link: https://threefold.io/why
+    external: true
+    expandable: false
+
   - name: PARTICIPATE
     link: ''
     external: false
     expandable: true
     submenu:
-      - title: Deploy Private Cloud
+      - title: Deploy P2P Cloud
         path: https://threefold.io/info/cloud#/cloud__readme
         external: true
-      - title: Deploy Applications
+      - title: Deploy P2P Apps
         path: https://threefold.io/marketplace
         external: true
-      - title: SDK
-        path: https://sdk.threefold.io/
-        external: true
-      - title: Get TFT
+      - title: Buy TFT
         path: https://www.threefold.io/token
         external: true
       - title: Be The Internet
         path: https://threefold.io/farming
+        external: true
+      - title: SDK
+        path: https://sdk.threefold.io/
         external: true
       - title: Join Testing Community
         path: https://t.me/joinchat/BwOvOxxgK59GmRoZ2_sM0w
@@ -57,7 +62,7 @@ navLinks:
     external: false
     expandable: true
     submenu:
-      - title: ThreeFold P2P Cloud
+      - title: Get Started
         path: https://threefold.io/info/cloud#/cloud__readme
         external: true
       - title: Live Capacity 
@@ -66,14 +71,11 @@ navLinks:
       - title: P2P Cloud Benefits
         path: https://threefold.io/info/cloud#/cloud__usp
         external: true
-      - title: Get Started
-        path: https://threefold.io/info/cloud#/cloud__evdc_getting_started
+      - title: What is TFT?
+        path: https://threefold.io/token
         external: true
       - title: ThreeFold Grid
         path: https://threefold.io/farming/tech
-        external: true
-      - title: What is TFT?
-        path: https://threefold.io/token
         external: true
       - title: Buy TFT
         path: https://www.threefold.io/info/threefold#/threefold__how_to_buy_and_sell
