@@ -45,7 +45,7 @@ navLinks:
         path: https://threefold.io/marketplace
         external: true
       - title: Buy TFT
-        path: https://www.threefold.io/token
+        path: https://threefold.io/info/threefold#/threefold__how_to_buy_and_sell
         external: true
       - title: Be The Internet
         path: https://threefold.io/farming

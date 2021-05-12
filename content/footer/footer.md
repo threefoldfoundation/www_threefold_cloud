@@ -34,7 +34,7 @@ items:
     - name: Deploy P2P Apps
       link: https://threefold.io/marketplace
     - name: Buy TFT
-      link: https://www.threefold.io/token
+      link: https://threefold.io/info/threefold#/threefold__how_to_buy_and_sell
     - name: Be The Internet
       link: https://threefold.io/farming
     - name: SDK
