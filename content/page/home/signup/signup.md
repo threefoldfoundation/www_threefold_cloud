@@ -1,8 +1,8 @@
 ---
 id: home_signup
-title: We are currently in BETA version and invite you to join our testing community! More info and documentation coming soon.
-button1: Join Now
-link1: https://t.me/joinchat/BwOvOxxgK59GmRoZ2_sM0w #Add button1 link here
-button2: ''
-link2: '' #Add button1 link here
+title: Get stareted with your eVDC BETA version and join our testing community!
+button1: Get Started
+link1: https://threefold.io/info/cloud#/cloud__evdc_getting_started
+button2: Join Community
+link2: https://t.me/joinchat/BwOvOxxgK59GmRoZ2_sM0w
 ---
