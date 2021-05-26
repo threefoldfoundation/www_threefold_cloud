@@ -10,7 +10,7 @@ youtube: 'https://www.youtube.com/threefoldfoundation'
 github: 'https://github.com/threefoldfoundation'
 telegram: 'https://t.me/threefoldnews'
 items:
-  - title: UNIVERSE
+  - title: TF UNIVERSE
     links:
     - name: ThreeFold
       link: https://threefold.io
