@@ -326,45 +326,6 @@ module.exports = {
                 shouldPurgeUnusedKeyframes: true,
             }
         },
-
-        // Full Text search
-        {
-            use: 'gridsome-plugin-flexsearch',
-            options: {
-                searchFields: ['title', 'name', 'content', 'status', 'linkedin', 'excerpt', 'cities', 'countries', 'websites'],
-                collections: [{
-                        typeName: 'Blog',
-                        indexName: 'Blog',
-                        fields: ['path']
-                    },
-
-                    {
-                        typeName: 'Project',
-                        indexName: 'Project',
-                        fields: ['path']
-                    },
-
-                    {
-                        typeName: 'Person',
-                        indexName: 'Person',
-                        fields: ['path']
-                    },
-
-                    {
-                        typeName: 'News',
-                        indexName: 'News',
-                        fields: ['path']
-                    },
-
-                    {
-                        typeName: 'MarkdownPage',
-                        indexName: 'MarkdownPage',
-                        fields: ['path']
-                    },
-
-                ]
-            }
-        },
         {
             use: 'gridsome-plugin-matomo',
             options: {
