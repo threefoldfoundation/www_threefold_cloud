@@ -14,8 +14,7 @@ node_modules
 .env.*
 yarn.lock
 .installed
-install.sh
-run.sh
-build.sh
 package-lock.json
 dist
+.temp
+
