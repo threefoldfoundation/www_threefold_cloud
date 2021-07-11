@@ -30,30 +30,7 @@ navLinks:
       - title: Join Testing Community
         path: https://t.me/joinchat/BwOvOxxgK59GmRoZ2_sM0w
         external: true
- 
-  - name: More Info
-    link: "" # /dropdown
-    external: false
-    expandable: true
-    submenu:
-      - title: KnowledgeBase
-        path: https://wiki.threefold.io
-        external: true            
-      - title: Blog
-        path: https://www.threefold.io/blog
-        external: true
-      - title: NewsRoom
-        path: https://www.threefold.io/news
-        external: true
-      - title: Forum
-        path: https://forum.threefold.io
-        external: true
-      - title: FAQ
-        path: https://www.threefold.io/faq
-        external: true   
-      - title: Grid Explorer
-        path: https://explorer.threefold.io/
-        external: true           
+        
           
   - name: ThreeFold
     link: ''
@@ -83,7 +60,49 @@ navLinks:
         external: true
       - title: Explorer
         path: https://explorer.threefold.io/
-        external: true    
+        external: true 
+
+  - name: Community
+    link: "" # /dropdown
+    external: false
+    expandable: true
+    submenu:
+      - title: Partners
+        path: https://threefold.io/partners
+        external: true
+      - title: People
+        path: https://threefold.io/people
+        external: true      
+      - title: Alliance
+        path: https://threefold.io/aci
+        external: true
+      - title: Telegram
+        path: https://t.me/threefoldnews
+        external: true   
+
+  - name: More Info
+    link: "" # /dropdown
+    external: false
+    expandable: true
+    submenu:
+      - title: KnowledgeBase
+        path: https://wiki.threefold.io
+        external: true            
+      - title: Blog
+        path: https://www.threefold.io/blog
+        external: true
+      - title: NewsRoom
+        path: https://www.threefold.io/news
+        external: true
+      - title: Forum
+        path: https://forum.threefold.io
+        external: true
+      - title: FAQ
+        path: https://www.threefold.io/faq
+        external: true   
+      - title: Grid Explorer
+        path: https://explorer.threefold.io/
+        external: true   
 
 social:
   - icon: telegram-plane
