@@ -62,8 +62,8 @@ query {
       facebook
       github
       twitter
-      dribbble
-      instagram
+  #   dribbble
+  #   instagram
       description
       items{
         title
