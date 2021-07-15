@@ -100,7 +100,7 @@ navLinks:
       - title: FAQ
         path: https://www.threefold.io/faq
         external: true   
-      - title: Grid Explorer
+      - title: Explorer
         path: https://explorer.threefold.io/
         external: true   
 
