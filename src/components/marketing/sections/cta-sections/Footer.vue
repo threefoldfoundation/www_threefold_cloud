@@ -44,7 +44,7 @@
                 />
               </svg>
             </a>
-            <a
+            <!-- <a
               v-if="record.instagram != '#'"
               :href="record.instagram"
               class="text-gray-400 hover:text-gray-500"
@@ -62,7 +62,7 @@
                   clip-rule="evenodd"
                 />
               </svg>
-            </a>
+            </a> -->
             <a
               v-if="record.twitter != '#'"
               :href="record.twitter"
@@ -99,7 +99,7 @@
                 />
               </svg>
             </a>
-            <a
+            <!-- <a
               v-if="record.dribbble != '#'"
               :href="record.dribbble"
               class="text-gray-400 hover:text-gray-500"
@@ -117,7 +117,7 @@
                   clip-rule="evenodd"
                 />
               </svg>
-            </a>
+            </a> -->
 
             <a
               class="text-gray-400 hover:text-gray-500"
