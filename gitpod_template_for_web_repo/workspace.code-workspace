@@ -1,0 +1,17 @@
+{
+	"folders": [
+		{
+			"path": "/home/gitpod/publisher"
+		},
+		{
+			"path": "/home/gitpod/code/crystaltools"
+		},
+		{
+			"path": "."
+		},
+		{
+			"path": "/home/gitpod/.vmodules/despiegk/crystallib"
+		}
+	],
+	"settings": {}
+}
