@@ -3,17 +3,19 @@ image:
 tasks:
     - name: WIKI
       command: |
-        export PBRANCH=development
-        curl https://raw.githubusercontent.com/crystaluniverse/crystaltools/$PBRANCH/install.sh > /tmp/install.sh
+        curl https://raw.githubusercontent.com/crystaluniverse/crystaltools/development/install.sh > /tmp/install.sh
         bash /tmp/install.sh
         source /workspace/env.sh
-        # publtools_check
-        # cd wiki_config && publishtools flatten 
-        web_install
-        website_install
-        website_run
-        echo ' - do "website_run" to run wiki or website.'
-        echo ' - do "open workspace.code-workspace" to open all relevant dirs in your editor.'
+        publtools_check
+        cd config
+        publishtools install 
+        cd ..
+        clear
+        echo ' -- WEB PUBLISH TOOLS -- '
+        echo 
+        echo ' - do "./run" to run website.'
+        echo ' - do "./build" to build website, see in dir build for result.'
+        echo ' - do "open ../workspace.code-workspace" to open all relevant dirs in your editor.'
 ports:
   - port: 9998
     onOpen: open-browser

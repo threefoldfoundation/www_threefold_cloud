@@ -1,0 +1,16 @@
+{
+    "name": "local",
+    "prefix": "local",
+    "git_url": "",
+    "fs_path": "..",
+    "pull": false,
+    "reset": false,
+    "cat": 2,
+    "domains": [
+        "www.local.io"
+    ],
+    "descr": "is our entry point for everyone, redirect to the detailed websites underneith.",
+    "groups": [],
+    "acl": [],
+    "trackingid": ""
+}
