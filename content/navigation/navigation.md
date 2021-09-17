@@ -25,7 +25,7 @@ navLinks:
         path: https://threefold.io/farming
         external: true
       - title: SDK
-        path: https://sdk.threefold.io/
+        path: https://library.threefold.me/info/sdk/
         external: true
       - title: Join Testing Community
         path: https://t.me/joinchat/BwOvOxxgK59GmRoZ2_sM0w
@@ -56,7 +56,7 @@ navLinks:
         path: https://threefold.io/aci
         external: true        
       - title: Developers (SDK)
-        path: https://sdk.threefold.io/
+        path: https://library.threefold.me/info/sdk/
         external: true
       - title: Explorer
         path: https://explorer.threefold.io/
@@ -86,7 +86,7 @@ navLinks:
     expandable: true
     submenu:
       - title: KnowledgeBase
-        path: https://wiki.threefold.io
+        path: https://library.threefold.me/info/tfgrid
         external: true            
       - title: Blog
         path: https://www.threefold.io/blog
