@@ -180,6 +180,14 @@ module.exports = {
         {
             use: '@gridsome/source-filesystem',
             options: {
+                typeName: 'Blogs',
+                path: './content/page/**/blogs/**/*.md',
+            }
+        },
+
+        {
+            use: '@gridsome/source-filesystem',
+            options: {
                 typeName: 'MarkdownPage',
                 path: './content/page/*/*.md',
                 refs: {
@@ -209,7 +217,8 @@ module.exports = {
                     plans: 'Plans',
                     inTheNews: 'InTheNews',
                     brandPanel: 'BrandPanel',
-                    allSlides: 'About'
+                    allSlides: 'About',
+                    blogs: 'Blogs'
                 }
             }
         },
@@ -397,19 +406,19 @@ module.exports = {
             anchorClassName: 'icon icon-link',
             plugins: [
                 ['gridsome-plugin-remark-prismjs-all', {
-                        highlightClassName: "gridsome-highlight",
-                        codeTitleClassName: "gridsome-code-title",
-                        classPrefix: 'language-',
-                        aliases: {},
-                        noInlineHighlight: false,
-                        showLineNumbers: false, //  `require("prismjs/plugins/line-numbers/prism-line-numbers.css");`
-                        languageExtensions: [],
-                        prompt: { //  `require("prismjs/plugins/command-line/prism-command-line.css");`
-                            user: `root`,
-                            host: `localhost`,
-                            global: false,
-                        }
-                    },
+                    highlightClassName: "gridsome-highlight",
+                    codeTitleClassName: "gridsome-code-title",
+                    classPrefix: 'language-',
+                    aliases: {},
+                    noInlineHighlight: false,
+                    showLineNumbers: false, //  `require("prismjs/plugins/line-numbers/prism-line-numbers.css");`
+                    languageExtensions: [],
+                    prompt: { //  `require("prismjs/plugins/command-line/prism-command-line.css");`
+                        user: `root`,
+                        host: `localhost`,
+                        global: false,
+                    }
+                },
                     // '@noxify/gridsome-remark-table-align', ['@noxify/gridsome-remark-classes', {
                     //     'table': 'table table-striped',
                     //     'tableCell[align=center]': 'text-center',

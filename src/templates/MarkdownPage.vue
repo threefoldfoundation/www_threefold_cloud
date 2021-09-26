@@ -57,7 +57,7 @@
         header_altImg
         header_title
         header_image
-        solution_image
+      #  solution_image
        header{
          title
          subtitle

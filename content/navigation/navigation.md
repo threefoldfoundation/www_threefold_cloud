@@ -2,6 +2,40 @@
 id: navigation
 navLinks:
 
+  - name: Compute
+    link: /compute
+    external: false
+    expandable: false
+
+  - name: Storage
+    link: /storage
+    external: false
+    expandable: false
+
+  - name: Network
+    link: /network
+    external: false
+    expandable: false
+
+  - name: Partners
+    link: /partners
+    external: false
+    expandable: false
+
+  - name: About
+    link: /about
+    external: false
+    expandable: false
+
+  - name: Blog
+    link: /blog
+    external: false
+    expandable: false
+
+---
+
+<!-- navLinks:
+
   - name: WHY
     link: https://threefold.io/why
     external: true
@@ -106,6 +140,4 @@ navLinks:
 
 social:
   - icon: telegram-plane
-    link: https://t.me/threefoldnews
----
-
+    link: https://t.me/threefoldnews -->

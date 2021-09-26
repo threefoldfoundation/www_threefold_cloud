@@ -46,16 +46,16 @@ query {
       link
       external
       expandable
-      submenu {
-        title
-        path
-        external
-      }
+#      submenu {
+#        title
+#        path
+#        external
+#      }
     }
-    social{
-      icon
-      link
-    }
+#    social{
+#      icon
+#      link
+#    }
   }
 
   footer(id: "footer"){

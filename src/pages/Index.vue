@@ -1,12 +1,19 @@
 <template>
   <Layout :hideHeader="true" :disableScroll="true">
     <Header
+      :id="$page.markdownPage.id"
       :title="$page.markdownPage.header_title"
       :image="$page.markdownPage.header_image"
       :altImg="$page.markdownPage.header_altImg"
       :excerpt="$page.markdownPage.header_excerpt"
       :button="$page.markdownPage.button"
       :link="$url($page.markdownPage.link)"
+    />
+
+    <Blogs
+      v-if="$page.markdownPage.blogs"
+      :id="$page.markdownPage.id"
+      :blogs="$page.markdownPage.blogs"
     />
 
     <SignUp
@@ -56,11 +63,11 @@
       :cardLeft="cardLeft"
     />
 
-    <FourTiersWithToggle
+    <!-- <FourTiersWithToggle
       v-if="$page.markdownPage.pricingPlans.length > 0"
       :main="$page.markdownPage.pricing_plansMain"
       :pricingPlans="$page.markdownPage.pricingPlans"
-    />
+    /> -->
 
     <!-- <logoShowcase
       v-if="$page.markdownPage.logos.length > 0"
@@ -88,8 +95,8 @@
         header_altImg
         button
         link
-        solution_image
-        solution_image2
+      #  solution_image
+      #  solution_image2
         header{
          title
          subtitle
@@ -183,6 +190,12 @@
           button2
           link2
         }
+        blogs{
+          id
+          image
+          title
+          content
+        }
     }  
   }
 
@@ -199,6 +212,7 @@ import FourTiersWithToggle from "~/components/marketing/sections/pricing/four_ti
 import logoShowcase from "~/components/marketing/sections/cta-sections/logoShowcase.vue";
 import InTheNews from "~/components/marketing/sections/logo-clouds/off_white_grid.vue";
 import SignUp from "~/components/custom/sections/SignUp.vue";
+import Blogs from "~/components/marketing/sections/blog-sections/3_column_cards.vue";
 
 export default {
   components: {
@@ -212,8 +226,9 @@ export default {
     FourTiersWithToggle,
     InTheNews,
     SignUp,
+    Blogs,
   },
- computed: {
+  computed: {
     getImg() {
       let image = "";
       if (process.isClient) {
