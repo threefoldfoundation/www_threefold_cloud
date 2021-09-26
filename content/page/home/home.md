@@ -10,6 +10,8 @@ header_excerpt: Deploy any workload with unprecedented security, scalability, an
 button: '' #Learn More
 link: '' #link for button
 blogs: [storage, compute, network]
+cta: home_cta
+brandPanel: limitless_possibilities
 
 # signup: home_signup
 
@@ -22,8 +24,6 @@ blogs: [storage, compute, network]
 # cardLefts: [cardLeft1]
 
 # solution_image: ./home_cta.png
-
-# cta: home_cta
 
 # cards2: [marketplace]
 

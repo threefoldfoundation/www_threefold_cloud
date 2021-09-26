@@ -1,15 +1,12 @@
 <template>
-  <div class="container mx-auto">
+  <div class="mx-auto">
     <NavBar
       :navigation="$static.navigation"
       @setTheme="setTheme"
       :theme="this.theme"
     />
     <slot />
-    <Footer 
-      :record="$static.footer"
-      @setTheme="setTheme"
-      :theme="this.theme" />
+    <Footer :record="$static.footer" @setTheme="setTheme" :theme="this.theme" />
   </div>
 </template>
 

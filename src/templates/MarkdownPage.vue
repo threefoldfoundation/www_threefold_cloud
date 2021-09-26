@@ -82,10 +82,10 @@
         }
         cta{
           id
-          title
-          content
-          button
-          link
+        #  title
+        #  content
+        #  button
+        #  link
         }
         signup{
           id

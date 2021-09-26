@@ -1,21 +1,35 @@
 <template>
   <Layout :hideHeader="true" :disableScroll="true">
-    <Header
-      :id="$page.markdownPage.id"
-      :title="$page.markdownPage.header_title"
-      :image="$page.markdownPage.header_image"
-      :altImg="$page.markdownPage.header_altImg"
-      :excerpt="$page.markdownPage.header_excerpt"
-      :button="$page.markdownPage.button"
-      :link="$url($page.markdownPage.link)"
-    />
+    <div class="container sm:pxi-0 mx-auto overflow-x-hidden py-5">
+      <Header
+        :id="$page.markdownPage.id"
+        :title="$page.markdownPage.header_title"
+        :image="$page.markdownPage.header_image"
+        :altImg="$page.markdownPage.header_altImg"
+        :excerpt="$page.markdownPage.header_excerpt"
+        :button="$page.markdownPage.button"
+        :link="$url($page.markdownPage.link)"
+      />
 
-    <Blogs
-      v-if="$page.markdownPage.blogs"
-      :id="$page.markdownPage.id"
-      :blogs="$page.markdownPage.blogs"
-    />
-
+      <Blogs
+        v-if="$page.markdownPage.blogs"
+        :id="$page.markdownPage.id"
+        :blogs="$page.markdownPage.blogs"
+      />
+      <CallToAction
+        v-if="$page.markdownPage.cta"
+        :id="$page.markdownPage.id"
+        :cta="$page.markdownPage.cta"
+      />
+    </div>
+    <div class="container-fluid sm:pxi-0 mx-auto overflow-x-hidden">
+      <BrandPanel
+        class="my-20"
+        :brand="$page.markdownPage.brandPanel"
+        :id="$page.markdownPage.id"
+        v-if="$page.markdownPage.brandPanel"
+      />
+    </div>
     <SignUp
       v-if="$page.markdownPage.signup"
       :signup="$page.markdownPage.signup"
@@ -48,8 +62,6 @@
       v-if="$page.markdownPage.solution_image"
       :src="$page.markdownPage.solution_image.src"
     />
-
-    <CallToAction v-if="$page.markdownPage.cta" :cta="$page.markdownPage.cta" />
 
     <NewCard
       v-for="card in $page.markdownPage.cards2"
@@ -164,10 +176,7 @@
         }
         cta{
           id
-          title
-          content
-          button
-          link
+          image
         }
         logos{
           id
@@ -196,6 +205,12 @@
           title
           content
         }
+        brandPanel{
+         id
+         title
+         content
+         image
+       }
     }  
   }
 
@@ -213,6 +228,7 @@ import logoShowcase from "~/components/marketing/sections/cta-sections/logoShowc
 import InTheNews from "~/components/marketing/sections/logo-clouds/off_white_grid.vue";
 import SignUp from "~/components/custom/sections/SignUp.vue";
 import Blogs from "~/components/marketing/sections/blog-sections/3_column_cards.vue";
+import BrandPanel from "~/components/marketing/sections/cta-sections/BrandPanel.vue";
 
 export default {
   components: {
@@ -227,6 +243,7 @@ export default {
     InTheNews,
     SignUp,
     Blogs,
+    BrandPanel,
   },
   computed: {
     getImg() {
@@ -288,3 +305,11 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+.container-fluid {
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+}
+</style>
