@@ -13,7 +13,9 @@ blogs: [storage, compute, network]
 cta: home_cta
 brandPanel: limitless_possibilities
 features: [digithree, own_cloud, uhuru, artheon]
-
+workloadsMain: workloadMain
+workloads: [workload1, workload2, workload3, workload4]
+stats: stats
 # signup: home_signup
 
 # solution_image2: ./carbon_neutral.png

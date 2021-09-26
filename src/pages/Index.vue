@@ -36,6 +36,19 @@
         :id="$page.markdownPage.id"
         :features="$page.markdownPage.features"
       />
+
+      <SimpleColumns
+        v-if="$page.markdownPage.workloads.length > 0"
+        :id="$page.markdownPage.id"
+        :main="$page.markdownPage.workloadsMain"
+        :sections="$page.markdownPage.workloads"
+      />
+
+      <Stats
+        :id="$page.markdownPage.id"
+        v-if="$page.markdownPage.stats"
+        :info="$page.markdownPage.stats"
+      />
       <SignUp
         v-if="$page.markdownPage.signup"
         :signup="$page.markdownPage.signup"
@@ -224,6 +237,25 @@
          image
          content
        }
+       workloadsMain {
+         id
+         title
+         button
+         link
+       }
+       workloads{
+         id
+         title
+         image
+         content
+       }
+       stats{
+         id
+         title
+         content
+         button
+         link
+       }
     }  
   }
 
@@ -243,6 +275,8 @@ import SignUp from "~/components/custom/sections/SignUp.vue";
 import Blogs from "~/components/marketing/sections/blog-sections/3_column_cards.vue";
 import BrandPanel from "~/components/marketing/sections/cta-sections/BrandPanel.vue";
 import Centered2x2Grid from "~/components/marketing/sections/feature-sections/Centered2x2Grid.vue";
+import SimpleColumns from "~/components/marketing/sections/feature-sections/SimpleColumns.vue";
+import Stats from "~/components/marketing/sections/stats-sections/SimpleInCard.vue";
 export default {
   components: {
     Header,
@@ -258,6 +292,8 @@ export default {
     Blogs,
     BrandPanel,
     Centered2x2Grid,
+    SimpleColumns,
+    Stats,
   },
   computed: {
     getImg() {

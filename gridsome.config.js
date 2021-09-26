@@ -200,6 +200,27 @@ module.exports = {
                 path: './content/page/**/features/**/*.md',
             }
         },
+        {
+            use: '@gridsome/source-filesystem',
+            options: {
+                typeName: 'WorkloadsMain',
+                path: './content/page/**/workloads/main/*.md',
+            }
+        },
+        {
+            use: '@gridsome/source-filesystem',
+            options: {
+                typeName: 'Workloads',
+                path: './content/page/**/workloads/**/*.md',
+            }
+        },
+        {
+            use: '@gridsome/source-filesystem',
+            options: {
+                typeName: 'Stats',
+                path: './content/page/**/stats/*.md',
+            }
+        },
 
         {
             use: '@gridsome/source-filesystem',
@@ -235,7 +256,10 @@ module.exports = {
                     brandPanel: 'BrandPanel',
                     allSlides: 'About',
                     blogs: 'Blogs',
-                    features: 'Features'
+                    features: 'Features',
+                    workloadsMain: 'WorkloadsMain',
+                    workloads: 'Workloads',
+                    stats: 'Stats'
                 }
             }
         },
