@@ -12,6 +12,7 @@ link: '' #link for button
 blogs: [storage, compute, network]
 cta: home_cta
 brandPanel: limitless_possibilities
+features: [digithree, own_cloud, uhuru, artheon]
 
 # signup: home_signup
 

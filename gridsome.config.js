@@ -196,6 +196,14 @@ module.exports = {
         {
             use: '@gridsome/source-filesystem',
             options: {
+                typeName: 'Features',
+                path: './content/page/**/features/**/*.md',
+            }
+        },
+
+        {
+            use: '@gridsome/source-filesystem',
+            options: {
                 typeName: 'MarkdownPage',
                 path: './content/page/*/*.md',
                 refs: {
@@ -226,7 +234,8 @@ module.exports = {
                     inTheNews: 'InTheNews',
                     brandPanel: 'BrandPanel',
                     allSlides: 'About',
-                    blogs: 'Blogs'
+                    blogs: 'Blogs',
+                    features: 'Features'
                 }
             }
         },

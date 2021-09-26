@@ -30,66 +30,73 @@
         v-if="$page.markdownPage.brandPanel"
       />
     </div>
-    <SignUp
-      v-if="$page.markdownPage.signup"
-      :signup="$page.markdownPage.signup"
-    />
+    <div class="container sm:pxi-0 mx-auto overflow-x-hidden py-5">
+      <Centered2x2Grid
+        v-if="$page.markdownPage.features.length > 0"
+        :id="$page.markdownPage.id"
+        :features="$page.markdownPage.features"
+      />
+      <SignUp
+        v-if="$page.markdownPage.signup"
+        :signup="$page.markdownPage.signup"
+      />
 
-    <g-image
-      class="m-auto w-2/4 lg:mt-20"
-      v-if="$page.markdownPage.solution_image2"
-      :src="$page.markdownPage.solution_image2.src"
-    />
+      <g-image
+        class="m-auto w-2/4 lg:mt-20"
+        v-if="$page.markdownPage.solution_image2"
+        :src="$page.markdownPage.solution_image2.src"
+      />
 
-    <SolutionsHeader
-      v-if="$page.markdownPage.header"
-      :header="$page.markdownPage.header"
-    />
+      <SolutionsHeader
+        v-if="$page.markdownPage.header"
+        :header="$page.markdownPage.header"
+      />
 
-    <NewCardNewCard2button
-      v-for="card in $page.markdownPage.cards"
-      :key="card.id"
-      :card="card"
-    />
+      <NewCardNewCard2button
+        v-for="card in $page.markdownPage.cards"
+        :key="card.id"
+        :card="card"
+      />
 
-    <NewCardLeft
-      v-for="cardLeft in $page.markdownPage.cardLefts"
-      :key="cardLeft.id"
-      :cardLeft="cardLeft"
-    />
+      <NewCardLeft
+        v-for="cardLeft in $page.markdownPage.cardLefts"
+        :key="cardLeft.id"
+        :cardLeft="cardLeft"
+      />
 
-    <g-image
-      v-if="$page.markdownPage.solution_image"
-      :src="$page.markdownPage.solution_image.src"
-    />
+      <g-image
+        v-if="$page.markdownPage.solution_image"
+        :src="$page.markdownPage.solution_image.src"
+      />
 
-    <NewCard
-      v-for="card in $page.markdownPage.cards2"
-      :key="card.id"
-      :card="card"
-    />
+      <NewCard
+        v-for="card in $page.markdownPage.cards2"
+        :key="card.id"
+        :card="card"
+      />
 
-    <NewCardLeft
-      v-for="cardLeft in $page.markdownPage.cardLefts2"
-      :key="cardLeft.id"
-      :cardLeft="cardLeft"
-    />
+      <NewCardLeft
+        v-for="cardLeft in $page.markdownPage.cardLefts2"
+        :key="cardLeft.id"
+        :cardLeft="cardLeft"
+      />
 
-    <!-- <FourTiersWithToggle
+      <!-- <FourTiersWithToggle
       v-if="$page.markdownPage.pricingPlans.length > 0"
       :main="$page.markdownPage.pricing_plansMain"
       :pricingPlans="$page.markdownPage.pricingPlans"
     /> -->
 
-    <!-- <logoShowcase
+      <!-- <logoShowcase
       v-if="$page.markdownPage.logos.length > 0"
       :logos="$page.markdownPage.logos"
     /> -->
 
-    <!-- <InTheNews
+      <!-- <InTheNews
       v-if="$page.markdownPage.inTheNews"
       :news="$page.markdownPage.inTheNews"
     /> -->
+    </div>
   </Layout>
 </template>
 
@@ -211,6 +218,12 @@
          content
          image
        }
+       features {
+         id
+         title
+         image
+         content
+       }
     }  
   }
 
@@ -229,7 +242,7 @@ import InTheNews from "~/components/marketing/sections/logo-clouds/off_white_gri
 import SignUp from "~/components/custom/sections/SignUp.vue";
 import Blogs from "~/components/marketing/sections/blog-sections/3_column_cards.vue";
 import BrandPanel from "~/components/marketing/sections/cta-sections/BrandPanel.vue";
-
+import Centered2x2Grid from "~/components/marketing/sections/feature-sections/Centered2x2Grid.vue";
 export default {
   components: {
     Header,
@@ -244,6 +257,7 @@ export default {
     SignUp,
     Blogs,
     BrandPanel,
+    Centered2x2Grid,
   },
   computed: {
     getImg() {
