@@ -1,5 +1,5 @@
 <template>
-  <div v-if="id == 'home'" class="bg-black">
+  <div v-if="id == 'home' && !lastBrand" class="bg-black">
     <div class="max-w-screen-xl mx-auto py-16">
       <div
         class="
@@ -31,6 +31,52 @@
               class="mt-4 text-lg leading-6 text-white"
               v-html="brand.content"
             ></div>
+          </div>
+        </div>
+        <div class="relative lg:mt-14">
+          <g-image
+            class="absolute inset-0 w-1/2 mx-auto object-cover"
+            :src="image"
+            :alt="brand.title"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div v-else-if="id == 'home' && lastBrand">
+    <div class="max-w-screen-xl mx-auto py-16">
+      <div class="rounded-lg overflow-hidden lg:grid lg:grid-cols-2 lg:gap-4">
+        <div
+          class="
+            pb-12
+            px-6
+            sm:px-16
+            lg:pr-0
+            xl:py-10
+            xl:px-20
+          "
+        >
+          <div class="lg:self-center">
+            <h2 class="text-5xl font-extrabold text-black">
+              {{ brand.title }}
+            </h2>
+            <div
+              class="mt-4 text-lg leading-6 text-black"
+              v-html="brand.content"
+            ></div>
+            <div class="my-10" >
+              <a
+                :href="brand.link"
+                class="green text-md text-gray-900 px-12 py-2 my-4 mr-3 shadow"
+                >{{ brand.button }}</a
+              >
+              <a
+                :href="brand.link2"
+                class="green text-md text-gray-900 px-12 py-2 mb-4 shadow"
+                >{{ brand.button2 }}</a
+              >
+            </div>
           </div>
         </div>
         <div class="relative lg:mt-14">
@@ -140,7 +186,7 @@
 
 <script>
 export default {
-  props: ["id", "brand"],
+  props: ["id", "brand", "lastBrand"],
   computed: {
     image() {
       return this.brand.image.src
@@ -154,5 +200,8 @@ export default {
 <style scoped>
 .brandPanel {
   background-color: black;
+}
+.green {
+  background-color: #70dfc9;
 }
 </style>

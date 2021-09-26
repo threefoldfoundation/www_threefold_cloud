@@ -12,10 +12,12 @@ link: '' #link for button
 blogs: [storage, compute, network]
 cta: home_cta
 brandPanel: limitless_possibilities
+brandPanel2: explore
 features: [digithree, own_cloud, uhuru, artheon]
 workloadsMain: workloadMain
 workloads: [workload1, workload2, workload3, workload4]
 stats: stats
+cta2: home_cta2
 # signup: home_signup
 
 # solution_image2: ./carbon_neutral.png

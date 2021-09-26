@@ -117,6 +117,14 @@ module.exports = {
         {
             use: '@gridsome/source-filesystem',
             options: {
+                typeName: 'Cta2',
+                path: './content/page/**/cta2/*.md',
+            }
+        },
+
+        {
+            use: '@gridsome/source-filesystem',
+            options: {
                 typeName: 'SignUp',
                 path: './content/page/**/signup/*.md',
             }
@@ -196,6 +204,14 @@ module.exports = {
         {
             use: '@gridsome/source-filesystem',
             options: {
+                typeName: 'BrandPanel2',
+                path: './content/page/**/brandPanel2/*.md',
+            }
+        },
+
+        {
+            use: '@gridsome/source-filesystem',
+            options: {
                 typeName: 'Features',
                 path: './content/page/**/features/**/*.md',
             }
@@ -243,6 +259,7 @@ module.exports = {
                     features: 'Features',
                     logos: 'Logo',
                     cta: 'Cta',
+                    cta2: 'Cta2',
                     signup: 'SignUp',
                     comparisonMain: 'Comparison',
                     comparisonSecs: 'Comparison',
@@ -254,9 +271,9 @@ module.exports = {
                     plans: 'Plans',
                     inTheNews: 'InTheNews',
                     brandPanel: 'BrandPanel',
+                    brandPanel2: 'BrandPanel2',
                     allSlides: 'About',
                     blogs: 'Blogs',
-                    features: 'Features',
                     workloadsMain: 'WorkloadsMain',
                     workloads: 'Workloads',
                     stats: 'Stats'

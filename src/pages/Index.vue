@@ -49,6 +49,23 @@
         v-if="$page.markdownPage.stats"
         :info="$page.markdownPage.stats"
       />
+    </div>
+    <div class="container-fluid sm:pxi-0 mx-auto overflow-x-hidden">
+      <CallToAction
+        v-if="$page.markdownPage.cta2"
+        :id="$page.markdownPage.id"
+        :cta="$page.markdownPage.cta2"
+        :textOnly="true"
+      />
+
+      <BrandPanel
+        class="my-20"
+        :brand="$page.markdownPage.brandPanel2"
+        :id="$page.markdownPage.id"
+        v-if="$page.markdownPage.brandPanel2"
+        :lastBrand="true"
+      />
+
       <SignUp
         v-if="$page.markdownPage.signup"
         :signup="$page.markdownPage.signup"
@@ -255,6 +272,24 @@
          content
          button
          link
+       }
+       cta2 {
+         id
+         title
+         subtitle
+         content
+         button
+         link
+       }
+       brandPanel2 {
+         id
+         title
+         content
+         image
+         button
+         link
+         button2
+         link2
        }
     }  
   }

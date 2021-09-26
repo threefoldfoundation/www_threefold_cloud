@@ -1,7 +1,37 @@
 <template>
-  <section class="py-12 px-4 text-center">
-    <div class="w-full mx-auto mt-10" v-if="id == 'home'">
+  <section
+    class="py-12 px-4 mt-10 text-center"
+    :class="{ 'bg-black': textOnly }"
+  >
+    <div class="w-full mx-auto mt-10" v-if="id == 'home' && !textOnly">
       <g-image :src="cta.image.src" />
+    </div>
+
+    <div
+      v-else-if="id == 'home' && textOnly"
+      class="w-full py-20 max-w-2xl mx-auto"
+    >
+      <h2 class="text-5xl text-white leading-tight font-semibold font-heading">
+        {{ cta.title }}
+        <span class="pink">{{ cta.subtitle }}</span>
+      </h2>
+      <div
+        v-html="cta.content"
+        class="mt-6 mb-8 text-white leading-relaxed"
+      ></div>
+      <a
+        v-if="cta.link.includes('http')"
+        target="_blank"
+        :href="cta.link"
+        class="green text-md text-gray-900 px-12 py-2 mb-4 shadow"
+        >{{ cta.button }}</a
+      >
+      <a
+        v-else
+        :href="cta.link"
+        class="green text-md text-gray-900 px-12 py-2 mb-4 shadow"
+        >{{ cta.button }}</a
+      >
     </div>
     <div v-else class="w-full max-w-2xl mx-auto">
       <h2
@@ -67,6 +97,15 @@
 
 <script>
 export default {
-  props: ["id", "cta"],
+  props: ["id", "cta", "textOnly"],
 };
 </script>
+
+<style scoped>
+.pink {
+  color: #ea1ff7;
+}
+.green {
+  background-color: #70dfc9;
+}
+</style>
