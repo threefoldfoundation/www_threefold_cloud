@@ -10,4 +10,6 @@ header_excerpt: Run cloud native tools like kubernetes and VMs on a peer-to-peer
 button: GET STARTED #Learn More
 link: '#' #link for button
 brandPanel: kubernetes
+cta: compute_cta
+brandPanel2: industry
 ---

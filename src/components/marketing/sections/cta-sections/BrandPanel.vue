@@ -59,12 +59,34 @@
             <div class="my-10">
               <a
                 :href="brand.link"
-                class="green text-md text-gray-900 px-12 py-2 my-4 mr-3 shadow"
+                class="
+                  inline-block
+                  green
+                  text-lg text-black
+                  font-extrabold
+                  px-8
+                  py-3
+                  mr-5
+                  my-2
+                  shadow
+                  rounded-lg
+                "
                 >{{ brand.button }}</a
               >
               <a
                 :href="brand.link2"
-                class="green text-md text-gray-900 px-12 py-2 mb-4 shadow"
+                class="
+                  inline-block
+                  green
+                  text-lg text-black
+                  font-extrabold
+                  px-8
+                  py-3
+                  mr-5
+                  my-2
+                  shadow
+                  rounded-lg
+                "
                 >{{ brand.button2 }}</a
               >
             </div>
@@ -81,7 +103,7 @@
     </div>
   </div>
 
-  <div v-else-if="id == 'compute'">
+  <div v-else-if="id == 'compute' && !lastBrand">
     <div class="max-w-screen-xl mx-auto py-16">
       <div class="rounded-lg overflow-hidden lg:grid lg:grid-cols-2 lg:gap-4">
         <div class="lg:mt-14">
@@ -99,11 +121,61 @@
             <div class="my-10">
               <a
                 :href="brand.link"
-                class="green text-md text-gray-900 px-12 py-2 my-4 mr-3 shadow"
+                class="
+                  inline-block
+                  green
+                  text-lg text-black
+                  font-extrabold
+                  px-8
+                  py-3
+                  mr-5
+                  my-2
+                  shadow
+                  rounded-lg
+                "
                 >{{ brand.button }}</a
               >
             </div>
           </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div v-else-if="id == 'compute' && lastBrand">
+    <div class="max-w-screen-xl mx-auto py-16">
+      <div class="rounded-lg overflow-hidden lg:grid lg:grid-cols-2 lg:gap-4">
+        <div class="flex content-center px-6 sm:px-16 lg:pr-0 xl:px-20">
+          <div class="lg:self-center">
+            <h2 class="text-5xl leading-tight font-extrabold text-black">
+              {{ brand.title }}
+            </h2>
+            <div
+              class="mt-4 text-lg leading-6 text-black"
+              v-html="brand.content"
+            ></div>
+            <div class="my-10">
+              <a
+                :href="brand.link"
+                class="
+                  inline-block
+                  green
+                  text-lg text-black
+                  font-extrabold
+                  px-8
+                  py-3
+                  mr-5
+                  my-2
+                  shadow
+                  rounded-lg
+                "
+                >{{ brand.button }}</a
+              >
+            </div>
+          </div>
+        </div>
+        <div class="lg:mt-14">
+          <g-image class="mx-auto" :src="image" :alt="brand.title" />
         </div>
       </div>
     </div>

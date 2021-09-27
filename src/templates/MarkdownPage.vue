@@ -22,6 +22,18 @@
         v-if="$page.markdownPage.brandPanel"
       />
 
+      <CallToAction
+        v-if="$page.markdownPage.cta"
+        :id="$page.markdownPage.id"
+        :cta="$page.markdownPage.cta"
+      />
+
+      <BrandPanel
+        :brand="$page.markdownPage.brandPanel2"
+        :id="$page.markdownPage.id"
+        v-if="$page.markdownPage.brandPanel2"
+        :lastBrand="true"
+      />
       <!-- <SolutionsHeader
         v-if="$page.markdownPage.header"
         :header="$page.markdownPage.header"
@@ -43,10 +55,6 @@
         :logos="$page.markdownPage.logos"
       />
 
-      <CallToAction
-        v-if="$page.markdownPage.cta"
-        :cta="$page.markdownPage.cta"
-      />
 
       <SignUp
         v-if="$page.markdownPage.signup"
@@ -71,12 +79,22 @@
         link
         cta{
           id
-        #  title
-        #  content
-        #  button
-        #  link
+          title
+          image
+          content
+          button
+          link
         }
     brandPanel{
+         id
+         title
+         content
+         image
+         button
+         link
+       }
+
+    brandPanel2{
          id
          title
          content

@@ -33,6 +33,53 @@
         >{{ cta.button }}</a
       >
     </div>
+
+    <div v-else-if="id == 'compute'" class="w-full py-20 max-w-2xl mx-auto">
+      <div class="w-full mx-auto mt-10">
+        <g-image :src="cta.image.src" class="w-1/2 mx-auto" />
+      </div>
+      <h2 class="text-4xl text-black leading-tight font-semibold font-heading">
+        {{ cta.title }}
+      </h2>
+      <div
+        v-html="cta.content"
+        class="mt-6 mb-8 text-black leading-relaxed"
+      ></div>
+      <a
+        v-if="cta.link.includes('http')"
+        target="_blank"
+        :href="cta.link"
+        class="
+          green
+          text-xl
+          font-extrabold
+          text-gray-900
+          px-12
+          py-2
+          mb-4
+          shadow
+          rounded-lg
+        "
+        >{{ cta.button }}</a
+      >
+      <a
+        v-else
+        :href="cta.link"
+        class="
+          green
+          text-xl
+          font-extrabold
+          text-gray-900
+          px-12
+          py-2
+          mb-4
+          shadow
+          rounded-lg
+        "
+        >{{ cta.button }}</a
+      >
+    </div>
+
     <div v-else class="w-full max-w-2xl mx-auto">
       <h2
         class="text-5xl text-gray-700 leading-tight font-semibold font-heading"
