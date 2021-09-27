@@ -1,15 +1,7 @@
 <template>
-  <div v-if="id == 'home' && !lastBrand" class="bg-black">
+  <div v-if="id == 'home' && !lastBrand" class="to-black">
     <div class="max-w-screen-xl mx-auto py-16">
-      <div
-        class="
-          rounded-lg
-          shadow-xl
-          overflow-hidden
-          lg:grid lg:grid-cols-2
-          lg:gap-4
-        "
-      >
+      <div class="rounded-lg overflow-hidden lg:grid lg:grid-cols-2 lg:gap-4">
         <div
           class="
             pt-10
@@ -289,8 +281,10 @@ export default {
 </script>
 
 <style scoped>
-.brandPanel {
-  background-color: black;
+.to-black {
+  background: #000;
+  background: -webkit-linear-gradient(to right, #000, #323232);
+  background: linear-gradient(to right, #000, #323232);
 }
 .green {
   background-color: #70dfc9;

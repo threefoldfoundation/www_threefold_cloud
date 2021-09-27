@@ -12,4 +12,6 @@ link: '#' #link for button
 brandPanel: kubernetes
 cta: compute_cta
 brandPanel2: industry
+cta2: compute_graph
+cta3: compute_meets_storage
 ---

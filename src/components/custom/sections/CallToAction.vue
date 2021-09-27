@@ -1,7 +1,7 @@
 <template>
   <section
-    class="py-12 px-4 mt-10 text-center"
-    :class="{ 'bg-black': textOnly }"
+    class="py-12 px-4 text-center"
+    :class="{ 'to-black': textOnly, 'bg-gray': lastCta }"
   >
     <div class="w-full mx-auto mt-10" v-if="id == 'home' && !textOnly">
       <g-image :src="cta.image.src" />
@@ -34,7 +34,10 @@
       >
     </div>
 
-    <div v-else-if="id == 'compute'" class="w-full py-20 max-w-2xl mx-auto">
+    <div
+      v-else-if="id == 'compute' && !lastCta && !textOnly"
+      class="w-full py-20 max-w-2xl mx-auto"
+    >
       <div class="w-full mx-auto mt-10">
         <g-image :src="cta.image.src" class="w-1/2 mx-auto" />
       </div>
@@ -78,6 +81,60 @@
         "
         >{{ cta.button }}</a
       >
+    </div>
+
+    <div
+      v-else-if="(id == 'compute' && lastCta) || textOnly"
+      class="w-full py-20 max-w-4xl mx-auto"
+    >
+      <h1
+        class="text-6xl leading-tight font-semibold font-heading"
+        :class="{ 'text-white': textOnly, 'text-black': !textOnly }"
+      >
+        {{ cta.title }}
+      </h1>
+      <div
+        v-html="cta.content"
+        class="mt-6 mb-8 text-xl leading-relaxed"
+        :class="{ 'text-white': textOnly, 'text-black': !textOnly }"
+      ></div>
+      <div class="w-full mx-auto mt-10">
+        <g-image :src="cta.image.src" class="mx-auto" />
+      </div>
+      <div class="mt-20">
+        <a
+          v-if="cta.link.includes('http')"
+          target="_blank"
+          :href="cta.link"
+          class="
+            green
+            text-xl
+            font-extrabold
+            text-gray-900
+            px-12
+            py-2
+            mb-4
+            shadow
+            rounded-lg
+          "
+          >{{ cta.button }}</a
+        >
+        <a
+          v-else
+          :href="cta.link"
+          class="
+            green
+            text-xl
+            font-extrabold
+            text-gray-900
+            px-12
+            py-2
+            shadow
+            rounded-lg
+          "
+          >{{ cta.button }}</a
+        >
+      </div>
     </div>
 
     <div v-else class="w-full max-w-2xl mx-auto">
@@ -144,6 +201,17 @@
 
 <script>
 export default {
-  props: ["id", "cta", "textOnly"],
+  props: ["id", "cta", "textOnly", "lastCta"],
 };
 </script>
+
+<style scoped>
+.to-black {
+  background: #000;
+  background: -webkit-linear-gradient(to right, #000, #323232);
+  background: linear-gradient(to right, #000, #323232);
+}
+.bg-gray {
+  background-color: #e6e6e6;
+}
+</style>

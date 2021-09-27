@@ -34,6 +34,20 @@
         v-if="$page.markdownPage.brandPanel2"
         :lastBrand="true"
       />
+
+      <CallToAction
+        v-if="$page.markdownPage.cta2"
+        :id="$page.markdownPage.id"
+        :cta="$page.markdownPage.cta2"
+        :lastCta="true"
+      />
+
+      <CallToAction
+        v-if="$page.markdownPage.cta3"
+        :id="$page.markdownPage.id"
+        :cta="$page.markdownPage.cta3"
+        :textOnly="true"
+      />
       <!-- <SolutionsHeader
         v-if="$page.markdownPage.header"
         :header="$page.markdownPage.header"
@@ -78,6 +92,22 @@
         button
         link
         cta{
+          id
+          title
+          image
+          content
+          button
+          link
+        }
+        cta3{
+          id
+          title
+          image
+          content
+          button
+          link
+        }
+        cta2{
           id
           title
           image
