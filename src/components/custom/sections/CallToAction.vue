@@ -84,7 +84,11 @@
     </div>
 
     <div
-      v-else-if="(id == 'compute' && lastCta) || textOnly"
+      v-else-if="
+        (id == 'compute' && lastCta) ||
+        (id == 'compute' && textOnly) ||
+        id == 'network'
+      "
       class="w-full py-20 max-w-4xl mx-auto"
     >
       <h1
@@ -99,7 +103,11 @@
         :class="{ 'text-white': textOnly, 'text-black': !textOnly }"
       ></div>
       <div class="w-full mx-auto mt-10">
-        <g-image :src="cta.image.src" class="mx-auto" />
+        <g-image
+          :src="cta.image.src"
+          class="mx-auto"
+          :class="{ 'w-1/2': id == 'network' }"
+        />
       </div>
       <div class="mt-20">
         <a

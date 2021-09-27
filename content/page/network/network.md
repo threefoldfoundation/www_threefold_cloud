@@ -12,4 +12,6 @@ link: '#' #link for button
 brandPanel: minimal_attack
 brandPanel2: globel
 brandPanel3: web_getways
+cta: ipv4
+brandPanel4: public_ips
 ---

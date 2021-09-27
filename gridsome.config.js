@@ -228,6 +228,14 @@ module.exports = {
         {
             use: '@gridsome/source-filesystem',
             options: {
+                typeName: 'BrandPanel4',
+                path: './content/page/**/brandPanel4/*.md',
+            }
+        },
+
+        {
+            use: '@gridsome/source-filesystem',
+            options: {
                 typeName: 'Features',
                 path: './content/page/**/features/**/*.md',
             }
@@ -290,6 +298,7 @@ module.exports = {
                     brandPanel: 'BrandPanel',
                     brandPanel2: 'BrandPanel2',
                     brandPanel3: 'BrandPanel3',
+                    brandPanel4: 'BrandPanel4',
                     allSlides: 'About',
                     blogs: 'Blogs',
                     workloadsMain: 'WorkloadsMain',

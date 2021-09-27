@@ -23,7 +23,7 @@
       />
 
       <CallToAction
-        v-if="$page.markdownPage.cta"
+        v-if="$page.markdownPage.cta && $page.markdownPage.id !== 'network'"
         :id="$page.markdownPage.id"
         :cta="$page.markdownPage.cta"
       />
@@ -55,32 +55,19 @@
         :cta="$page.markdownPage.cta3"
         :textOnly="true"
       />
-      <!-- <SolutionsHeader
-        v-if="$page.markdownPage.header"
-        :header="$page.markdownPage.header"
+
+      <CallToAction
+        v-if="$page.markdownPage.cta && $page.markdownPage.id == 'network'"
+        :id="$page.markdownPage.id"
+        :cta="$page.markdownPage.cta"
       />
 
-      <g-image
-        v-if="$page.markdownPage.solution_image"
-        :src="$page.markdownPage.solution_image.src"
+      <BrandPanel
+        :brand="$page.markdownPage.brandPanel4"
+        :id="$page.markdownPage.id"
+        v-if="$page.markdownPage.brandPanel4"
+        :textFirst="true"
       />
-
-      <NewCard
-        v-for="card in $page.markdownPage.cards"
-        :key="card.id"
-        :card="card"
-      />
-
-      <logoShowcase
-        v-if="$page.markdownPage.logos && $page.markdownPage.logos.length > 0"
-        :logos="$page.markdownPage.logos"
-      />
-
-
-      <SignUp
-        v-if="$page.markdownPage.signup"
-        :signup="$page.markdownPage.signup"
-      /> -->
     </div>
   </Layout>
 </template>
@@ -147,28 +134,28 @@
          button
          link
        }
+    brandPanel4{
+         id
+         title
+         content
+         image
+         button
+         link
+       }
     }
   }
 
 </page-query>
 
 <script>
-import NewCard from "~/components/marketing/sections/cta-sections/NewCard.vue";
 import Header from "~/components/marketing/sections/cta-sections/Header.vue";
-import SolutionsHeader from "~/components/custom/sections/header/HeaderSection.vue";
-import logoShowcase from "~/components/marketing/sections/cta-sections/logoShowcase.vue";
 import CallToAction from "~/components/custom/sections/CallToAction.vue";
-import SignUp from "~/components/custom/sections/SignUp.vue";
 import BrandPanel from "~/components/marketing/sections/cta-sections/BrandPanel.vue";
 
 export default {
   components: {
-    NewCard,
     Header,
-    SolutionsHeader,
-    logoShowcase,
     CallToAction,
-    SignUp,
     BrandPanel,
   },
 
