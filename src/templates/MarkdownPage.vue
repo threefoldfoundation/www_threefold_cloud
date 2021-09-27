@@ -1,19 +1,28 @@
 <template>
   <Layout :hideHeader="true" :disableScroll="true">
-    <div class="container sm:pxi-0 mx-auto overflow-x-hidden py-5">
+    <div class="container-fluid sm:pxi-0 mx-auto overflow-x-hidden py-5">
       <Header
         v-if="
           $page.markdownPage.id !== 'contact' &&
           $page.markdownPage.header_title &&
           $page.markdownPage.header_title != ''
         "
+        :id="$page.markdownPage.id"
         :title="$page.markdownPage.header_title"
         :image="$page.markdownPage.header_image"
         :altImg="$page.markdownPage.header_altImg"
         :excerpt="$page.markdownPage.header_excerpt"
+        :button="$page.markdownPage.button"
+        :link="$page.markdownPage.link"
       />
 
-      <SolutionsHeader
+      <BrandPanel
+        :brand="$page.markdownPage.brandPanel"
+        :id="$page.markdownPage.id"
+        v-if="$page.markdownPage.brandPanel"
+      />
+
+      <!-- <SolutionsHeader
         v-if="$page.markdownPage.header"
         :header="$page.markdownPage.header"
       />
@@ -42,7 +51,7 @@
       <SignUp
         v-if="$page.markdownPage.signup"
         :signup="$page.markdownPage.signup"
-      />
+      /> -->
     </div>
   </Layout>
 </template>
@@ -58,28 +67,8 @@
         header_title
         header_image
       #  solution_image
-       header{
-         title
-         subtitle
-         content
-         btn1
-         link1
-         btn2
-         link2
-       }
-        cards{
-          id
-          title
-          image
-          button
-          link
-          order
-          content
-        }
-        logos{
-          id
-          image
-        }
+        button
+        link
         cta{
           id
         #  title
@@ -87,14 +76,15 @@
         #  button
         #  link
         }
-        signup{
-          id
-          title
-          button1
-          link1
-          button2
-          link2
-        }
+    brandPanel{
+         id
+         title
+         content
+         image
+         button
+         link
+       }
+ 
     }
   }
 
@@ -107,6 +97,7 @@ import SolutionsHeader from "~/components/custom/sections/header/HeaderSection.v
 import logoShowcase from "~/components/marketing/sections/cta-sections/logoShowcase.vue";
 import CallToAction from "~/components/custom/sections/CallToAction.vue";
 import SignUp from "~/components/custom/sections/SignUp.vue";
+import BrandPanel from "~/components/marketing/sections/cta-sections/BrandPanel.vue";
 
 export default {
   components: {
@@ -116,6 +107,7 @@ export default {
     logoShowcase,
     CallToAction,
     SignUp,
+    BrandPanel,
   },
 
   metaInfo() {

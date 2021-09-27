@@ -17,6 +17,67 @@
     </div>
 
     <div
+      v-else-if="id == 'compute'"
+      class="flex flex-wrap items-center text-center lg:text-left -mx-2"
+    >
+      <div
+        class="lg:w-1/2 lg:pl-20 lg:pr-10 mt-10 lg:mt-0 order-1 lg:order-none"
+      >
+        <h2
+          class="
+            text-8xl
+            xs:text-4xl
+            mb-6
+            leading-tight
+            font-bold font-heading
+            text-gray-800
+          "
+        >
+          {{ title }}
+        </h2>
+        <div class="mb-8 text-gray-700 leading-relaxed" v-html="excerpt"></div>
+        <div v-if="button">
+          <a
+            v-if="link.includes('http')"
+            target="_blank"
+            class="
+              inline-block
+              text-lg text-black
+              font-extrabold
+              px-8
+              py-3
+              mr-5
+              my-2
+              shadow
+              rounded-lg
+            "
+            :href="link"
+            >{{ button }}</a
+          >
+
+          <a
+            v-else
+            class="
+              inline-block
+              green
+              text-lg text-black
+              font-extrabold
+              px-8
+              py-3
+              mr-5
+              my-2
+              shadow
+              rounded-lg
+            "
+            :href="link"
+            >{{ button }}</a
+          >
+        </div>
+      </div>
+      <div class="lg:w-1/2 px-2"><g-image :src="img" :alt="altImg" /></div>
+    </div>
+
+    <div
       v-else
       class="flex flex-wrap items-center text-center lg:text-left -mx-2"
     >
@@ -60,10 +121,8 @@
             v-else
             class="
               inline-block
-              bg-blue-900
               text-lg
               learn-button
-              hover:bg-blue-800
               text-gray-100
               px-8
               py-2

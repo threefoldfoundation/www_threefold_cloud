@@ -100,12 +100,3 @@ export default {
   props: ["id", "cta", "textOnly"],
 };
 </script>
-
-<style scoped>
-.pink {
-  color: #ea1ff7;
-}
-.green {
-  background-color: #70dfc9;
-}
-</style>

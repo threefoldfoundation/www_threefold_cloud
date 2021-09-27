@@ -24,6 +24,18 @@ blockquote {
 * {
   font-family: "Orbitron Black", arial;
 }
+.container-fluid {
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.pink {
+  color: #ea1ff7;
+}
+.green {
+  background-color: #70dfc9;
+}
 body {
   padding-top: 100px;
 }
