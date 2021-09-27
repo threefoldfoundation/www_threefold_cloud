@@ -1,5 +1,11 @@
 <template>
-  <div v-if="id == 'home' && !lastBrand" class="to-black">
+  <div
+    v-if="
+      (id == 'home' && !lastBrand) ||
+      (id == 'network' && !lastBrand && !textFirst)
+    "
+    class="to-black"
+  >
     <div class="max-w-screen-xl mx-auto py-16">
       <div class="rounded-lg overflow-hidden lg:grid lg:grid-cols-2 lg:gap-4">
         <div
@@ -16,39 +22,17 @@
           "
         >
           <div class="lg:self-center">
-            <h2 class="text-8xl leading-9 font-extrabold mb-10 text-white">
+            <h2
+              class="leading-9 font-extrabold mb-10 text-white"
+              :class="{ 'text-8xl': id == 'home', 'text-4xl': id == 'network' }"
+            >
               {{ brand.title }}
             </h2>
             <div
               class="mt-4 text-lg leading-6 text-white"
               v-html="brand.content"
             ></div>
-          </div>
-        </div>
-        <div class="relative lg:mt-14">
-          <g-image
-            class="absolute inset-0 w-1/2 mx-auto object-cover"
-            :src="image"
-            :alt="brand.title"
-          />
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div v-else-if="id == 'home' && lastBrand">
-    <div class="max-w-screen-xl mx-auto py-16">
-      <div class="rounded-lg overflow-hidden lg:grid lg:grid-cols-2 lg:gap-4">
-        <div class="pb-12 px-6 sm:px-16 lg:pr-0 xl:py-10 xl:px-20">
-          <div class="lg:self-center">
-            <h2 class="text-5xl font-extrabold text-black">
-              {{ brand.title }}
-            </h2>
-            <div
-              class="mt-4 text-lg leading-6 text-black"
-              v-html="brand.content"
-            ></div>
-            <div class="my-10">
+            <div class="my-10" v-if="brand.button">
               <a
                 :href="brand.link"
                 class="
@@ -65,8 +49,67 @@
                 "
                 >{{ brand.button }}</a
               >
+            </div>
+          </div>
+        </div>
+        <div class="relative lg:mt-14">
+          <g-image
+            class="absolute inset-0 mx-auto object-cover"
+            :class="{ 'w-1/2': id == 'home', 'w-3/4': id == 'network' }"
+            :src="image"
+            :alt="brand.title"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div
+    v-else-if="(id == 'home' && lastBrand) || (id == 'network' && textFirst)"
+  >
+    <div class="max-w-screen-xl mx-auto py-16">
+      <div class="rounded-lg overflow-hidden lg:grid lg:grid-cols-2 lg:gap-4">
+        <div
+          class="
+            flex
+            content-center
+            pb-12
+            px-6
+            sm:px-16
+            lg:pr-0
+            xl:py-10
+            xl:px-20
+          "
+        >
+          <div class="lg:self-center">
+            <h2 class="text-5xl font-extrabold text-black">
+              {{ brand.title }}
+            </h2>
+            <div
+              class="mt-4 text-lg leading-6 text-black"
+              v-html="brand.content"
+            ></div>
+            <div class="my-10">
+              <a
+                :href="brand.link"
+                v-if="brand.button"
+                class="
+                  inline-block
+                  green
+                  text-lg text-black
+                  font-extrabold
+                  px-8
+                  py-3
+                  mr-5
+                  my-2
+                  shadow
+                  rounded-lg
+                "
+                >{{ brand.button }}</a
+              >
               <a
                 :href="brand.link2"
+                v-if="brand.button2"
                 class="
                   inline-block
                   green
@@ -86,7 +129,8 @@
         </div>
         <div class="relative lg:mt-14">
           <g-image
-            class="absolute inset-0 w-1/2 mx-auto object-cover"
+            class="absolute inset-0 mx-auto object-cover"
+            :class="{ 'w-1/2': id == 'home', 'w-3/4': id == 'network' }"
             :src="image"
             :alt="brand.title"
           />
@@ -95,7 +139,11 @@
     </div>
   </div>
 
-  <div v-else-if="id == 'compute' && !lastBrand">
+  <div
+    v-else-if="
+      (id == 'compute' && !lastBrand) || (id == 'network' && lastBrand)
+    "
+  >
     <div class="max-w-screen-xl mx-auto py-16">
       <div class="rounded-lg overflow-hidden lg:grid lg:grid-cols-2 lg:gap-4">
         <div class="lg:mt-14">
@@ -134,7 +182,9 @@
     </div>
   </div>
 
-  <div v-else-if="id == 'compute' && lastBrand">
+  <div
+    v-else-if="(id == 'compute' && lastBrand) || (id == 'network' && lastBrand)"
+  >
     <div class="max-w-screen-xl mx-auto py-16">
       <div class="rounded-lg overflow-hidden lg:grid lg:grid-cols-2 lg:gap-4">
         <div class="flex content-center px-6 sm:px-16 lg:pr-0 xl:px-20">
@@ -269,7 +319,7 @@
 
 <script>
 export default {
-  props: ["id", "brand", "lastBrand"],
+  props: ["id", "brand", "lastBrand", "textFirst"],
   computed: {
     image() {
       return this.brand.image.src

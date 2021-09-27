@@ -220,6 +220,14 @@ module.exports = {
         {
             use: '@gridsome/source-filesystem',
             options: {
+                typeName: 'BrandPanel3',
+                path: './content/page/**/brandPanel3/*.md',
+            }
+        },
+
+        {
+            use: '@gridsome/source-filesystem',
+            options: {
                 typeName: 'Features',
                 path: './content/page/**/features/**/*.md',
             }
@@ -281,6 +289,7 @@ module.exports = {
                     inTheNews: 'InTheNews',
                     brandPanel: 'BrandPanel',
                     brandPanel2: 'BrandPanel2',
+                    brandPanel3: 'BrandPanel3',
                     allSlides: 'About',
                     blogs: 'Blogs',
                     workloadsMain: 'WorkloadsMain',

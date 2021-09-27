@@ -35,6 +35,13 @@
         :lastBrand="true"
       />
 
+      <BrandPanel
+        :brand="$page.markdownPage.brandPanel3"
+        :id="$page.markdownPage.id"
+        v-if="$page.markdownPage.brandPanel3"
+        :textFirst="true"
+      />
+
       <CallToAction
         v-if="$page.markdownPage.cta2"
         :id="$page.markdownPage.id"
@@ -132,7 +139,14 @@
          button
          link
        }
- 
+     brandPanel3{
+         id
+         title
+         content
+         image
+         button
+         link
+       }
     }
   }
 

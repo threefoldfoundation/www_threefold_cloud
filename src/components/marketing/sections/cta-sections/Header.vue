@@ -1,5 +1,5 @@
 <template>
-  <section class="py-12 px-4">
+  <section>
     <div
       class="flex flex-wrap text-center lg:text-left lg:pt-10 -mx-2"
       v-if="id == 'home'"
