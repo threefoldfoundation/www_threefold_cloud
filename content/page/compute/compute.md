@@ -2,7 +2,7 @@
 id: compute
 metaTitle: ThreeFold P2P Cloud | Compute
 metaDesc: Run cloud native tools like kubernetes and VMs on a peer-to-peer infrastructure and explore a world of new possibilities.
-metaImg: ./cloud_header.png
+metaImg: ./compute_header.png
 header_title: DEPLOY SEAMLESSLY SCALE LIMITLESSLY
 header_image: ./compute_header.png
 header_altImg: tfcloud

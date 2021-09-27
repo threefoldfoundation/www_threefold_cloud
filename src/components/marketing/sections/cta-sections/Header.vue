@@ -42,6 +42,7 @@
             target="_blank"
             class="
               inline-block
+              green
               text-lg text-black
               font-extrabold
               px-8
@@ -76,7 +77,54 @@
       </div>
       <div class="lg:w-1/2 px-2"><g-image :src="img" :alt="altImg" /></div>
     </div>
+    <div
+      class="flex flex-wrap text-center lg:text-left -mx-2"
+      v-else-if="id == 'network'"
+    >
+      <div class="px-3 order-1 lg:order-none mx-auto text-center">
+        <h2 class="max-w-4xl text-8xl uppercase mb-6 leading-none font-heading">
+          {{ title }}
+        </h2>
+        <div class="mb-8 mx-auto text-2xl max-w-4xl" v-html="excerpt"></div>
 
+        <a
+          v-if="link.includes('http')"
+          target="_blank"
+          class="
+            inline-block
+            green
+            text-lg text-black
+            font-extrabold
+            px-8
+            py-3
+            mr-5
+            my-2
+            shadow
+            rounded-lg
+          "
+          :href="link"
+          >{{ button }}</a
+        >
+        <a
+          v-else
+          class="
+            inline-block
+            green
+            text-lg text-black
+            font-extrabold
+            px-8
+            py-3
+            mr-5
+            my-2
+            shadow
+            rounded-lg
+          "
+          :href="link"
+          >{{ button }}</a
+        >
+      </div>
+      <g-image class="order-2 lg:order-none" :src="img" :alt="altImg" />
+    </div>
     <div
       v-else
       class="flex flex-wrap items-center text-center lg:text-left -mx-2"
