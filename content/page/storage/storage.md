@@ -13,4 +13,6 @@ cta: perfect_peace
 stats: storage_stats
 workloadsMain: storageWorkloadMain
 workloads: [step1, step2, step3]
+cta2: storage_cta2
+brandPanel: raw_disk
 ---

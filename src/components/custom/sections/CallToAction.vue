@@ -145,7 +145,10 @@
       </div>
     </div>
 
-    <div v-else-if="id == 'storage'" class="w-full max-w-2xl mx-auto">
+    <div
+      v-else-if="id == 'storage' && textOnly"
+      class="w-full max-w-2xl mx-auto"
+    >
       <h2 class="text-5xl text-white leading-tight font-semibold font-heading">
         {{ cta.title }}
       </h2>
@@ -153,6 +156,57 @@
         v-html="cta.content"
         class="mt-6 mb-8 text-white text-lg leading-relaxed"
       ></div>
+    </div>
+
+    <div v-else-if="id == 'storage' && !textOnly" class="w-full mx-auto">
+      <h2 class="text-5xl text-black leading-tight font-semibold font-heading">
+        {{ cta.title }}
+      </h2>
+      <div
+        v-html="cta.content"
+        class="mt-6 mb-8 text-black text-xl max-w-3xl mx-auto leading-relaxed"
+      ></div>
+      <div class="w-full mx-auto mt-10">
+        <g-image
+          :src="cta.image.src"
+          class="mx-auto"
+          :class="{ 'w-1/2': id == 'network' }"
+        />
+      </div>
+      <div class="mt-20">
+        <a
+          v-if="cta.link.includes('http')"
+          target="_blank"
+          :href="cta.link"
+          class="
+            green
+            text-xl
+            font-extrabold
+            text-gray-900
+            px-12
+            py-4
+            mb-4
+            shadow
+            rounded-lg
+          "
+          >{{ cta.button }}</a
+        >
+        <a
+          v-else
+          :href="cta.link"
+          class="
+            green
+            text-xl
+            font-extrabold
+            text-gray-900
+            px-12
+            py-4
+            shadow
+            rounded-lg
+          "
+          >{{ cta.button }}</a
+        >
+      </div>
     </div>
 
     <div v-else class="w-full max-w-2xl mx-auto">

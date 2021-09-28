@@ -19,7 +19,9 @@
       <BrandPanel
         :brand="$page.markdownPage.brandPanel"
         :id="$page.markdownPage.id"
-        v-if="$page.markdownPage.brandPanel"
+        v-if="
+          $page.markdownPage.brandPanel && $page.markdownPage.id !== 'storage'
+        "
       />
 
       <CallToAction
@@ -47,7 +49,7 @@
       />
 
       <CallToAction
-        v-if="$page.markdownPage.cta2"
+        v-if="$page.markdownPage.cta2 && $page.markdownPage.id !== 'storage'"
         :id="$page.markdownPage.id"
         :cta="$page.markdownPage.cta2"
         :lastCta="true"
@@ -95,6 +97,21 @@
         :id="$page.markdownPage.id"
         :main="$page.markdownPage.workloadsMain"
         :sections="$page.markdownPage.workloads"
+      />
+    </div>
+    <div class="container-fluid sm:pxi-0 mx-auto overflow-x-hidden py-5">
+      <CallToAction
+        v-if="$page.markdownPage.cta2 && $page.markdownPage.id == 'storage'"
+        :id="$page.markdownPage.id"
+        :cta="$page.markdownPage.cta2"
+      />
+      <BrandPanel
+        :brand="$page.markdownPage.brandPanel"
+        v-if="
+          $page.markdownPage.brandPanel && $page.markdownPage.id == 'storage'
+        "
+        :id="$page.markdownPage.id"
+        :textFirst="true"
       />
     </div>
   </Layout>
