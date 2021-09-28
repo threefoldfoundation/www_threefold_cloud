@@ -15,4 +15,6 @@ workloadsMain: storageWorkloadMain
 workloads: [step1, step2, step3]
 cta2: storage_cta2
 brandPanel: raw_disk
+cta3: stroage_graph
+cta4: globe_storage
 ---

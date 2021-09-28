@@ -56,7 +56,11 @@
       />
 
       <CallToAction
-        v-if="$page.markdownPage.cta3"
+        v-if="
+          $page.markdownPage.cta3 &&
+          $page.markdownPage.id == 'compute' &&
+          $page.markdownPage.id !== 'storage'
+        "
         :id="$page.markdownPage.id"
         :cta="$page.markdownPage.cta3"
         :textOnly="true"
@@ -113,6 +117,18 @@
         :id="$page.markdownPage.id"
         :textFirst="true"
       />
+      <CallToAction
+        v-if="$page.markdownPage.cta3 && $page.markdownPage.id == 'storage'"
+        :id="$page.markdownPage.id"
+        :cta="$page.markdownPage.cta3"
+        :lastCta="true"
+      />
+      <CallToAction
+        v-if="$page.markdownPage.cta4"
+        :id="$page.markdownPage.id"
+        :cta="$page.markdownPage.cta4"
+        :textOnly="true"
+      />
     </div>
   </Layout>
 </template>
@@ -147,6 +163,14 @@
           link
         }
         cta2{
+          id
+          title
+          image
+          content
+          button
+          link
+        }
+        cta4{
           id
           title
           image

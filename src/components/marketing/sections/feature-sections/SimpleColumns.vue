@@ -20,7 +20,13 @@
           v-html="main.content"
         ></div>
       </div>
-      <div class="lg:grid lg:grid-cols-3 lg:gap-8">
+      <div
+        class="lg:grid lg:gap-8"
+        :class="{
+          'lg:grid-cols-3': id == 'storage',
+          'lg:grid-cols-4': id == 'home',
+        }"
+      >
         <div
           class="my-10 text-center lg:mt-0"
           v-for="section in sections"

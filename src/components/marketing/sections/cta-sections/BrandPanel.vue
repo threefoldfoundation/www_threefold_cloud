@@ -134,7 +134,11 @@
         <div class="relative lg:mt-14">
           <g-image
             class="absolute inset-0 mx-auto object-cover"
-            :class="{ 'w-1/2': id == 'home', 'w-3/4': id == 'network', 'w-3/4': id == 'storage' }"
+            :class="{
+              'w-1/2': id == 'home',
+              'w-3/4': id == 'network',
+              'w-3/4': id == 'storage',
+            }"
             :src="image"
             :alt="brand.title"
           />

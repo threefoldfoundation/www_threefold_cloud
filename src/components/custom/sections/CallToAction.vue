@@ -1,7 +1,10 @@
 <template>
   <section
     class="py-12 px-4 text-center"
-    :class="{ 'to-black': textOnly, 'bg-gray': lastCta }"
+    :class="{
+      'to-black': textOnly,
+      'bg-gray': lastCta,
+    }"
   >
     <div class="w-full mx-auto mt-10" v-if="id == 'home' && !textOnly">
       <g-image :src="cta.image.src" />
@@ -156,6 +159,43 @@
         v-html="cta.content"
         class="mt-6 mb-8 text-white text-lg leading-relaxed"
       ></div>
+      <div class="w-full mx-auto mt-10" v-if="cta.image">
+        <g-image :src="cta.image.src" class="mx-auto" />
+      </div>
+      <div class="mt-20" v-if="cta.button">
+        <a
+          v-if="cta.link.includes('http')"
+          target="_blank"
+          :href="cta.link"
+          class="
+            green
+            text-xl
+            font-extrabold
+            text-gray-900
+            px-12
+            py-4
+            mb-4
+            shadow
+            rounded-lg
+          "
+          >{{ cta.button }}</a
+        >
+        <a
+          v-else
+          :href="cta.link"
+          class="
+            green
+            text-xl
+            font-extrabold
+            text-gray-900
+            px-12
+            py-4
+            shadow
+            rounded-lg
+          "
+          >{{ cta.button }}</a
+        >
+      </div>
     </div>
 
     <div v-else-if="id == 'storage' && !textOnly" class="w-full mx-auto">
@@ -282,6 +322,11 @@ export default {
   background: #000;
   background: -webkit-linear-gradient(to right, #000, #323232);
   background: linear-gradient(to right, #000, #323232);
+}
+.to-black-bottom {
+  background: #000;
+  background: -webkit-linear-gradient(to bottom, #000, #323232);
+  background: linear-gradient(to bottom, #000, #323232);
 }
 .bg-gray {
   background-color: #e6e6e6;
