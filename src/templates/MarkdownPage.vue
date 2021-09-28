@@ -83,6 +83,19 @@
         :cta="$page.markdownPage.cta"
         :textOnly="true"
       />
+      <Stats
+        :id="$page.markdownPage.id"
+        v-if="$page.markdownPage.stats"
+        :info="$page.markdownPage.stats"
+      />
+    </div>
+    <div class="container sm:pxi-0 mx-auto overflow-x-hidden py-5">
+      <SimpleColumns
+        v-if="$page.markdownPage.workloads.length > 0"
+        :id="$page.markdownPage.id"
+        :main="$page.markdownPage.workloadsMain"
+        :sections="$page.markdownPage.workloads"
+      />
     </div>
   </Layout>
 </template>
@@ -157,6 +170,26 @@
          button
          link
        }
+      stats{
+         id
+         title
+         content
+         button
+         link
+       }
+      workloadsMain {
+         id
+         title
+         content
+         button
+         link
+       }
+       workloads{
+         id
+         title
+         image
+         content
+       }
     }
   }
 
@@ -166,12 +199,16 @@
 import Header from "~/components/marketing/sections/cta-sections/Header.vue";
 import CallToAction from "~/components/custom/sections/CallToAction.vue";
 import BrandPanel from "~/components/marketing/sections/cta-sections/BrandPanel.vue";
+import Stats from "~/components/marketing/sections/stats-sections/SimpleInCard.vue";
+import SimpleColumns from "~/components/marketing/sections/feature-sections/SimpleColumns.vue";
 
 export default {
   components: {
     Header,
     CallToAction,
     BrandPanel,
+    Stats,
+    SimpleColumns,
   },
 
   metaInfo() {

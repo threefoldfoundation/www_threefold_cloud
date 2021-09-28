@@ -10,4 +10,7 @@ header_excerpt: Quantum-safe storage presents a standard file system interface t
 button: Get Started #Learn More
 link: '#' #link for button
 cta: perfect_peace
+stats: storage_stats
+workloadsMain: storageWorkloadMain
+workloads: [step1, step2, step3]
 ---

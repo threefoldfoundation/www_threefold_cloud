@@ -15,15 +15,19 @@
         >
           {{ main.title }}
         </h2>
+        <div
+          class="mt-2 text-lg leading-6 text-gray-900"
+          v-html="main.content"
+        ></div>
       </div>
-      <div class="lg:grid lg:grid-cols-4 lg:gap-8">
+      <div class="lg:grid lg:grid-cols-3 lg:gap-8">
         <div
           class="my-10 text-center lg:mt-0"
           v-for="section in sections"
           :key="section.id"
         >
           <div class="flex items-center justify-center rounded-md text-white">
-            <g-image :src="section.image" class="mx-auto w-1/2" />
+            <g-image :src="section.image" class="mx-auto" />
           </div>
           <div class="mt-5">
             <h5 class="text-lg leading-6 font-medium text-gray-900">
@@ -39,7 +43,16 @@
       <div class="block text-center mt-10">
         <a
           :href="main.link"
-          class="green text-md text-gray-900 px-12 py-2 mb-4 shadow"
+          class="
+            green
+            text-md text-gray-900
+            font-extrabold
+            px-12
+            rounded-lg
+            py-4
+            mb-4
+            shadow
+          "
           >{{ main.button }}</a
         >
       </div>
