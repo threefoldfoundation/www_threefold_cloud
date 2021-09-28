@@ -102,6 +102,15 @@
         :main="$page.markdownPage.workloadsMain"
         :sections="$page.markdownPage.workloads"
       />
+      <ShowcaseProducts
+        v-if="
+          $page.markdownPage.productData &&
+          $page.markdownPage.productData.length > 0
+        "
+        :id="$page.markdownPage.id"
+        :main="$page.markdownPage.productsMain"
+        :products="$page.markdownPage.productData"
+      />
     </div>
     <div class="container-fluid sm:pxi-0 mx-auto overflow-x-hidden py-5">
       <CallToAction
@@ -231,6 +240,19 @@
          image
          content
        }
+      productsMain{
+          id
+          title
+          content
+       }
+       productData{
+         id
+         title
+         price
+         content
+         button
+         url
+       }
     }
   }
 
@@ -242,6 +264,7 @@ import CallToAction from "~/components/custom/sections/CallToAction.vue";
 import BrandPanel from "~/components/marketing/sections/cta-sections/BrandPanel.vue";
 import Stats from "~/components/marketing/sections/stats-sections/SimpleInCard.vue";
 import SimpleColumns from "~/components/marketing/sections/feature-sections/SimpleColumns.vue";
+import ShowcaseProducts from "~/components/marketing/sections/cta-sections/ShowcaseProducts.vue";
 
 export default {
   components: {
@@ -250,6 +273,7 @@ export default {
     BrandPanel,
     Stats,
     SimpleColumns,
+    ShowcaseProducts,
   },
 
   metaInfo() {
