@@ -145,6 +145,16 @@
       </div>
     </div>
 
+    <div v-else-if="id == 'storage'" class="w-full max-w-2xl mx-auto">
+      <h2 class="text-5xl text-white leading-tight font-semibold font-heading">
+        {{ cta.title }}
+      </h2>
+      <div
+        v-html="cta.content"
+        class="mt-6 mb-8 text-white text-lg leading-relaxed"
+      ></div>
+    </div>
+
     <div v-else class="w-full max-w-2xl mx-auto">
       <h2
         class="text-5xl text-gray-700 leading-tight font-semibold font-heading"

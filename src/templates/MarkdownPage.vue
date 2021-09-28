@@ -23,7 +23,11 @@
       />
 
       <CallToAction
-        v-if="$page.markdownPage.cta && $page.markdownPage.id !== 'network'"
+        v-if="
+          $page.markdownPage.cta &&
+          $page.markdownPage.id !== 'network' &&
+          $page.markdownPage.id !== 'storage'
+        "
         :id="$page.markdownPage.id"
         :cta="$page.markdownPage.cta"
       />
@@ -57,7 +61,11 @@
       />
 
       <CallToAction
-        v-if="$page.markdownPage.cta && $page.markdownPage.id == 'network'"
+        v-if="
+          $page.markdownPage.cta &&
+          $page.markdownPage.id == 'network' &&
+          $page.markdownPage.id !== 'storage'
+        "
         :id="$page.markdownPage.id"
         :cta="$page.markdownPage.cta"
       />
@@ -67,6 +75,13 @@
         :id="$page.markdownPage.id"
         v-if="$page.markdownPage.brandPanel4"
         :textFirst="true"
+      />
+
+      <CallToAction
+        v-if="$page.markdownPage.cta && $page.markdownPage.id == 'storage'"
+        :id="$page.markdownPage.id"
+        :cta="$page.markdownPage.cta"
+        :textOnly="true"
       />
     </div>
   </Layout>
