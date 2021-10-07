@@ -5,7 +5,9 @@
       v-if="id == 'home'"
     >
       <div class="px-3 lg:mt-5 order-1 lg:order-none mx-auto text-center">
-        <h2 class="text-4xl uppercase mb-6 leading-none font-black font-heading">
+        <h2
+          class="text-4xl uppercase mb-6 leading-none font-black font-heading"
+        >
           {{ title }}
         </h2>
         <div
@@ -13,29 +15,33 @@
           v-html="excerpt"
         ></div>
       </div>
-      <g-image class="w-3/4 mx-auto order-2 lg:order-none" :src="img" :alt="altImg" />
+      <g-image
+        class="w-3/4 mx-auto order-2 lg:order-none"
+        :src="img"
+        :alt="altImg"
+      />
     </div>
 
     <div
       v-else-if="id == 'compute'"
-      class="flex flex-wrap items-center text-center lg:text-left -mx-2"
+      class="flex flex-wrap items-center text-center lg:text-left -mx-2 lg:mx-10 my-40"
     >
       <div
         class="lg:w-1/2 lg:pl-20 lg:pr-10 mt-10 lg:mt-0 order-1 lg:order-none"
       >
         <h2
           class="
-            text-8xl
+            text-6xl
             xs:text-4xl
             mb-6
-            leading-normal
+            leading-none
             font-bold font-heading
             text-gray-800
           "
         >
           {{ title }}
         </h2>
-        <div class="mb-8 text-gray-700 leading-tight" v-html="excerpt"></div>
+        <div class="mb-8 lg:text-2xl text-xl leading-normal" v-html="excerpt"></div>
         <div v-if="button">
           <a
             v-if="link.includes('http')"
@@ -43,14 +49,16 @@
             class="
               inline-block
               green
-              text-lg text-black
+              bg-green-300
+              lg:text-2xl
+              text-lg
               font-extrabold
-              px-8
-              py-3
-              mr-5
-              my-2
-              shadow
+              px-12
+              hover:bg-green-200
               rounded-lg
+              py-4
+              mb-4
+              shadow
             "
             :href="link"
             >{{ button }}</a
@@ -61,21 +69,23 @@
             class="
               inline-block
               green
-              text-lg text-black
+              bg-green-300
+              lg:text-2xl
+              text-lg
               font-extrabold
-              px-8
-              py-3
-              mr-5
-              my-2
-              shadow
+              px-12
+              hover:bg-green-200
               rounded-lg
+              py-4
+              mb-4
+              shadow
             "
             :href="link"
             >{{ button }}</a
           >
         </div>
       </div>
-      <div class="lg:w-1/2 px-2"><g-image :src="img" :alt="altImg" /></div>
+      <div class="lg:w-1/2 px-2"><g-image class="w-3/4 mx-auto" :src="img" :alt="altImg" /></div>
     </div>
     <div
       class="flex flex-wrap text-center lg:text-left -mx-2"
@@ -145,7 +155,10 @@
         >
           {{ title }}
         </h2>
-        <div class="mb-8 text-gray-900 max-w-xl text-lg leading-relaxed" v-html="excerpt"></div>
+        <div
+          class="mb-8 text-gray-900 max-w-xl text-lg leading-relaxed"
+          v-html="excerpt"
+        ></div>
         <div v-if="button">
           <a
             v-if="link.includes('http')"
@@ -265,3 +278,9 @@ export default {
   },
 };
 </script>
+<style scoped>
+.green {
+  /* background-color: #70dfc9; */
+  font-family: 'Orbitron', sans-serif !important;
+}
+</style>

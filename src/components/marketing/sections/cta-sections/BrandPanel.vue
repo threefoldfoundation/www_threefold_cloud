@@ -24,7 +24,10 @@
           <div class="lg:self-center">
             <h2
               class="leading-9 font-extrabold mb-10 text-white"
-              :class="{ 'text-6xl leading-none': id == 'home', 'text-4xl': id == 'network' }"
+              :class="{
+                'text-5xl leading-none': id == 'home',
+                'text-4xl': id == 'network',
+              }"
             >
               {{ brand.title }}
             </h2>
@@ -55,7 +58,7 @@
         <div class="relative">
           <g-image
             class="inset-0 mx-auto object-cover"
-            :class="{ 'w-3/4': id == 'home', 'w-3/4': id == 'network' }"
+            :class="{ 'w-2/3': id == 'home', 'w-3/4': id == 'network' }"
             :src="image"
             :alt="brand.title"
           />
@@ -71,7 +74,7 @@
       (id == 'storage' && textFirst)
     "
   >
-    <div class="max-w-screen-2xl mx-auto py-16">
+    <div class="max-w-screen-3xl mx-auto py-16">
       <div class="rounded-lg overflow-hidden lg:grid lg:grid-cols-2 lg:gap-4">
         <div
           class="
@@ -86,7 +89,7 @@
           "
         >
           <div class="lg:self-center">
-            <h2 class="text-6xl leading-none text-black">
+            <h2 class="text-5xl leading-none text-black">
               {{ brand.title }}
             </h2>
             <div
@@ -155,34 +158,36 @@
       (id == 'compute' && !lastBrand) || (id == 'network' && lastBrand)
     "
   >
-    <div class="max-w-screen-xl mx-auto py-16">
+    <div class="max-w-screen-3xl mx-auto py-16">
       <div class="rounded-lg overflow-hidden lg:grid lg:grid-cols-2 lg:gap-4">
         <div class="lg:mt-14">
           <g-image class="mx-auto" :src="image" :alt="brand.title" />
         </div>
         <div class="flex content-center px-6 sm:px-16 lg:pr-0 xl:px-20">
           <div class="lg:self-center">
-            <h2 class="text-5xl leading-tight font-extrabold text-black">
+            <h2 class="text-5xl leading-none font-extrabold text-black mb-10">
               {{ brand.title }}
             </h2>
             <div
-              class="mt-4 text-lg leading-6 text-black"
+              class="mt-4 text-xl lg:text-2xl leading-normal text-black"
               v-html="brand.content"
             ></div>
-            <div class="my-10">
+            <div class="mt-20">
               <a
                 :href="brand.link"
                 class="
                   inline-block
                   green
-                  text-lg text-black
+                  bg-green-300
+                  lg:text-2xl
+                  text-lg
                   font-extrabold
-                  px-8
-                  py-3
-                  mr-5
-                  my-2
-                  shadow
+                  px-12
+                  hover:bg-green-200
                   rounded-lg
+                  py-4
+                  mb-4
+                  shadow
                 "
                 >{{ brand.button }}</a
               >
@@ -196,15 +201,15 @@
   <div
     v-else-if="(id == 'compute' && lastBrand) || (id == 'network' && lastBrand)"
   >
-    <div class="max-w-screen-xl mx-auto py-16">
+    <div class="max-w-screen-3xl mx-auto py-16">
       <div class="rounded-lg overflow-hidden lg:grid lg:grid-cols-2 lg:gap-4">
         <div class="flex content-center px-6 sm:px-16 lg:pr-0 xl:px-20">
           <div class="lg:self-center">
-            <h2 class="text-5xl leading-tight font-extrabold text-black">
+            <h2 class="text-5xl leading-none font-extrabold text-black mb-10">
               {{ brand.title }}
             </h2>
             <div
-              class="mt-4 text-lg leading-6 text-black"
+              class="mt-4 text-xl lg:text-2xl leading-normal text-black"
               v-html="brand.content"
             ></div>
             <div class="my-10">
@@ -213,14 +218,16 @@
                 class="
                   inline-block
                   green
-                  text-lg text-black
+                  bg-green-300
+                  lg:text-2xl
+                  text-lg
                   font-extrabold
-                  px-8
-                  py-3
-                  mr-5
-                  my-2
-                  shadow
+                  px-12
+                  hover:bg-green-200
                   rounded-lg
+                  py-4
+                  mb-4
+                  shadow
                 "
                 >{{ brand.button }}</a
               >

@@ -26,67 +26,18 @@
         v-if="cta.link.includes('http')"
         target="_blank"
         :href="cta.link"
-         class="
-            green
-            bg-green-300
-            lg:text-2xl text-lg
-            font-extrabold
-            px-12
-            hover:bg-green-200
-            rounded-lg
-            py-4
-            mb-4
-            shadow
-          "
-        >{{ cta.button }}</a
-      >
-      <a
-        v-else
-        :href="cta.link"
-         class="
-            green
-            bg-green-300
-            lg:text-2xl text-lg
-            font-extrabold
-            px-12
-            hover:bg-green-200
-            rounded-lg
-            py-4
-            mb-4
-            shadow
-          "
-        >{{ cta.button }}</a
-      >
-    </div>
-
-    <div
-      v-else-if="id == 'compute' && !lastCta && !textOnly"
-      class="w-full py-20 max-w-2xl mx-auto"
-    >
-      <div class="w-full mx-auto mt-10">
-        <g-image :src="cta.image.src" class="w-1/2 mx-auto" />
-      </div>
-      <h2 class="text-4xl text-black leading-tight font-semibold font-heading">
-        {{ cta.title }}
-      </h2>
-      <div
-        v-html="cta.content"
-        class="mt-6 mb-8 text-black leading-relaxed"
-      ></div>
-      <a
-        v-if="cta.link.includes('http')"
-        target="_blank"
-        :href="cta.link"
         class="
           green
-          text-xl
+          bg-green-300
+          lg:text-2xl
+          text-lg
           font-extrabold
-          text-gray-900
           px-12
-          py-2
+          hover:bg-green-200
+          rounded-lg
+          py-4
           mb-4
           shadow
-          rounded-lg
         "
         >{{ cta.button }}</a
       >
@@ -95,14 +46,69 @@
         :href="cta.link"
         class="
           green
-          text-xl
+          bg-green-300
+          lg:text-2xl
+          text-lg
           font-extrabold
-          text-gray-900
           px-12
-          py-2
+          hover:bg-green-200
+          rounded-lg
+          py-4
           mb-4
           shadow
+        "
+        >{{ cta.button }}</a
+      >
+    </div>
+
+    <div
+      v-else-if="id == 'compute' && !lastCta && !textOnly"
+      class="w-full py-20 max-w-3xl mx-auto"
+    >
+      <div class="w-full mx-auto mt-10">
+        <g-image :src="cta.image.src" class="w-2/3 mx-auto" />
+      </div>
+      <h2 class="text-5xl text-black leading-none font-semibold font-heading">
+        {{ cta.title }}
+      </h2>
+      <div
+        v-html="cta.content"
+        class="mt-6 mb-8 text-xl lg:text-2xl leading-normal"
+      ></div>
+      <a
+        v-if="cta.link.includes('http')"
+        target="_blank"
+        :href="cta.link"
+        class="
+          green
+          bg-green-300
+          lg:text-2xl
+          text-lg
+          font-extrabold
+          px-12
+          hover:bg-green-200
           rounded-lg
+          py-4
+          mb-4
+          shadow
+        "
+        >{{ cta.button }}</a
+      >
+      <a
+        v-else
+        :href="cta.link"
+        class="
+          green
+          bg-green-300
+          lg:text-2xl
+          text-lg
+          font-extrabold
+          px-12
+          hover:bg-green-200
+          rounded-lg
+          py-4
+          mb-4
+          shadow
         "
         >{{ cta.button }}</a
       >
@@ -116,15 +122,15 @@
       "
       class="w-full py-20 max-w-4xl mx-auto"
     >
-      <h1
-        class="text-6xl leading-tight font-semibold font-heading"
+      <h2
+        class="text-5xl leading-tight font-bold font-heading"
         :class="{ 'text-white': textOnly, 'text-black': !textOnly }"
       >
         {{ cta.title }}
-      </h1>
+      </h2>
       <div
         v-html="cta.content"
-        class="mt-6 mb-8 text-xl leading-relaxed"
+        class="mt-6 mb-8 text-xl lg:text-2xl leading-non"
         :class="{ 'text-white': textOnly, 'text-black': !textOnly }"
       ></div>
       <div class="w-full mx-auto mt-10">
@@ -140,15 +146,18 @@
           target="_blank"
           :href="cta.link"
           class="
+            inline-block
             green
-            text-xl
+            bg-green-300
+            lg:text-2xl
+            text-lg
             font-extrabold
-            text-gray-900
             px-12
-            py-2
+            hover:bg-green-200
+            rounded-lg
+            py-4
             mb-4
             shadow
-            rounded-lg
           "
           >{{ cta.button }}</a
         >
@@ -156,14 +165,18 @@
           v-else
           :href="cta.link"
           class="
+            inline-block
             green
-            text-xl
+            bg-green-300
+            lg:text-2xl
+            text-lg
             font-extrabold
-            text-gray-900
             px-12
-            py-2
-            shadow
+            hover:bg-green-200
             rounded-lg
+            py-4
+            mb-4
+            shadow
           "
           >{{ cta.button }}</a
         >
@@ -356,6 +369,6 @@ export default {
 
 .green {
   /* background-color: #70dfc9; */
-  font-family: 'Orbitron', sans-serif !important;
+  font-family: "Orbitron", sans-serif !important;
 }
 </style>
