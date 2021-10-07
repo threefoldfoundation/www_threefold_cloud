@@ -28,8 +28,7 @@
         :id="$page.markdownPage.id"
         v-if="$page.markdownPage.brandPanel"
       />
-    </div>
-    <div class="container-fluid sm:pxi-0 mx-auto overflow-x-hidden py-5">
+
       <Centered2x2Grid
         v-if="$page.markdownPage.features.length > 0"
         :id="$page.markdownPage.id"
@@ -48,8 +47,7 @@
         v-if="$page.markdownPage.stats"
         :info="$page.markdownPage.stats"
       />
-    </div>
-    <div class="container-fluid sm:pxi-0 mx-auto overflow-x-hidden">
+
       <CallToAction
         v-if="$page.markdownPage.cta2"
         :id="$page.markdownPage.id"
@@ -65,7 +63,7 @@
         :lastBrand="true"
       />
 
-      <SignUp
+      <!-- <SignUp
         v-if="$page.markdownPage.signup"
         :signup="$page.markdownPage.signup"
       />
@@ -110,18 +108,18 @@
         :cardLeft="cardLeft"
       />
 
-      <!-- <FourTiersWithToggle
+      <FourTiersWithToggle
       v-if="$page.markdownPage.pricingPlans.length > 0"
       :main="$page.markdownPage.pricing_plansMain"
       :pricingPlans="$page.markdownPage.pricingPlans"
-    /> -->
+    />
 
-      <!-- <logoShowcase
+      <logoShowcase
       v-if="$page.markdownPage.logos.length > 0"
       :logos="$page.markdownPage.logos"
-    /> -->
+    />
 
-      <!-- <InTheNews
+      <InTheNews
       v-if="$page.markdownPage.inTheNews"
       :news="$page.markdownPage.inTheNews"
     /> -->

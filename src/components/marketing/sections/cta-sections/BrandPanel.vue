@@ -24,7 +24,7 @@
           <div class="lg:self-center">
             <h2
               class="leading-9 font-extrabold mb-10 text-white"
-              :class="{ 'text-8xl': id == 'home', 'text-4xl': id == 'network' }"
+              :class="{ 'text-6xl leading-none': id == 'home', 'text-4xl': id == 'network' }"
             >
               {{ brand.title }}
             </h2>
@@ -71,7 +71,7 @@
       (id == 'storage' && textFirst)
     "
   >
-    <div class="max-w-screen-xl mx-auto py-16">
+    <div class="max-w-screen-2xl mx-auto py-16">
       <div class="rounded-lg overflow-hidden lg:grid lg:grid-cols-2 lg:gap-4">
         <div
           class="
@@ -86,11 +86,11 @@
           "
         >
           <div class="lg:self-center">
-            <h2 class="text-5xl font-extrabold text-black">
+            <h2 class="text-6xl leading-none text-black">
               {{ brand.title }}
             </h2>
             <div
-              class="mt-4 text-lg leading-6 text-black"
+              class="mt-4 text-xl lg:text-2xl leading-normal text-black"
               v-html="brand.content"
             ></div>
             <div class="my-10">
@@ -98,16 +98,18 @@
                 :href="brand.link"
                 v-if="brand.button"
                 class="
-                  inline-block
                   green
-                  text-lg text-black
+                  bg-green-300
+                  lg:text-2xl
+                  text-lg
                   font-extrabold
-                  px-8
-                  py-3
-                  mr-5
-                  my-2
-                  shadow
+                  px-12
+                  hover:bg-green-200
                   rounded-lg
+                  py-4
+                  mb-4
+                  lg:mr-4
+                  shadow
                 "
                 >{{ brand.button }}</a
               >
@@ -115,16 +117,17 @@
                 :href="brand.link2"
                 v-if="brand.button2"
                 class="
-                  inline-block
                   green
-                  text-lg text-black
+                  bg-green-300
+                  lg:text-2xl
+                  text-lg
                   font-extrabold
-                  px-8
-                  py-3
-                  mr-5
-                  my-2
-                  shadow
+                  px-12
+                  hover:bg-green-200
                   rounded-lg
+                  py-4
+                  mb-4
+                  shadow
                 "
                 >{{ brand.button2 }}</a
               >
@@ -133,9 +136,9 @@
         </div>
         <div class="relative lg:mt-14">
           <g-image
-            class="absolute inset-0 mx-auto object-cover"
+            class="inset-0 mx-auto object-cover"
             :class="{
-              'w-1/2': id == 'home',
+              'w-3/4': id == 'home',
               'w-3/4': id == 'network',
               'w-3/4': id == 'storage',
             }"
@@ -345,6 +348,7 @@ export default {
   background: linear-gradient(to right, #000, #323232);
 }
 .green {
-  background-color: #70dfc9;
+  /* background-color: #70dfc9; */
+  font-family: "Orbitron", sans-serif !important;
 }
 </style>

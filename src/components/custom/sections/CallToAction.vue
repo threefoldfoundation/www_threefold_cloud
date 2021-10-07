@@ -1,6 +1,6 @@
 <template>
   <section
-    class="py-12 px-4 text-center"
+    class="lg:my-20 py-10 px-4 text-center"
     :class="{
       'to-black': textOnly,
       'bg-gray': lastCta,
@@ -12,7 +12,7 @@
 
     <div
       v-else-if="id == 'home' && textOnly"
-      class="w-full py-20 max-w-2xl mx-auto"
+      class="w-full py-20 max-w-3xl mx-auto"
     >
       <h2 class="text-5xl text-white leading-tight font-semibold font-heading">
         {{ cta.title }}
@@ -20,19 +20,41 @@
       </h2>
       <div
         v-html="cta.content"
-        class="mt-6 mb-8 text-white leading-relaxed"
+        class="text-2xl text-white leading-normal py-10"
       ></div>
       <a
         v-if="cta.link.includes('http')"
         target="_blank"
         :href="cta.link"
-        class="green text-md text-gray-900 px-12 py-2 mb-4 shadow"
+         class="
+            green
+            bg-green-300
+            lg:text-2xl text-lg
+            font-extrabold
+            px-12
+            hover:bg-green-200
+            rounded-lg
+            py-4
+            mb-4
+            shadow
+          "
         >{{ cta.button }}</a
       >
       <a
         v-else
         :href="cta.link"
-        class="green text-md text-gray-900 px-12 py-2 mb-4 shadow"
+         class="
+            green
+            bg-green-300
+            lg:text-2xl text-lg
+            font-extrabold
+            px-12
+            hover:bg-green-200
+            rounded-lg
+            py-4
+            mb-4
+            shadow
+          "
         >{{ cta.button }}</a
       >
     </div>
@@ -330,5 +352,10 @@ export default {
 }
 .bg-gray {
   background-color: #e6e6e6;
+}
+
+.green {
+  /* background-color: #70dfc9; */
+  font-family: 'Orbitron', sans-serif !important;
 }
 </style>
