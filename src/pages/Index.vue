@@ -151,88 +151,12 @@
          link1
          btn2
          link2
-        }
-        cards{
-          id
-          title
-          image
-          button
-          link
-          button2
-          link2
-          order
-          content
-        }
-        cards2{
-          id
-          title
-          image
-          button
-          link
-          order
-          content
-        }
-        cardLefts{
-          id
-          title
-          image
-          button
-          link
-          order
-          content
-        }
-        cardLefts2{
-          id
-          title
-          image
-          button
-          link
-          order
-          content
-        }
-        pricing_plansMain{
-          id
-          title
-          button1
-          button2
-          excerpt
-        }
-        pricingPlans{
-          id
-          title
-          excerpt
-          price
-          duration
-          button
-          link
-          includeTitle
-          options
-        }
+        } 
         cta{
           id
           image
         }
-        logos{
-          id
-          image
-          url
-        }
-        inTheNews {
-          id
-          excerpt
-          partners {
-            path
-            logo
-          }
-        }
-        signup{
-          id
-          title
-          button1
-          link1
-          button2
-          link2
-        }
+
         blogs{
           id
           image
