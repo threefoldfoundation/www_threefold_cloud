@@ -125,6 +125,69 @@
       </div>
       <g-image class="order-2 lg:order-none" :src="img" :alt="altImg" />
     </div>
+
+    <div
+      v-else-if="id == 'storage'"
+      class="flex flex-wrap items-center text-center lg:text-left -mx-2"
+    >
+      <div class="lg:w-1/2 px-2"><g-image :src="img" :alt="altImg" /></div>
+
+      <div class="lg:w-1/2 px-2 lg:pr-10 mt-10 lg:mt-0 order-1 lg:order-none">
+        <h2
+          class="
+            text-8xl
+            test
+            mb-6
+            leading-tight
+            font-bold font-heading
+            text-gray-800
+          "
+        >
+          {{ title }}
+        </h2>
+        <div class="mb-8 text-gray-900 max-w-xl text-lg leading-relaxed" v-html="excerpt"></div>
+        <div v-if="button">
+          <a
+            v-if="link.includes('http')"
+            target="_blank"
+            class="
+              inline-block
+              green
+              text-lg text-black
+              font-extrabold
+              px-8
+              py-3
+              mr-5
+              my-2
+              shadow
+              rounded-lg
+            "
+            :href="link"
+            >{{ button }}</a
+          >
+
+          <a
+            v-else
+            class="
+              inline-block
+              green
+              text-lg text-black
+              font-extrabold
+              px-8
+              py-3
+              mr-5
+              my-2
+              shadow
+              rounded-lg
+            "
+            :href="link"
+            >{{ button }}</a
+          >
+          <!-- <a class="text-gray-600 hover:underline" href="#">Learn more</a> -->
+        </div>
+      </div>
+    </div>
+
     <div
       v-else
       class="flex flex-wrap items-center text-center lg:text-left -mx-2"

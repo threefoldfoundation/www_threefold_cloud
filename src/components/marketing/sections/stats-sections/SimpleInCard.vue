@@ -1,5 +1,5 @@
 <template>
-  <div class="pt-12 sm:pt-16">
+  <div class="py-12 sm:pt-16">
     <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="max-w-4xl mx-auto text-center">
         <h2
@@ -15,7 +15,7 @@
           {{ info.title }}
         </h2>
         <div
-          class="mt-3 text-xl leading-7 text-gray-500 sm:mt-4"
+          class="mt-3 text-xl leading-7 text-gray-900 sm:mt-4"
           v-html="info.content"
         ></div>
       </div>
@@ -42,7 +42,7 @@
                     text-lg
                     leading-6
                     font-medium
-                    text-gray-500
+                    text-gray-900
                   "
                   id="item-1"
                 >
@@ -77,7 +77,7 @@
                     text-lg
                     leading-6
                     font-medium
-                    text-gray-500
+                    text-gray-900
                   "
                 >
                   Capacity
@@ -110,7 +110,7 @@
                     text-lg
                     leading-6
                     font-medium
-                    text-gray-500
+                    text-gray-900
                   "
                 >
                   Cores
@@ -143,7 +143,7 @@
                     text-lg
                     leading-6
                     font-medium
-                    text-gray-500
+                    text-gray-900
                   "
                 >
                   Countries
@@ -169,7 +169,17 @@
     <div class="block text-center mt-5">
       <a
         :href="info.link"
-        class="green text-md text-gray-900 px-12 py-2 mb-4 shadow"
+        class="
+          green
+          text-md
+          font-extrabold
+          text-gray-900
+          px-12
+          py-4
+          rounded-lg
+          mb-4
+          shadow
+        "
         >{{ info.button }}</a
       >
     </div>

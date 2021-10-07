@@ -65,7 +65,11 @@
   </div>
 
   <div
-    v-else-if="(id == 'home' && lastBrand) || (id == 'network' && textFirst)"
+    v-else-if="
+      (id == 'home' && lastBrand) ||
+      (id == 'network' && textFirst) ||
+      (id == 'storage' && textFirst)
+    "
   >
     <div class="max-w-screen-xl mx-auto py-16">
       <div class="rounded-lg overflow-hidden lg:grid lg:grid-cols-2 lg:gap-4">
@@ -130,7 +134,11 @@
         <div class="relative lg:mt-14">
           <g-image
             class="absolute inset-0 mx-auto object-cover"
-            :class="{ 'w-1/2': id == 'home', 'w-3/4': id == 'network' }"
+            :class="{
+              'w-1/2': id == 'home',
+              'w-3/4': id == 'network',
+              'w-3/4': id == 'storage',
+            }"
             :src="image"
             :alt="brand.title"
           />

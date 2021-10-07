@@ -1,7 +1,10 @@
 <template>
   <section
-    class="lg:py-20 py-10 px-4 text-center"
-    :class="{ 'to-black': textOnly, 'bg-gray': lastCta }"
+    class="py-12 px-4 text-center"
+    :class="{
+      'to-black': textOnly,
+      'bg-gray': lastCta,
+    }"
   >
     <div class="w-full mx-auto mt-10" v-if="id == 'home' && !textOnly">
       <g-image class="mx-auto" :src="cta.image.src" />
@@ -145,6 +148,107 @@
       </div>
     </div>
 
+    <div
+      v-else-if="id == 'storage' && textOnly"
+      class="w-full max-w-2xl mx-auto"
+    >
+      <h2 class="text-5xl text-white leading-tight font-semibold font-heading">
+        {{ cta.title }}
+      </h2>
+      <div
+        v-html="cta.content"
+        class="mt-6 mb-8 text-white text-lg leading-relaxed"
+      ></div>
+      <div class="w-full mx-auto mt-10" v-if="cta.image">
+        <g-image :src="cta.image.src" class="mx-auto" />
+      </div>
+      <div class="mt-20" v-if="cta.button">
+        <a
+          v-if="cta.link.includes('http')"
+          target="_blank"
+          :href="cta.link"
+          class="
+            green
+            text-xl
+            font-extrabold
+            text-gray-900
+            px-12
+            py-4
+            mb-4
+            shadow
+            rounded-lg
+          "
+          >{{ cta.button }}</a
+        >
+        <a
+          v-else
+          :href="cta.link"
+          class="
+            green
+            text-xl
+            font-extrabold
+            text-gray-900
+            px-12
+            py-4
+            shadow
+            rounded-lg
+          "
+          >{{ cta.button }}</a
+        >
+      </div>
+    </div>
+
+    <div v-else-if="id == 'storage' && !textOnly" class="w-full mx-auto">
+      <h2 class="text-5xl text-black leading-tight font-semibold font-heading">
+        {{ cta.title }}
+      </h2>
+      <div
+        v-html="cta.content"
+        class="mt-6 mb-8 text-black text-xl max-w-3xl mx-auto leading-relaxed"
+      ></div>
+      <div class="w-full mx-auto mt-10">
+        <g-image
+          :src="cta.image.src"
+          class="mx-auto"
+          :class="{ 'w-1/2': id == 'network' }"
+        />
+      </div>
+      <div class="mt-20">
+        <a
+          v-if="cta.link.includes('http')"
+          target="_blank"
+          :href="cta.link"
+          class="
+            green
+            text-xl
+            font-extrabold
+            text-gray-900
+            px-12
+            py-4
+            mb-4
+            shadow
+            rounded-lg
+          "
+          >{{ cta.button }}</a
+        >
+        <a
+          v-else
+          :href="cta.link"
+          class="
+            green
+            text-xl
+            font-extrabold
+            text-gray-900
+            px-12
+            py-4
+            shadow
+            rounded-lg
+          "
+          >{{ cta.button }}</a
+        >
+      </div>
+    </div>
+
     <div v-else class="w-full max-w-2xl mx-auto">
       <h2
         class="text-5xl text-gray-700 leading-tight font-semibold font-heading"
@@ -218,6 +322,11 @@ export default {
   background: #000;
   background: -webkit-linear-gradient(to right, #000, #323232);
   background: linear-gradient(to right, #000, #323232);
+}
+.to-black-bottom {
+  background: #000;
+  background: -webkit-linear-gradient(to bottom, #000, #323232);
+  background: linear-gradient(to bottom, #000, #323232);
 }
 .bg-gray {
   background-color: #e6e6e6;
