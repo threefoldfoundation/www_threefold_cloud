@@ -1,19 +1,19 @@
 <template>
   <section>
     <div
-      class="flex flex-wrap text-center lg:text-left lg:pt-10 -mx-2"
+      class="flex flex-wrap text-center lg:text-left lg:pt-4 pb-10 -mx-2"
       v-if="id == 'home'"
     >
       <div class="px-3 lg:mt-5 order-1 lg:order-none mx-auto text-center">
-        <h2 class="text-3xl uppercase mb-6 leading-none font-heading">
+        <h2 class="text-4xl uppercase mb-6 leading-none font-black font-heading">
           {{ title }}
         </h2>
         <div
-          class="mb-8 mx-auto text-xl max-w-4xl leading-relaxed"
+          class="mb-8 mx-auto lg:text-2xl text-xl lg:max-w-4xl leading-normal"
           v-html="excerpt"
         ></div>
       </div>
-      <g-image class="w-full order-2 lg:order-none" :src="img" :alt="altImg" />
+      <g-image class="w-3/4 mx-auto order-2 lg:order-none" :src="img" :alt="altImg" />
     </div>
 
     <div
@@ -28,14 +28,14 @@
             text-8xl
             xs:text-4xl
             mb-6
-            leading-tight
+            leading-normal
             font-bold font-heading
             text-gray-800
           "
         >
           {{ title }}
         </h2>
-        <div class="mb-8 text-gray-700 leading-relaxed" v-html="excerpt"></div>
+        <div class="mb-8 text-gray-700 leading-tight" v-html="excerpt"></div>
         <div v-if="button">
           <a
             v-if="link.includes('http')"

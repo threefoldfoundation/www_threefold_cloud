@@ -1,6 +1,6 @@
 <template>
   <Layout :hideHeader="true" :disableScroll="true">
-    <div class="container sm:pxi-0 mx-auto overflow-x-hidden py-5">
+    <div class="container-fluid sm:pxi-0 mx-auto overflow-x-hidden py-5">
       <Header
         :id="$page.markdownPage.id"
         :title="$page.markdownPage.header_title"
@@ -21,8 +21,7 @@
         :id="$page.markdownPage.id"
         :cta="$page.markdownPage.cta"
       />
-    </div>
-    <div class="container-fluid sm:pxi-0 mx-auto overflow-x-hidden">
+
       <BrandPanel
         class="my-20"
         :brand="$page.markdownPage.brandPanel"
@@ -30,7 +29,7 @@
         v-if="$page.markdownPage.brandPanel"
       />
     </div>
-    <div class="container sm:pxi-0 mx-auto overflow-x-hidden py-5">
+    <div class="container-fluid sm:pxi-0 mx-auto overflow-x-hidden py-5">
       <Centered2x2Grid
         v-if="$page.markdownPage.features.length > 0"
         :id="$page.markdownPage.id"

@@ -1,5 +1,5 @@
 <template>
-  <div class="py-12 bg-white">
+  <div class="py-32 bg-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div v-if="main" class="lg:text-center">
         <h2
@@ -58,12 +58,13 @@
                 <!-- Heroicon name: outline/globe-alt -->
                 <g-image :src="feature.image" />
               </div>
-              <p class="ml-16 text-lg leading-6 font-medium text-gray-900">
+              <h2 class="ml-16 text-3xl leading-none uppercase font-heading">
+                
                 {{ feature.title }}
-              </p>
+              </h2>
             </dt>
             <dd
-              class="mt-2 ml-16 text-base text-gray-500"
+              class="mt-2 ml-16 lg:text-2xl text-xl text-gray-900"
               v-html="feature.content"
             ></dd>
           </div>

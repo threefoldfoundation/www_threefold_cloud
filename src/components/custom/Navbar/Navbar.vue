@@ -17,12 +17,12 @@
         'opacity-0': !disableScroll && scrollPosition < headerHeight,
       }"
     >
-      <div class="flex items-center justify-between px-4 py-3 sm:p-0">
+      <div class="flex items-center justify-between px-4 py-3 sm:p-0 lg:mx-10 mx-4">
         <div class="inline-flex items-center flex-shrink-0">
           <a href="/" class="flex">
             <g-image
               :src="require(`!!assets-loader!@images/new_cloud_logo.png`)"
-              class="mr-3 fill-current w-3/5"
+              class="mr-3 fill-current w-1/2"
               alt=""
             />
 
@@ -394,6 +394,11 @@ button:focus {
 nav li a {
   padding-right: 10px;
 }
+
+nav a {
+  font-family: 'Orbitron', sans-serif !important;
+}
+
 a.active--exact.active {
   background-color: rgba(237, 242, 247, 1);
   border-radius: 0.5rem;

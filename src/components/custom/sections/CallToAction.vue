@@ -1,10 +1,10 @@
 <template>
   <section
-    class="py-12 px-4 text-center"
+    class="lg:py-20 py-10 px-4 text-center"
     :class="{ 'to-black': textOnly, 'bg-gray': lastCta }"
   >
     <div class="w-full mx-auto mt-10" v-if="id == 'home' && !textOnly">
-      <g-image :src="cta.image.src" />
+      <g-image class="mx-auto" :src="cta.image.src" />
     </div>
 
     <div

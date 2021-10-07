@@ -1,7 +1,7 @@
 <template>
   <div
     v-if="id == 'home'"
-    class="relative pt-16 pb-20 px-4 sm:px-6 lg:pt-24 lg:pb-28 lg:px-8"
+    class="relative lg:py-28 py-10 px-4 sm:px-6 lg:px-8"
   >
     <div class="absolute inset-0">
       <div class="bg-white h-1/3 sm:h-2/3"></div>
@@ -35,19 +35,19 @@
         >
           <div class="flex-shrink-0">
             <g-image
-              class="h-48 w-full object-cover"
+              class="w-full object-cover"
               :src="img(blog.image)"
               alt=""
             />
           </div>
           <div class="flex-1 bg-white p-6 flex flex-col justify-between">
             <div class="flex-1">
-              <h3 class="mt-2 text-xl leading-7 font-semibold text-gray-900">
+              <h2 class="text-3xl uppercase mb-6 leading-none font-black font-heading">
                 {{ blog.title }}
-              </h3>
+              </h2>
               <div
                 v-html="blog.content"
-                class="mt-3 text-base md:text-lg leading-6 text-gray-800"
+                class="mt-3 text-base text-xl lg:text-2xl leading-normal text-gray-800"
               ></div>
             </div>
           </div>

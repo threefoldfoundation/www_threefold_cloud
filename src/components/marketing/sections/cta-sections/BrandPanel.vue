@@ -6,7 +6,7 @@
     "
     class="to-black"
   >
-    <div class="max-w-screen-xl mx-auto py-16">
+    <div class="max-w-screen-2xl mx-auto py-20">
       <div class="rounded-lg overflow-hidden lg:grid lg:grid-cols-2 lg:gap-4">
         <div
           class="
@@ -18,7 +18,7 @@
             lg:py-16
             lg:pr-0
             xl:py-20
-            xl:px-20
+            xl:px-10
           "
         >
           <div class="lg:self-center">
@@ -29,7 +29,7 @@
               {{ brand.title }}
             </h2>
             <div
-              class="mt-4 text-lg leading-6 text-white"
+              class="mt-4 lg:text-2xl text-xl leading-normal text-white"
               v-html="brand.content"
             ></div>
             <div class="my-10" v-if="brand.button">
@@ -52,10 +52,10 @@
             </div>
           </div>
         </div>
-        <div class="relative lg:mt-14">
+        <div class="relative">
           <g-image
-            class="absolute inset-0 mx-auto object-cover"
-            :class="{ 'w-1/2': id == 'home', 'w-3/4': id == 'network' }"
+            class="inset-0 mx-auto object-cover"
+            :class="{ 'w-3/4': id == 'home', 'w-3/4': id == 'network' }"
             :src="image"
             :alt="brand.title"
           />
