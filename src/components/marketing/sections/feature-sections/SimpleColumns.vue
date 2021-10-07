@@ -3,12 +3,12 @@
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:max-w-screen-2xl lg:px-8">
       <div v-if="main" class="mx-auto mb-24 lg:text-center">
         <h2
-          class="text-4xl max-w-2xl uppercase mb-6 leading-none font-black font-heading mx-auto"
+          class="text-5xl max-w-2xl uppercase mb-6 leading-none font-black font-heading mx-auto"
         >
           {{ main.title }}
         </h2>
         <div
-          class="mt-2 text-lg leading-6 text-gray-900"
+          class="mt-2 lg:text-2xl text-xl leading-normal text-gray-900"
           v-html="main.content"
         ></div>
       </div>
@@ -25,7 +25,7 @@
           :key="section.id"
         >
           <div class="flex items-center justify-center rounded-md text-white">
-            <g-image :src="section.image" class="mx-auto w-2/3" />
+            <g-image :src="section.image" class="mx-auto" />
           </div>
           <div class="mt-5">
             <h2 class="text-3xl uppercase mb-6 leading-none font-black font-heading py-8">

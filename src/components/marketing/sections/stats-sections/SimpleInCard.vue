@@ -1,10 +1,10 @@
 <template>
   <div class="lg:py-20 py-10 sm:pt-16">
     <div class="mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="lg:max-w-4xl mx-auto text-center">
+      <div class="lg:max-w-xl mx-auto text-center">
         <h2
           class="
-            text-4xl
+            text-5xl
             uppercase
             mb-6
             leading-none

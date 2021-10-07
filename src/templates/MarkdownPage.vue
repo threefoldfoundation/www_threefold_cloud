@@ -94,8 +94,7 @@
         v-if="$page.markdownPage.stats"
         :info="$page.markdownPage.stats"
       />
-    </div>
-    <div class="container sm:pxi-0 mx-auto overflow-x-hidden py-5">
+   
       <SimpleColumns
         v-if="$page.markdownPage.workloads.length > 0"
         :id="$page.markdownPage.id"

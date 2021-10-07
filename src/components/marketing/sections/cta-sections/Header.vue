@@ -138,17 +138,17 @@
 
     <div
       v-else-if="id == 'storage'"
-      class="flex flex-wrap items-center text-center lg:text-left -mx-2"
+      class="flex flex-wrap items-center text-center lg:text-left -mx-2 lg:mx-10 my-20"
     >
-      <div class="lg:w-1/2 px-2"><g-image :src="img" :alt="altImg" /></div>
+      <div class="lg:w-1/2 px-2"><g-image class="max-auto w-3/4" :src="img" :alt="altImg" /></div>
 
       <div class="lg:w-1/2 px-2 lg:pr-10 mt-10 lg:mt-0 order-1 lg:order-none">
         <h2
           class="
-            text-8xl
+            text-6xl
             test
             mb-6
-            leading-tight
+            leading-none
             font-bold font-heading
             text-gray-800
           "
@@ -156,7 +156,7 @@
           {{ title }}
         </h2>
         <div
-          class="mb-8 text-gray-900 max-w-xl text-lg leading-relaxed"
+          class="mb-8 text-gray-900 max-w-2xl text-xl lg:text-2xl leading-normal"
           v-html="excerpt"
         ></div>
         <div v-if="button">
@@ -166,14 +166,16 @@
             class="
               inline-block
               green
-              text-lg text-black
+              bg-green-300
+              lg:text-2xl
+              text-lg
               font-extrabold
-              px-8
-              py-3
-              mr-5
-              my-2
-              shadow
+              px-12
+              hover:bg-green-200
               rounded-lg
+              py-4
+              mb-4
+              shadow
             "
             :href="link"
             >{{ button }}</a
@@ -184,14 +186,16 @@
             class="
               inline-block
               green
-              text-lg text-black
+              bg-green-300
+              lg:text-2xl
+              text-lg
               font-extrabold
-              px-8
-              py-3
-              mr-5
-              my-2
-              shadow
+              px-12
+              hover:bg-green-200
               rounded-lg
+              py-4
+              mb-4
+              shadow
             "
             :href="link"
             >{{ button }}</a

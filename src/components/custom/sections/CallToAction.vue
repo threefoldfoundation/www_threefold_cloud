@@ -1,6 +1,6 @@
 <template>
   <section
-    class="lg:my-20 py-10 px-4 text-center"
+    class="lg:py-20 py-10 px-4 text-center"
     :class="{
       'to-black': textOnly,
       'bg-gray': lastCta,
@@ -185,14 +185,14 @@
 
     <div
       v-else-if="id == 'storage' && textOnly"
-      class="w-full max-w-2xl mx-auto"
+      class="w-full max-w-4xl mx-auto my-20"
     >
       <h2 class="text-5xl text-white leading-tight font-semibold font-heading">
         {{ cta.title }}
       </h2>
       <div
         v-html="cta.content"
-        class="mt-6 mb-8 text-white text-lg leading-relaxed"
+        class="mt-6 mb-8 text-white text-xl lg:text-2xl leading-normal"
       ></div>
       <div class="w-full mx-auto mt-10" v-if="cta.image">
         <g-image :src="cta.image.src" class="mx-auto" />
@@ -203,15 +203,18 @@
           target="_blank"
           :href="cta.link"
           class="
+            inline-block
             green
-            text-xl
+            bg-green-300
+            lg:text-2xl
+            text-lg
             font-extrabold
-            text-gray-900
             px-12
+            hover:bg-green-200
+            rounded-lg
             py-4
             mb-4
             shadow
-            rounded-lg
           "
           >{{ cta.button }}</a
         >
@@ -219,14 +222,18 @@
           v-else
           :href="cta.link"
           class="
+            inline-block
             green
-            text-xl
+            bg-green-300
+            lg:text-2xl
+            text-lg
             font-extrabold
-            text-gray-900
             px-12
-            py-4
-            shadow
+            hover:bg-green-200
             rounded-lg
+            py-4
+            mb-4
+            shadow
           "
           >{{ cta.button }}</a
         >
@@ -234,17 +241,17 @@
     </div>
 
     <div v-else-if="id == 'storage' && !textOnly" class="w-full mx-auto">
-      <h2 class="text-5xl text-black leading-tight font-semibold font-heading">
+      <h2 class="text-5xl text-black leading-tight font-bold font-heading">
         {{ cta.title }}
       </h2>
       <div
         v-html="cta.content"
-        class="mt-6 mb-8 text-black text-xl max-w-3xl mx-auto leading-relaxed"
+        class="mt-6 mb-8 text-black text-xl lg:text-2xl max-w-3xl mx-auto leading-relaxed"
       ></div>
       <div class="w-full mx-auto mt-10">
         <g-image
           :src="cta.image.src"
-          class="mx-auto"
+          class="mx-auto lg:my-20"
           :class="{ 'w-1/2': id == 'network' }"
         />
       </div>
@@ -254,15 +261,18 @@
           target="_blank"
           :href="cta.link"
           class="
+            inline-block
             green
-            text-xl
+            bg-green-300
+            lg:text-2xl
+            text-lg
             font-extrabold
-            text-gray-900
             px-12
+            hover:bg-green-200
+            rounded-lg
             py-4
             mb-4
             shadow
-            rounded-lg
           "
           >{{ cta.button }}</a
         >
@@ -270,14 +280,18 @@
           v-else
           :href="cta.link"
           class="
+            inline-block
             green
-            text-xl
+            bg-green-300
+            lg:text-2xl
+            text-lg
             font-extrabold
-            text-gray-900
             px-12
-            py-4
-            shadow
+            hover:bg-green-200
             rounded-lg
+            py-4
+            mb-4
+            shadow
           "
           >{{ cta.button }}</a
         >
