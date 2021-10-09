@@ -23,10 +23,10 @@
         >
           <div class="lg:self-center">
             <h2
-              class="leading-9 font-extrabold mb-10 text-white"
+              class="leading-none font-extrabold mb-10 text-white"
               :class="{
                 'text-5xl leading-none': id == 'home',
-                'text-4xl': id == 'network',
+                'text-5xl ': id == 'network',
               }"
             >
               {{ brand.title }}

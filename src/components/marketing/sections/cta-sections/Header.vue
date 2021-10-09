@@ -6,7 +6,7 @@
     >
       <div class="px-3 lg:mt-5 order-1 lg:order-none mx-auto text-center">
         <h2
-          class="text-4xl uppercase mb-6 leading-none font-black font-heading"
+          class="text-5xl uppercase mb-6 leading-none font-black font-heading"
         >
           {{ title }}
         </h2>
@@ -92,25 +92,27 @@
       v-else-if="id == 'network'"
     >
       <div class="px-3 order-1 lg:order-none mx-auto text-center">
-        <h2 class="max-w-4xl text-8xl uppercase mb-6 leading-none font-heading">
+        <h2 class="max-w-4xl text-6xl uppercase mb-6 leading-none font-heading">
           {{ title }}
         </h2>
-        <div class="mb-8 mx-auto text-2xl max-w-4xl" v-html="excerpt"></div>
+        <div class="mb-8 mx-auto lg:text-2xl text-xl max-w-4xl" v-html="excerpt"></div>
 
         <a
           v-if="link.includes('http')"
           target="_blank"
           class="
             inline-block
-            green
-            text-lg text-black
-            font-extrabold
-            px-8
-            py-3
-            mr-5
-            my-2
-            shadow
-            rounded-lg
+              green
+              bg-green-300
+              lg:text-2xl
+              text-lg
+              font-extrabold
+              px-12
+              hover:bg-green-200
+              rounded-lg
+              py-4
+              mb-4
+              shadow
           "
           :href="link"
           >{{ button }}</a
@@ -119,15 +121,17 @@
           v-else
           class="
             inline-block
-            green
-            text-lg text-black
-            font-extrabold
-            px-8
-            py-3
-            mr-5
-            my-2
-            shadow
-            rounded-lg
+              green
+              bg-green-300
+              lg:text-2xl
+              text-lg
+              font-extrabold
+              px-12
+              hover:bg-green-200
+              rounded-lg
+              py-4
+              mb-4
+              shadow
           "
           :href="link"
           >{{ button }}</a

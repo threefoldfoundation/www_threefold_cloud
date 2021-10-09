@@ -1,15 +1,15 @@
 <template>
-  <div class="py-12 mb-5">
-    <div class="w-full text-center">
+  <div class="py-12 mb-5 mx-40">
+    <div class="mx-auto text-center">
       <h1
         v-if="main.title"
-        class="text-4xl mt-2 uppercase mb-6 leading-tight font-heading"
+        class="text-5xl mt-2 uppercase mb-6 leading-tight font-heading"
       >
         {{ main.title }}
       </h1>
       <div
         v-if="main.content"
-        class="text-xl tracking-widest text-gray-700"
+        class="lg:text-2xl mx-auto text-xl tracking-widest max-w-4xl"
         v-html="main.content"
       ></div>
     </div>
@@ -61,13 +61,15 @@
                 class="
                   inline-block
                   green
-                  text-lg text-black
+                  bg-green-300
+                  text-lg
                   font-extrabold
-                  px-8
-                  py-3
-                  my-2
-                  shadow
+                  px-12
+                  hover:bg-green-200
                   rounded-lg
+                  py-4
+                  mb-4
+                  shadow
                 "
                 >{{ product.button }}</a
               >
@@ -96,5 +98,9 @@ export default {
 <style scoped>
 .bannerFondo {
   height: 400px;
+}
+.green {
+  /* background-color: #70dfc9; */
+  font-family: "Orbitron", sans-serif !important;
 }
 </style>

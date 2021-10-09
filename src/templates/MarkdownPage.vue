@@ -110,8 +110,7 @@
         :main="$page.markdownPage.productsMain"
         :products="$page.markdownPage.productData"
       />
-    </div>
-    <div class="container-fluid sm:pxi-0 mx-auto overflow-x-hidden py-5">
+   
       <CallToAction
         v-if="$page.markdownPage.cta2 && $page.markdownPage.id == 'storage'"
         :id="$page.markdownPage.id"

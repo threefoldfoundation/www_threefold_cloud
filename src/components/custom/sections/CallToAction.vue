@@ -195,7 +195,7 @@
         class="mt-6 mb-8 text-white text-xl lg:text-2xl leading-normal"
       ></div>
       <div class="w-full mx-auto mt-10" v-if="cta.image">
-        <g-image :src="cta.image.src" class="mx-auto" />
+        <g-image :src="cta.image.src" class="mx-auto w-1/2 " />
       </div>
       <div class="mt-20" v-if="cta.button">
         <a
@@ -251,8 +251,8 @@
       <div class="w-full mx-auto mt-10">
         <g-image
           :src="cta.image.src"
-          class="mx-auto lg:my-20"
-          :class="{ 'w-1/2': id == 'network' }"
+          class="mx-auto w-1/2 lg:my-20"
+          :class="{ 'w-1/2': id == 'network' }" 
         />
       </div>
       <div class="mt-20">
