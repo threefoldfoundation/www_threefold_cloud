@@ -7,7 +7,7 @@
     }"
   >
     <div class="w-full mx-auto mt-10" v-if="id == 'home' && !textOnly">
-      <g-image class="mx-auto" :src="cta.image.src" />
+      <g-image class="mx-auto" :src="img(cta.image)" />
     </div>
 
     <div
@@ -66,7 +66,7 @@
       class="w-full py-20 max-w-3xl mx-auto"
     >
       <div class="w-full mx-auto mt-10">
-        <g-image :src="cta.image.src" class="w-2/3 mx-auto" />
+        <g-image :src="img(cta.image)" class="w-2/3 mx-auto" />
       </div>
       <h2 class="text-5xl text-black leading-none font-semibold font-heading">
         {{ cta.title }}
@@ -135,7 +135,7 @@
       ></div>
       <div class="w-full mx-auto mt-10">
         <g-image
-          :src="cta.image.src"
+          :src="img(cta.image)"
           class="mx-auto"
           :class="{ 'w-1/2': id == 'network' }"
         />
@@ -195,7 +195,7 @@
         class="mt-6 mb-8 text-white text-xl lg:text-2xl leading-normal"
       ></div>
       <div class="w-full mx-auto mt-10" v-if="cta.image">
-        <g-image :src="cta.image.src" class="mx-auto w-1/2 " />
+        <g-image :src="img(cta.image)" class="mx-auto w-1/2" />
       </div>
       <div class="mt-20" v-if="cta.button">
         <a
@@ -246,13 +246,21 @@
       </h2>
       <div
         v-html="cta.content"
-        class="mt-6 mb-8 text-black text-xl lg:text-2xl max-w-3xl mx-auto leading-relaxed"
+        class="
+          mt-6
+          mb-8
+          text-black text-xl
+          lg:text-2xl
+          max-w-3xl
+          mx-auto
+          leading-relaxed
+        "
       ></div>
       <div class="w-full mx-auto mt-10">
         <g-image
-          :src="cta.image.src"
+          :src="img(cta.image)"
           class="mx-auto w-1/2 lg:my-20"
-          :class="{ 'w-1/2': id == 'network' }" 
+          :class="{ 'w-1/2': id == 'network' }"
         />
       </div>
       <div class="mt-20">
@@ -363,6 +371,13 @@
 <script>
 export default {
   props: ["id", "cta", "textOnly", "lastCta"],
+  methods: {
+    img(image) {
+      if (!image) return "";
+      if (image.src) return image.src;
+      return image;
+    },
+  },
 };
 </script>
 
