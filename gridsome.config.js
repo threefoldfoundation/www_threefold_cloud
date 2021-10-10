@@ -121,6 +121,13 @@ module.exports = {
         {
             use: '@gridsome/source-filesystem',
             options: {
+                typeName: 'FeaturesMain',
+                path: './content/page/**/features/main/*.md',
+            }
+        },
+        {
+            use: '@gridsome/source-filesystem',
+            options: {
                 typeName: 'WorkloadsMain',
                 path: './content/page/**/workloads/main/*.md',
             }
@@ -148,7 +155,7 @@ module.exports = {
                 refs: {
                     productsMain: 'ProductTitle',
                     productData: 'Product',
-                    featuresMain: 'Features',
+                    featuresMain: 'FeaturesMain',
                     features: 'Features',
                     cta: 'Cta',
                     cta2: 'Cta2',
