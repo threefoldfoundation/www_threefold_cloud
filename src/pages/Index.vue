@@ -142,16 +142,7 @@
         button
         link
       #  solution_image
-      #  solution_image2
-        header{
-         title
-         subtitle
-         content
-         btn1
-         link1
-         btn2
-         link2
-        } 
+      #  solution_image2 
         cta{
           id
           image

@@ -12,74 +12,6 @@ module.exports = {
         {
             use: '@gridsome/source-filesystem',
             options: {
-                typeName: 'Card',
-                path: './content/page/**/cards/**/*.md',
-            }
-        },
-        {
-            use: '@gridsome/source-filesystem',
-            options: {
-                typeName: 'Card2',
-                path: './content/page/**/cards2/**/*.md',
-            }
-        },
-        {
-            use: '@gridsome/source-filesystem',
-            options: {
-                typeName: 'CardLeft',
-                path: './content/page/**/cardLefts/**/*.md',
-            }
-        },
-        {
-            use: '@gridsome/source-filesystem',
-            options: {
-                typeName: 'CardLeft2',
-                path: './content/page/**/cardLefts2/**/*.md',
-            }
-        },
-        {
-            use: '@gridsome/source-filesystem',
-            options: {
-                typeName: 'Slide',
-                path: './content/page/**/sliders/**/*.md',
-            }
-        },
-
-        {
-            use: '@gridsome/source-filesystem',
-            options: {
-                typeName: 'Contact',
-                path: './content/page/**/contactData/**/*.md',
-            }
-        },
-
-        {
-            use: '@gridsome/source-filesystem',
-            options: {
-                typeName: 'HowItWorks',
-                path: './content/page/**/how_it_works/**/*.md',
-            }
-        },
-
-        {
-            use: '@gridsome/source-filesystem',
-            options: {
-                typeName: 'HowItWorks_2',
-                path: './content/page/**/how_it_works_2/**/*.md',
-            }
-        },
-
-        {
-            use: '@gridsome/source-filesystem',
-            options: {
-                typeName: 'Header',
-                path: './content/page/**/header/*.md',
-            }
-        },
-
-        {
-            use: '@gridsome/source-filesystem',
-            options: {
                 typeName: 'Product',
                 path: './content/page/**/productData/**/*.md',
             }
@@ -96,13 +28,6 @@ module.exports = {
             options: {
                 typeName: 'Features',
                 path: './content/page/**/features/**/*.md',
-            }
-        },
-        {
-            use: '@gridsome/source-filesystem',
-            options: {
-                typeName: 'Logo',
-                path: './content/page/**/logos/**/*.md',
             }
         },
 
@@ -141,63 +66,8 @@ module.exports = {
         {
             use: '@gridsome/source-filesystem',
             options: {
-                typeName: 'SignUp',
-                path: './content/page/**/signup/*.md',
-            }
-        },
-        {
-            use: '@gridsome/source-filesystem',
-            options: {
-                typeName: 'About',
-                path: './content/about/**/*.md',
-            }
-        },
-
-        {
-            use: '@gridsome/source-filesystem',
-            options: {
-                typeName: 'Comparison',
-                path: './content/page/**/comparison/**/*.md',
-            }
-        },
-
-        {
-            use: '@gridsome/source-filesystem',
-            options: {
-                typeName: 'Roadmap',
-                path: './content/page/**/roadmap/*.md',
-            }
-        },
-
-        {
-            use: '@gridsome/source-filesystem',
-            options: {
-                typeName: 'PricingPlans',
-                path: './content/page/**/pricing_plans/**/*.md',
-            }
-        },
-
-        {
-            use: '@gridsome/source-filesystem',
-            options: {
-                typeName: 'Plans',
-                path: './content/page/**/withComparisonTable/**/*.md',
-            }
-        },
-
-        {
-            use: '@gridsome/source-filesystem',
-            options: {
                 typeName: 'BrandPanel',
                 path: './content/page/**/brandPanel/*.md',
-            }
-        },
-
-        {
-            use: '@gridsome/source-filesystem',
-            options: {
-                typeName: 'InTheNews',
-                path: './content/page/**/InTheNews/*.md',
             }
         },
 
@@ -276,39 +146,18 @@ module.exports = {
                 typeName: 'MarkdownPage',
                 path: './content/page/*/*.md',
                 refs: {
-                    cards: 'Card',
-                    cards2: 'Card2',
-                    cardLefts: 'CardLeft',
-                    cardLefts2: 'CardLeft2',
-                    slides: 'Slide',
-                    contactData: 'Contact',
-                    header: 'Header',
-                    howItWorks: 'HowItWorks',
-                    howItWorksMain: 'HowItWorks',
                     productsMain: 'ProductTitle',
                     productData: 'Product',
                     featuresMain: 'Features',
                     features: 'Features',
-                    logos: 'Logo',
                     cta: 'Cta',
                     cta2: 'Cta2',
                     cta3: 'Cta3',
                     cta4: 'Cta4',
-                    signup: 'SignUp',
-                    comparisonMain: 'Comparison',
-                    comparisonSecs: 'Comparison',
-                    howItWorksMain_2: 'HowItWorks_2',
-                    howItWorks_2: 'HowItWorks_2',
-                    roadmap: 'Roadmap',
-                    pricing_plansMain: 'PricingPlans',
-                    pricingPlans: 'PricingPlans',
-                    plans: 'Plans',
-                    inTheNews: 'InTheNews',
                     brandPanel: 'BrandPanel',
                     brandPanel2: 'BrandPanel2',
                     brandPanel3: 'BrandPanel3',
                     brandPanel4: 'BrandPanel4',
-                    allSlides: 'About',
                     blogs: 'Blogs',
                     workloadsMain: 'WorkloadsMain',
                     workloads: 'Workloads',
