@@ -4,7 +4,7 @@
       <div v-if="main" class="mx-auto mb-24 lg:text-center">
         <h2
           class="
-            text-5xl
+            lg:text-5xl
             max-w-3xl
             uppercase
             mb-6

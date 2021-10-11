@@ -24,14 +24,14 @@
 
     <div
       v-else-if="id == 'compute'"
-      class="flex flex-wrap items-center text-center lg:text-left -mx-2 lg:mx-10 my-40"
+      class="flex flex-wrap items-center text-center lg:text-left -mx-2 lg:mx-10 lg:my-40 my-10"
     >
       <div
         class="lg:w-1/2 lg:pl-20 lg:pr-10 mt-10 lg:mt-0 order-1 lg:order-none"
       >
         <h2
           class="
-            text-6xl
+            lg:text-6xl
             xs:text-4xl
             mb-6
             leading-none
@@ -85,14 +85,14 @@
           >
         </div>
       </div>
-      <div class="lg:w-1/2 px-2"><g-image class="w-3/4 mx-auto" :src="img" :alt="altImg" /></div>
+      <div class="lg:w-1/2 px-2"><g-image class="lg:w-3/4 mx-auto" :src="img" :alt="altImg" /></div>
     </div>
     <div
       class="flex flex-wrap text-center lg:text-left -mx-2"
       v-else-if="id == 'network'"
     >
-      <div class="px-3 order-1 lg:order-none mx-auto text-center">
-        <h2 class="max-w-4xl text-6xl uppercase mb-6 leading-none font-heading">
+      <div class="px-3 order-1 lg:order-none mx-auto text-center px-4">
+        <h2 class="max-w-4xl lg:text-6xl uppercase mb-6 leading-none font-heading">
           {{ title }}
         </h2>
         <div class="mb-8 mx-auto lg:text-2xl text-xl max-w-4xl" v-html="excerpt"></div>
@@ -142,14 +142,14 @@
 
     <div
       v-else-if="id == 'storage'"
-      class="flex flex-wrap items-center text-center lg:text-left -mx-2 lg:mx-10 my-20"
+      class="flex flex-wrap items-center text-center lg:text-left -mx-2 lg:mx-10 px-4 lg:my-10 mb-10"
     >
-      <div class="lg:w-1/2 px-2"><g-image class="max-auto w-3/4" :src="img" :alt="altImg" /></div>
+      <div class="lg:w-1/2 px-2"><g-image class="mx-auto w-3/4" :src="img" :alt="altImg" /></div>
 
       <div class="lg:w-1/2 px-2 lg:pr-10 mt-10 lg:mt-0 order-1 lg:order-none">
         <h2
           class="
-            text-6xl
+            lg:text-6xl
             test
             mb-6
             leading-none

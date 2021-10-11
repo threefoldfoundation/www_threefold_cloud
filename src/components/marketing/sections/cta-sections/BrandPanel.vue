@@ -25,8 +25,8 @@
             <h2
               class="leading-none font-extrabold mb-10 text-white"
               :class="{
-                'text-5xl leading-none': id == 'home',
-                'text-5xl ': id == 'network',
+                'lg:text-5xl leading-none': id == 'home',
+                'lg:text-5xl ': id == 'network',
               }"
             >
               {{ brand.title }}
@@ -89,7 +89,7 @@
           "
         >
           <div class="lg:self-center">
-            <h2 class="text-5xl leading-none text-black">
+            <h2 class="lg:text-5xl leading-none text-black">
               {{ brand.title }}
             </h2>
             <div
@@ -101,6 +101,8 @@
                 :href="brand.link"
                 v-if="brand.button"
                 class="
+                text-center
+                  inline-block
                   green
                   bg-green-300
                   lg:text-2xl
@@ -120,6 +122,8 @@
                 :href="brand.link2"
                 v-if="brand.button2"
                 class="
+                text-center
+                  inline-block
                   green
                   bg-green-300
                   lg:text-2xl
@@ -165,7 +169,7 @@
         </div>
         <div class="flex content-center px-6 sm:px-16 lg:pr-0 xl:px-20">
           <div class="lg:self-center">
-            <h2 class="text-5xl leading-none font-extrabold text-black mb-10">
+            <h2 class="lg:text-5xl leading-none font-extrabold text-black mb-10">
               {{ brand.title }}
             </h2>
             <div
@@ -176,6 +180,7 @@
               <a
                 :href="brand.link"
                 class="
+                text-center
                   inline-block
                   green
                   bg-green-300
@@ -205,7 +210,7 @@
       <div class="rounded-lg overflow-hidden lg:grid lg:grid-cols-2 lg:gap-4">
         <div class="flex content-center px-6 sm:px-16 lg:pr-0 xl:px-20">
           <div class="lg:self-center">
-            <h2 class="text-5xl leading-none font-extrabold text-black mb-10">
+            <h2 class="lg:text-5xl leading-none font-extrabold text-black mb-10">
               {{ brand.title }}
             </h2>
             <div
@@ -216,6 +221,7 @@
               <a
                 :href="brand.link"
                 class="
+                text-center
                   inline-block
                   green
                   bg-green-300

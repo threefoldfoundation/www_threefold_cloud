@@ -4,7 +4,7 @@
       <div class="lg:max-w-xl mx-auto text-center">
         <h2
           class="
-            text-5xl
+            lg:text-5xl
             uppercase
             mb-6
             leading-none

@@ -68,7 +68,7 @@
       <div class="w-full mx-auto mt-10">
         <g-image :src="img(cta.image)" class="w-2/3 mx-auto" />
       </div>
-      <h2 class="text-5xl text-black leading-none font-semibold font-heading">
+      <h2 class="lg:text-5xl text-black leading-none font-semibold font-heading">
         {{ cta.title }}
       </h2>
       <div
@@ -123,7 +123,7 @@
       class="w-full py-20 max-w-4xl mx-auto"
     >
       <h2
-        class="text-5xl leading-tight font-bold font-heading"
+        class="lg:text-5xl leading-tight font-bold font-heading"
         :class="{ 'text-white': textOnly, 'text-black': !textOnly }"
       >
         {{ cta.title }}
@@ -187,7 +187,7 @@
       v-else-if="id == 'storage' && textOnly"
       class="w-full max-w-4xl mx-auto my-20"
     >
-      <h2 class="text-5xl text-white leading-tight font-semibold font-heading">
+      <h2 class="lg:text-5xl text-white leading-tight font-semibold font-heading">
         {{ cta.title }}
       </h2>
       <div
@@ -241,7 +241,7 @@
     </div>
 
     <div v-else-if="id == 'storage' && !textOnly" class="w-full mx-auto">
-      <h2 class="text-5xl text-black leading-tight font-bold font-heading">
+      <h2 class="lg:text-5xl text-black leading-tight font-bold font-heading">
         {{ cta.title }}
       </h2>
       <div
@@ -259,7 +259,7 @@
       <div class="w-full mx-auto mt-10">
         <g-image
           :src="img(cta.image)"
-          class="mx-auto w-1/2 lg:my-20"
+          class="mx-auto lg:w-1/2 lg:my-20"
           :class="{ 'w-1/2': id == 'network' }"
         />
       </div>
