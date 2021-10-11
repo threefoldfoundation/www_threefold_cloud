@@ -117,30 +117,6 @@ module.exports = {
         {
             use: '@gridsome/source-filesystem',
             options: {
-                typeName: 'Cta2',
-                path: './content/page/**/cta2/*.md',
-            }
-        },
-
-        {
-            use: '@gridsome/source-filesystem',
-            options: {
-                typeName: 'Cta3',
-                path: './content/page/**/cta3/*.md',
-            }
-        },
-
-        {
-            use: '@gridsome/source-filesystem',
-            options: {
-                typeName: 'Cta4',
-                path: './content/page/**/cta4/*.md',
-            }
-        },
-
-        {
-            use: '@gridsome/source-filesystem',
-            options: {
                 typeName: 'SignUp',
                 path: './content/page/**/signup/*.md',
             }
@@ -204,75 +180,6 @@ module.exports = {
         {
             use: '@gridsome/source-filesystem',
             options: {
-                typeName: 'Blogs',
-                path: './content/page/**/blogs/**/*.md',
-            }
-        },
-
-        {
-            use: '@gridsome/source-filesystem',
-            options: {
-                typeName: 'BrandPanel',
-                path: './content/page/**/brandPanel/*.md',
-            }
-        },
-
-        {
-            use: '@gridsome/source-filesystem',
-            options: {
-                typeName: 'BrandPanel2',
-                path: './content/page/**/brandPanel2/*.md',
-            }
-        },
-
-        {
-            use: '@gridsome/source-filesystem',
-            options: {
-                typeName: 'BrandPanel3',
-                path: './content/page/**/brandPanel3/*.md',
-            }
-        },
-
-        {
-            use: '@gridsome/source-filesystem',
-            options: {
-                typeName: 'BrandPanel4',
-                path: './content/page/**/brandPanel4/*.md',
-            }
-        },
-
-        {
-            use: '@gridsome/source-filesystem',
-            options: {
-                typeName: 'Features',
-                path: './content/page/**/features/**/*.md',
-            }
-        },
-        {
-            use: '@gridsome/source-filesystem',
-            options: {
-                typeName: 'WorkloadsMain',
-                path: './content/page/**/workloads/main/*.md',
-            }
-        },
-        {
-            use: '@gridsome/source-filesystem',
-            options: {
-                typeName: 'Workloads',
-                path: './content/page/**/workloads/**/*.md',
-            }
-        },
-        {
-            use: '@gridsome/source-filesystem',
-            options: {
-                typeName: 'Stats',
-                path: './content/page/**/stats/*.md',
-            }
-        },
-
-        {
-            use: '@gridsome/source-filesystem',
-            options: {
                 typeName: 'MarkdownPage',
                 path: './content/page/*/*.md',
                 refs: {
@@ -291,9 +198,6 @@ module.exports = {
                     features: 'Features',
                     logos: 'Logo',
                     cta: 'Cta',
-                    cta2: 'Cta2',
-                    cta3: 'Cta3',
-                    cta4: 'Cta4',
                     signup: 'SignUp',
                     comparisonMain: 'Comparison',
                     comparisonSecs: 'Comparison',
@@ -305,14 +209,7 @@ module.exports = {
                     plans: 'Plans',
                     inTheNews: 'InTheNews',
                     brandPanel: 'BrandPanel',
-                    brandPanel2: 'BrandPanel2',
-                    brandPanel3: 'BrandPanel3',
-                    brandPanel4: 'BrandPanel4',
-                    allSlides: 'About',
-                    blogs: 'Blogs',
-                    workloadsMain: 'WorkloadsMain',
-                    workloads: 'Workloads',
-                    stats: 'Stats'
+                    allSlides: 'About'
                 }
             }
         },
@@ -500,19 +397,19 @@ module.exports = {
             anchorClassName: 'icon icon-link',
             plugins: [
                 ['gridsome-plugin-remark-prismjs-all', {
-                    highlightClassName: "gridsome-highlight",
-                    codeTitleClassName: "gridsome-code-title",
-                    classPrefix: 'language-',
-                    aliases: {},
-                    noInlineHighlight: false,
-                    showLineNumbers: false, //  `require("prismjs/plugins/line-numbers/prism-line-numbers.css");`
-                    languageExtensions: [],
-                    prompt: { //  `require("prismjs/plugins/command-line/prism-command-line.css");`
-                        user: `root`,
-                        host: `localhost`,
-                        global: false,
-                    }
-                },
+                        highlightClassName: "gridsome-highlight",
+                        codeTitleClassName: "gridsome-code-title",
+                        classPrefix: 'language-',
+                        aliases: {},
+                        noInlineHighlight: false,
+                        showLineNumbers: false, //  `require("prismjs/plugins/line-numbers/prism-line-numbers.css");`
+                        languageExtensions: [],
+                        prompt: { //  `require("prismjs/plugins/command-line/prism-command-line.css");`
+                            user: `root`,
+                            host: `localhost`,
+                            global: false,
+                        }
+                    },
                     // '@noxify/gridsome-remark-table-align', ['@noxify/gridsome-remark-classes', {
                     //     'table': 'table table-striped',
                     //     'tableCell[align=center]': 'text-center',

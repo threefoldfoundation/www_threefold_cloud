@@ -1,142 +1,47 @@
 <template>
   <Layout :hideHeader="true" :disableScroll="true">
-    <div class="container-fluid sm:pxi-0 mx-auto overflow-x-hidden py-5">
+    <div class="container sm:pxi-0 mx-auto overflow-x-hidden py-5">
       <Header
         v-if="
           $page.markdownPage.id !== 'contact' &&
           $page.markdownPage.header_title &&
           $page.markdownPage.header_title != ''
         "
-        :id="$page.markdownPage.id"
         :title="$page.markdownPage.header_title"
         :image="$page.markdownPage.header_image"
         :altImg="$page.markdownPage.header_altImg"
         :excerpt="$page.markdownPage.header_excerpt"
-        :button="$page.markdownPage.button"
-        :link="$page.markdownPage.link"
       />
 
-      <BrandPanel
-        :brand="$page.markdownPage.brandPanel"
-        :id="$page.markdownPage.id"
-        v-if="
-          $page.markdownPage.brandPanel && $page.markdownPage.id !== 'storage'
-        "
+      <SolutionsHeader
+        v-if="$page.markdownPage.header"
+        :header="$page.markdownPage.header"
+      />
+
+      <g-image
+        v-if="$page.markdownPage.solution_image"
+        :src="$page.markdownPage.solution_image.src"
+      />
+
+      <NewCard
+        v-for="card in $page.markdownPage.cards"
+        :key="card.id"
+        :card="card"
+      />
+
+      <logoShowcase
+        v-if="$page.markdownPage.logos && $page.markdownPage.logos.length > 0"
+        :logos="$page.markdownPage.logos"
       />
 
       <CallToAction
-        v-if="
-          $page.markdownPage.cta &&
-          $page.markdownPage.id !== 'network' &&
-          $page.markdownPage.id !== 'storage'
-        "
-        :id="$page.markdownPage.id"
+        v-if="$page.markdownPage.cta"
         :cta="$page.markdownPage.cta"
       />
 
-      <BrandPanel
-        :brand="$page.markdownPage.brandPanel2"
-        :id="$page.markdownPage.id"
-        v-if="$page.markdownPage.brandPanel2"
-        :lastBrand="true"
-      />
-
-      <BrandPanel
-        :brand="$page.markdownPage.brandPanel3"
-        :id="$page.markdownPage.id"
-        v-if="$page.markdownPage.brandPanel3"
-        :textFirst="true"
-      />
-
-      <CallToAction
-        v-if="$page.markdownPage.cta2 && $page.markdownPage.id !== 'storage'"
-        :id="$page.markdownPage.id"
-        :cta="$page.markdownPage.cta2"
-        :lastCta="true"
-      />
-
-      <CallToAction
-        v-if="
-          $page.markdownPage.cta3 &&
-          $page.markdownPage.id == 'compute' &&
-          $page.markdownPage.id !== 'storage'
-        "
-        :id="$page.markdownPage.id"
-        :cta="$page.markdownPage.cta3"
-        :textOnly="true"
-      />
-
-      <CallToAction
-        v-if="
-          $page.markdownPage.cta &&
-          $page.markdownPage.id == 'network' &&
-          $page.markdownPage.id !== 'storage'
-        "
-        :id="$page.markdownPage.id"
-        :cta="$page.markdownPage.cta"
-      />
-
-      <BrandPanel
-        :brand="$page.markdownPage.brandPanel4"
-        :id="$page.markdownPage.id"
-        v-if="$page.markdownPage.brandPanel4"
-        :textFirst="true"
-      />
-
-      <CallToAction
-        v-if="$page.markdownPage.cta && $page.markdownPage.id == 'storage'"
-        :id="$page.markdownPage.id"
-        :cta="$page.markdownPage.cta"
-        :textOnly="true"
-      />
-      <Stats
-        :id="$page.markdownPage.id"
-        v-if="$page.markdownPage.stats"
-        :info="$page.markdownPage.stats"
-      />
-    </div>
-    <div class="container sm:pxi-0 mx-auto overflow-x-hidden py-5">
-      <SimpleColumns
-        v-if="$page.markdownPage.workloads.length > 0"
-        :id="$page.markdownPage.id"
-        :main="$page.markdownPage.workloadsMain"
-        :sections="$page.markdownPage.workloads"
-      />
-      <ShowcaseProducts
-        v-if="
-          $page.markdownPage.productData &&
-          $page.markdownPage.productData.length > 0
-        "
-        :id="$page.markdownPage.id"
-        :main="$page.markdownPage.productsMain"
-        :products="$page.markdownPage.productData"
-      />
-    </div>
-    <div class="container-fluid sm:pxi-0 mx-auto overflow-x-hidden py-5">
-      <CallToAction
-        v-if="$page.markdownPage.cta2 && $page.markdownPage.id == 'storage'"
-        :id="$page.markdownPage.id"
-        :cta="$page.markdownPage.cta2"
-      />
-      <BrandPanel
-        :brand="$page.markdownPage.brandPanel"
-        v-if="
-          $page.markdownPage.brandPanel && $page.markdownPage.id == 'storage'
-        "
-        :id="$page.markdownPage.id"
-        :textFirst="true"
-      />
-      <CallToAction
-        v-if="$page.markdownPage.cta3 && $page.markdownPage.id == 'storage'"
-        :id="$page.markdownPage.id"
-        :cta="$page.markdownPage.cta3"
-        :lastCta="true"
-      />
-      <CallToAction
-        v-if="$page.markdownPage.cta4"
-        :id="$page.markdownPage.id"
-        :cta="$page.markdownPage.cta4"
-        :textOnly="true"
+      <SignUp
+        v-if="$page.markdownPage.signup"
+        :signup="$page.markdownPage.signup"
       />
     </div>
   </Layout>
@@ -152,128 +57,65 @@
         header_altImg
         header_title
         header_image
-      #  solution_image
-        button
-        link
+        solution_image
+       header{
+         title
+         subtitle
+         content
+         btn1
+         link1
+         btn2
+         link2
+       }
+        cards{
+          id
+          title
+          image
+          button
+          link
+          order
+          content
+        }
+        logos{
+          id
+          image
+        }
         cta{
           id
           title
-          image
           content
           button
           link
         }
-        cta3{
+        signup{
           id
           title
-          image
-          content
-          button
-          link
+          button1
+          link1
+          button2
+          link2
         }
-        cta2{
-          id
-          title
-          image
-          content
-          button
-          link
-        }
-        cta4{
-          id
-          title
-          image
-          content
-          button
-          link
-        }
-    brandPanel{
-         id
-         title
-         content
-         image
-         button
-         link
-       }
-
-    brandPanel2{
-         id
-         title
-         content
-         image
-         button
-         link
-       }
-     brandPanel3{
-         id
-         title
-         content
-         image
-         button
-         link
-       }
-    brandPanel4{
-         id
-         title
-         content
-         image
-         button
-         link
-       }
-      stats{
-         id
-         title
-         content
-         button
-         link
-       }
-      workloadsMain {
-         id
-         title
-         content
-         button
-         link
-       }
-       workloads{
-         id
-         title
-         image
-         content
-       }
-      productsMain{
-          id
-          title
-          content
-       }
-       productData{
-         id
-         title
-         price
-         content
-         button
-         url
-       }
     }
   }
 
 </page-query>
 
 <script>
+import NewCard from "~/components/marketing/sections/cta-sections/NewCard.vue";
 import Header from "~/components/marketing/sections/cta-sections/Header.vue";
+import SolutionsHeader from "~/components/custom/sections/header/HeaderSection.vue";
+import logoShowcase from "~/components/marketing/sections/cta-sections/logoShowcase.vue";
 import CallToAction from "~/components/custom/sections/CallToAction.vue";
-import BrandPanel from "~/components/marketing/sections/cta-sections/BrandPanel.vue";
-import Stats from "~/components/marketing/sections/stats-sections/SimpleInCard.vue";
-import SimpleColumns from "~/components/marketing/sections/feature-sections/SimpleColumns.vue";
-import ShowcaseProducts from "~/components/marketing/sections/cta-sections/ShowcaseProducts.vue";
+import SignUp from "~/components/custom/sections/SignUp.vue";
 
 export default {
   components: {
+    NewCard,
     Header,
+    SolutionsHeader,
+    logoShowcase,
     CallToAction,
-    BrandPanel,
-    Stats,
-    SimpleColumns,
-    ShowcaseProducts,
+    SignUp,
   },
 
   metaInfo() {

@@ -1,12 +1,15 @@
 <template>
-  <div class="mx-auto">
+  <div class="container mx-auto">
     <NavBar
       :navigation="$static.navigation"
       @setTheme="setTheme"
       :theme="this.theme"
     />
     <slot />
-    <Footer :record="$static.footer" @setTheme="setTheme" :theme="this.theme" />
+    <Footer 
+      :record="$static.footer"
+      @setTheme="setTheme"
+      :theme="this.theme" />
   </div>
 </template>
 
@@ -43,16 +46,16 @@ query {
       link
       external
       expandable
-#      submenu {
-#        title
-#        path
-#        external
-#      }
+      submenu {
+        title
+        path
+        external
+      }
     }
-#    social{
-#      icon
-#      link
-#    }
+    social{
+      icon
+      link
+    }
   }
 
   footer(id: "footer"){

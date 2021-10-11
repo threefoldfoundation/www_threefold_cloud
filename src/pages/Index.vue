@@ -1,131 +1,76 @@
 <template>
   <Layout :hideHeader="true" :disableScroll="true">
-    <div class="container-fluid sm:pxi-0 mx-auto overflow-x-hidden py-5">
-      <Header
-        :id="$page.markdownPage.id"
-        :title="$page.markdownPage.header_title"
-        :image="$page.markdownPage.header_image"
-        :altImg="$page.markdownPage.header_altImg"
-        :excerpt="$page.markdownPage.header_excerpt"
-        :button="$page.markdownPage.button"
-        :link="$url($page.markdownPage.link)"
-      />
+    <Header
+      :title="$page.markdownPage.header_title"
+      :image="$page.markdownPage.header_image"
+      :altImg="$page.markdownPage.header_altImg"
+      :excerpt="$page.markdownPage.header_excerpt"
+      :button="$page.markdownPage.button"
+      :link="$url($page.markdownPage.link)"
+    />
 
-      <Blogs
-        v-if="$page.markdownPage.blogs"
-        :id="$page.markdownPage.id"
-        :blogs="$page.markdownPage.blogs"
-      />
-      <CallToAction
-        v-if="$page.markdownPage.cta"
-        :id="$page.markdownPage.id"
-        :cta="$page.markdownPage.cta"
-      />
+    <SignUp
+      v-if="$page.markdownPage.signup"
+      :signup="$page.markdownPage.signup"
+    />
 
-      <BrandPanel
-        class="my-20"
-        :brand="$page.markdownPage.brandPanel"
-        :id="$page.markdownPage.id"
-        v-if="$page.markdownPage.brandPanel"
-      />
-    </div>
-    <div class="container-fluid sm:pxi-0 mx-auto overflow-x-hidden py-5">
-      <Centered2x2Grid
-        v-if="$page.markdownPage.features.length > 0"
-        :id="$page.markdownPage.id"
-        :features="$page.markdownPage.features"
-      />
+    <g-image
+      class="m-auto w-2/4 lg:mt-20"
+      v-if="$page.markdownPage.solution_image2"
+      :src="$page.markdownPage.solution_image2.src"
+    />
 
-      <SimpleColumns
-        v-if="$page.markdownPage.workloads.length > 0"
-        :id="$page.markdownPage.id"
-        :main="$page.markdownPage.workloadsMain"
-        :sections="$page.markdownPage.workloads"
-      />
+    <SolutionsHeader
+      v-if="$page.markdownPage.header"
+      :header="$page.markdownPage.header"
+    />
 
-      <Stats
-        :id="$page.markdownPage.id"
-        v-if="$page.markdownPage.stats"
-        :info="$page.markdownPage.stats"
-      />
-    </div>
-    <div class="container-fluid sm:pxi-0 mx-auto overflow-x-hidden">
-      <CallToAction
-        v-if="$page.markdownPage.cta2"
-        :id="$page.markdownPage.id"
-        :cta="$page.markdownPage.cta2"
-        :textOnly="true"
-      />
+    <NewCardNewCard2button
+      v-for="card in $page.markdownPage.cards"
+      :key="card.id"
+      :card="card"
+    />
 
-      <BrandPanel
-        class="my-20"
-        :brand="$page.markdownPage.brandPanel2"
-        :id="$page.markdownPage.id"
-        v-if="$page.markdownPage.brandPanel2"
-        :lastBrand="true"
-      />
+    <NewCardLeft
+      v-for="cardLeft in $page.markdownPage.cardLefts"
+      :key="cardLeft.id"
+      :cardLeft="cardLeft"
+    />
 
-      <SignUp
-        v-if="$page.markdownPage.signup"
-        :signup="$page.markdownPage.signup"
-      />
+    <g-image
+      v-if="$page.markdownPage.solution_image"
+      :src="$page.markdownPage.solution_image.src"
+    />
 
-      <g-image
-        class="m-auto w-2/4 lg:mt-20"
-        v-if="$page.markdownPage.solution_image2"
-        :src="$page.markdownPage.solution_image2.src"
-      />
+    <CallToAction v-if="$page.markdownPage.cta" :cta="$page.markdownPage.cta" />
 
-      <SolutionsHeader
-        v-if="$page.markdownPage.header"
-        :header="$page.markdownPage.header"
-      />
+    <NewCard
+      v-for="card in $page.markdownPage.cards2"
+      :key="card.id"
+      :card="card"
+    />
 
-      <NewCardNewCard2button
-        v-for="card in $page.markdownPage.cards"
-        :key="card.id"
-        :card="card"
-      />
+    <NewCardLeft
+      v-for="cardLeft in $page.markdownPage.cardLefts2"
+      :key="cardLeft.id"
+      :cardLeft="cardLeft"
+    />
 
-      <NewCardLeft
-        v-for="cardLeft in $page.markdownPage.cardLefts"
-        :key="cardLeft.id"
-        :cardLeft="cardLeft"
-      />
-
-      <g-image
-        v-if="$page.markdownPage.solution_image"
-        :src="$page.markdownPage.solution_image.src"
-      />
-
-      <NewCard
-        v-for="card in $page.markdownPage.cards2"
-        :key="card.id"
-        :card="card"
-      />
-
-      <NewCardLeft
-        v-for="cardLeft in $page.markdownPage.cardLefts2"
-        :key="cardLeft.id"
-        :cardLeft="cardLeft"
-      />
-
-      <!-- <FourTiersWithToggle
+    <FourTiersWithToggle
       v-if="$page.markdownPage.pricingPlans.length > 0"
       :main="$page.markdownPage.pricing_plansMain"
       :pricingPlans="$page.markdownPage.pricingPlans"
-    /> -->
+    />
 
-      <!-- <logoShowcase
+    <!-- <logoShowcase
       v-if="$page.markdownPage.logos.length > 0"
       :logos="$page.markdownPage.logos"
     /> -->
 
-      <!-- <InTheNews
+    <!-- <InTheNews
       v-if="$page.markdownPage.inTheNews"
       :news="$page.markdownPage.inTheNews"
     /> -->
-    </div>
   </Layout>
 </template>
 
@@ -143,8 +88,8 @@
         header_altImg
         button
         link
-      #  solution_image
-      #  solution_image2
+        solution_image
+        solution_image2
         header{
          title
          subtitle
@@ -212,7 +157,10 @@
         }
         cta{
           id
-          image
+          title
+          content
+          button
+          link
         }
         logos{
           id
@@ -235,61 +183,6 @@
           button2
           link2
         }
-        blogs{
-          id
-          image
-          title
-          content
-        }
-        brandPanel{
-         id
-         title
-         content
-         image
-       }
-       features {
-         id
-         title
-         image
-         content
-       }
-       workloadsMain {
-         id
-         title
-         button
-         link
-       }
-       workloads{
-         id
-         title
-         image
-         content
-       }
-       stats{
-         id
-         title
-         content
-         button
-         link
-       }
-       cta2 {
-         id
-         title
-         subtitle
-         content
-         button
-         link
-       }
-       brandPanel2 {
-         id
-         title
-         content
-         image
-         button
-         link
-         button2
-         link2
-       }
     }  
   }
 
@@ -306,11 +199,7 @@ import FourTiersWithToggle from "~/components/marketing/sections/pricing/four_ti
 import logoShowcase from "~/components/marketing/sections/cta-sections/logoShowcase.vue";
 import InTheNews from "~/components/marketing/sections/logo-clouds/off_white_grid.vue";
 import SignUp from "~/components/custom/sections/SignUp.vue";
-import Blogs from "~/components/marketing/sections/blog-sections/3_column_cards.vue";
-import BrandPanel from "~/components/marketing/sections/cta-sections/BrandPanel.vue";
-import Centered2x2Grid from "~/components/marketing/sections/feature-sections/Centered2x2Grid.vue";
-import SimpleColumns from "~/components/marketing/sections/feature-sections/SimpleColumns.vue";
-import Stats from "~/components/marketing/sections/stats-sections/SimpleInCard.vue";
+
 export default {
   components: {
     Header,
@@ -323,13 +212,8 @@ export default {
     FourTiersWithToggle,
     InTheNews,
     SignUp,
-    Blogs,
-    BrandPanel,
-    Centered2x2Grid,
-    SimpleColumns,
-    Stats,
   },
-  computed: {
+ computed: {
     getImg() {
       let image = "";
       if (process.isClient) {

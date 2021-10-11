@@ -1,41 +1,23 @@
 ---
 id: home
 metaTitle: ThreeFold P2P Cloud | Scale Limitlessly
-metaDesc: Deploy any workload with unprecedented security, scalability, and eﬃciency, on a fully comprehensive peer-to-peer digital infrastructure. Discover a cloud like no other
-metaImg: ./cloud_header.png
-header_title: THE NEXT GENERATION OF CLOUD COMPUTING
-header_image: ./cloud_header.png
+metaDesc: Scale your workloads limitlessly in a secure end-to-end environment. The world's first carbon neutral peer-to-peer cloud.
+metaImg: ./home_header.png
+header_title: ThreeFold P2P Cloud
+header_image: ./home_header.png
 header_altImg: tfcloud
-header_excerpt: Deploy any workload with unprecedented security, scalability, and eﬃciency, on a fully comprehensive peer-to-peer digital infrastructure. Discover a cloud like no other
+header_excerpt: Scale your workloads limitlessly in a secure end-to-end environment. The world's first carbon neutral peer-to-peer cloud.
 button: '' #Learn More
 link: '' #link for button
-blogs: [storage, compute, network]
+signup: home_signup
+solution_image2: ./carbon_neutral.png
+header: carbon_neutral
+cards: [card1]
+cardLefts: [cardLeft1]
+solution_image: ./home_cta.png
 cta: home_cta
-brandPanel: limitless_possibilities
-brandPanel2: explore
-features: [digithree, own_cloud, uhuru, artheon]
-workloadsMain: workloadMain
-workloads: [workload1, workload2, workload3, workload4]
-stats: stats
-cta2: home_cta2
-# signup: home_signup
-
-# solution_image2: ./carbon_neutral.png
-
-# header: header
-
-# cards: [card1]
-
-# cardLefts: [cardLeft1]
-
-# solution_image: ./home_cta.png
-
-# cards2: [marketplace]
-
-# cardLefts2: [iac]
-
-# pricing_plansMain: pricing
-
-# pricingPlans: [plan1, plan2, plan3, plan4]
-
+cards2: [marketplace]
+cardLefts2: [iac]
+pricing_plansMain: pricing
+pricingPlans: [plan1, plan2, plan3, plan4]
 ---
