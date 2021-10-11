@@ -2,27 +2,27 @@
   <div class="fixed inset-0 h-16 bg-white">
     <header
       class="
-        flex
+        inline-flex
         items-center
         justify-between
         flex-wrap
+        container-fluid
         mx-auto
-        px-4
+        py-2
         sm:px-0
-        py-4
-        transition-all transition-500
+        transition-all transition-500 
       "
       :class="{
         'opacity-100': !disableScroll && scrollPosition > headerHeight,
         'opacity-0': !disableScroll && scrollPosition < headerHeight,
       }"
     >
-      <div class="flex items-center justify-between px-4 py-3 sm:p-0 lg:mx-10 mx-4">
+      <div class="flex items-center justify-between px-4 py-3 sm:p-0 lg:mx-10 mx-4 mx-auto">
         <div class="inline-flex items-center flex-shrink-0">
           <a href="/" class="flex">
             <g-image
               :src="require(`!!assets-loader!@images/new_cloud_logo.png`)"
-              class="mr-3 fill-current w-1/2"
+              class="mr-3 fill-current logo"
               alt=""
             />
 
@@ -38,12 +38,11 @@
             > -->
           </a>
         </div>
-
-        <div class="sm:hidden ml-auto">
+ <div class="lg:hidden ml-auto">
           <button
             @click="isOpen = !isOpen"
             type="button"
-            class="block text-gray-500 focus:outline-none"
+            class="block ml-auto text-gray-900 focus:outline-none"
           >
             <svg class="h-6 w-6 fill-current" viewBox="0 0 24 24">
               <path
@@ -59,7 +58,7 @@
             </svg>
           </button>
         </div>
-        <div class="text-gray-400 sm:block md:hidden">
+        <!-- <div class="text-gray-400 sm:block md:hidden">
           <ul class="list-none flex justify-center md:justify-end">
             <li class="mr-0 sm:mr-6">
               <theme-switcher v-on="$listeners" :theme="theme" />
@@ -83,7 +82,7 @@
               </span>
             </li>
           </ul>
-        </div>
+        </div> -->
       </div>
 
       <nav
@@ -406,6 +405,10 @@ a.active--exact.active {
 
 .navbar {
   width: auto;
+}
+
+.logo {
+  max-width: 200px;
 }
 @media (max-width: 768px) {
   .navbar {
