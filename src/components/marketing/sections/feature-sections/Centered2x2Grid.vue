@@ -31,44 +31,42 @@
         ></div>
       </div>
 
-      <div class="mt-10">
-        <dl
+      <div
+        class="mt-12 grid gap-5 mx-auto lg:grid-cols-2"
+      >
+        <!-- <dl
           class="
             space-y-10
             md:space-y-0
             md:grid md:grid-cols-2
             md:gap-x-8 md:gap-y-10
           "
-        >
-          <div class="relative" v-for="feature in features" :key="feature.id">
-            <dt>
-              <div
-                class="
-                  absolute
-                  flex
-                  items-center
-                  justify-center
-                  h-12
-                  w-12
-                  rounded-md
-                  bg-indigo-500
-                  text-white
-                "
-              >
+        > -->
+          <div class="flex flex-wrap text-center lg:text-left -mx-2 my-10" v-for="feature in features" :key="feature.id">
+            <!-- <dt> -->
+              <div class="lg:w-1/3 mx-auto self-start">
                 <!-- Heroicon name: outline/globe-alt -->
-                <g-image :src="feature.image" />
+                <g-image class="mx-auto" :src="feature.image" />
               </div>
-              <h2 class="ml-16 text-3xl leading-none uppercase font-heading">
+             
+            <!-- </dt> -->
+            <div
+              class="lg:w-2/3"
+              
+            >
+             <h2 class="text-3xl leading-none uppercase font-heading">
                 
                 {{ feature.title }}
               </h2>
-            </dt>
-            <dd
-              class="mt-2 ml-16 lg:text-2xl text-xl text-gray-900"
+              <div
+                class="mt-2 text-xl"
               v-html="feature.content"
-            ></dd>
+              >
+              </div>
+            
+            </div>
           </div>
-        </dl>
+        <!-- </dl> -->
       </div>
     </div>
   </div>
