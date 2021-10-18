@@ -22,7 +22,7 @@
           <a href="/" class="flex">
             <g-image
               :src="require(`!!assets-loader!@images/new_cloud_logo.png`)"
-              class="mr-3 fill-current logo"
+              class="mr-3 fill-current"
               alt=""
             />
 

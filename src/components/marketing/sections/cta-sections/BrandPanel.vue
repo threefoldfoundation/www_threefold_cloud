@@ -58,7 +58,7 @@
         <div class="relative">
           <g-image
             class="inset-0 mx-auto object-cover"
-            :class="{ 'w-2/3': id == 'home', 'w-3/4': id == 'network' }"
+            :class="{ 'w-3/4': id == 'network' }"
             :src="image"
             :alt="brand.title"
           />

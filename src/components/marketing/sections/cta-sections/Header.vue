@@ -16,7 +16,7 @@
         ></div>
       </div>
       <g-image
-        class="w-3/4 mx-auto order-2 lg:order-none"
+        class="mx-auto order-2 lg:order-none"
         :src="img"
         :alt="altImg"
       />

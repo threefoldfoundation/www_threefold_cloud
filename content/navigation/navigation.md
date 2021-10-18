@@ -1,7 +1,10 @@
 ---
 id: navigation
 navLinks:
-
+  - name: Home
+    link: /
+    external: false
+    expandable: false                                                                                                                                                                 
   - name: Compute
     link: /compute
     external: false
