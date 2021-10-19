@@ -9,6 +9,10 @@
         :excerpt="$page.markdownPage.header_excerpt"
         :button="$page.markdownPage.button"
         :link="$url($page.markdownPage.link)"
+        :text1="$page.markdownPage.header_link1_txt"
+        :link1="$page.markdownPage.header_link1"
+        :text2="$page.markdownPage.header_link2_txt"
+        :link2="$page.markdownPage.header_link2"
       />
 
       <Blogs
@@ -139,6 +143,10 @@
         header_image
         header_excerpt
         header_altImg
+        header_link1_txt
+        header_link1
+        header_link2_txt
+        header_link2
         button
         link
       #  solution_image

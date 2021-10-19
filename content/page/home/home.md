@@ -2,11 +2,15 @@
 id: home
 metaTitle: ThreeFold P2P Cloud | Scale Limitlessly
 metaDesc: Deploy any workload with unprecedented security, scalability, and eﬃciency, on a fully comprehensive peer-to-peer digital infrastructure. Discover a cloud like no other
-metaImg: ./cloud_header.png
+metaImg: ./cloud_header_seprated.png
 header_title: THE NEXT GENERATION OF CLOUD COMPUTING
-header_image: ./cloud_header.png
+header_image: ./cloud_header_seprated.png
 header_altImg: tfcloud
 header_excerpt: Deploy any workload with unprecedented security, scalability, and eﬃciency, on a fully comprehensive peer-to-peer digital infrastructure. Discover a cloud like no other
+header_link1_txt: STORE
+header_link1: '#'
+header_link2_txt: DEPLOY
+header_link2: '#'
 button: '' #Learn More
 link: '' #link for button
 blogs: [storage, compute, network]
@@ -18,6 +22,7 @@ workloadsMain: workloadMain
 workloads: [workload1, workload2, workload3, workload4]
 stats: stats
 cta2: home_cta2
+
 # signup: home_signup
 
 # solution_image2: ./carbon_neutral.png
