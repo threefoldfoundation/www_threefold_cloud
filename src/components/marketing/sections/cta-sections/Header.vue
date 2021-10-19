@@ -13,11 +13,12 @@
         ></div>
       </div>
       <div class="grid grid-cols-1 md:grid-cols-3 mx-auto items-center">
-        <div class="w-full mb-4">
-          <div class="arrow_up"></div>
+        <div class="w-full mb-4 border-b border-gray-600">
+          <div class="arrow_up "></div>
           <g-link :to="link1" class="text-5xl font-extrabold">{{
             text1
           }}</g-link>
+          
         </div>
         <div class="mb-4">
           <g-image
@@ -26,7 +27,7 @@
             :alt="altImg"
           />
         </div>
-        <div class="w-full mb-4">
+        <div class="w-full mb-4 w-full mb-4 border-b border-gray-600">
           <g-link :to="link2" class="text-5xl font-extrabold">{{
             text2
           }}</g-link>
@@ -372,5 +373,11 @@ export default {
 
 a {
   font-family: "Orbitron", sans-serif !important;
+}
+hr {
+  height:1px;
+  border-width:0;
+  color:gray;
+  background-color:gray;
 }
 </style>
