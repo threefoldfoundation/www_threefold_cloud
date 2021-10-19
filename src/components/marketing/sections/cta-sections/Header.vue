@@ -1,9 +1,9 @@
 <template>
   <section>
-    <div class="flex flex-wrap text-center lg:pt-4 pb-10" v-if="id == 'home'">
+    <div class="flex flex-wrap text-center mx-4 lg:pt-4 pb-10" v-if="id == 'home'">
       <div class="px-3 lg:mt-5 order-1 lg:order-none mx-auto text-center">
         <h2
-          class="text-5xl uppercase mb-6 leading-none font-black font-heading"
+          class="lg:text-5xl uppercase mb-6 leading-none font-black font-heading"
         >
           {{ title }}
         </h2>
@@ -181,7 +181,7 @@
         -mx-2
         lg:mx-10
         px-4
-        lg:my-10
+        lg:mb-40
         mb-10
       "
     >
