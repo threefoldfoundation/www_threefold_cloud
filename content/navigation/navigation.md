@@ -4,11 +4,12 @@ navLinks:
   - name: Home
     link: /
     external: false
-    expandable: false                                                                                                                                                                 
+    expandable: false
+                                                                                                                                                                 
   - name: Compute
     link: /compute
     external: false
-    expandable: false
+    
 
   - name: Storage
     link: /storage
