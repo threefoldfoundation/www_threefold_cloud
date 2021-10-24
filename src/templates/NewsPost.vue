@@ -186,6 +186,7 @@ export default {
 </script>
 
 <style scoped>
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 .post-card-excerpt,
 .post-content-text {
   font-family: "Roboto", sans-serif !important;

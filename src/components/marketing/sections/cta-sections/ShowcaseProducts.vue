@@ -45,8 +45,4 @@ export default {
 .bannerFondo {
   height: 400px;
 }
-.green {
-  /* background-color: #70dfc9; */
-  font-family: "Orbitron", sans-serif !important;
-}
 </style>

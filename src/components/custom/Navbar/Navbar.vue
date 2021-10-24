@@ -30,11 +30,12 @@
             > -->
           </a>
         </div>
- <div class="lg:hidden ml-auto">
+
+        <div class="sm:hidden ml-auto">
           <button
             @click="isOpen = !isOpen"
             type="button"
-            class="block ml-auto text-gray-900 focus:outline-none"
+            class="block text-gray-500 focus:outline-none"
           >
             <svg class="h-6 w-6 fill-current" viewBox="0 0 24 24">
               <path
@@ -52,9 +53,9 @@
         </div>
         <div class="text-gray-400 sm:block md:hidden">
           <ul class="list-none flex justify-center md:justify-end">
-           <li class="mr-0 sm:mr-6">
+            <!-- <li class="mr-0 sm:mr-6">
               <theme-switcher v-on="$listeners" :theme="theme" />
-            </li>
+            </li> -->
             <li
               :key="element.name"
               v-for="(element, index) in navigation.social"
@@ -96,7 +97,7 @@
               </a>
             </li>
           </ul>
-        </div> -->
+        </div>
       </div>
 
       <nav
@@ -355,10 +356,6 @@ a.active--exact.active {
 }
 .navbar {
   width: auto;
-}
-
-.logo {
-  max-width: 200px;
 }
 @media (max-width: 768px) {
   .navbar {

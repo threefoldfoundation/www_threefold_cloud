@@ -1,6 +1,5 @@
 <template>
-  <div
-    v-if="card"
+  <div v-if="card"
     class="flex search-post px-0 sm:px-4 pb-8 mb-8"
     v-bind:class="{ 'no-border': !border }"
   >
@@ -20,19 +19,7 @@
             v-for="membership in record.memberships"
             :key="membership.id"
             :to="membership.path"
-            class="
-              text-xs
-              bg-transparent
-              hover:text-blue-700
-              py-1
-              px-2
-              mr-1
-              border
-              hover:border-blue-500
-              border-gray-600
-              text-gray-700
-              rounded-full
-            "
+            class="text-xs bg-transparent hover:text-blue-700 py-1 px-2 mr-1 border hover:border-blue-500 border-gray-600 text-gray-700 rounded-full"
             >{{ membership.title }}</g-link
           >
         </section>
@@ -52,13 +39,7 @@
                     <g-image
                       :src="author.image"
                       :alt="author.name"
-                      class="
-                        w-8
-                        h-8
-                        rounded-full
-                        bg-gray-200
-                        border-2 border-white
-                      "
+                      class="w-8 h-8 rounded-full bg-gray-200 border-2 border-white"
                     />
                   </g-link>
                 </li>
@@ -88,19 +69,7 @@
               v-for="tag in record.tags"
               :key="tag.id"
               :to="tag.path"
-              class="
-                text-xs
-                bg-transparent
-                hover:text-blue-700
-                py-2
-                px-4
-                mr-2
-                border
-                hover:border-blue-500
-                border-gray-600
-                text-gray-700
-                rounded-full
-              "
+              class="text-xs bg-transparent hover:text-blue-700 py-2 px-4 mr-2 border hover:border-blue-500 border-gray-600 text-gray-700 rounded-full"
               >{{ tag.title }}</g-link
             >
           </section>
@@ -109,23 +78,22 @@
     </div>
   </div>
 
-  <div
-    v-else
+   <div v-else
     class="flex search-post px-0 sm:px-4 pb-8 mb-8"
     v-bind:class="{ 'no-border': !border }"
   >
-    <div class="p-5">
+
+  <div class="p-5">
       <g-link :to="record.path">
-        <h2 class="post-card-title mt-3">{{ record.title }}</h2>
-        <p class="post-card-excerpt" v-if="record.excerpt">
-          {{ record.excerpt.substring(100) }}
-        </p>
+        <h2 class="post-card-title mt-3">{{ record.title}}</h2>
+        <p class="post-card-excerpt" v-if="record.excerpt" >{{ record.excerpt.substring(100) }}</p>
       </g-link>
-    </div>
+      </div>
   </div>
 </template>
 
 <script>
+
 export default {
   props: {
     record: {},
@@ -135,19 +103,19 @@ export default {
     },
   },
   computed: {
-    card() {
-      return this.record.__typename != "MarkdownPage";
-    },
+    card(){return this.record.__typename != "MarkdownPage"},
 
-    path() {
-      if (this.pathPrefix) return this.pathPrefix + "/" + this.record.id;
-      return this.record.path;
-    },
+    path(){
+       if (this.pathPrefix)
+          return this.pathPrefix + "/" + this.record.id
+        return this.record.path
+    }
   },
 };
 </script>
 
 <style scoped>
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 .post-card-excerpt {
   font-family: "Roboto", sans-serif;
   line-height: 1.2;
@@ -155,11 +123,12 @@ export default {
 
 .flex-post {
   flex-direction: row;
+  
 }
-.search-post {
+.search-post{
   border-bottom-width: 1px;
   border-bottom-color: #e2e8f0;
-
+  
   width: 100%;
 }
 
