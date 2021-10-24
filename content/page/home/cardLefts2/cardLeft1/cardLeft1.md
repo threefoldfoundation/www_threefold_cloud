@@ -3,7 +3,7 @@ id: iac
 title: Infrastructure As Code (IAC)
 image: ./iac.png
 button: Learn More
-link: https://threefold.io/info/threefold#/cloud__iac
+link: https://library.threefold.me/info/threefold#/cloud/threefold__cloud_products?id=infrastructure-as-code-iac-for-experts
 order: 1
 ---
 

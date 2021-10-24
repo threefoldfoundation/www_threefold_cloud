@@ -2,8 +2,8 @@
 id: carbon_neutral
 title: ''
 subtitle: Truly Better for Our Planet
-btn1: Learn More
-link1: https://threefold.io/info/cloud#/cloud__cloud_neutral
+btn1: ''
+link1: ''
 btn2: ''
 link2: '' 
 ---

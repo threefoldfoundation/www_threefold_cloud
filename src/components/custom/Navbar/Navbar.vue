@@ -1,37 +1,24 @@
 <template>
   <div class="fixed inset-0 h-16 bg-white">
     <header
-      class="flex items-center justify-between flex-wrap container mx-auto px-4 sm:px-0 py-4 transition-all transition-500"
+      class="container mx-auto px-4 sm:px-0 py-4 transition-all transition-500"
       :class="{
         'opacity-100': !disableScroll && scrollPosition > headerHeight,
         'opacity-0': !disableScroll && scrollPosition < headerHeight,
       }"
     >
-      <div class="flex items-center justify-between px-4 py-3 sm:p-0">
-        <div class="inline-flex items-center flex-shrink-0">
-          <a :href="$url('/')" class="flex">
-            <g-image
-              :src="require(`!!assets-loader!@images/cloud_logo.svg`)"
-              class="mr-3 fill-current logo"
-              v-if="theme == 'light'"
-              alt=""
-            />
-
-            <g-image
-              :src="require(`!!assets-loader!@images/cloud_logo.svg`)"
-              class="mr-3 fill-current logo"
-              v-else
-              alt=""
-            />
-
-            <!-- <span
-              class="hidden md:block font-semibold text-xl tracking-tight"
-              >{{ $static.metadata.siteName }}</span
-            > -->
-          </a>
+      <div class="">
+        <div class="my-2">
+          <!-- <a :href="$url('/')" class="flex"> -->
+          <g-image
+            :src="require(`!!assets-loader!@images/cloud_logo.svg`)"
+            class="mx-auto logo"
+            alt=""
+          />
+          <!-- </a> -->
         </div>
 
-        <div class="sm:hidden ml-auto">
+        <!-- <div class="sm:hidden ml-auto">
           <button
             @click="isOpen = !isOpen"
             type="button"
@@ -53,9 +40,6 @@
         </div>
         <div class="text-gray-400 sm:block md:hidden">
           <ul class="list-none flex justify-center md:justify-end">
-            <!-- <li class="mr-0 sm:mr-6">
-              <theme-switcher v-on="$listeners" :theme="theme" />
-            </li> -->
             <li
               :key="element.name"
               v-for="(element, index) in navigation.social"
@@ -97,9 +81,9 @@
               </a>
             </li>
           </ul>
-        </div>
+        </div> -->
       </div>
-
+      <!-- 
       <nav
         :class="isOpen ? 'block' : 'hidden'"
         class="navbar md:order-2 px-2 pt-2 pb-4 sm:flex sm:p-0 sm:w-100 bg-white"
@@ -187,9 +171,9 @@
             >{{ element.name }}</a
           >
         </div>
-        <!-- <div
-          class="md:hidden inline-flex rounded-full border-2 border-gray-200 w-1/2"
-        >
+      </nav> -->
+      <!-- <div class="hidden md:ml-auto md:inline-block md:order-last">
+        <div class="inline-flex rounded-full border-2 border-gray-200 w-1/2">
           <span class="w-auto flex justify-end items-center p-2">
             <font-awesome :icon="['fas', 'search']" />
           </span>
@@ -200,25 +184,11 @@
             v-model="search"
             @keyup.enter="result"
           />
-        </div> -->
-      </nav>
-      <div class="hidden md:ml-auto md:inline-block md:order-last">
-        <!-- <div class="inline-flex rounded-full border-2 border-gray-200 w-1/2">
-          <span class="w-auto flex justify-end items-center p-2">
-            <font-awesome :icon="['fas', 'search']" />
-          </span>
-          <input
-            class="w-full rounded mr-4 bg-white"
-            type="text"
-            placeholder="Search..."
-            v-model="search"
-            @keyup.enter="result"
-          />
-        </div> -->
+        </div>
         <ul class="list-none inline-flex justify-center md:justify-end">
-          <!-- <li class="mr-0 sm:mr-2">
+          <li class="mr-0 sm:mr-2">
             <ThemeSwitcher v-on="$listeners" :theme="theme" />
-          </li> -->
+          </li>
           <li
             :key="element.name"
             v-for="(element, index) in navigation.social"
@@ -256,7 +226,7 @@
             </a>
           </li>
         </ul>
-      </div>
+      </div> -->
     </header>
   </div>
 </template>
