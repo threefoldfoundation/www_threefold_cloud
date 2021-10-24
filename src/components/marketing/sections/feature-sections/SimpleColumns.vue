@@ -1,22 +1,22 @@
 <template>
-  <div class="py-12 bg-white">
-    <div class="max-w-xl mx-auto px-4 sm:px-6 lg:max-w-screen-xl lg:px-8">
-      <div v-if="main" class="max-w-md mx-auto mb-24 lg:text-center">
+  <div class="py-20 bg-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:max-w-screen-2xl lg:px-8">
+      <div v-if="main" class="mx-auto mb-24 lg:text-center">
         <h2
           class="
-            mt-2
-            text-3xl
-            leading-8
-            font-extrabold
-            tracking-tight
-            text-gray-900
-            sm:text-4xl
+            lg:text-5xl
+            max-w-3xl
+            uppercase
+            mb-6
+            leading-none
+            font-black font-heading
+            mx-auto
           "
         >
           {{ main.title }}
         </h2>
         <div
-          class="mt-2 text-lg leading-6 text-gray-900"
+          class="mt-2 lg:text-2xl text-xl leading-normal text-gray-900"
           v-html="main.content"
         ></div>
       </div>
@@ -33,14 +33,30 @@
           :key="section.id"
         >
           <div class="flex items-center justify-center rounded-md text-white">
-            <g-image :src="section.image" class="mx-auto" />
+            <g-image
+              :src="section.image"
+              class="w-3/4 mx-auto"
+              :class="{
+                'w-full mx-auto': id == 'storage',
+                'w-3/4 mx-auto': id == 'home',
+              }"
+            />
           </div>
           <div class="mt-5">
-            <h5 class="text-lg leading-6 font-medium text-gray-900">
+            <h2
+              class="
+                text-3xl
+                uppercase
+                mb-6
+                leading-none
+                font-black font-heading
+                py-8
+              "
+            >
               {{ section.title }}
-            </h5>
+            </h2>
             <div
-              class="mt-2 text-base leading-6 text-gray-900"
+              class="mt-2 lg:text-2xl text-xl leading-normal text-gray-900 pb-6"
               v-html="section.content"
             ></div>
           </div>
@@ -51,9 +67,12 @@
           :href="main.link"
           class="
             green
-            text-md text-gray-900
+            bg-green-300
+            lg:text-2xl
+            text-lg
             font-extrabold
             px-12
+            hover:bg-green-200
             rounded-lg
             py-4
             mb-4
@@ -74,6 +93,7 @@ export default {
 
 <style scoped>
 .green {
-  background-color: #70dfc9;
+  /* background-color: #70dfc9; */
+  font-family: "Orbitron", sans-serif !important;
 }
 </style>

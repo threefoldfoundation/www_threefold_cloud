@@ -65,7 +65,7 @@
     <!-- <logoShowcase
       v-if="$page.markdownPage.logos.length > 0"
       :logos="$page.markdownPage.logos"
-    /> -->
+    />
 
     <!-- <InTheNews
       v-if="$page.markdownPage.inTheNews"
@@ -86,6 +86,10 @@
         header_image
         header_excerpt
         header_altImg
+        header_link1_txt
+        header_link1
+        header_link2_txt
+        header_link2
         button
         link
         solution_image

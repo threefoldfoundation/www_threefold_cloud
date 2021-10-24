@@ -41,3 +41,35 @@ export default {
   },
 };
 </script>
+<style scoped>
+.green {
+  /* background-color: #70dfc9; */
+  font-family: "Orbitron", sans-serif !important;
+}
+.arrow_up,
+.arrow_down {
+  display: inline-block;
+  margin-right: 10px;
+  width: 0;
+  height: 0;
+  border-width: 0 12.5px 30px 12.5px;
+  border-color: transparent transparent #000000 transparent;
+  border-style: solid;
+}
+.arrow_down {
+  margin-left: 10px;
+
+  border-width: 35px 12.5px 0 12.5px;
+  border-color: #000000 transparent transparent transparent;
+}
+
+a {
+  font-family: "Orbitron", sans-serif !important;
+}
+hr {
+  height:1px;
+  border-width:0;
+  color:gray;
+  background-color:gray;
+}
+</style>
