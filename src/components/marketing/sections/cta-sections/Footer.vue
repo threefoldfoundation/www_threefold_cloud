@@ -187,13 +187,13 @@
           <a
             class="leading-6 text-gray-500 hover:text-gray-900"
             target="_blank"
-            href="https://threefold.io/info/legal#/legal__terms_conditions_websites"
+            href="https://library.threefold.me/info/legal/#/legal__terms_conditions_websites"
             >Terms & Conditions |
           </a>
           <a
             class="leading-6 text-gray-500 hover:text-gray-900"
             target="_blank"
-            href="https://threefold.io/info/legal#/legal__privacypolicy"
+            href="https://library.threefold.me/info/legal/#/legal__privacypolicy"
             >Privacy Policy |
           </a>
           <a
