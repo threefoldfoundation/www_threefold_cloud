@@ -201,6 +201,28 @@ module.exports = function(api) {
             }
         })
     });
+    api.createPages(async({ graphql, createPage }) => {
+      const { data } = await graphql(`{
+  allAppsTag {
+    edges {
+      node {
+        id
+        path
+      }
+    }
+  }
+}`)
 
+      data.allAppsTag.edges.forEach(({ node }) => {
+          createPage({
+              path: `${node.path}`,
+              component: './src/templates/Tag.vue',
+              context: {
+                  id: node.id,
+                  private: private
+              }
+          })
+      })
+  })
 
 }

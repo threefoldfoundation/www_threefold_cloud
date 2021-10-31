@@ -127,6 +127,27 @@
       }
     }
 
+    appsTag(id: $id) {
+      title
+      path
+      belongsTo{
+        totalCount
+        pageInfo {
+          totalPages
+          currentPage
+        }
+        edges {
+          node {
+            ... on App {
+              title
+              image
+              path
+            }
+          }
+        }
+      }
+    }
+
     allProjectTag(filter: { title: {in: ["blockchain", "experience", "technology", "farming", "community", "infrastructure", "impact"]}}){
       edges{
         node{
@@ -156,7 +177,15 @@
       }
     }
 } 
-
+ allAppsTag{
+     edges{
+      node{
+        id
+        title
+        path
+      }
+    }
+  }
   }
 </page-query>
 
@@ -188,8 +217,10 @@ export default {
       } else if (this.$page.blogTag) {
         path = "/blog";
         tags = this.$page.allBlogTag;
+      } else if (this.$page.appsTag) {
+        path = "/apps";
+        tags = this.$page.allAppsTag;
       }
-
       var res = [{ title: "All Tags", path: path }];
       tags.edges.forEach((edge) =>
         res.push({ title: edge.node.title, path: edge.node.path })
@@ -198,7 +229,12 @@ export default {
     },
 
     tags() {
-      return this.$page.projectTag || this.$page.newsTag || this.$page.blogTag;
+      return (
+        this.$page.projectTag ||
+        this.$page.newsTag ||
+        this.$page.blogTag ||
+        this.$page.appsTag
+      );
     },
     item() {
       var plural = this.tags.belongsTo.totalCount > 0;

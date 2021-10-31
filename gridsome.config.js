@@ -150,6 +150,37 @@ module.exports = {
         {
             use: '@gridsome/source-filesystem',
             options: {
+                typeName: 'AppsMain',
+                path: './content/page/**/all_apps/main/*.md',
+            }
+        },
+        {
+            use: '@gridsome/source-filesystem',
+            options: {
+                typeName: 'Applications',
+                path: './content/page/**/all_apps/**/*.md',
+            }
+        },
+
+        {
+            use: '@gridsome/source-filesystem',
+            options: {
+                typeName: 'Header',
+                path: './content/page/**/header/*.md',
+            }
+        },
+
+        {
+            use: '@gridsome/source-filesystem',
+            options: {
+                typeName: 'SignUp',
+                path: './content/page/**/signup/*.md',
+            }
+        },
+
+        {
+            use: '@gridsome/source-filesystem',
+            options: {
                 typeName: 'MarkdownPage',
                 path: './content/page/*/*.md',
                 refs: {
@@ -168,7 +199,12 @@ module.exports = {
                     blogs: 'Blogs',
                     workloadsMain: 'WorkloadsMain',
                     workloads: 'Workloads',
-                    stats: 'Stats'
+                    stats: 'Stats',
+                    appsMain: 'AppsMain',
+                    apps: 'Applications',
+                    header: 'Header',
+                    signup: 'SignUp',
+
                 }
             }
         },
@@ -269,6 +305,24 @@ module.exports = {
             }
         },
 
+        {
+            use: "@gridsome/source-filesystem",
+            options: {
+                typeName: "App",
+                path: './content/page/applications/all_apps/**/*.md',
+                templates: {
+                    App: '/apps/:id'
+                },
+                refs: {
+                    // Creates a GraphQL collection from 'tags' in front-matter and adds a reference.
+                    tags: {
+                        typeName: "AppsTag",
+                        create: true,
+                    },
+                },
+            },
+        },
+
         // Tailwind
         {
             use: 'gridsome-plugin-tailwindcss',
@@ -345,6 +399,15 @@ module.exports = {
         Project: [{
             path: '/partners/:id',
             component: '~/templates/Project.vue'
+        }],
+        App: [{
+            path: '/apps/:id',
+            component: '~/templates/App.vue'
+        }],
+
+        AppsTag: [{
+            path: '/apps/tags/:id',
+            component: '~/templates/Tag.vue'
         }],
     },
 
