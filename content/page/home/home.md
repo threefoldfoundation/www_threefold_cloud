@@ -22,6 +22,7 @@ workloadsMain: workloadMain
 workloads: [workload1, workload2, workload3, workload4]
 stats: stats
 cta2: home_cta2
+logos: [logo1, logo2, logo3, logo4, logo5, logo6, logo7, logo8]
 
 # signup: home_signup
 

@@ -20,12 +20,20 @@
         :id="$page.markdownPage.id"
         :blogs="$page.markdownPage.blogs"
       />
-      <CallToAction
+      <!-- <CallToAction
         v-if="$page.markdownPage.cta"
         :id="$page.markdownPage.id"
         :cta="$page.markdownPage.cta"
+      /> -->
+    </div>
+    <div class="container sm:pxi-0 mx-auto overflow-x-hidden py-5">
+      <LogoShowcase
+        v-if="$page.markdownPage.logos.length > 0"
+        :id="$page.markdownPage.id"
+        :logos="$page.markdownPage.logos"
       />
-
+    </div>
+    <div class="container-fluid sm:pxi-0 mx-auto overflow-x-hidden py-5">
       <BrandPanel
         class="my-20"
         :brand="$page.markdownPage.brandPanel"
@@ -118,10 +126,6 @@
       :pricingPlans="$page.markdownPage.pricingPlans"
     />
 
-      <logoShowcase
-      v-if="$page.markdownPage.logos.length > 0"
-      :logos="$page.markdownPage.logos"
-    />
 
       <InTheNews
       v-if="$page.markdownPage.inTheNews"
@@ -211,6 +215,10 @@
          button2
          link2
        }
+       logos {
+         id
+         image
+       }
     }  
   }
 
@@ -224,7 +232,7 @@ import NewCardNewCard2button from "~/components/marketing/sections/cta-sections/
 import NewCardLeft from "~/components/marketing/sections/cta-sections/NewCardLeft.vue";
 import CallToAction from "~/components/custom/sections/CallToAction.vue";
 import FourTiersWithToggle from "~/components/marketing/sections/pricing/four_tiers_with_toggle.vue";
-import logoShowcase from "~/components/marketing/sections/cta-sections/logoShowcase.vue";
+import LogoShowcase from "~/components/marketing/sections/cta-sections/logoShowcase.vue";
 import InTheNews from "~/components/marketing/sections/logo-clouds/off_white_grid.vue";
 import SignUp from "~/components/custom/sections/SignUp.vue";
 import Blogs from "~/components/marketing/sections/blog-sections/3_column_cards.vue";
@@ -240,7 +248,7 @@ export default {
     NewCardNewCard2button,
     NewCardLeft,
     CallToAction,
-    logoShowcase,
+    LogoShowcase,
     FourTiersWithToggle,
     InTheNews,
     SignUp,

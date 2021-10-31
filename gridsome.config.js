@@ -181,6 +181,14 @@ module.exports = {
         {
             use: '@gridsome/source-filesystem',
             options: {
+                typeName: 'Logos',
+                path: './content/page/**/logos/**/*.md',
+            }
+        },
+
+        {
+            use: '@gridsome/source-filesystem',
+            options: {
                 typeName: 'MarkdownPage',
                 path: './content/page/*/*.md',
                 refs: {
@@ -204,7 +212,7 @@ module.exports = {
                     apps: 'Applications',
                     header: 'Header',
                     signup: 'SignUp',
-
+                    logos: 'Logos'
                 }
             }
         },
