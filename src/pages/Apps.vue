@@ -5,10 +5,10 @@
       :signup="$page.markdownPage.signup"
     />
 
-    <!-- <SolutionsHeader
+    <SolutionsHeader
       v-if="$page.markdownPage.header"
       :header="$page.markdownPage.header"
-    /> -->
+    />
 
     <TagFilterHeader
       :tags="appsTag"

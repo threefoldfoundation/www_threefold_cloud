@@ -21,6 +21,11 @@ navLinks:
     external: false
     expandable: false
 
+  - name: Apps
+    link: /apps
+    external: false
+    expandable: false
+
   - name: Partners
     link: /partners
     external: false
