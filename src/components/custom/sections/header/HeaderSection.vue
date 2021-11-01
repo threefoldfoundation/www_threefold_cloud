@@ -1,8 +1,8 @@
 <template>
   <section class="py-12 px-4 text-center">
     <div class="w-full max-w-2xl mx-auto">
-      <span class="text-sm font-semibold">{{ header.title }}</span>
-      <h2 class="text-5xl text-gray-700 leading-tight font-semibold font-heading">
+      <span class="text-lg font-semibold">{{ header.title }}</span>
+      <h2 class="text-5xl text-gray-700 leading-tight font-bold font-heading">
         {{ header.subtitle }}
       </h2>
       <div

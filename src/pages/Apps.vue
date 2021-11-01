@@ -1,9 +1,9 @@
 <template>
-  <Layout :hideHeader="true" :disableScroll="true" class="container">
-    <SignUp
+  <Layout :hideHeader="true" :disableScroll="true" class="container_tft sm:pxi-0 mx-auto overflow-x-hidden py-5">
+    <!-- <SignUp
       v-if="$page.markdownPage.signup"
       :signup="$page.markdownPage.signup"
-    />
+    /> -->
 
     <SolutionsHeader
       v-if="$page.markdownPage.header"

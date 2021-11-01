@@ -68,7 +68,9 @@
       <div class="w-full mx-auto mt-10">
         <g-image :src="img(cta.image)" class="w-2/3 mx-auto" />
       </div>
-      <h2 class="lg:text-5xl text-black leading-none font-semibold font-heading">
+      <h2
+        class="lg:text-5xl text-black leading-none font-semibold font-heading"
+      >
         {{ cta.title }}
       </h2>
       <div
@@ -187,7 +189,9 @@
       v-else-if="id == 'storage' && textOnly"
       class="w-full max-w-4xl mx-auto my-20"
     >
-      <h2 class="lg:text-5xl text-white leading-tight font-semibold font-heading">
+      <h2
+        class="lg:text-5xl text-white leading-tight font-semibold font-heading"
+      >
         {{ cta.title }}
       </h2>
       <div
@@ -308,13 +312,13 @@
 
     <div v-else class="w-full max-w-2xl mx-auto">
       <h2
-        class="text-5xl text-gray-700 leading-tight font-semibold font-heading"
+        class="text-5xl leading-tight font-bold font-heading"
       >
         {{ cta.title }}
       </h2>
       <div
         v-html="cta.content"
-        class="mt-6 mb-8 text-gray-700 leading-relaxed"
+        class="mt-6 mb-12 leading-relaxed"
       ></div>
       <!-- <a
         v-if="cta.button"
@@ -328,19 +332,17 @@
         target="_blank"
         :href="cta.link"
         class="
-          inline-block
-          bg-blue-900
+          green
+          bg-green-300
+          lg:text-2xl
           text-lg
-          learn-button
-          hover:bg-blue-800
-          text-gray-100
-          px-8
-          py-2
-          mr-5
-          my-2
-          rounded
+          font-extrabold
+          px-12
+          hover:bg-green-200
+          rounded-lg
+          py-4
+          mb-4
           shadow
-          rounded-full
         "
         >{{ cta.button }}</a
       >
@@ -348,19 +350,17 @@
         v-else
         :href="cta.link"
         class="
-          inline-block
-          bg-blue-900
+          green
+          bg-green-300
+          lg:text-2xl
           text-lg
-          learn-button
-          hover:bg-blue-800
-          text-gray-100
-          px-8
-          py-2
-          mr-5
-          my-2
-          rounded
+          font-extrabold
+          px-12
+          hover:bg-green-200
+          rounded-lg
+          py-4
+          mb-4
           shadow
-          rounded-full
         "
         >{{ cta.button }}</a
       >
