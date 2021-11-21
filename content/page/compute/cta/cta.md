@@ -1,6 +1,6 @@
 ---
 id: compute_cta
-title: THE MOST FLEXIBLE VM PROVISIONING IN THE SPACE
+title: THE MOST FLEXIBLE VM PROVISIONING IN SPACE
 image: ./compute_flexible.png
 button: DEPLOY A VM
 link: '#'

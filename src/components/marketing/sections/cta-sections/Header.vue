@@ -6,6 +6,8 @@
           class="lg:text-5xl uppercase mb-6 leading-none font-black font-heading"
         >
           {{ title }}
+          <br>
+          <span>{{ title2 }}</span>
         </h2>
         <div
           class="mb-8 mx-auto lg:text-2xl text-xl lg:max-w-4xl leading-normal"
@@ -330,6 +332,7 @@ export default {
   props: [
     "id",
     "title",
+    "title2",
     "excerpt",
     "altImg",
     "image",

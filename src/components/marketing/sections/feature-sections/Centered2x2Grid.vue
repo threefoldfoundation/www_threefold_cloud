@@ -1,6 +1,6 @@
 <template>
   <div class="py-32 bg-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-10">
       <div v-if="main" class="lg:text-center">
         <h2
           class="
@@ -32,7 +32,7 @@
       </div>
 
       <div
-        class="mt-12 grid gap-5 mx-auto lg:grid-cols-2"
+        class="mt-12 grid gap-8 mx-auto lg:grid-cols-2"
       >
         <!-- <dl
           class="
@@ -44,14 +44,14 @@
         > -->
           <div class="flex flex-wrap text-center lg:text-left -mx-2 my-10" v-for="feature in features" :key="feature.id">
             <!-- <dt> -->
-              <div class="lg:w-1/3 mx-auto self-start">
+              <div class="lg:w-1/3 mx-auto self-start px-4">
                 <!-- Heroicon name: outline/globe-alt -->
-                <g-image class="mx-auto" :src="feature.image" />
+                <g-image class="mx-auto p-2 border-2 border-gray-400" :src="feature.image" />
               </div>
              
             <!-- </dt> -->
             <div
-              class="lg:w-2/3"
+              class="lg:w-2/3 px-4"
               
             >
              <h2 class="text-3xl leading-none uppercase font-heading">
@@ -59,7 +59,7 @@
                 {{ feature.title }}
               </h2>
               <div
-                class="mt-2 text-xl"
+                class="mt-2 text-xl text-justify"
               v-html="feature.content"
               >
               </div>

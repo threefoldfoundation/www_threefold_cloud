@@ -1,6 +1,6 @@
 ---
-id: artheon
-title: ARTHEON
-image: https://via.placeholder.com/150
+id: solidaridad
+title: Solidaridad
+image: ./solidaridad.png
 ---
-Together with ThreeFold, Artheon is building the world's largest open art database. We aim to provide access to art and cultural heritage to people around the world, without borders. A high-quality virtual reality experience
+Solidaridad and ThreeFold are working on transparant supply chain solution to accelerate the digital transformation in developing countires in ways that empower communities universally.

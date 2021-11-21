@@ -241,7 +241,7 @@
           </div>
         </div>
         <div class="lg:mt-14">
-          <g-image class="mx-auto" :src="image" :alt="brand.title" />
+          <g-image class="mx-auto w-2/3" :src="image" :alt="brand.title" />
         </div>
       </div>
     </div>

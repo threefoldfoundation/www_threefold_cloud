@@ -1,6 +1,6 @@
 ---
-id: uhuru
-title: UHURU
-image: https://via.placeholder.com/150
+id: hpe
+title: HPE
+image: ./hpe.png
 ---
-Uhuru is an open-source project that is building a self-sovereign application that combines peer-to-peer browsing, messaging, video conferencing and cloud. This revolutionary application aims to free countries for the
+HPE is developing transformative solutions to improve connectivity and performance, while reducing the environmental footprint of IT infrastructure globally with ThreeFold Cloud.

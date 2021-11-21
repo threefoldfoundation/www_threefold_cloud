@@ -3,7 +3,8 @@ id: home
 metaTitle: ThreeFold P2P Cloud | Scale Limitlessly
 metaDesc: Deploy any workload with unprecedented security, scalability, and eﬃciency, on a fully comprehensive peer-to-peer digital infrastructure. Discover a cloud like no other
 metaImg: ./cloud_header_seprated.png
-header_title: THE NEXT GENERATION OF CLOUD COMPUTING
+header_title: THE NEXT GENERATION 
+header_title2: OF CLOUD COMPUTING
 header_image: ./cloud_header_seprated.png
 header_altImg: tfcloud
 header_excerpt: Deploy any workload with unprecedented security, scalability, and eﬃciency, on a fully comprehensive peer-to-peer digital infrastructure. Discover a cloud like no other
@@ -17,7 +18,7 @@ blogs: [storage, compute, network]
 cta: home_cta
 brandPanel: limitless_possibilities
 brandPanel2: explore
-features: [digithree, own_cloud, uhuru, artheon]
+features: [digithree, own_cloud, hpe, solidaridad]
 workloadsMain: workloadMain
 workloads: [workload1, workload2, workload3, workload4]
 stats: stats

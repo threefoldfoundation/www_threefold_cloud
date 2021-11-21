@@ -4,6 +4,7 @@
       <Header
         :id="$page.markdownPage.id"
         :title="$page.markdownPage.header_title"
+        :title2="$page.markdownPage.header_title2"
         :image="$page.markdownPage.header_image"
         :altImg="$page.markdownPage.header_altImg"
         :excerpt="$page.markdownPage.header_excerpt"
@@ -144,6 +145,7 @@
         metaDesc
         metaImg
         header_title
+        header_title2
         header_image
         header_excerpt
         header_altImg

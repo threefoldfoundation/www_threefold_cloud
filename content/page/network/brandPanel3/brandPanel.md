@@ -1,7 +1,7 @@
 ---
 id: web_getways
 title: WEB GATEWAYS
-image: web_getways.jpg # src/assets/brandPanel/..
+image: web_getways.png # src/assets/brandPanel/..
 button : DISCOVER THE NETWORK WALL
 link: '#'
 ---

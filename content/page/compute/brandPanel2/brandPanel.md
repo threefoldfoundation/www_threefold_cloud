@@ -1,7 +1,7 @@
 ---
 id: industry
 title: A LEAP FORWARD FOR THE INDUSTRY
-image: cloud_industry.jpg # src/assets/brandPanel/..
+image: app_new.png # src/assets/brandPanel/..
 button: LEARN MORE
 link: '#'
 ---
