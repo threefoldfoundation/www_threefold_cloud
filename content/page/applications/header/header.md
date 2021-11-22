@@ -1,6 +1,6 @@
 ---
 id: apps_header
-title: FAST, PRIVATE & ALLOWS YOU TO BREAK FREE 
+title: Incredibly fast, private and efficient
 subtitle: PEER-TO-PEER
 btn1: ''
 link1: '' #link for button

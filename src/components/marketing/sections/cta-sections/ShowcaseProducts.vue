@@ -12,7 +12,7 @@
       </h1>
     </div>
 
-    <div class="grid grid-cols-1 gap-5 sm:grid-cols-5">
+    <div class="grid grid-cols-1 gap-5 sm:grid-cols-5 mx-10">
       <div
         v-for="(product, idx) in products"
         :key="idx"
