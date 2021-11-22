@@ -1,4 +1,5 @@
 ---
 id: logo1
-image: ./qsfs.png
+image: ./qss.png
+url: ''
 ---

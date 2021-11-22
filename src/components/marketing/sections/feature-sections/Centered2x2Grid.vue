@@ -42,22 +42,22 @@
             md:gap-x-8 md:gap-y-10
           "
         > -->
-          <div class="flex flex-wrap text-center lg:text-left -mx-2 my-10" v-for="feature in features" :key="feature.id">
+          <div class="flex flex-wrap text-center lg:text-left -mx-2 my-10 px-10" v-for="feature in features" :key="feature.id">
             <!-- <dt> -->
-              <div class="lg:w-1/3 mx-auto self-start px-4">
+              <div class="">
                 <!-- Heroicon name: outline/globe-alt -->
-                <g-image class="mx-auto p-2 border-2 border-gray-400" :src="feature.image" />
+                <g-image class="my-4" :src="feature.image" />
               </div>
              
             <!-- </dt> -->
             <div
-              class="lg:w-2/3 px-4"
+              class=""
               
             >
-             <h2 class="text-3xl leading-none uppercase font-heading">
+             <!-- <h2 class="text-3xl leading-none uppercase font-heading">
                 
                 {{ feature.title }}
-              </h2>
+              </h2> -->
               <div
                 class="mt-2 text-xl text-justify"
               v-html="feature.content"

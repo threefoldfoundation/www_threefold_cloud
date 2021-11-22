@@ -1,4 +1,5 @@
 ---
 id: logo2
-image: ./kuberntes.png
+image: ./kubernetes.png
+url: ''
 ---

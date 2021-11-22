@@ -1,4 +1,5 @@
 ---
 id: logo7
-image: ./nametbd.png
+image: ./zflist.png
+url: ''
 ---

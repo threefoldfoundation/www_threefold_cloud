@@ -1,4 +1,5 @@
 ---
 id: logo6
-image: ./virtualmachiens.png
+image: ./virtual_machine.png
+url: ''
 ---

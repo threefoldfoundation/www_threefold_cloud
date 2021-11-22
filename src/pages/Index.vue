@@ -220,6 +220,7 @@
        logos {
          id
          image
+         url
        }
     }  
   }

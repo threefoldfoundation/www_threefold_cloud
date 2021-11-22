@@ -1,4 +1,5 @@
 ---
 id: logo4
-image: ./clickapp.png
+image: ./app_platform.png
+url: ''
 ---
