@@ -8,22 +8,22 @@
       <div class="xl:grid xl:grid-cols-4 xl:gap-4">
         <div class="space-y-8 xl:col-span-1">
           <g-image
-            class="h-10"
-            :src="require(`!!assets-loader!@images/tf_icon_black.svg`)"
+            class="h-10 lg:mt-4"
+            :src="require(`!!assets-loader!@images/new_cloud_logo.png`)"
             alt="Company name"
             v-if="theme == 'light'"
           />
 
           <g-image
             class="h-10"
-            :src="require(`!!assets-loader!@images/tf_icon_white.svg`)"
+            :src="require(`!!assets-loader!@images/new_cloud_logo.png`)"
             alt="Company name"
             v-else
           />
 
-          <p class="text-gray-500 font-bold text-base leading-6">
+          <!-- <p class="text-gray-500 font-bold text-base leading-6">
             {{ record.description }}
-          </p>
+          </p> -->
           <div class="flex space-x-6">
             <a
               v-if="record.facebook != '#'"

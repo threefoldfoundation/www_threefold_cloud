@@ -6,7 +6,7 @@ metaImg: ./storage_header.png
 header_title: UNBREAKABLE FILE AND OBJECT STORAGE
 header_image: ./storage_header.png
 header_altImg: tfcloud
-header_excerpt: Quantum-safe storage presents a standard file system interface that is compatible with most protocols including S3 and IPFS
+header_excerpt: Quantum-safe storage presents a standard file system interface that is compatible with most protocols including S3 and IPFS.
 button: Get Started #Learn More
 link: '#' #link for button
 cta: perfect_peace

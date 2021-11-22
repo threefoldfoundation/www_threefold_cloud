@@ -6,4 +6,4 @@ button: LEARN MORE
 link: '#'
 ---
 
-With ZFlist, host your workloads in a next-generation docker-compatible container environment that offers superior solation though the use of mini VMs
+With ZFlist, host your workloads in a next-generation docker-compatible container environment that offers superior solation though the use of mini VMs.
