@@ -1,5 +1,5 @@
 ---
 id: logo7
 image: ./zflist.png
-url: ''
+url: /compute/#block_4
 ---

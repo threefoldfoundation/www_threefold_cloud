@@ -8,7 +8,7 @@ header_image: ./compute_header.png
 header_altImg: tfcloud
 header_excerpt: Run cloud native tools like kubernetes and VMs on a peer-to-peer infrastructure and explore a world of new possibilities.
 button: GET STARTED #Learn More
-link: '#' #link for button
+link: https://library.threefold.me/info/manual/#/manual__weblets_vm 
 brandPanel: kubernetes
 cta: compute_cta
 brandPanel2: industry

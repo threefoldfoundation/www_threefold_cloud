@@ -2,8 +2,8 @@
 id: public_ips
 title: HAVE PUBLIC IPs TO OFFER? 
 image: public_ips.jpg # src/assets/brandPanel/..
-button : CONTACT US
-link: '#'
+button : LEARN MORE
+link:  https://library.threefold.me/info/threefold#/tfgrid/farming/threefold__farming_reward?id=farming-reward-30
 ---
 
- Contact us to start earning from your IPs while retaining ownership. 
+Start earning from your IPs while retaining ownership. 

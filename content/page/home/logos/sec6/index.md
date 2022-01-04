@@ -1,5 +1,5 @@
 ---
 id: logo6
 image: ./virtual_machine.png
-url: ''
+url: /compute/#block_3
 ---

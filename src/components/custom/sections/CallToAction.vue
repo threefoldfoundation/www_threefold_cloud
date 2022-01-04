@@ -61,7 +61,7 @@
       >
     </div>
 
-    <div
+    <div id="block_3"
       v-else-if="id == 'compute' && !lastCta && !textOnly"
       class="w-full py-20 max-w-3xl mx-auto"
     >

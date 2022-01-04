@@ -8,7 +8,7 @@ header_image: ./storage_header.png
 header_altImg: tfcloud
 header_excerpt: Quantum-safe storage presents a standard file system interface that is compatible with most protocols including S3 and IPFS.
 button: Get Started #Learn More
-link: '#' #link for button
+link: https://library.threefold.me/info/manual/#/cloud/threefold__qss_filesystem 
 cta: perfect_peace
 stats: storage_stats
 workloadsMain: storageWorkloadMain

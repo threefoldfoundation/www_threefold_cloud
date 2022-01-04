@@ -1,5 +1,5 @@
 ---
 id: logo2
 image: ./kubernetes.png
-url: ''
+url: /compute/#block_2
 ---

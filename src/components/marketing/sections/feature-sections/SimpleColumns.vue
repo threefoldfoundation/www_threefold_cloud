@@ -64,6 +64,26 @@
       </div>
       <div class="block text-center mt-10">
         <a
+        v-if="main.link.includes('http')"
+        target="_blank"
+          :href="main.link"
+          class="
+            green
+            bg-green-300
+            lg:text-2xl
+            text-lg
+            font-extrabold
+            px-12
+            hover:bg-green-200
+            rounded-lg
+            py-4
+            mb-4
+            shadow
+          "
+          >{{ main.button }}</a
+        >
+         <a
+          v-else
           :href="main.link"
           class="
             green
