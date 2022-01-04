@@ -4,7 +4,7 @@
 -->
 <template>
   <footer class="bg-white">
-    <div class="max-w-screen-xl mx-auto py-12 px-4 sm:px-6 lg:py-16 lg:px-8">
+    <div class="max-w-screen-2xl mx-auto py-12 px-4 sm:px-6 lg:py-16 lg:px-8">
       <div class="xl:grid xl:grid-cols-4 xl:gap-4">
         <div class="space-y-8 xl:col-span-1">
           <g-image

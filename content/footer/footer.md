@@ -17,8 +17,6 @@ items:
       link: https://library.threefold.me/info/threefold/#/cloud/threefold__cloud_home
     - name: Grid Explorer
       link: https://explorer.threefold.io/      
-    - name: ThreeFold Marketplace 2.0
-      link: https://threefold.io/marketplace
     - name: Alliance
       link: https://consciousinternet.org
 
@@ -26,7 +24,7 @@ items:
  - title: Participate
    links:
     - name: Start Farming
-      link: https://farming.threefold.io/farm
+      link: https://threefold.io/farm/
     - name: Buy the Token
       link: https://library.threefold.me/info/threefold#/tokens/threefold__how_to_buy
     - name: Use the Cloud

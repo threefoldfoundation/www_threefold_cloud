@@ -35,7 +35,7 @@
       </div>
     </div>
   </div>
-  <div class="py-12 mb-5 mx-40" v-else>
+  <div class="py-12 mb-5 lg:mx-20" v-else>
     <div class="mx-auto text-center">
       <h1
         v-if="main.title"

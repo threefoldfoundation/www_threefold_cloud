@@ -52,7 +52,7 @@
                 <dd
                   class="
                     order-1
-                    text-6xl
+                    text-5xl
                     leading-none
                     font-extrabold
                     text-black
@@ -88,7 +88,7 @@
                 <dd
                   class="
                     order-1
-                    text-6xl
+                    text-5xl
                     leading-none
                     font-extrabold
                     text-black
@@ -123,7 +123,7 @@
                 <dd
                   class="
                     order-1
-                    text-6xl
+                    text-5xl
                     leading-none
                     font-extrabold
                     text-black
@@ -158,7 +158,7 @@
                 <dd
                   class="
                     order-1
-                    text-6xl
+                    text-5xl
                     leading-none
                     font-extrabold
                     text-black

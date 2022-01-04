@@ -55,11 +55,12 @@
       >
         <h2
           class="
-            lg:text-6xl
+            lg:text-5xl
             xs:text-4xl
+
             mb-6
             leading-none
-            font-bold font-heading
+            font-extrabold font-heading
             text-gray-800
           "
         >
@@ -122,7 +123,7 @@
     >
       <div class="px-3 order-1 lg:order-none mx-auto text-center px-4">
         <h2
-          class="max-w-4xl lg:text-6xl uppercase mb-6 leading-none font-heading"
+          class="max-w-4xl lg:text-5xl uppercase mb-6 leading-none font-heading"
         >
           {{ title }}
         </h2>
@@ -183,6 +184,7 @@
         lg:text-left
         -mx-2
         lg:mx-10
+        lg:my-20
         px-4
         lg:mb-40
         mb-10
@@ -195,11 +197,11 @@
       <div class="lg:w-1/2 px-2 lg:pr-10 mt-10 lg:mt-0 order-1 lg:order-none">
         <h2
           class="
-            lg:text-6xl
+            lg:text-5xl
             test
             mb-6
             leading-none
-            font-bold font-heading
+            font-extrabold font-heading
             text-gray-800
           "
         >
